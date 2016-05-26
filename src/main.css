@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-family: "Gotham Medium";
+}
+
+body {
+  background-color: #2d343e;
+}
+
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url(./fonts/gotham-medium.ttf);
+}
+
+@font-face {
+  font-family: 'Gotham Light';
+  src: url(./fonts/gotham-light.ttf);
+}
+
+@font-face {
+  font-family: 'Gotham Book';
+  src: url(./fonts/gotham-book.ttf);
+}
