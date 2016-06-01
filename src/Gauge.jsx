@@ -54,13 +54,14 @@ var Gauge = ({value, minValue, maxValue, arcSpan, majorTickStep,
       {labels(majorTickStep, outterRadius - majorTickLen - 11)}
       <text textAnchor="middle" x={center.x} y={center.y} fill="white"
             fontSize="26" fontFamily="Gotham Medium">
-        {value.toFixed(1)}
+        {value !== null && value.toFixed(1)}
       </text>
       <text textAnchor="middle" x={center.x} y={center.y + 25} fill="white"
             fontSize="16" fontFamily="Gotham Light">
         km/h
       </text>
-      <Light pos={fromPolar(center, innerRadius, valueToAngle(value))} />
+      {value !== null &&
+        <Light pos={fromPolar(center, innerRadius, valueToAngle(value))} />}
     </svg>
   );
 }

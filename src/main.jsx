@@ -21,7 +21,9 @@ var render = (state) => {
         <div style={{textAlign: "center", marginTop: 20}}>
           <Gauge
             innerRadius={60} outterRadius={100} arcSpan={250}
-            value={state.velocity * 60 * 60 / 1000} minValue={0} maxValue={800}
+            value={state.velocity === null ?
+                    null : state.velocity * 60 * 60 / 1000}
+            minValue={0} maxValue={800}
             units="km/h"
             majorTickStep={100} minorTickStep={20}
             majorTickLen={10} minorTickLen={5} />
