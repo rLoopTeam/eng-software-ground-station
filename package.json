@@ -11,8 +11,10 @@
   "author": "Ted Suzman",
   "license": "MIT",
   "dependencies": {
+    "highcharts": "4.2.5",
     "react": "15.1.0",
     "react-dom": "15.1.0",
+    "reconnectingwebsocket": "1.0.0",
     "underscore": "1.8.3"
   },
   "devDependencies": {
