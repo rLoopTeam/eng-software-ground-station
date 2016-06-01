@@ -27,7 +27,6 @@ connected_websockets = set()
 
 async def handler(websocket, path):
     logging.info("New client connected")
-    global connected_websockets
     connected_websockets.add(websocket)
     # when this function returns, the server closes the websocket.
     # so, don't return until the client disconnects
@@ -37,7 +36,6 @@ async def handler(websocket, path):
     connected_websockets.discard(websocket)
 
 async def send(websocket, msg):
-    global connected_websockets
     try:
         await websocket.send(msg)
         logging.debug("Relayed %s", msg)
