@@ -1,6 +1,3 @@
-// dev+prod setup...
-// http://red-badger.com/blog/2016/04/18/building-desktop-apps-with-electron-webpack-and-redux/
-
 var electron = require('electron');
 var app = electron.app;
 
