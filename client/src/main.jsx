@@ -50,7 +50,14 @@ var state = {
 
 render(state);
 
+// called by external parent
+window.onMessage = (state) => {
+  console.log("Got state", state)
+  render(state)
+};
 
+
+/*
 var socket = new ReconnectingWebSocket(
   "ws://localhost:8765",
   null,
@@ -65,6 +72,7 @@ socket.onmessage = (event) => {
   var state = JSON.parse(event.data);
   render(state)
 }
+*/
 
 
 // Animation for demo ----------------------------------------------------------

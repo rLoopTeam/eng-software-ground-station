@@ -2,7 +2,7 @@ module.exports = {
   entry: "./src/main.jsx",
   output: {
     path: __dirname,
-    filename: "./dist/bundle.js"
+    filename: "./renderer-bundle.js"
   },
   module: {
     loaders: [
