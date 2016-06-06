@@ -47,8 +47,8 @@ Everything inside client/ except electron-main.js is written in es6 javascript. 
 Contributing
 ------------
 
-Let's use GitHub pull requests. I'd like to make sure I (@RoboTeddy on slack) understand all the code going in, double-check it for bugs, etc.
+Let's use GitHub pull requests. That way I (@RoboTeddy on slack) can make sure I understand all the code going in, double-check it for bugs, etc.
 
 A couple of people mentioned they're new to frontend development or some aspects of it -- that's great! Comments on a pull requests are a fantastic way to learn new things.
 
-If someone else starts contributing lots, I'll make my changes in pull requests for them to look at as well.
+If anyone else starts contributing lots too, I'll make my changes in pull requests for them to look at as well.
