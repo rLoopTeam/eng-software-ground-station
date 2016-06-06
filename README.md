@@ -23,7 +23,9 @@ npm install
 After installing the telemetry UI, you can use these commands from inside `client/`:
 
 `npm run dev` - run for development (enables livereloading, etc)
+
 `npm start` - run as though in production
+
 `npm run package` - build a standalone .app for running on osx, and put it in dist/ (later, we'll build standalone linux or windows verisons)
 
 
