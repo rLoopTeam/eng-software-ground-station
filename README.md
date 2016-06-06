@@ -43,6 +43,8 @@ If you get stuck understanding something, ping @RoboTeddy on slack and we can fi
 
 Everything inside `client/` except `electron-main.js` is written in es6 javascript. It might look a little unfamiliar if you've never seen it before. In particular, you might want to look up es6 arrow functions and destructuring.
 
+If you're wondering what editor to use, I'd recommend https://www.sublimetext.com/ -- it lets you easily install things like jsx syntax highlighting. You can use it for free indefinitely (it just nags you a bit on startup).
+
 
 Contributing
 ------------
