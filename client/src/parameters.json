@@ -1,15 +1,9 @@
-/*
-{
- <nodename>: [[<parameter index>, <min>, <max>, <unit>, <description>], ...],
- ...
-}
-*/
-
 {
   "command": [
     [1, 0, 500, null, "Sequence number for detecting missing frames, increments 1 each frame"],
     [3, 10, 100, "C", "Hover Engine 1 Temperature"],
-    [11, 0, 50, "Amps", "Hover Engine 1 Current"]
+    [11, 0, 50, "Amps", "Hover Engine 1 Current"],
+    [55, -50, 500, "kph", "Pod Speed"]
   ],
   "power": [],
   "control": [],

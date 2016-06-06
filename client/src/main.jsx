@@ -1,103 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReconnectingWebSocket from 'reconnectingwebsocket';
 import _ from 'underscore';
 
-import Gauge from './Gauge.jsx'
+import parameters from './parameters.json'
+import {groupsOf} from './utils.js'
+import Screen from './Screen.jsx'
 
-//import TimeChart from './TimeChart.jsx'
+console.log("parameters", parameters)
 
-require('./main.css');
+// list of all telemtry messages received
+// XXX: consider how quickly this will grow in memory. prune if necessary
+var messages = [];
 
-var Panel = ({title, children}) =>
-  <div style={{width: 300, minHeight: 200, borderTop: "1px solid #545F6E"}}>
-    <h1 style={{color: "#676F7F", fontSize: 9, lineHeight: "9px",
-                marginTop: 6, fontFamily: 'Gotham Book'}}>
-      {title.toUpperCase()}
-    </h1>
-    {children}
- </div>;
-
-var render = (state) => {
-  ReactDOM.render(
-    <div style={{padding: 30}}>
-      <Panel title="Speedometer">
-        <div style={{textAlign: "center", marginTop: 20}}>
-          <Gauge
-            innerRadius={60} outterRadius={100} arcSpan={250}
-            value={state.velocity === null ?
-                    null : state.velocity * 60 * 60 / 1000}
-            minValue={0} maxValue={800}
-            units="km/h"
-            majorTickStep={100} minorTickStep={20}
-            majorTickLen={10} minorTickLen={5} />
-        </div>
-      </Panel>
-      <Panel title="Temperature">
-        {/*<TimeChart values={state.temperatures} />*/}
-      </Panel>
-      <Panel title="Cooling">
-      </Panel>
-    </div>,
-    document.getElementById('render-target')
-  );
-};
-
-var state = {
-  velocity: null, // Number in m/s, or null if not known
-  temperatures: [[Date.now(), 30]] // [[millisecondTimestamp, centigrade], ...]
-};
-
-render(state);
-
-// called by external parent
-window.onMessage = (state) => {
-  console.log("Got state", state)
-  render(state)
-};
-
-
-/*
-var socket = new ReconnectingWebSocket(
-  "ws://localhost:8765",
-  null,
-  {reconnectInterval: 100, maxReconnectInterval: 1000}
+// latest value of each parameter for each node
+// {<node name>: {<parameter index>: <value>}}
+var latestValues = _.object(
+  _.map(_.keys(parameters), (nodeName) => [nodeName, {}])
 );
 
-socket.onopen = (event) => {
-  console.log("websocket established");
+window.debug = {messages, latestValues};
+
+var hasRequestedRender = false;
+var render = (_latestValues) => {
+  ReactDOM.render(
+    <Screen latestValues={_latestValues} />,
+    document.getElementById('render-target')
+  );
+  hasRequestedRender = false;
 };
 
-socket.onmessage = (event) => {
-  var state = JSON.parse(event.data);
-  render(state)
-}
-*/
+render(latestValues);
 
-
-// Animation for demo ----------------------------------------------------------
-
-
-/*
-var acceleration = 10; // m/s^2
-var maxVelocity = 155; // m/s
-var temperatureHz = 3;
-
-var lastUpdate = Date.now();
-window.requestAnimationFrame(function tick () {
-  state.velocity = Math.min(
-    state.velocity + acceleration * (Date.now() - lastUpdate) / 1000,
-    maxVelocity);
-
-  var [lastTempertureMts, lastTemperatureValue] = _.last(state.temperatures);
-  if (Date.now() - _.last(state.temperatures)[0] > 1000 / temperatureHz) {
-    state.temperatures.push(
-      [Date.now(), lastTemperatureValue + _.random(-200, 300)/100]
-    );
+// called by external parent (electron-main.js)
+window.onMessage = (message) => {
+  messages.push(message);
+  _.each(groupsOf(message.data, 2), ([index, value]) => {
+    latestValues[message.node][index] = value;
+  })
+  if (!hasRequestedRender) {
+    window.requestAnimationFrame(_.bind(render, null, latestValues));
+    hasRequestedRender = true;
   }
-
-  render(state);
-  lastUpdate = Date.now();
-  window.requestAnimationFrame(tick);
-});
-*/
+};

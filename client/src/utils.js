@@ -13,14 +13,25 @@ var fromPolar = (center, r, angle) => {
 
 // adapted from http://stackoverflow.com/a/18473154
 var svgArc = (center, radius, startAngle, endAngle) => {
-    var start = fromPolar(center, radius, endAngle);
-    var end = fromPolar(center, radius, startAngle);
-    var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
-    var d = [
-        "M", start.x, start.y, 
-        "A", radius, radius, 0, arcSweep, 0, end.x, end.y
-    ].join(" ");
-    return d;
+  var start = fromPolar(center, radius, endAngle);
+  var end = fromPolar(center, radius, startAngle);
+  var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+  var d = [
+    "M", start.x, start.y, 
+    "A", radius, radius, 0, arcSweep, 0, end.x, end.y
+  ].join(" ");
+  return d;
 }
 
-module.exports = {fromPolar, svgArc, lerp, unlerp}
+// groupsOf([1, 2, 3, 4], 2) --> [[1, 2], [3, 4]]
+var groupsOf = (xs, n, step) => {
+  step = step === undefined ? n : step
+  if (xs.length % step !== 0) throw "uneven groups"
+  var groups = [];
+  for (var i = 0; i + n <= xs.length; i += step) {
+    groups.push(xs.slice(i, i + n))
+  }
+  return groups;
+}
+
+module.exports = {fromPolar, svgArc, lerp, unlerp, groupsOf}

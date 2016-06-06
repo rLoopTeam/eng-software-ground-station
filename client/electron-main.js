@@ -4,9 +4,10 @@ var app = electron.app;
 var mainWindow;
 
 function createWindow () {
-  mainWindow = new electron.BrowserWindow({width: 800, height: 600})
+  mainWindow = new electron.BrowserWindow({width: 1280, height: 800})
+  console.log("Running in", process.env.ENV === "dev" ? "dev" : "prod")
   mainWindow.loadURL(
-    process.env.ENV == "dev" ?
+    process.env.ENV === "dev" ?
       'http://localhost:8080/electron-main.html' :
       'file://' + __dirname + '/electron-main.html');
   mainWindow.webContents.openDevTools()

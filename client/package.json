@@ -8,9 +8,8 @@
     "bundle-renderer-js": "./node_modules/webpack/bin/webpack.js",
     "start": "npm run bundle-renderer-js && ./node_modules/electron-prebuilt/cli.js electron-main.js",
     "package": "npm run bundle-renderer-js && ./node_modules/electron-packager/cli.js --platform=darwin --arch=x64 --prune --overwrite .",
-
     "__dev-serve-renderer-js": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --colors --inline",
-    "dev": "./node_modules/concurrently/src/main.js -k 'npm run __dev-serve-renderer-js' 'env ENV=development ./node_modules/electron-prebuilt/cli.js electron-main.js'"
+    "dev": "./node_modules/concurrently/src/main.js -k 'npm run __dev-serve-renderer-js' 'env ENV=dev ./node_modules/electron-prebuilt/cli.js electron-main.js'"
   },
   "author": "Ted Suzman",
   "license": "MIT",
@@ -31,6 +30,7 @@
     "electron-prebuilt": "1.2.0",
     "electron-rebuild": "1.1.5",
     "file-loader": "0.8.5",
+    "json-loader": "0.5.4",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.1",

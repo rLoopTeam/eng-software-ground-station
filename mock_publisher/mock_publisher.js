@@ -4,9 +4,6 @@ var socket = zmq.socket('pub');
 socket.bindSync('tcp://127.0.0.1:3000');
 console.log('Publisher bound to port 3000');
 
-var hz = 20;
-
-
 // example message...
 /*
 {
@@ -17,11 +14,29 @@ var hz = 20;
 */
 
 var state = {
-  velocity: 0 // m/s
+  seq: 0,
+  he1tmp: 30,
+  he1current: 8,
+  speed: 0
+};
+
+var nextState = function (_state) {
+  return {
+    seq: (_state.seq + 1) % 500,
+    he1temp: _state.he1tmp + (Math.random() - 0.5),
+    he1current: _state.he1current + (Math.random() - 0.5)/10,
+    speed: (_state.speed + 4) % 500
+  }
 }
 
-setInterval(function(){
-  state.velocity = (state.velocity + 1) % 155
-  console.log("Publishing state", state);
-  socket.send('telemetry' + ' ' + JSON.stringify(state));
+var hz = 5;
+
+setInterval(function() {
+  var msg = {
+    node: "command",
+    data: [1, state.seq, 3, state.he1tmp, 11, state.he1current, 55, state.speed]
+  }
+  state = nextState(state);
+  console.log("Publishing msg", msg);
+  socket.send('telemetry' + ' ' + JSON.stringify(msg));
 }, 1000 / hz);
