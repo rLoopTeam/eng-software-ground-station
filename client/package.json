@@ -1,15 +1,15 @@
 {
   "name": "rpanel",
   "version": "0.1.0",
-  "description": "rloop ui",
+  "description": "rLoop telemetry ui",
   "main": "electron-main.js",
   "scripts": {
     "postinstall": "./node_modules/.bin/electron-rebuild",
-    "bundle-renderer-js": "./node_modules/webpack/bin/webpack.js",
-    "start": "npm run bundle-renderer-js && ./node_modules/electron-prebuilt/cli.js electron-main.js",
-    "package": "npm run bundle-renderer-js && ./node_modules/electron-packager/cli.js --platform=darwin --arch=x64 --prune --overwrite .",
+    "__bundle-renderer-js": "./node_modules/webpack/bin/webpack.js",
     "__dev-serve-renderer-js": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --colors --inline",
-    "dev": "./node_modules/concurrently/src/main.js -k 'npm run __dev-serve-renderer-js' 'env ENV=dev ./node_modules/electron-prebuilt/cli.js electron-main.js'"
+    "dev": "./node_modules/concurrently/src/main.js -k 'npm run __dev-serve-renderer-js' 'env ENV=dev ./node_modules/electron-prebuilt/cli.js electron-main.js'",
+    "start": "npm run __bundle-renderer-js && ./node_modules/electron-prebuilt/cli.js electron-main.js",
+    "package": "npm run __bundle-renderer-js && ./node_modules/electron-packager/cli.js . rPanel --out=dist --overwrite --platform=darwin --arch=x64 --prune"
   },
   "author": "Ted Suzman",
   "license": "MIT",

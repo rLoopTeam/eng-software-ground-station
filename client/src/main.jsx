@@ -10,7 +10,7 @@ import Screen from './Screen.jsx'
 console.log("parameters", parameters)
 
 // list of all telemtry messages received
-// XXX: consider how quickly this will grow in memory. prune if necessary
+// XXX: consider how quickly this will grow in memory. likely need to prune.
 var messages = [];
 
 // latest value of each parameter for each node
@@ -19,7 +19,7 @@ var latestValues = _.object(
   _.map(_.keys(parameters), (nodeName) => [nodeName, {}])
 );
 
-window.debug = {messages, latestValues};
+window.__debug = {messages, latestValues};
 
 var hasRequestedRender = false;
 var render = (_latestValues) => {
