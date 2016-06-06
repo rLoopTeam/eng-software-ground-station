@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'underscore';
 
-import parameters from './parameters.json'
+import parameters from '../parameters.json'
+
 import {groupsOf} from './utils.js'
 import Screen from './Screen.jsx'
 

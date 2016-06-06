@@ -1,12 +1,43 @@
 import React from 'react';
 import _ from 'underscore';
 
+import parameters from '../parameters.json'
+
 import Gauge from './Gauge.jsx';
 //import TimeChart from './TimeChart.jsx'
 
 require('./main.css');
 
-var RawScreen = (state) => {
+
+var NodeTable = ({params, values}) =>
+  <table className="raw">
+    <tbody>
+      {_.map(params, ([index, min, max, unit, desc]) =>
+        <tr key={index}>
+          <td>{index}</td>
+          <td style={{textAlign: "right"}}>
+            {_.has(values, index) ? values[index].toFixed(4) : "?"}
+          </td>
+          <td>{unit}</td>
+          <td>{desc}</td>
+        </tr>
+      )}
+    </tbody>
+  </table>;
+
+var RawScreen = ({latestValues}) => {
+  return (
+    <div style={{padding: 30}}>
+      {_.map(parameters, (params, nodeName) => {
+        return (
+          <div key={nodeName}>
+            <h1>{nodeName}:</h1>
+            <NodeTable params={params} values={latestValues[nodeName]} />
+          </div>
+        );
+      })}
+    </div>
+  )
   return <div>I am the raw ui</div>
 };
 
@@ -21,7 +52,8 @@ var Panel = ({title, children}) =>
 
 var PrettyScreen = ({latestValues}) => {
   return (
-    <div style={{padding: 30}}>
+    <div style={{padding: 30, backgroundColor: "#2d343e",
+                 position: "absolute", left:0,top:0,bottom:0,right:0}}>
       <Panel title="Speedometer">
         <div style={{textAlign: "center", marginTop: 20}}>
           <Gauge
@@ -58,7 +90,10 @@ var Screen = React.createClass({
     var SelectedScreen = this.state.SelectedScreen;
     return (
       <div>
-        <a href="#" onClick={this.toggle}>toggle screen</a>
+        <a href="#" onClick={this.toggle}
+           style={{position: 'absolute', right: 20, bottom: 20, zIndex: 2}}>
+          toggle screen
+        </a>
         <SelectedScreen latestValues={this.props.latestValues} />
       </div>
     );

@@ -3,11 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   font-weight: normal;
-  font-family: "Gotham Medium";
 }
 
 body {
-  background-color: #2d343e;
+  font-family: 'Gothic Medium'
 }
 
 @font-face {
@@ -23,4 +22,14 @@ body {
 @font-face {
   font-family: 'Gotham Book';
   src: url(./fonts/gotham-book.ttf);
+}
+
+table.raw {
+  font-family: monospace;
+  border-collapse: collapse;
+}
+
+table.raw td {
+  padding: 5px;
+  border: 1px solid #ccc;
 }

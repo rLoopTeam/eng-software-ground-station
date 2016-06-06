@@ -2,6 +2,11 @@ import React from 'react';
 import _ from 'underscore';
 import {lerp, unlerp, fromPolar, svgArc} from './utils.js'
 
+// TODO:
+// - tween updates?
+// - avoid speed number jittering around due to variable-width characters
+
+
 var Light = ({pos}) =>
   <g>
     <defs>
