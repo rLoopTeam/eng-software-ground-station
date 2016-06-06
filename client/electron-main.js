@@ -5,12 +5,17 @@ var mainWindow;
 
 function createWindow () {
   mainWindow = new electron.BrowserWindow({width: 1280, height: 800})
-  console.log("Running in", process.env.ENV === "dev" ? "dev" : "prod")
+
+  var isDev = process.env.ENV === "dev" 
+  console.log("Running in", isDev ? "dev" : "prod")
   mainWindow.loadURL(
-    process.env.ENV === "dev" ?
+    isDev ?
       'http://localhost:8080/electron-main.html' :
       'file://' + __dirname + '/electron-main.html');
-  mainWindow.webContents.openDevTools()
+
+  if (isDev) {
+    mainWindow.webContents.openDevTools();
+  }
 
   mainWindow.on('closed', function () {
     mainWindow = null;

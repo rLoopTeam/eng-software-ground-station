@@ -31,6 +31,8 @@
     "electron-rebuild": "1.1.5",
     "file-loader": "0.8.5",
     "json-loader": "0.5.4",
+    "left-pad": "1.1.0",
+    "right-pad": "1.0.0",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.1",

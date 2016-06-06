@@ -26,6 +26,7 @@ body {
 
 table.raw {
   font-family: monospace;
+  white-space: pre;
   border-collapse: collapse;
 }
 

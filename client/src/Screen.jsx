@@ -1,3 +1,5 @@
+import leftPad from 'left-pad';
+import rightPad from 'right-pad';
 import React from 'react';
 import _ from 'underscore';
 
@@ -8,6 +10,19 @@ import Gauge from './Gauge.jsx';
 
 require('./main.css');
 
+var formatNumber = (value, preDecimalLen, postDecimalLen) => {
+  var str = value.toString();
+  if (str.indexOf("e") !== -1) { return str } // exponent. run away.
+
+  var parts = str.split('.');
+  var hasDecimal = parts.length > 1;
+  var predecimal = parts[0];
+  var postdecimal = hasDecimal ? parts[1] : " ";
+
+  return leftPad(predecimal, preDecimalLen) +
+    (hasDecimal ? "." : " ") +
+    rightPad(postdecimal, postDecimalLen);
+}
 
 var NodeTable = ({params, values}) =>
   <table className="raw">
@@ -16,7 +31,7 @@ var NodeTable = ({params, values}) =>
         <tr key={index}>
           <td>{index}</td>
           <td style={{textAlign: "right"}}>
-            {_.has(values, index) ? values[index].toFixed(4) : "?"}
+            {_.has(values, index) ? formatNumber(values[index], 5, 18): "?"}
           </td>
           <td>{unit}</td>
           <td>{desc}</td>
@@ -31,7 +46,7 @@ var RawScreen = ({latestValues}) => {
       {_.map(parameters, (params, nodeName) => {
         return (
           <div key={nodeName}>
-            <h1>{nodeName}:</h1>
+            <h1>{nodeName} node:</h1>
             <NodeTable params={params} values={latestValues[nodeName]} />
           </div>
         );

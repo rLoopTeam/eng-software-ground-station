@@ -25,7 +25,7 @@ var nextState = function (_state) {
     1: (_state[1] + 1) % 500,
     3: _state[3] + (Math.random() - 0.5),
     11: _state[11] + (Math.random() - 0.5)/10,
-    55: (_state[55] + 4) % 500
+    55: (_state[55] + 4.1) % 500
   }
 }
 
