@@ -26,7 +26,7 @@ After installing the telemetry UI, you can use these commands from inside `clien
 
 `npm start` - run as though in production
 
-`npm run package` - build a standalone .app for running on osx, and put it in dist/ (later, we'll build standalone linux or windows verisons)
+`npm run package` - build a standalone .app for running on osx, and put it in `dist/` (later, we'll build standalone linux or windows verisons)
 
 
 Misc
@@ -41,7 +41,7 @@ React tutorial - https://facebook.github.io/react/docs/tutorial.html
 
 If you get stuck understanding something, ping @RoboTeddy on slack and we can figure it out over chat or google hangout.
 
-Everything inside client/ except electron-main.js is written in es6 javascript. It might look a little unfamiliar if you've never seen it before. In particular, you might want to look up es6 arrow functions and destructuring.
+Everything inside `client/` except `electron-main.js` is written in es6 javascript. It might look a little unfamiliar if you've never seen it before. In particular, you might want to look up es6 arrow functions and destructuring.
 
 
 Contributing
