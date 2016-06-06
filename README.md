@@ -45,6 +45,12 @@ Everything inside `client/` except `electron-main.js` is written in es6 javascri
 
 If you're wondering what editor to use, I'd recommend https://www.sublimetext.com/ -- it lets you easily install things like jsx syntax highlighting. You can use it for free indefinitely (it just nags you a bit on startup).
 
+Design Reference
+----------------
+
+@ilyasvali's design for the pretty UI:
+![](https://raw.githubusercontent.com/RoboTeddy/rPanel/master/client/design-reference/ilyas-ui-design.jpg)
+
 
 Contributing
 ------------
