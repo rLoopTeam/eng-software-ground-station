@@ -5,7 +5,7 @@ import _ from 'underscore';
 import parameters from '../parameters.json'
 
 import {groupsOf} from './utils.js'
-import Screen from './Screen.jsx'
+import RootScreen from './RootScreen.jsx'
 
 console.log("parameters", parameters)
 
@@ -24,7 +24,7 @@ window.__debug = {messages, latestValues};
 var hasRequestedRender = false;
 var render = (_latestValues) => {
   ReactDOM.render(
-    <Screen latestValues={_latestValues} />,
+    <RootScreen latestValues={_latestValues} />,
     document.getElementById('render-target')
   );
   hasRequestedRender = false;

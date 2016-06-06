@@ -17,4 +17,4 @@ var TimeChart = React.createClass({
   }
 });
 
-module.exports = TimeChart;
+export default TimeChart;

@@ -71,4 +71,4 @@ var Gauge = ({value, minValue, maxValue, arcSpan, majorTickStep,
   );
 }
 
-module.exports = Gauge;
+export default Gauge
