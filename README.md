@@ -39,7 +39,7 @@ Learning Resources
 ------------------
 React tutorial - https://facebook.github.io/react/docs/tutorial.html
 
-If you get stuck understanding something, ping me and we can figure it out over slack or google hangout.
+If you get stuck understanding something, ping @RoboTeddy on slack and we can figure it out over chat or google hangout.
 
 Everything inside client/ except electron-main.js is written in es6 javascript. It might look a little unfamiliar if you've never seen it before. In particular, you might want to look up es6 arrow functions and destructuring.
 
