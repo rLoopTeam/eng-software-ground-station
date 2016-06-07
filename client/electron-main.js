@@ -67,8 +67,9 @@ socket.subscribe('telemetry');
 console.log('Listening for zmq publisher on port 3000');
 
 socket.on('message', function(msg) {
-  var parts = msg.toString().split(' ', 2)
-  var message = JSON.parse(parts[1]);
+  var parts = msg.toString().split(' ');
+  parts.shift() // remove topic
+  var message = JSON.parse(parts.join(' '));
   //console.log(message);
 
   if (mainWindow) {
