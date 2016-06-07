@@ -14,18 +14,16 @@ console.log('Publisher bound to port 3000');
 */
 
 var state = {
-  1: 0, // seq
+  0: 0, // seq
   3: 30, // temp
-  11: 8, // current
-  55: 0 // speed
+  27: 8, // current
 };
 
 var nextState = function (_state) {
   return {
-    1: (_state[1] + 1) % 500,
+    0: (_state[0] + 1) % 500,
     3: _state[3] + (Math.random() - 0.5),
-    11: _state[11] + (Math.random() - 0.5)/10,
-    55: (_state[55] + 4.1) % 500
+    27: _state[27] + (Math.random() - 0.5)/10,
   }
 }
 
@@ -34,7 +32,7 @@ var hz = 5;
 setInterval(function() {
   var msg = {
     node: "command",
-    data: [1, state[1], 3, state[3], 11, state[11], 55, state[55]],
+    data: [0, state[0], 3, state[3], 27, state[27]],
     mts: Date.now()
   }
   state = nextState(state);
