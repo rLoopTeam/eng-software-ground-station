@@ -34,4 +34,4 @@ var groupsOf = (xs, n, step) => {
   return groups;
 }
 
-export default {fromPolar, svgArc, lerp, unlerp, groupsOf}
+module.exports = {fromPolar, svgArc, lerp, unlerp, groupsOf}
