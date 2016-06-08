@@ -1,10 +1,26 @@
-Installation
-------------
+Using the application
+---------------------
 
-Requirements:
-- nodejs -- if on osx using homebrew, `brew install node`
-- libzmq -- if on osx using homebrew, `brew install zmq`
-- pkg-config -- if on osx using homebrew, `brew install pkg-config` (used by npm to build native part of npm zmq package)
+Ping @RoboTeddy on Slack and he'll send you a standalone build for your OS. The rest of this document only applies if you want to work on the telemetry UI itself.
+
+OSX dependencies for development
+--------------------------------
+
+Using homebrew, `brew install node zmq pkg-config`
+
+Windows dependencies for development
+------------------------------------
+
+Recommended: develop on linux or osx. But if you're on Windows:
+
+- install python2.7 (won't work with 3)
+- set environment variable PYTHON=C:\path\to\python.exe
+- install visual studio community 2015
+  -  File -> New -> Project, select Visual C++, opt to install Windows 8.1 SDK & Common Tools for Visual C++
+- install http://gnuwin32.sourceforge.net/packages/coreutils.htm (just need this for the `env` command) and add them to your PATH
+
+Installation for development
+----------------------------
 
 To install and run the mock telemetry publisher:
 
@@ -34,6 +50,15 @@ Misc
 ----
 
 If while starting the client you ever get an error about a node version mismatch, try `npm run postinstall`. It's because the node zeromq binding requires native code. For more information about this error: https://github.com/electron/electron/blob/master/docs/tutorial/using-native-node-modules.md
+
+If you're on windows, and you get an error about loading the zmq dll, try this:
+```
+cd client/
+rm -rf node_modules/zmq
+env npm_config_disturl=https://atom.io/download/atom-shell
+env npm_config_target=1.2.0 # should exactly match electron-prebuilt in package.json
+npm install zmq
+```
 
 
 Learning Resources
