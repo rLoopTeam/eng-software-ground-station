@@ -4,6 +4,7 @@ Installation
 Requirements:
 - nodejs -- if on osx using homebrew, `brew install node`
 - libzmq -- if on osx using homebrew, `brew install zmq`
+- pkg-config -- if on osx using homebrew, `brew install pkg-config` (used by npm to build native part of npm zmq package)
 
 To install and run the mock telemetry publisher:
 
