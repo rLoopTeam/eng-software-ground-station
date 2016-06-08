@@ -55,9 +55,9 @@ If you're on windows, and you get an error about loading the zmq dll, try this:
 ```
 cd client/
 rm -rf node_modules/zmq
-env npm_config_disturl=https://atom.io/download/atom-shell
-env npm_config_target=1.2.0 # should exactly match electron-prebuilt in package.json
-npm install zmq
+# make sure npm_config_target matches electron-prebuilt version in package.json
+# if you're on a 32 bit system, replace x64 with ia32
+env npm_config_target=1.2.0 npm_config_arch=x64 npm install zmq
 ```
 
 
