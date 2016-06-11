@@ -22,7 +22,7 @@ var RootScreen = React.createClass({
     return (
       <div>
         <a href="#" onClick={this.toggle}
-           style={{position: 'absolute', right: 20, bottom: 20, zIndex: 2}}>
+           style={{position: 'fixed', right: 20, bottom: 20, zIndex: 2}}>
           toggle screen
         </a>
         <Screen latestValues={this.props.latestValues} />
