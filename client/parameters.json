@@ -1,7 +1,7 @@
 {
 	"command": [
 		[0,		0,		500,	null,		"Sequence number for detecting missing frames, increments 1 each frame"],
-		[1,		7000000000,	null,	"microseconds",		"Teensy Up Time"],
+		[1,		12000,	null,	"S",	"Teensy Up Time"],
 		[2,		null,	null,	null,		"Run Mode"],
 		[3,		10,		100,	"C",		"Hover Engine 1 Temperature"],
 		[4,		10,		100,	"C",		"Hover Engine 2 Temperature"],
