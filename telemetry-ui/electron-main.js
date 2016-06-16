@@ -1,7 +1,14 @@
 var electron = require('electron');
+var zmq = require('zmq');
+
 var app = electron.app;
 
-var mainWindow;
+// user configuration
+// app.getPath(userData)
+var defaultEndpoint = 'tcp://127.0.0.1:3000';
+
+var mainWindow; // single main window
+
 
 function createWindow () {
   mainWindow = new electron.BrowserWindow({width: 1280, height: 800})
@@ -59,22 +66,29 @@ app.on('activate', function () {
 
 // Relay messages into render process ------------------------------------------
 
-var zmq = require('zmq');
-var socket = zmq.socket('sub');
+var socket; // single global socket at a time, for now
 
-socket.connect('tcp://127.0.0.1:3000');
-socket.subscribe('telemetry');
-console.log('Listening for zmq publisher on port 3000');
-
-socket.on('message', function(msg) {
-  var parts = msg.toString().split(' ');
-  parts.shift() // remove topic
-  var message = JSON.parse(parts.join(' '));
-  //console.log(message);
-
-  if (mainWindow) {
-    // guard against the case where onMessage doesn't exist yet
-    mainWindow.webContents.executeJavaScript(
-      "window.onMessage && window.onMessage("+JSON.stringify(message)+")")
+var connect = function (endpoint) {
+  if (socket) {
+    socket.disconnect();
   }
-});
+  socket = zmq.socket('sub');
+  socket.connect(endpoint);
+  socket.subscribe('telemetry');
+  console.log('Listening for zmq publisher at', endpoint);
+
+  socket.on('message', function(msg) {
+    var parts = msg.toString().split(' ');
+    parts.shift() // remove topic
+    var message = JSON.parse(parts.join(' '));
+    //console.log(message);
+
+    if (mainWindow) {
+      // guard against the case where onMessage doesn't exist yet
+      mainWindow.webContents.executeJavaScript(
+        "window.onMessage && window.onMessage("+JSON.stringify(message)+")")
+    }
+  });
+}
+
+connect(defaultEndpoint);
