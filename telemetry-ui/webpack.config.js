@@ -1,5 +1,7 @@
+
 module.exports = {
   entry: "./src/main.jsx",
+  target: 'electron',
   output: {
     path: __dirname,
     filename: "./renderer-bundle.js"
@@ -13,6 +15,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
+      },
+	  {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       },
       {
         test: /\.ttf$/,
