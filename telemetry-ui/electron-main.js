@@ -10,6 +10,11 @@ var app = electron.app;
 var mainWindow; // single main window
 var activeIPs = [];
 
+var client = require('scp2');
+
+client.scp('C:\\New Folder\\test.txt', 'root:MoreCowbell@192.168.0.200:/', function(err) {
+});
+
 
 function createWindow () {
   mainWindow = new electron.BrowserWindow({width: 1280, height: 800})

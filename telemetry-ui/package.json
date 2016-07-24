@@ -30,13 +30,17 @@
     "electron-prebuilt": "1.2.0",
     "electron-rebuild": "1.1.5",
     "file-loader": "0.8.5",
+    "grommet": "0.6.10",
+    "gulp": "3.9.1",
     "json-loader": "0.5.4",
     "left-pad": "1.1.0",
+    "node-sass": "^3.8.0",
     "right-pad": "1.0.0",
+    "sass-loader": "^4.0.0",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webpack": "1.13.1",
+    "webpack": "^1.13.1",
     "webpack-dev-server": "1.14.1",
-	"material-ui": "0.15.2"
+	"scp2": "0.5.0"
   }
 }
