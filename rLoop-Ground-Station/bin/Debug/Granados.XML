@@ -1,0 +1,3649 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Granados</name>
+    </assembly>
+    <members>
+        <member name="T:Granados.ISSHChannelEventReceiver">
+            <summary>
+            Channel specific receiver 
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.Crypto.CipherFactory">
+            <summary>
+            Creates a cipher from given parameters
+            </summary>
+        </member>
+        <member name="M:Granados.Crypto.CipherFactory.GetKeySize(Granados.CipherAlgorithm)">
+            <summary>
+            returns necessary key size from Algorithm in bytes
+            </summary>
+        </member>
+        <member name="M:Granados.Crypto.CipherFactory.GetBlockSize(Granados.CipherAlgorithm)">
+            <summary>
+            returns the block size from Algorithm in bytes
+            </summary>
+        </member>
+        <member name="T:Granados.Crypto.SSH1.BlowfishCipher1">
+            <summary>
+            Blowfish for SSH1
+            </summary>
+        </member>
+        <member name="T:Granados.Crypto.SSH1.TripleDESCipher1">
+            <summary>
+            TripleDES for SSH1
+            </summary>
+        </member>
+        <member name="T:Granados.Crypto.SSH2.BlowfishCipher2">
+            <summary>
+            Blowfish for SSH2
+            </summary>
+        </member>
+        <member name="T:Granados.Crypto.SSH2.TripleDESCipher2">
+            <summary>
+            TripleDES for SSH2
+            </summary>
+        </member>
+        <member name="T:Granados.Crypto.SSH2.RijindaelCipher2">
+            <summary>
+            Rijindael (SSH2 only)
+            </summary>
+        </member>
+        <member name="T:Granados.Util.Base64">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Granados.Util.Base64.Encode(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+            <exclude/>
+        </member>
+        <member name="M:Granados.Util.Base64.Decode(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+            <exclude/>
+        </member>
+        <member name="M:Granados.Util.Base64.Decode(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="encoded"></param>
+            <param name="offset"></param>
+            <param name="length"></param>
+            <returns></returns>
+            <exclude/>
+        </member>
+        <member name="M:Granados.Util.Base64.Encode(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="offset"></param>
+            <param name="length"></param>
+            <returns></returns>
+            <exclude/>
+        </member>
+        <member name="M:Granados.Util.Base64.test">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.Algorithms.Blowfish">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.ChannelCollection">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.ChannelCollection.Entry">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.Crypto.CipherUtil">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSH2.SSH2ConnectionInfo">
+            <summary>
+            A class retains miscellaneous informations about a SSH2 connection.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2ConnectionInfo.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="hostName">host name</param>
+            <param name="portNumber">port number</param>
+            <param name="serverVersionString">a version string received from the server</param>
+            <param name="clientVersionString">a version string of myself</param>
+        </member>
+        <member name="M:Granados.SSH2.SSH2ConnectionInfo.GetSSHHostKeyInformationProvider">
+            <summary>
+            Get an object that provides informations about a host key.
+            </summary>
+            <returns>An object that provides informations about a host key.</returns>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.HostName">
+            <summary>
+            Host name
+            </summary>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.PortNumber">
+            <summary>
+            Port number.
+            </summary>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.ServerVersionString">
+            <summary>
+            A version string received from the server
+            </summary>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.ClientVersionString">
+            <summary>
+            A version string of myself
+            </summary>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SupportedKEXAlgorithms">
+            <summary>
+            Server's supported KEX algorithms
+            </summary>
+            <remarks>This property is null until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SupportedHostKeyAlgorithms">
+            <summary>
+            Server's supported host key algorithms
+            </summary>
+            <remarks>This property is null until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SupportedEncryptionAlgorithmsClientToServer">
+            <summary>
+            Server's supported encryption algorithms (client to server).
+            </summary>
+            <remarks>This property is null until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SupportedEncryptionAlgorithmsServerToClient">
+            <summary>
+            Server's supported encryption algorithms (server to client).
+            </summary>
+            <remarks>This property is null until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.HostKeyAlgorithm">
+            <summary>
+            Host key algorithm determined to use for the verification of the server's host key.
+            </summary>
+            <remarks>This property is null until the algorithm is detemined.</remarks>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.KEXAlgorithm">
+            <summary>
+            KEX algorithm determined to use.
+            </summary>
+            <remarks>This property is null until the algorithm is detemined.</remarks>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.OutgoingPacketCipher">
+            <summary>
+            Cipher algorithm determined to use for the outgoing packet.
+            </summary>
+            <remarks>This property is null until the algorithm is detemined.</remarks>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.IncomingPacketCipher">
+            <summary>
+            Cipher algorithm determined to use for the incoming packet.
+            </summary>
+            <remarks>This property is null until the algorithm is detemined.</remarks>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.HostKey">
+            <summary>
+            Public key of the server.
+            </summary>
+            <remarks>This property is null until the information is obtained from the server.</remarks>
+        </member>
+        <member name="T:Granados.SSH2.SSH2ConnectionInfo.SSH2HostKeyInformationProvider">
+            <summary>
+            <see cref="T:Granados.KnownHosts.ISSHHostKeyInformationProvider"/> imlpementation for SSH2
+            </summary>
+        </member>
+        <member name="T:Granados.KnownHosts.ISSHHostKeyInformationProvider">
+            <summary>
+            An interface that provides informations about a host key.
+            </summary>
+        </member>
+        <member name="P:Granados.KnownHosts.ISSHHostKeyInformationProvider.Protocol">
+            <summary>
+            SSH protocol version.
+            </summary>
+        </member>
+        <member name="P:Granados.KnownHosts.ISSHHostKeyInformationProvider.HostName">
+            <summary>
+            Host name.
+            </summary>
+        </member>
+        <member name="P:Granados.KnownHosts.ISSHHostKeyInformationProvider.PortNumber">
+            <summary>
+            Port number.
+            </summary>
+        </member>
+        <member name="P:Granados.KnownHosts.ISSHHostKeyInformationProvider.KnownHostsString">
+            <summary>
+            A string in ssh_known_hosts format of the Poderosa.
+            </summary>
+        </member>
+        <member name="P:Granados.KnownHosts.ISSHHostKeyInformationProvider.HostKeyFingerPrint">
+            <summary>
+            Finger print of the host key.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2ConnectionInfo.SSH2HostKeyInformationProvider.#ctor(System.String,System.Int32,Granados.PKI.PublicKey)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="hostName">host name</param>
+            <param name="portNumber">port number</param>
+            <param name="hostKey">host key</param>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SSH2HostKeyInformationProvider.Protocol">
+            <summary>
+            SSH protocol version.
+            </summary>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SSH2HostKeyInformationProvider.HostName">
+            <summary>
+            Host name
+            </summary>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SSH2HostKeyInformationProvider.PortNumber">
+            <summary>
+            Port number.
+            </summary>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SSH2HostKeyInformationProvider.KnownHostsString">
+            <summary>
+            A string in ssh_known_hosts format of the Poderosa.
+            </summary>
+        </member>
+        <member name="P:Granados.SSH2.SSH2ConnectionInfo.SSH2HostKeyInformationProvider.HostKeyFingerPrint">
+            <summary>
+            Finger print of the host key.
+            </summary>
+        </member>
+        <member name="T:Granados.SSH1.SSH1ConnectionInfo">
+            <summary>
+            A class retains miscellaneous informations about a SSH1 connection.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1ConnectionInfo.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="hostName">host name</param>
+            <param name="portNumber">port number</param>
+            <param name="serverVersionString">a version string received from the server</param>
+            <param name="clientVersionString">a version string of myself</param>
+        </member>
+        <member name="M:Granados.SSH1.SSH1ConnectionInfo.GetSSHHostKeyInformationProvider">
+            <summary>
+            Get an object that provides informations about a host key.
+            </summary>
+            <returns>An object that provides informations about a host key.</returns>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.HostName">
+            <summary>
+            Host name
+            </summary>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.PortNumber">
+            <summary>
+            Port number.
+            </summary>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.ServerVersionString">
+            <summary>
+            A version string received from the server
+            </summary>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.ClientVersionString">
+            <summary>
+            A version string of myself
+            </summary>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.AntiSpoofingCookie">
+            <summary>
+            anti_spoofing_cookie sent by the server.
+            </summary>
+            <remarks>This property is null until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.ServerKeyBits">
+            <summary>
+            Bit lengths of the server key.
+            </summary>
+            <remarks>This property is zero until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.ServerKey">
+            <summary>
+            Server key of the server.
+            </summary>
+            <remarks>This property is null until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.HostKeyBits">
+            <summary>
+            Bit lengths of the host key.
+            </summary>
+            <remarks>This property is zero until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.HostKey">
+            <summary>
+            Host key of the server.
+            </summary>
+            <remarks>This property is null until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.SupportedEncryptionAlgorithmsMask">
+            <summary>
+            Server's supported encryption algorithms.
+            </summary>
+            <remarks>This property is zero until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.SupportedEncryptionAlgorithms">
+            <summary>
+            Server's supported encryption algorithms.
+            </summary>
+            <remarks>This property is empty until the information is obtained from the server.</remarks>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.OutgoingPacketCipher">
+            <summary>
+            Cipher algorithm determined to use for the outgoing packet.
+            </summary>
+            <remarks>This property is null until the algorithm is detemined.</remarks>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.IncomingPacketCipher">
+            <summary>
+            Cipher algorithm determined to use for the incoming packet.
+            </summary>
+            <remarks>This property is null until the algorithm is detemined.</remarks>
+        </member>
+        <member name="T:Granados.SSH1.SSH1ConnectionInfo.SSH1HostKeyInformationProvider">
+            <summary>
+            <see cref="T:Granados.KnownHosts.ISSHHostKeyInformationProvider"/> imlpementation for SSH1
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1ConnectionInfo.SSH1HostKeyInformationProvider.#ctor(System.String,System.Int32,Granados.PKI.RSAPublicKey)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="hostName">host name</param>
+            <param name="portNumber">port number</param>
+            <param name="hostKey">host key</param>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.SSH1HostKeyInformationProvider.Protocol">
+            <summary>
+            SSH protocol version.
+            </summary>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.SSH1HostKeyInformationProvider.HostName">
+            <summary>
+            Host name
+            </summary>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.SSH1HostKeyInformationProvider.PortNumber">
+            <summary>
+            Port number.
+            </summary>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.SSH1HostKeyInformationProvider.KnownHostsString">
+            <summary>
+            A string in ssh_known_hosts format of the Poderosa.
+            </summary>
+        </member>
+        <member name="P:Granados.SSH1.SSH1ConnectionInfo.SSH1HostKeyInformationProvider.HostKeyFingerPrint">
+            <summary>
+            Finger print of the host key.
+            </summary>
+        </member>
+        <member name="T:Granados.SSHConnectionParameter">
+            <summary>
+            SSH connection parameter.
+            </summary>
+            <remarks>
+            Fill the properties of ConnectionParameter object before you start the connection.
+            </remarks>
+        </member>
+        <member name="M:Granados.SSHConnectionParameter.#ctor(System.String,System.Int32,Granados.SSHProtocol,Granados.AuthenticationType,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="hostName">Host name</param>
+            <param name="portNumber">port number</param>
+            <param name="protocol">SSH protocol version</param>
+            <param name="authType">authentication type</param>
+            <param name="userName">user name for login</param>
+            <param name="password">password for login. pass empty string for the keyboard interactive mode.</param>
+        </member>
+        <member name="M:Granados.SSHConnectionParameter.Clone">
+            <summary>
+            Clone this object.
+            </summary>
+            <returns>a new object.</returns>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.HostName">
+            <summary>
+            Host name.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.PortNumber">
+            <summary>
+            Port number.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.Protocol">
+            <summary>
+            SSH Protocol version.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.PreferableCipherAlgorithms">
+            <summary>
+            Preferable cipher algorithms.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.PreferableHostKeyAlgorithms">
+            <summary>
+            Preferable host key algorithms.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.AuthenticationType">
+            <summary>
+            Authentication type.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.UserName">
+            <summary>
+            User name for login.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.Password">
+            <summary>
+            Password for login.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.IdentityFile">
+            <summary>
+            Identity file path.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.VerifySSHHostKey">
+            <summary>
+            Callback to verify a host key.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.TerminalName">
+            <summary>
+            Terminal name. (vt100, xterm, etc.)
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.TerminalWidth">
+            <summary>
+            Terminal columns.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.TerminalHeight">
+            <summary>
+            Terminal raws.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.TerminalPixelWidth">
+            <summary>
+            Terminal width in pixels.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.TerminalPixelHeight">
+            <summary>
+            Terminal height in pixels.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.CheckMACError">
+            <summary>
+            Whether integrity of the incoming packet is checked using MAC.
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.WindowSize">
+            <summary>
+            Window size of the SSH2 channel.
+            </summary>
+            <remarks>This property is used only in SSH2.</remarks>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.MaxPacketSize">
+            <summary>
+            Maximum packet size of the SSH2 connection.
+            </summary>
+            <remarks>This property is used only in SSH2.</remarks>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.VersionEOL">
+            <summary>
+            End of line characters for terminating a version string.
+            </summary>
+            <remarks>
+            Some server may expect irregular end-of-line character(s).
+            Initial value is '\n' for SSH1 and '/r/n' for SSH2.
+            </remarks>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.EventTracer">
+            <summary>
+            Protocol event tracer. (optional)
+            </summary>
+        </member>
+        <member name="P:Granados.SSHConnectionParameter.AgentForward">
+            <summary>
+            Agent forward (optional)
+            </summary>
+        </member>
+        <member name="T:Granados.ISSHEventTracer">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSHConnection">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Granados.SSHConnection.Connect">
+            internal procedure for opening connection
+        </member>
+        <member name="M:Granados.SSHConnection.Disconnect(System.String)">
+            terminates this connection
+        </member>
+        <member name="M:Granados.SSHConnection.OpenShell(Granados.ISSHChannelEventReceiver)">
+            opens a pseudo terminal
+        </member>
+        <member name="M:Granados.SSHConnection.ForwardPort(Granados.ISSHChannelEventReceiver,System.String,System.Int32,System.String,System.Int32)">
+            forwards the remote end to another host
+        </member>
+        <member name="M:Granados.SSHConnection.ListenForwardedPort(System.String,System.Int32)">
+            listens a connection on the remote end
+        </member>
+        <member name="M:Granados.SSHConnection.CancelForwardedPort(System.String,System.Int32)">
+            cancels binded port
+        </member>
+        <member name="M:Granados.SSHConnection.Close">
+            closes socket directly.
+        </member>
+        <member name="M:Granados.SSHConnection.SendIgnorableData(System.String)">
+            sends ignorable data: the server may record the message into the log
+        </member>
+        <member name="M:Granados.SSHConnection.Connect(Granados.SSHConnectionParameter,Granados.ISSHConnectionEventReceiver,System.Net.Sockets.Socket)">
+            open a new SSH connection via the .NET socket
+        </member>
+        <member name="P:Granados.SSHConnection.Packetizer">
+            abstract properties
+        </member>
+        <member name="P:Granados.SSHConnection.Param">
+             paramters
+        </member>
+        <member name="T:Granados.ChannelType">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSHChannel">
+            the base class for SSH channels
+            <exclude/>
+        </member>
+        <member name="M:Granados.SSHChannel.ResizeTerminal(System.Int32,System.Int32,System.Int32,System.Int32)">
+            resizes the size of terminal
+        </member>
+        <member name="M:Granados.SSHChannel.Transmit(System.Byte[])">
+            transmits channel data 
+        </member>
+        <member name="M:Granados.SSHChannel.Transmit(System.Byte[],System.Int32,System.Int32)">
+            transmits channel data 
+        </member>
+        <member name="M:Granados.SSHChannel.SendEOF">
+            sends EOF(SSH2 only)
+        </member>
+        <member name="M:Granados.SSHChannel.Close">
+            closes this channel
+        </member>
+        <member name="T:Granados.SSH1.CRC">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.IO.DataFragment">
+            <summary>
+            DataFragment represents one or more tuples of (byte[], offset, length).
+            To reduce memory usage, the source byte[] will not be copied.
+            If this behavior is not convenient, call Isolate() method.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Granados.IO.DataFragment.#ctor(System.Int32)">
+            <summary>
+            Constructor for assembly-internal use.
+            </summary>
+            <param name="capacity"></param>
+        </member>
+        <member name="M:Granados.IO.DataFragment.#ctor(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="data">a byte array that contains the data that this object represents.</param>
+            <param name="offset">start index of the data that this object represents.</param>
+            <param name="length">number of bytes of the data that this object represents.</param>
+        </member>
+        <member name="M:Granados.IO.DataFragment.Isolate">
+            <summary>
+            An alias of <see cref="M:Granados.IO.DataFragment.Duplicate"/>.
+            </summary>
+            <returns>a new instance that has the duplicated bytes.</returns>
+        </member>
+        <member name="M:Granados.IO.DataFragment.Duplicate">
+            <summary>
+            Duplicate data.
+            </summary>
+            <returns>a new instance that has the duplicated bytes.</returns>
+        </member>
+        <member name="M:Granados.IO.DataFragment.SetLength(System.Int32,System.Int32)">
+            <summary>
+            Set offset and length. (assembly-internal use only)
+            </summary>
+            <param name="offset"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Granados.IO.DataFragment.GetBytes">
+            <summary>
+            Get a copy of the data.
+            </summary>
+            <returns>a new byte array.</returns>
+        </member>
+        <member name="M:Granados.IO.DataFragment.MakeView(System.Int32)">
+            <summary>
+            Make another view of this instance.
+            </summary>
+            <param name="startIndex">start index for the new view.</param>
+        </member>
+        <member name="P:Granados.IO.DataFragment.Length">
+            <summary>
+            Number of bytes.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.DataFragment.Offset">
+            <summary>
+            Start index in <see cref="P:Granados.IO.DataFragment.Data"/>.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.DataFragment.Data">
+            <summary>
+            A byte array that contains the data that this object represents.
+            Actual data are the bytes in the range of Data[Offset] .. Data[Offset + Length - 1].
+            </summary>
+        </member>
+        <member name="P:Granados.IO.DataFragment.Item(System.Int32)">
+            <summary>
+            Indexer
+            </summary>
+            <param name="index">index.</param>
+            <returns>a byte value at the index.</returns>
+            <exception cref="T:System.IndexOutOfRangeException">invalid index.</exception>
+        </member>
+        <member name="T:Granados.IO.SimpleMemoryStream">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.IO.ByteBuffer">
+            <summary>
+            Byte buffer
+            </summary>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="initialCapacity">initial capacity in bytes.</param>
+            <param name="maxCapacity">maximum capacity in bytes. negative value means unlimited.</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.Clear">
+            <summary>
+            Clear buffer.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.Append(System.Byte[])">
+            <summary>
+            Append data.
+            </summary>
+            <param name="data">byte array</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.Append(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Append data.
+            </summary>
+            <param name="data">byte array</param>
+            <param name="offset">start index of the byte array</param>
+            <param name="length">byte count to copy</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.Append(Granados.IO.ByteBuffer)">
+            <summary>
+            Append data which is read from another buffer.
+            </summary>
+            <param name="buffer">another buffer</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.Append(Granados.IO.ByteBuffer,System.Int32,System.Int32)">
+            <summary>
+            Append data which is read from another buffer.
+            </summary>
+            <param name="buffer">another buffer</param>
+            <param name="offset">start index of the data to copy</param>
+            <param name="length">byte count to copy</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.Append(System.Int32,System.Action{System.Byte[],System.Int32})">
+            <summary>
+            Append data with writer function.
+            </summary>
+            <param name="length">number of bytes to write</param>
+            <param name="writer">a function writes data to the specified buffer</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.Overwrite(System.Int32,System.Int32,System.Action{System.Byte[],System.Int32})">
+            <summary>
+            Overwrite data with writer function.
+            </summary>
+            <param name="offset">index to start to write</param>
+            <param name="length">number of bytes to write</param>
+            <param name="writer">a function writes data to the specified buffer</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.RemoveHead(System.Int32)">
+            <summary>
+            Remove bytes from the head of the buffer.
+            </summary>
+            <param name="length">number of bytes to remove</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.RemoveTail(System.Int32)">
+            <summary>
+            Remove bytes from the tail of the buffer.
+            </summary>
+            <param name="length">number of bytes to remove</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.MakeRoom(System.Int32)">
+            <summary>
+            Make room in the internal buffer
+            </summary>
+            <param name="size">number of bytes needed</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.RoundUp(System.Int32)">
+            <summary>
+            Round up to power of two.
+            </summary>
+            <param name="size">size</param>
+            <returns>the value power of two.</returns>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.CheckRange(System.Int32,System.Int32)">
+            <summary>
+            Checks if the specified range was valid on this buffer.
+            </summary>
+            <param name="index">index of the data</param>
+            <param name="length">number of bytes</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.GetBytes">
+            <summary>
+            Returns the contents of this buffer.
+            </summary>
+            <returns>new byte array</returns>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.AsDataFragment">
+            <summary>
+            Wrap this buffer.
+            </summary>
+            <returns>new <see cref="T:Granados.IO.DataFragment"/> instance that wraps this buffer.</returns>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.WriteByte(System.Byte)">
+            <summary>
+            Write Byte value.
+            </summary>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.OverwriteByte(System.Int32,System.Byte)">
+            <summary>
+            Overwrite Byte value.
+            </summary>
+            <param name="offset">offset index of the buffer</param>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.WriteUInt16(System.UInt16)">
+            <summary>
+            Write UInt16 value in network byte order.
+            </summary>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.WriteInt16(System.Int16)">
+            <summary>
+            Write Int16 value in network byte order.
+            </summary>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.WriteUInt32(System.UInt32)">
+            <summary>
+            Write UInt32 value in network byte order.
+            </summary>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.OverwriteUInt32(System.Int32,System.UInt32)">
+            <summary>
+            Overwrite UInt32 value in network byte order.
+            </summary>
+            <param name="offset">offset index of the buffer</param>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.WriteInt32(System.Int32)">
+            <summary>
+            Write Int32 value in network byte order.
+            </summary>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.WriteUInt64(System.UInt64)">
+            <summary>
+            Write UInt64 value in network byte order.
+            </summary>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.WriteInt64(System.Int64)">
+            <summary>
+            Write Int64 value in network byte order.
+            </summary>
+            <param name="val">the value to be written</param>
+        </member>
+        <member name="M:Granados.IO.ByteBuffer.WriteSecureRandomBytes(System.Int32)">
+            <summary>
+            Write random bytes.
+            </summary>
+            <param name="length">number of bytes</param>
+        </member>
+        <member name="P:Granados.IO.ByteBuffer.Length">
+            <summary>
+            Number of bytes in this buffer.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.ByteBuffer.RawBuffer">
+            <summary>
+            Internal buffer.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.ByteBuffer.RawBufferOffset">
+            <summary>
+            Offset of the internal buffer.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.ByteBuffer.Item(System.Int32)">
+            <summary>
+            Byte accessor
+            </summary>
+            <param name="index">index</param>
+            <returns>byte value</returns>
+            <exception cref="T:System.IndexOutOfRangeException">invalid index was specified.</exception>
+        </member>
+        <member name="T:Granados.Algorithms.DES">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.DSAKeyPair">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.KeyPair">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.ISigner">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.IVerifier">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.DSAPublicKey">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.PublicKey">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.KnownHosts.VerifySSHHostKeyDelegate">
+            <summary>
+            A delegate to the function that verify a host key with known_hosts file.
+            </summary>
+            <param name="info">informations about a hot key.</param>
+            <returns>true to success, or false to failure.</returns>
+        </member>
+        <member name="T:Granados.PortForwardingCheckResult">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="F:Granados.PortForwardingCheckResult.allowed">
+            if you allow this request, set 'allowed' to true.
+        </member>
+        <member name="F:Granados.PortForwardingCheckResult.channel">
+            if you allow this request, you must set 'channel' for this request. otherwise, 'channel' is ignored
+        </member>
+        <member name="F:Granados.PortForwardingCheckResult.reason_code">
+                     * if you disallow this request, you can set 'reason_code'.
+                        The following reason codes are defined:
+            
+                        #define SSH_OPEN_ADMINISTRATIVELY_PROHIBITED    1
+                        #define SSH_OPEN_CONNECT_FAILED                 2
+                        #define SSH_OPEN_UNKNOWN_CHANNEL_TYPE           3
+                        #define SSH_OPEN_RESOURCE_SHORTAGE              4
+        </member>
+        <member name="F:Granados.PortForwardingCheckResult.reason_message">
+            if you disallow this request, you can set 'reason_message'. this message can contain only ASCII characters.
+        </member>
+        <member name="T:Granados.ISSHConnectionEventReceiver">
+            <summary>
+            Connection specific receiver
+            </summary>
+            <exclude/>
+        </member>
+        <member name="F:Granados.Mono.Math.BigInteger.DEFAULT_LEN">
+            <summary>
+            Default length of a BigInteger in bytes
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.BigInteger.length">
+            <summary>
+            The Length of this BigInteger
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.BigInteger.data">
+            <summary>
+            The data for this BigInteger
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.BigInteger.smallPrimes">
+            <summary>
+            	Table of primes below 2000.
+            </summary>
+            <remarks>
+            	<para>
+            	This table was generated using Mathematica 4.1 using the following function:
+            	</para>
+            	<para>
+            		<code>
+            		PrimeTable [x_] := Prime [Range [1, PrimePi [x]]]
+            		PrimeTable [6000]
+            		</code>
+            	</para>
+            </remarks>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.GenerateRandom(System.Int32,System.Security.Cryptography.RandomNumberGenerator)">
+            <summary>
+            Generates a new, random BigInteger of the specified length.
+            </summary>
+            <param name="bits">The number of bits for the new number.</param>
+            <param name="rng">A random number generator to use to obtain the bits.</param>
+            <returns>A random number of the specified length.</returns>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.GenerateRandom(System.Int32)">
+            <summary>
+            Generates a new, random BigInteger of the specified length using the default RNG crypto service provider.
+            </summary>
+            <param name="bits">The number of bits for the new number.</param>
+            <returns>A random number of the specified length.</returns>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Randomize(System.Security.Cryptography.RandomNumberGenerator)">
+            <summary>
+            Randomizes the bits in "this" from the specified RNG.
+            </summary>
+            <param name="rng">A RNG.</param>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Randomize">
+            <summary>
+            Randomizes the bits in "this" from the default RNG.
+            </summary>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.TestBit(System.UInt32)">
+            <summary>
+            Tests if the specified bit is 1.
+            </summary>
+            <param name="bitNum">The bit to test. The least significant bit is 0.</param>
+            <returns>True if bitNum is set to 1, else false.</returns>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Normalize">
+            <summary>
+                Normalizes this by setting the length to the actual number of
+                uints used in data and by setting the sign to Sign.Zero if the
+                value of this is 0.
+            </summary>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.NextHighestPrime(Granados.Mono.Math.BigInteger)">
+            <summary>
+            Generates the smallest prime >= bi
+            </summary>
+            <param name="bi">A BigInteger</param>
+            <returns>The smallest prime >= bi. More mathematically, if bi is prime: bi, else Prime [PrimePi [bi] + 1].</returns>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Incr2">
+            <summary>
+            Increments this by two
+            </summary>
+        </member>
+        <member name="T:Granados.Mono.Math.BigInteger.Kernel">
+            <summary>
+            Low level functions for the BigInteger
+            </summary>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Kernel.AddSameSign(Granados.Mono.Math.BigInteger,Granados.Mono.Math.BigInteger)">
+            <summary>
+            Adds two numbers with the same sign.
+            </summary>
+            <param name="bi1">A BigInteger</param>
+            <param name="bi2">A BigInteger</param>
+            <returns>bi1 + bi2</returns>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Kernel.Compare(Granados.Mono.Math.BigInteger,Granados.Mono.Math.BigInteger)">
+            <summary>
+            Compares two BigInteger
+            </summary>
+            <param name="bi1">A BigInteger</param>
+            <param name="bi2">A BigInteger</param>
+            <returns>The sign of bi1 - bi2</returns>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Kernel.SingleByteDivideInPlace(Granados.Mono.Math.BigInteger,System.UInt32)">
+            <summary>
+            Performs n / d and n % d in one operation.
+            </summary>
+            <param name="n">A BigInteger, upon exit this will hold n / d</param>
+            <param name="d">The divisor</param>
+            <returns>n % d</returns>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Kernel.Multiply(System.UInt32[],System.UInt32,System.UInt32,System.UInt32[],System.UInt32,System.UInt32,System.UInt32[],System.UInt32)">
+            <summary>
+            Multiplies the data in x [xOffset:xOffset+xLen] by
+            y [yOffset:yOffset+yLen] and puts it into
+            d [dOffset:dOffset+xLen+yLen].
+            </summary>
+            <remarks>
+            This code is unsafe! It is the caller's responsibility to make
+            sure that it is safe to access x [xOffset:xOffset+xLen],
+            y [yOffset:yOffset+yLen], and d [dOffset:dOffset+xLen+yLen].
+            </remarks>
+        </member>
+        <member name="M:Granados.Mono.Math.BigInteger.Kernel.MultiplyMod2p32pmod(System.UInt32[],System.Int32,System.Int32,System.UInt32[],System.Int32,System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+            Multiplies the data in x [xOffset:xOffset+xLen] by
+            y [yOffset:yOffset+yLen] and puts the low mod words into
+            d [dOffset:dOffset+mod].
+            </summary>
+            <remarks>
+            This code is unsafe! It is the caller's responsibility to make
+            sure that it is safe to access x [xOffset:xOffset+xLen],
+            y [yOffset:yOffset+yLen], and d [dOffset:dOffset+mod].
+            </remarks>
+        </member>
+        <member name="T:Granados.Mono.Math.Prime.ConfidenceFactor">
+            <summary>
+            A factor of confidence.
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.Prime.ConfidenceFactor.ExtraLow">
+            <summary>
+            Only suitable for development use, probability of failure may be greater than 1/2^20.
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.Prime.ConfidenceFactor.Low">
+            <summary>
+            Suitable only for transactions which do not require forward secrecy.  Probability of failure about 1/2^40
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.Prime.ConfidenceFactor.Medium">
+            <summary>
+            Designed for production use. Probability of failure about 1/2^80.
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.Prime.ConfidenceFactor.High">
+            <summary>
+            Suitable for sensitive data. Probability of failure about 1/2^160.
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.Prime.ConfidenceFactor.ExtraHigh">
+            <summary>
+            Use only if you have lots of time! Probability of failure about 1/2^320.
+            </summary>
+        </member>
+        <member name="F:Granados.Mono.Math.Prime.ConfidenceFactor.Provable">
+            <summary>
+            Only use methods which generate provable primes. Not yet implemented.
+            </summary>
+        </member>
+        <member name="T:Granados.Mono.Math.Prime.Generator.NextPrimeFinder">
+            <summary>
+            Finds the next prime after a given number.
+            </summary>
+        </member>
+        <member name="M:Granados.Mono.Math.Prime.Generator.PrimeGeneratorBase.PostTrialDivisionTests(Granados.Mono.Math.BigInteger)">
+            <summary>
+            Performs primality tests on bi, assumes trial division has been done.
+            </summary>
+            <param name="bi">A BigInteger that has been subjected to and passed trial division</param>
+            <returns>False if bi is composite, true if it may be prime.</returns>
+            <remarks>The speed of this method is dependent on Confidence</remarks>
+        </member>
+        <member name="M:Granados.Mono.Math.Prime.PrimalityTests.RabinMillerTest(Granados.Mono.Math.BigInteger,Granados.Mono.Math.Prime.ConfidenceFactor)">
+            <summary>
+                Probabilistic prime test based on Rabin-Miller's test
+            </summary>
+            <param name="n" type="BigInteger.BigInteger">
+                <para>
+                    The number to test.
+                </para>
+            </param>
+            <param name="confidence" type="int">
+                <para>
+            The number of chosen bases. The test has at least a
+            1/4^confidence chance of falsely returning True.
+                </para>
+            </param>
+            <returns>
+            <para>
+            	True if "this" is a strong pseudoprime to randomly chosen bases.
+            </para>
+            <para>
+            	False if "this" is definitely NOT prime.
+            </para>
+            </returns>
+        </member>
+        <member name="T:Granados.PKI.IKeyWriter">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.PublicKeyAlgorithm">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.PKIUtil">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.VerifyException">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.Poderosa.FileTransfer.Cancellation">
+            <summary>
+            A class to request a cancellation.
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.FileTransfer.Cancellation.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.FileTransfer.Cancellation.Cancel">
+            <summary>
+            Request cancellation.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.FileTransfer.Cancellation.IsRequested">
+            <summary>
+            Gets whether a cancellation has been requested.
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.KeyFormat.BERReader">
+            <summary>
+            Reads elements which are encoded by ASN.1 Basic Encoding Rules
+            </summary>
+            <remarks>
+            Only SEQUENCE and INTEGER are supported.
+            </remarks>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.BERReader.#ctor(System.IO.Stream)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="s">stream to input</param>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.BERReader.ReadSequence">
+            <summary>
+            Read sequnce. (only check the value type)
+            </summary>
+            <returns>true if succeeded.</returns>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.BERReader.ReadInteger(Granados.Mono.Math.BigInteger@)">
+            <summary>
+            Read integer.
+            </summary>
+            <param name="bigint">BigInteger instance will be stored if succeeded.</param>
+            <returns>true if succeeded.</returns>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.ISSH1PrivateKeyLoader.Load(System.String,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@)">
+            <summary>
+            Read private key parameters.
+            </summary>
+            <param name="passphrase">passphrase for decrypt the key file</param>
+            <param name="modulus">private key parameter is set</param>
+            <param name="publicExponent">private key parameter is set</param>
+            <param name="privateExponent">private key parameter is set</param>
+            <param name="primeP">private key parameter is set</param>
+            <param name="primeQ">private key parameter is set</param>
+            <param name="crtCoefficient">private key parameter is set</param>
+            <exception cref="T:Granados.SSHException">failed to parse</exception>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.ISSH2PrivateKeyLoader.Load(System.String,Granados.PKI.KeyPair@,System.String@)">
+            <summary>
+            Read private key parameters.
+            </summary>
+            <param name="passphrase">passphrase for decrypt the key file</param>
+            <param name="keyPair">key pair is set</param>
+            <param name="comment">comment is set. empty if it didn't exist</param>
+            <exception cref="T:Granados.SSHException">failed to parse</exception>
+        </member>
+        <member name="T:Granados.Poderosa.KeyFormat.OpenSSHPrivateKeyLoader">
+            <summary>
+            OpenSSH SSH2 private key loader
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.OpenSSHPrivateKeyLoader.#ctor(System.Byte[],System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="keyFile">key file data</param>
+            <param name="keyFilePath">Path of a key file</param>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.OpenSSHPrivateKeyLoader.Load(System.String,Granados.PKI.KeyPair@,System.String@)">
+            <summary>
+            Read OpenSSH SSH2 private key parameters.
+            </summary>
+            <param name="passphrase">passphrase for decrypt the key file</param>
+            <param name="keyPair">key pair</param>
+            <param name="comment">comment or empty if it didn't exist</param>
+        </member>
+        <member name="T:Granados.Poderosa.KeyFormat.PrivateKeyFileFormat">
+            <summary>
+            SSH private key file format
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.KeyFormat.PrivateKeyFileHeader">
+            <summary>
+            Header and footer of the SSH private key file
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.PrivateKeyLoader.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="path">Path of a key file to load</param>
+            <exception cref="T:Granados.SSHException">failed to read the key file</exception>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.PrivateKeyLoader.ProbeFormat">
+            <summary>
+            Detect file format of a SSH private key file.
+            </summary>
+            <returns>format type</returns>
+            <exception cref="T:System.IO.IOException">File I/O error</exception>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.PrivateKeyLoader.LoadSSH1PrivateKey(System.String,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@)">
+            <summary>
+            Read SSH1 private key parameters.
+            </summary>
+            <param name="passphrase">passphrase for decrypt the key file</param>
+            <param name="modulus">private key parameter is set</param>
+            <param name="publicExponent">private key parameter is set</param>
+            <param name="privateExponent">private key parameter is set</param>
+            <param name="primeP">private key parameter is set</param>
+            <param name="primeQ">private key parameter is set</param>
+            <param name="crtCoefficient">private key parameter is set</param>
+            <exception cref="T:Granados.SSHException">failed to parse</exception>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.PrivateKeyLoader.LoadSSH2PrivateKey(System.String,Granados.PKI.KeyPair@,System.String@)">
+            <summary>
+            Read SSH2 private key parameters.
+            </summary>
+            <param name="passphrase">passphrase for decrypt the key file</param>
+            <param name="keyPair">key pair is set</param>
+            <param name="comment">comment is set. empty if it didn't exist</param>
+            <exception cref="T:Granados.SSHException">failed to parse</exception>
+        </member>
+        <member name="T:Granados.Poderosa.KeyFormat.PuTTYPrivateKeyLoader">
+            <summary>
+            PuTTY SSH2 private key loader
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.PuTTYPrivateKeyLoader.#ctor(System.Byte[],System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="keyFile">key file data</param>
+            <param name="keyFilePath">Path of a key file</param>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.PuTTYPrivateKeyLoader.Load(System.String,Granados.PKI.KeyPair@,System.String@)">
+            <summary>
+            Read PuTTY SSH2 private key parameters.
+            </summary>
+            <param name="passphrase">passphrase for decrypt the key file</param>
+            <param name="keyPair">key pair</param>
+            <param name="comment">comment or empty if it didn't exist</param>
+        </member>
+        <member name="T:Granados.Poderosa.KeyFormat.SSH1PrivateKeyLoader">
+            <summary>
+            SSH1 private key loader
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.SSH1PrivateKeyLoader.#ctor(System.Byte[],System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="keyFile">key file data</param>
+            <param name="keyFilePath">Path of a key file</param>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.SSH1PrivateKeyLoader.Load(System.String,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@,Granados.Mono.Math.BigInteger@)">
+            <summary>
+            Read SSH1 private key parameters.
+            </summary>
+            <param name="passphrase">passphrase for decrypt the key file</param>
+            <param name="modulus">private key parameter</param>
+            <param name="publicExponent">private key parameter</param>
+            <param name="privateExponent">private key parameter</param>
+            <param name="primeP">private key parameter</param>
+            <param name="primeQ">private key parameter</param>
+            <param name="crtCoefficient">private key parameter</param>
+            <exception cref="T:Granados.SSHException">failed to parse</exception>
+        </member>
+        <member name="T:Granados.Poderosa.KeyFormat.SSHComPrivateKeyLoader">
+            <summary>
+            SSH.com SSH2 private key loader
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.SSHComPrivateKeyLoader.#ctor(System.Byte[],System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="keyFile">key file data</param>
+            <param name="keyFilePath">Path of a key file</param>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.SSHComPrivateKeyLoader.Load(System.String,Granados.PKI.KeyPair@,System.String@)">
+            <summary>
+            Read SSH.com SSH2 private key parameters.
+            </summary>
+            <param name="passphrase">passphrase for decrypt the key file</param>
+            <param name="keyPair">key pair</param>
+            <param name="comment">comment or empty if it didn't exist</param>
+            <exception cref="T:Granados.SSHException">failed to parse</exception>
+        </member>
+        <member name="M:Granados.Poderosa.KeyFormat.SSHComPrivateKeyLoader.ReadBigIntWithBits(Granados.IO.SSH2.SSH2DataReader)">
+            <summary>
+            Reads a multiple precision integer.
+            </summary>
+            <returns>a multiple precision integer</returns>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPClientException">
+            <summary>
+            Common exception class thrown by SCPClient
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClientException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">exception message</param>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClientException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">exception message</param>
+            <param name="innerException">inner exception</param>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPClientTimeoutException">
+            <summary>
+            Exception thrown when timeout occurred.
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClientTimeoutException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPClientInvalidStatusException">
+            <summary>
+            Exception thrown when inoperable channel status.
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClientInvalidStatusException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPFileTransferStatus">
+            <summary>
+            Statuses of the file transfer
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPFileTransferStatus.None">
+            <summary>Not started</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPFileTransferStatus.CreateDirectory">
+            <summary>Creating a local or remote directory</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPFileTransferStatus.DirectoryCreated">
+            <summary>Created a local or remote directory</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPFileTransferStatus.Open">
+            <summary>Opening remote or local file</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPFileTransferStatus.Transmitting">
+            <summary>Data is transmitting</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPFileTransferStatus.CompletedSuccess">
+            <summary>File was closed successfully</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPFileTransferStatus.CompletedAbort">
+            <summary>File transfer was aborted by cancellation</summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPFileTransferProgressDelegate">
+            <summary>
+            Delegate notifies progress of the file transfer.
+            </summary>
+            <param name="localFullPath">Full path of the local file or local directory.</param>
+            <param name="fileName">Name of the file or directory.</param>
+            <param name="status">Status of the file transfer.</param>
+            <param name="fileSize">File size. Zero if target is a directory.</param>
+            <param name="transmitted">Transmitted data length. Zero if target is a directory.</param>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPClient">
+            <summary>
+            SCP Client
+            </summary>
+            
+            <remarks>
+            <para>This class is designed to be used in the worker thread.</para>
+            <para>Each method blocks thread while transmitting the files.</para>
+            </remarks>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClient.#ctor(Granados.SSHConnection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="connection">SSH connection. Currently only SSH2 connection is accepted.</param>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClient.Upload(System.String,System.String,System.Boolean,System.Boolean,Granados.Poderosa.FileTransfer.Cancellation,Granados.Poderosa.SCP.SCPFileTransferProgressDelegate)">
+            <summary>
+            Upload files or directories.
+            </summary>
+            <remarks>
+            <para>Unfortunately, Granados sends a command line in the ASCII encoding.
+            So the "remotePath" must be an ASCII text.</para>
+            </remarks>
+            <param name="localPath">Local path (Windows' path)</param>
+            <param name="remotePath">Remote path (Unix path)</param>
+            <param name="recursive">Specifies recursive mode</param>
+            <param name="preserveTime">Specifies to preserve time of the directory or file.</param>
+            <param name="cancellation">An object to request the cancellation. Set null if the cancellation is not needed.</param>
+            <param name="progressDelegate">Delegate to notify progress. Set null if notification is not needed.</param>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClient.Download(System.String,System.String,System.Boolean,System.Boolean,Granados.Poderosa.FileTransfer.Cancellation,Granados.Poderosa.SCP.SCPFileTransferProgressDelegate)">
+            <summary>
+            Download files or directories.
+            </summary>
+            <remarks>
+            <para>Unfortunately, Granados sends a command line in the ASCII encoding.
+            So the "remotePath" must be an ASCII text.</para>
+            </remarks>
+            <param name="remotePath">Remote path (Unix path)</param>
+            <param name="localPath">Local path (Windows' path)</param>
+            <param name="recursive">Specifies recursive mode</param>
+            <param name="preserveTime">Specifies to preserve time of the directory or file.</param>
+            <param name="cancellation">An object to request the cancellation. Set null if the cancellation is not needed.</param>
+            <param name="progressDelegate">Delegate to notify progress. Set null if notification is not needed.</param>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClient.CheckResponse(Granados.Poderosa.SCP.SCPChannelStream)">
+            <summary>
+            Read a byte and check the status code.
+            </summary>
+            <param name="stream">Channel stream</param>
+            <exception cref="T:Granados.Poderosa.SCP.SCPClientException">Response was a warning or an error.</exception>
+        </member>
+        <member name="P:Granados.Poderosa.SCP.SCPClient.ProtocolTimeout">
+            <summary>
+            Protocol timeout in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SCP.SCPClient.Encoding">
+            <summary>
+            Gets or sets encoding to convert path name or file name.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SCP.SCPClient.DefaultFilePermissions">
+            <summary>
+            Unix permissions used when creating a remote file.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SCP.SCPClient.DefaultDirectoryPermissions">
+            <summary>
+            Unix permissions used when creating a remote directory.
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPClient.SCPEntry">
+            <summary>
+            File or directory entry to create.
+            Used in sink mode.
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPClient.SCPModTime">
+            <summary>
+            Time modification informations.
+            Used in sink mode.
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPChannelStream">
+            <summary>
+            Channel stream for SCPClient
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.Open(Granados.SSHConnection,System.String,System.Int32)">
+            <summary>
+            Opens channel.
+            </summary>
+            <param name="connection">SSH connection object</param>
+            <param name="command">Remote command</param>
+            <param name="millisecondsTimeout">timeout in milliseconds</param>
+            <exception cref="T:Granados.Poderosa.SCP.SCPClientInvalidStatusException">Channel has been already opened or already closed.</exception>
+            <exception cref="T:Granados.Poderosa.SCP.SCPClientTimeoutException">Timeout has occurred while waiting for READY status.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.Close">
+            <summary>
+            Close channel.
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.Write(System.Byte[])">
+            <summary>
+            Writes data.
+            </summary>
+            <param name="buffer">Buffer</param>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.Write(System.Byte[],System.Int32)">
+            <summary>
+            Writes data.
+            </summary>
+            <param name="buffer">Buffer</param>
+            <param name="length">Length</param>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.Read(System.Byte[],System.Int32)">
+            <summary>
+            Reads data
+            </summary>
+            <param name="buffer">Byte array to store the data</param>
+            <param name="millisecondsTimeout">Timeout in milliseconds</param>
+            <returns>Length to be stored in the buffer</returns>
+            <exception cref="T:Granados.Poderosa.SCP.SCPClientTimeoutException">Timeout has occurred</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads data
+            </summary>
+            <param name="buffer">Byte array to store the data</param>
+            <param name="maxLength">Maximum bytes to read</param>
+            <param name="millisecondsTimeout">Timeout in milliseconds</param>
+            <returns>Length to be stored in the buffer</returns>
+            <exception cref="T:Granados.Poderosa.SCP.SCPClientTimeoutException">Timeout has occurred</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.ReadByte(System.Int32)">
+            <summary>
+            Read one byte
+            </summary>
+            <param name="millisecondsTimeout">Timeout in milliseconds</param>
+            <returns>Byte value</returns>
+            <exception cref="T:Granados.Poderosa.SCP.SCPClientTimeoutException">Timeout has occurred</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.ReadUntil(System.Byte,System.Int32)">
+            <summary>
+            Read data until specified byte value is read.
+            </summary>
+            <param name="terminator">Byte value to stop reading</param>
+            <param name="millisecondsTimeout">Timeout in milliseconds</param>
+            <returns>Byte array received.</returns>
+            <exception cref="T:Granados.Poderosa.SCP.SCPClientTimeoutException">Timeout has occurred</exception>
+            <exception cref="T:Granados.Poderosa.SCP.SCPClientException">Buffer overflow</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPChannelStream.Dispose">
+            <summary>
+            IDisposable implementation
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPChannelStream.StreamStatus">
+            <summary>
+            Stream status
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPChannelStream.StreamStatus.NotOpened">
+            <summary>Channel is not opened yet</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPChannelStream.StreamStatus.Opened">
+            <summary>Channel is opened, but not ready</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPChannelStream.StreamStatus.Closing">
+            <summary>Channel is closing</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPChannelStream.StreamStatus.Closed">
+            <summary>Channel is closed</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SCP.SCPChannelStream.StreamStatus.Error">
+            <summary>Channel has error</summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPChannelStatus">
+            <summary>
+            Channel status
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.DataReceivedDelegate">
+            <summary>
+            Delegate that handles channel data.
+            </summary>
+            <param name="data">Data buffer</param>
+            <param name="offset">Offset</param>
+            <param name="length">Length</param>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.ChannelStatusChangedDelegate">
+            <summary>
+            Delegate that handles transition of the channel status.
+            </summary>
+            <param name="newStatus">New status</param>
+        </member>
+        <member name="T:Granados.Poderosa.SCP.SCPClientChannelEventReceiver">
+            <summary>
+            Channel data handler for SCPClient
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SCP.SCPClientChannelEventReceiver.#ctor(Granados.Poderosa.SCP.DataReceivedDelegate,Granados.Poderosa.SCP.ChannelStatusChangedDelegate)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dataHandler">Data handler</param>
+            <param name="statusChangeHandler">Channel status handler</param>
+        </member>
+        <member name="P:Granados.Poderosa.SCP.SCPClientChannelEventReceiver.StatusChangeNotifier">
+            <summary>
+            Gets an object for synchronizing change of the channel status.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SCP.SCPClientChannelEventReceiver.ChannelStatus">
+            <summary>
+            Gets channel status
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPClientException">
+            <summary>
+            Common exception class thrown by SFTPClient
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClientException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">exception message</param>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClientException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">exception message</param>
+            <param name="innerException">inner exception</param>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">
+            <summary>
+            Exception thrown when timeout occurred.
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClientTimeoutException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">
+            <summary>
+            Exception thrown when inoperable channel status.
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPClientErrorException">
+            <summary>
+            Exception representing error informations that reported by SSH_FXP_STATUS.
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClientErrorException.Create(Granados.IO.SSHDataReader)">
+            <summary>
+            Create new instance from SSH_FXP_STATUS packet data.
+            </summary>
+            <param name="dataReader">data reader</param>
+            <returns>new instance</returns>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClientErrorException.#ctor(System.UInt32,System.UInt32,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClientErrorException.ID">
+            <summary>
+            SFTP request ID
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClientErrorException.Code">
+            <summary>
+            SFTP error / status code
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClientErrorException.LanguageTag">
+            <summary>
+            Language tag
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPFileInfo">
+            <summary>
+            SFTP remote file informations
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPFileAttributes">
+            <summary>
+            SFTP remote file attribute informations
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPFileAttributes.#ctor(System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fileSize">file size</param>
+            <param name="uid">user identifier</param>
+            <param name="gid">group identifier</param>
+            <param name="permissions">permissions</param>
+            <param name="atime">access time</param>
+            <param name="mtime">modification time</param>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPFileAttributes.#ctor(Granados.Poderosa.SFTP.SFTPFileAttributes)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="attributes">attributes</param>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPFileAttributes.FileSize">
+            <summary>
+            File size
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPFileAttributes.UID">
+            <summary>
+            User ID
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPFileAttributes.GID">
+            <summary>
+            Group ID
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPFileAttributes.Permissions">
+            <summary>
+            Unix permissions
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPFileAttributes.Atime">
+            <summary>
+            Access time
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPFileAttributes.Mtime">
+            <summary>
+            Modification time
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPFileInfo.#ctor(System.String,System.String,Granados.Poderosa.SFTP.SFTPFileAttributes)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fileName">file name</param>
+            <param name="longName">long name</param>
+            <param name="attributes">attributes</param>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPFileInfo.FileName">
+            <summary>
+            File name
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPFileInfo.LongName">
+            <summary>
+            Long format line. Commonly this will be a result of ls -l.
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPPacketType">
+            <summary>
+            SFTP packet type
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPFileTransferStatus">
+            <summary>
+            Statuses of the file transfer
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPFileTransferStatus.None">
+            <summary>Not started</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPFileTransferStatus.Open">
+            <summary>Opening remote file is attempted</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPFileTransferStatus.Transmitting">
+            <summary>File was opened successfully and data has been requested</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPFileTransferStatus.Close">
+            <summary>Closing remote file is attempted</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPFileTransferStatus.CompletedSuccess">
+            <summary>File was closed successfully</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPFileTransferStatus.CompletedError">
+            <summary>Error has occurred</summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPFileTransferStatus.CompletedAbort">
+            <summary>File transfer was aborted by the cancellation.</summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPFileTransferProgressDelegate">
+            <summary>
+            Delegate notifies progress of the file transfer.
+            </summary>
+            <param name="status">Status of the file transfer.</param>
+            <param name="transmitted">Transmitted data length.</param>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPClient">
+            <summary>
+            SFTP Client
+            </summary>
+            
+            <remarks>
+            <para>This class is designed to be used in the worker thread.</para>
+            <para>Some methods block thread while waiting for the response.</para>
+            </remarks>
+            
+            <remarks>
+            Referenced specification:<br/>
+            IETF Network Working Group Internet Draft<br/>
+            SSH File Transfer Protocol<br/>
+            draft-ietf-secsh-filexfer-02 (protocol version 3)
+            </remarks>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.OpenSFTPChannel(Granados.SSH2.SSH2Connection)">
+            <summary>
+            Opens SFTP channel and creates a new instance.
+            </summary>
+            <param name="connection">SSH2 connection object</param>
+            <returns>New instance.</returns>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.#ctor(Granados.SSHChannel,Granados.Poderosa.SFTP.SFTPClientChannelEventReceiver)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="channel">SSH2 channel object</param>
+            <param name="channelReceiver">event receiver object</param>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.Init">
+            <summary>
+            Initialize
+            </summary>
+            <remarks>
+            Send SSH_FXP_INIT and receive SSH_FXP_VERSION.
+            </remarks>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status</exception>
+            <exception cref="T:System.Exception">An exception which was thrown while processing the response.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.WaitReady">
+            <summary>
+            Waits for channel status to be "READY".
+            The current thread is blocked until the status comes to "READY" or "CLOSED".
+            </summary>
+            <returns>Whether the channel status is READY.</returns>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.Close">
+            <summary>
+            Close channel.
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.GetRealPath(System.String)">
+            <summary>
+            Gets canonical path.
+            </summary>
+            <param name="path">Path to be canonicalized.</param>
+            <returns>Canonical path.</returns>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.GetDirectoryEntries(System.String)">
+            <summary>
+            Gets directory entries in the specified directory path.
+            </summary>
+            <param name="directoryPath">Directory path.</param>
+            <returns>Array of the file information.</returns>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.CreateDirectory(System.String)">
+            <summary>
+            Create directory.
+            </summary>
+            <param name="path">Directory path to create.</param>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status</exception>
+            <exception cref="T:System.Exception">An exception which was thrown while processing the response.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.RemoveDirectory(System.String)">
+            <summary>
+            Remove directory.
+            </summary>
+            <param name="path">Directory path to remove.</param>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status</exception>
+            <exception cref="T:System.Exception">An exception which was thrown while processing the response.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.GetFileInformations(System.String,System.Boolean)">
+            <summary>
+            Get file informations.
+            </summary>
+            <param name="path">File path.</param>
+            <param name="lstat">Specifies to use lstat. Symbolic link is not followed and informations about the symbolic link are returned.</param>
+            <returns>File attribute informations</returns>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status</exception>
+            <exception cref="T:System.Exception">An exception which was thrown while processing the response.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.RemoveFile(System.String)">
+            <summary>
+            Remove file.
+            </summary>
+            <param name="path">File path to remove.</param>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status</exception>
+            <exception cref="T:System.Exception">An exception which was thrown while processing the response.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.Rename(System.String,System.String)">
+            <summary>
+            Rename file or directory.
+            </summary>
+            <param name="oldPath">Old path.</param>
+            <param name="newPath">New path.</param>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status</exception>
+            <exception cref="T:System.Exception">An exception which was thrown while processing the response.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.SetPermissions(System.String,System.Int32)">
+            <summary>
+            Set permissions of the file or directory.
+            </summary>
+            <param name="path">Path.</param>
+            <param name="permissions">Permissions to set.</param>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status</exception>
+            <exception cref="T:System.Exception">An exception which was thrown while processing the response.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.DownloadFile(System.String,System.String,Granados.Poderosa.FileTransfer.Cancellation,Granados.Poderosa.SFTP.SFTPFileTransferProgressDelegate)">
+            <summary>
+            Download a file.
+            </summary>
+            <remarks>
+            Even if download failed, local file is not deleted.
+            </remarks>
+            
+            <param name="remotePath">Remote file path to download.</param>
+            <param name="localPath">Local file path to save.</param>
+            <param name="cancellation">An object to request the cancellation. Set null if the cancellation is not needed.</param>
+            <param name="progressDelegate">Delegate to notify progress. Set null if notification is not needed.</param>
+            
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientException">Error.</exception>
+            <exception cref="T:System.Exception">Error.</exception>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClient.UploadFile(System.String,System.String,Granados.Poderosa.FileTransfer.Cancellation,Granados.Poderosa.SFTP.SFTPFileTransferProgressDelegate)">
+            <summary>
+            Upload a file.
+            </summary>
+            
+            <param name="localPath">Local file path to upload.</param>
+            <param name="remotePath">Remote file path to write.</param>
+            <param name="cancellation">An object to request the cancellation. Set null if the cancellation is not needed.</param>
+            <param name="progressDelegate">Delegate to notify progress. Set null if notification is not needed.</param>
+            
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientErrorException">Operation failed.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientInvalidStatusException">Invalid status.</exception>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientException">Error.</exception>
+            <exception cref="T:System.Exception">Error.</exception>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClient.ProtocolTimeout">
+            <summary>
+            Protocol timeout in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClient.Encoding">
+            <summary>
+            Gets or sets encoding to convert path name or file name.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClient.IsClosed">
+            <summary>
+            Gets whether the channel has been closed
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPChannelStatus">
+            <summary>
+            Channel status
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.DataReceivedDelegate">
+            <summary>
+            Delegate that handles SFTP packet data.
+            </summary>
+            <param name="packetType">SFTP packet type</param>
+            <param name="dataReader">Data reader which can read SFTP data.</param>
+            <returns>true if the packet was processed.</returns>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPClientChannelEventReceiver">
+            <summary>
+            Channel data handler for SFTPClient
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPClientChannelEventReceiver.WaitResponse(Granados.Poderosa.SFTP.DataReceivedDelegate,System.Int32)">
+            <summary>
+            Wait for response.
+            </summary>
+            <remarks>
+            <para>
+            Caller should lock ResponseNotifier before send a request packet,
+            and this method should be called in the lock-block.
+            </para>
+            </remarks>
+            <param name="responseHandler">delegate which handles response data</param>
+            <param name="millisecondsTimeout">timeout in milliseconds</param>
+            <exception cref="T:Granados.Poderosa.SFTP.SFTPClientTimeoutException">Timeout has occured.</exception>
+            <exception cref="T:System.Exception">an exception which was thrown while executing responseHandler.</exception>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClientChannelEventReceiver.StatusChangeNotifier">
+            <summary>
+            Gets an object for synchronizing change of the channel status.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClientChannelEventReceiver.ResponseNotifier">
+            <summary>
+            Gets an object for synchronizing handling of the response.
+            </summary>
+        </member>
+        <member name="P:Granados.Poderosa.SFTP.SFTPClientChannelEventReceiver.ChannelStatus">
+            <summary>
+            Gets channel status
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPPacket">
+            <summary>
+            Specialized <see cref="T:Granados.SSH2.SSH2Packet"/> for constructing SFTP packet.
+            </summary>
+            <remarks>
+            The instances of this class share single thread-local buffer.
+            You should be careful that only single instance is used while constructing a packet.
+            </remarks>
+        </member>
+        <member name="T:Granados.SSH2.SSH2Packet">
+            <summary>
+            SSH2 packet builder.
+            </summary>
+            <remarks>
+            The instances of this class share single thread-local buffer.
+            You should be careful that only single instance is used while constructing a packet.
+            </remarks>
+        </member>
+        <member name="T:Granados.SSH2.ISSH2PacketBuilder">
+            <summary>
+            <see cref="T:Granados.IO.IPacketBuilder"/> specialized for SSH2.
+            </summary>
+        </member>
+        <member name="T:Granados.IO.IPacketBuilder">
+            <summary>
+            An interface of the SSH packet which provides a payload buffer.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.IPacketBuilder.Payload">
+            <summary>
+            Payload buffer.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packet.#ctor(Granados.SSH2.SSH2PacketType)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type">packet type (message number)</param>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packet.GetPayloadBytes">
+            <summary>
+            Get actual bytes of the payload field.
+            </summary>
+            <returns>bytes of the payload field</returns>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packet.GetPayloadSize">
+            <summary>
+            Get actual size of the payload field.
+            </summary>
+            <returns>number of bytes of the payload field</returns>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packet.GetPacketType">
+            <summary>
+            Get packet type (message number).
+            </summary>
+            <returns>a packet type (message number)</returns>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packet.GetImage(Granados.Crypto.Cipher,Granados.Crypto.MAC,System.UInt32)">
+            <summary>
+            Gets the binary image of this packet.
+            </summary>
+            <param name="cipher">cipher algorithm, or null if no encryption.</param>
+            <param name="mac">MAC algorithm, or null if no MAC.</param>
+            <param name="sequenceNumber">sequence number</param>
+            <returns>data</returns>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packet.BeforeBuildImage">
+            <summary>
+            Modifies payload before making a packet image.
+            Derived class can override this method for preparing sub-protocol packet.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packet.BuildImage(Granados.Crypto.Cipher,Granados.Crypto.MAC,System.UInt32)">
+            <summary>
+            Build packet binary data
+            </summary>
+            <param name="cipher">cipher algorithm, or null if no encryption.</param>
+            <param name="mac">MAC algorithm, or null if no MAC.</param>
+            <param name="sequenceNumber">sequence number</param>
+            <returns>a byte buffer</returns>
+        </member>
+        <member name="P:Granados.SSH2.SSH2Packet.Payload">
+            <summary>
+            Implements <see cref="T:Granados.IO.IPacketBuilder"/>
+            </summary>
+            <remarks>
+            This buffer also contains additional fields preceding the payload field due to the performance reason.
+            Please use <see cref="M:Granados.SSH2.SSH2Packet.GetPayloadBytes"/> to get the bytes of the playload field.
+            </remarks>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPPacket.#ctor(Granados.Poderosa.SFTP.SFTPPacketType,System.UInt32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="packetType">SFTP packet type.</param>
+            <param name="remoteChannel">remote channel number</param>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPPacket.BeforeBuildImage">
+            <summary>
+            Prepare SFTP message before making a packet image.
+            </summary>
+        </member>
+        <member name="T:Granados.Poderosa.SFTP.SFTPStatusCode">
+            <summary>
+            SFTP status code
+            </summary>
+            <remarks>
+            <para>Referenced: SSH File Transfer Protocol Internet-Draft Section 7. Responses from the Server to the Client</para>
+            </remarks>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_OK">
+            <summary>
+            Indicates successful completion of the operation.
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_EOF">
+            <summary>
+            indicates end-of-file condition.
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_NO_SUCH_FILE">
+            <summary>
+            returned when a reference is made to a file which should exist but doesn't.
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_PERMISSION_DENIED">
+            <summary>
+            returned when the authenticated user does not have sufficient permissions to perform the operation.
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_FAILURE">
+            <summary>
+            a generic catch-all error message.
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_BAD_MESSAGE">
+            <summary>
+            may be returned if a badly formatted packet or protocol incompatibility is detected.
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_NO_CONNECTION">
+            <summary>
+            a pseudo-error which indicates that the client has no connection to the server
+            (it can only be generated locally by the client, and MUST NOT be returned by servers).
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_CONNECTION_LOST">
+            <summary>
+            a pseudo-error which indicates that the connection to the server has been lost
+            (it can only be generated locally by the client, and MUST NOT be returned by servers).
+            </summary>
+        </member>
+        <member name="F:Granados.Poderosa.SFTP.SFTPStatusCode.SSH_FX_OP_UNSUPPORTED">
+            <summary>
+            indicates that an attempt was made to perform an operation which is not supported for the server
+            (it may be generated locally by the client if e.g. the version number exchange indicates that
+            a required feature is not supported by the server, or it may be returned by the server
+            if the server does not implement an operation).
+            </summary>
+        </member>
+        <member name="M:Granados.Poderosa.SFTP.SFTPStatusCode.ToString(System.Int32)">
+            <summary>
+            Gets the text representing a specified status code.
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Granados.PKI.PrimeSieve">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.IO.PacketBuilderMixin">
+            <summary>
+            Extension methods for writing content of the payload.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.Write``1(``0,System.Byte[])">
+            <summary>
+            Writes binary data.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteByte``1(``0,System.Byte)">
+            <summary>
+            Writes single byte.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteBool``1(``0,System.Boolean)">
+            <summary>
+            Writes boolean value as a byte.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteInt32``1(``0,System.Int32)">
+            <summary>
+            Writes Int32 value in the network byte order.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteUInt32``1(``0,System.UInt32)">
+            <summary>
+            Writes UInt32 value in the network byte order.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteUInt64``1(``0,System.UInt64)">
+            <summary>
+            Writes UInt64 value in the network byte order.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteInt64``1(``0,System.Int64)">
+            <summary>
+            Writes Int64 value in the network byte order.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteString``1(``0,System.String)">
+            <summary>
+            Writes ASCII text according to the SSH 1.5/2.0 specification.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteUTF8String``1(``0,System.String)">
+            <summary>
+            Writes UTF-8 text according to the SSH 1.5/2.0 specification.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteAsString``1(``0,System.Byte[])">
+            <summary>
+            Writes byte string according to the SSH 1.5/2.0 specification.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteAsString``1(``0,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes byte string according to the SSH 1.5/2.0 specification.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PacketBuilderMixin.WriteSecureRandomBytes``1(``0,System.Int32)">
+            <summary>
+            Writes random bytes.
+            </summary>
+        </member>
+        <member name="T:Granados.IO.SSHDataReader">
+            <summary>
+            Utility class for reading fields in the SSH packet.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.#ctor(System.Byte[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="image">a byte array to be read.</param>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.#ctor(Granados.IO.DataFragment)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="data">a data fragment to be read.</param>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.CheckEnd(System.Int32)">
+            <summary>
+            Boundary check.
+            </summary>
+            <param name="n">number of bytes to be read.</param>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.GetRemainingDataView">
+            <summary>
+            Makes a new <see cref="T:Granados.IO.DataFragment"/> that represents the view of the remaining data.
+            </summary>
+            <returns>a new <see cref="T:Granados.IO.DataFragment"/>.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.GetRemainingDataView(System.Int32)">
+            <summary>
+            Makes a new <see cref="T:Granados.IO.DataFragment"/> that represents the view of the remaining data.
+            </summary>
+            <param name="length">data length of the new view.</param>
+            <returns>a new <see cref="T:Granados.IO.DataFragment"/>.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadByte">
+            <summary>
+            Reads a byte value.
+            </summary>
+            <returns>byte value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadBool">
+            <summary>
+            Reads a bool value according to the SSH specification.
+            </summary>
+            <returns>a bool value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadInt16">
+            <summary>
+            Reads a Int16 value in the network byte order.
+            </summary>
+            <returns>a Int16 value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadUInt16">
+            <summary>
+            Reads a UInt16 value in the network byte order.
+            </summary>
+            <returns>a UInt16 value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadInt32">
+            <summary>
+            Reads a Int32 value in the network byte order.
+            </summary>
+            <returns>a Int32 value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadUInt32">
+            <summary>
+            Reads a UInt32 value in the network byte order.
+            </summary>
+            <returns>a UInt32 value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadInt64">
+            <summary>
+            Reads a Int64 value in the network byte order.
+            </summary>
+            <returns>a Int64 value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadUInt64">
+            <summary>
+            Reads a UInt64 value in the network byte order.
+            </summary>
+            <returns>a UInt64 value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.Read(System.Int32)">
+            <summary>
+            Reads bytes of the specified length.
+            </summary>
+            <param name="length">number of bytes.</param>
+            <returns>byte array.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadByteString">
+            <summary>
+            Reads binary string according to the SSH specification.
+            </summary>
+            <returns>byte array.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadString">
+            <summary>
+            Reads ASCII string according to the SSH specification.
+            </summary>
+            <returns>string value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadUTF8String">
+            <summary>
+            Reads UTF-8 string according to the SSH specification.
+            </summary>
+            <returns>string value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadString(System.Text.Encoding)">
+            <summary>
+            Reads text string according to the SSH specification.
+            </summary>
+            <param name="encoding">text encoding to use for decoding.</param>
+            <returns>string value.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHDataReader.ReadMPInt">
+            <summary>
+            Reads a multiple precision integer according to the SSH specification.
+            </summary>
+            <returns>a multiple precision integer</returns>
+        </member>
+        <member name="P:Granados.IO.SSHDataReader.Offset">
+            <summary>
+            Current reading position.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.SSHDataReader.RemainingDataLength">
+            <summary>
+            Number of bytes of the remaining data.
+            </summary>
+        </member>
+        <member name="T:Granados.IO.SSH1.SSH1DataReader">
+            <summary>
+            Utility class for reading fields in the SSH1 packet.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.SSH1.SSH1DataReader.#ctor(System.Byte[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="image">a byte array to be read.</param>
+        </member>
+        <member name="M:Granados.IO.SSH1.SSH1DataReader.#ctor(Granados.IO.DataFragment)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="data">a data fragment to be read.</param>
+        </member>
+        <member name="M:Granados.IO.SSH1.SSH1DataReader.ReadMPInt">
+            <summary>
+            Reads a multiple precision integer according to the SSH1 specification.
+            </summary>
+            <returns>a multiple precision integer</returns>
+        </member>
+        <member name="T:Granados.IO.SSH2.SSH2DataReader">
+            <summary>
+            Utility class for reading fields in the SSH2 packet.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.SSH2.SSH2DataReader.#ctor(System.Byte[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="image">a byte array to be read.</param>
+        </member>
+        <member name="M:Granados.IO.SSH2.SSH2DataReader.#ctor(Granados.IO.DataFragment)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="data">a data fragment to be read.</param>
+        </member>
+        <member name="M:Granados.IO.SSH2.SSH2DataReader.ReadMPInt">
+            <summary>
+            Reads a multiple precision integer according to the SSH2 specification.
+            </summary>
+            <returns>a multiple precision integer</returns>
+        </member>
+        <member name="T:Granados.Algorithms.Rijndael">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="F:Granados.Algorithms.Rijndael.BLOCK_SIZE">
+            <summary>
+            constants
+            </summary>
+        </member>
+        <member name="T:Granados.Rng">
+            <summary>
+            Random number generator
+            </summary>
+        </member>
+        <member name="M:Granados.Rng.GetBytes(System.Byte[])">
+            <summary>
+            Fills an array of bytes with random values.
+            </summary>
+            <param name="data">array to fill with random values.</param>
+        </member>
+        <member name="M:Granados.Rng.GetInt(System.Int32)">
+            <summary>
+            Returns a random number between 0 and maxValue-1
+            </summary>
+        </member>
+        <member name="T:Granados.RngManager">
+            <summary>
+            Random number generation utility
+            </summary>
+        </member>
+        <member name="M:Granados.RngManager.GetSystemRandomRng">
+            <summary>
+            Get a new instance which implements Rng using <see cref="T:System.Random"/>
+            </summary>
+            <remarks>An instance returned should be used in the same thread.</remarks>
+            <returns>a new instance</returns>
+        </member>
+        <member name="M:Granados.RngManager.GetSecureRng">
+            <summary>
+            Get a new instance which implements Rng using <see cref="T:System.Random"/>
+            </summary>
+            <remarks>An instance returned should be used in the same thread.</remarks>
+            <returns>a new instance</returns>
+        </member>
+        <member name="T:Granados.RngManager.SecureRng">
+            <summary>
+            implementation of Rng
+            </summary>
+            <remarks>An instance returned should be used in the same thread.</remarks>
+        </member>
+        <member name="T:Granados.RngManager.SystemRandomRng">
+            <summary>
+            implementation of Rng
+            </summary>
+        </member>
+        <member name="T:Granados.Util.SecureRandomBuffer">
+            <summary>
+            A class provides pre-buffered random bytes.
+            </summary>
+        </member>
+        <member name="M:Granados.Util.SecureRandomBuffer.GetRandomBytes(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Get pre-buffered random bytes.
+            </summary>
+            <param name="buff">an array that random bytes are copied to.</param>
+            <param name="offset">start index of the array.</param>
+            <param name="length">number of bytes to be copied.</param>
+        </member>
+        <member name="M:Granados.Util.SecureRandomBuffer.GetRandomBytes(System.Byte[])">
+            <summary>
+            Get pre-buffered random bytes.
+            </summary>
+            <param name="buff">an array that random bytes are copied to.</param>
+        </member>
+        <member name="M:Granados.Util.SecureRandomBuffer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Granados.Util.SecureRandomBuffer.GetRandomBytesInternal(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Get pre-buffered random bytes.
+            </summary>
+            <param name="buff">an array that random bytes are copied to.</param>
+            <param name="offset">start index of the array.</param>
+            <param name="length">number of bytes to be copied.</param>
+        </member>
+        <member name="T:Granados.PKI.RSAKeyPair">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.RSAPublicKey">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.PKI.RSAUtil">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Granados.PKI.RSAUtil.PKCS1PadType2(System.Byte[],System.Int32,Granados.Rng)">
+            <summary>
+            Make encoded message (EM) as described in PKCS#1
+            </summary>
+            <param name="input">input bytes</param>
+            <param name="len">total byte length of the result</param>
+            <param name="rng">random number generator</param>
+            <returns>new bits</returns>
+        </member>
+        <member name="M:Granados.PKI.RSAUtil.PKCS1PadType1(System.Byte[],System.Int32)">
+            <summary>
+            Make encoded message (EM) as described in PKCS#1
+            </summary>
+            <param name="input">input bytes</param>
+            <param name="len">total byte length of the result</param>
+            <returns>new bits</returns>
+        </member>
+        <member name="M:Granados.PKI.RSAUtil.StripPKCS1Pad(Granados.Mono.Math.BigInteger,System.Int32)">
+            <summary>
+            Extract an message from the encoded message (EM) described in PKCS#1
+            </summary>
+            <param name="input">encoded message bits</param>
+            <param name="type">type number (1 or 2)</param>
+            <returns>message bits</returns>
+        </member>
+        <member name="T:Granados.SCPProgression">
+            <summary>
+            
+            </summary>
+            <param name="processed_length"></param>
+            <param name="total_length"></param>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SCPCopyDirection">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.ScpLocalSource">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.ScpParameter">
+            <summary>
+            Fill the properties of ScpParameter object before you start the connection with SCP protocol.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.IO.SocketStatus">
+            <summary>
+            Status of <see cref="T:Granados.IO.IGranadosSocket"/>
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.IO.IGranadosSocket">
+            <summary>
+            Socket interface
+            </summary>
+        </member>
+        <member name="M:Granados.IO.IGranadosSocket.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Write data to the socket
+            </summary>
+            <param name="data">byte array that contains data to write</param>
+            <param name="offset">start index of data</param>
+            <param name="length">byte count to write</param>
+        </member>
+        <member name="M:Granados.IO.IGranadosSocket.Close">
+            <summary>
+            Close connection
+            </summary>
+        </member>
+        <member name="P:Granados.IO.IGranadosSocket.SocketStatus">
+            <summary>
+            Get status of this object.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.IGranadosSocket.DataAvailable">
+            <summary>
+            Get whether any received data are available on the socket
+            </summary>
+        </member>
+        <member name="T:Granados.IO.GranadosSocketMixin">
+            <summary>
+            Extension methods for <see cref="T:Granados.IO.IGranadosSocket"/>.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.GranadosSocketMixin.Write(Granados.IO.IGranadosSocket,Granados.IO.DataFragment)">
+            <summary>
+            Write data to the socket
+            </summary>
+            <param name="sock">socket object</param>
+            <param name="data">data to write</param>
+        </member>
+        <member name="T:Granados.IO.IDataHandler">
+            <summary>
+            Interface to handle received data in <see cref="T:Granados.IO.PlainSocket"/>
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.IO.NullDataHandler">
+            <summary>
+            <see cref="T:Granados.IO.IDataHandler"/> implementation that do nothing
+            </summary>
+        </member>
+        <member name="T:Granados.IO.FilterDataHandler">
+            <summary>
+            <see cref="T:Granados.IO.IDataHandler"/> implementation that works as a proxy of another handler
+            for intercepting OnData() call.
+            </summary>
+        </member>
+        <member name="F:Granados.IO.FilterDataHandler._innerHandler">
+            <summary>
+            A core handler that handles callbacks.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.FilterDataHandler.FilterData(Granados.IO.DataFragment)">
+            <summary>
+            Handle data instead of the core handler.
+            </summary>
+            <param name="data">data</param>
+        </member>
+        <member name="M:Granados.IO.FilterDataHandler.#ctor(Granados.IO.IDataHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="innerHandler">a core handler</param>
+        </member>
+        <member name="M:Granados.IO.FilterDataHandler.SetInnerHandler(Granados.IO.IDataHandler)">
+            <summary>
+            Set a core handler.
+            </summary>
+            <param name="innerHandler">a core handler</param>
+        </member>
+        <member name="M:Granados.IO.FilterDataHandler.OnDataInternal(Granados.IO.DataFragment)">
+            <summary>
+            Call OnData() of a core handler
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Granados.IO.FilterDataHandler.OnData(Granados.IO.DataFragment)">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Granados.IO.FilterDataHandler.OnClosed">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+        </member>
+        <member name="M:Granados.IO.FilterDataHandler.OnError(System.Exception)">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+            <param name="error"></param>
+        </member>
+        <member name="T:Granados.IO.SSHProtocolVersionReceiver">
+            <summary>
+            A class reads SSH protocol version
+            </summary>
+        </member>
+        <member name="M:Granados.IO.SSHProtocolVersionReceiver.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Granados.IO.SSHProtocolVersionReceiver.Receive(Granados.IO.PlainSocket,System.Int64)">
+            <summary>
+            Receive version string.
+            </summary>
+            <param name="sock">socket object</param>
+            <param name="timeout">timeout in msec</param>
+            <returns>true if version string was received.</returns>
+        </member>
+        <member name="M:Granados.IO.SSHProtocolVersionReceiver.Verify(Granados.SSHProtocol)">
+            <summary>
+            Verify server version
+            </summary>
+            <param name="protocol">expected protocol version</param>
+            <exception cref="T:Granados.SSHException">server version doesn't match</exception>
+        </member>
+        <member name="P:Granados.IO.SSHProtocolVersionReceiver.Lines">
+            <summary>
+            All lines recevied from the server including the version string.
+            </summary>
+            <remarks>Each string value doesn't contain the new-line characters.</remarks>
+        </member>
+        <member name="P:Granados.IO.SSHProtocolVersionReceiver.ServerVersion">
+            <summary>
+            Version string recevied from the server.
+            </summary>
+            <remarks>The string value doesn't contain the new-line characters.</remarks>
+        </member>
+        <member name="T:Granados.IO.SynchronizedPacketReceiver">
+            <summary>
+            <see cref="T:Granados.IO.IDataHandler"/> implementation that queues received packets.
+            </summary>
+        </member>
+        <member name="F:Granados.IO.SynchronizedPacketReceiver._sync">
+            <summary>
+            Object used for synchronization
+            </summary>
+        </member>
+        <member name="F:Granados.IO.SynchronizedPacketReceiver._socket">
+            <summary>
+            Socket for sending SSH packet
+            </summary>
+        </member>
+        <member name="F:Granados.IO.SynchronizedPacketReceiver._queue">
+            <summary>
+            Queue of <see cref="T:Granados.IO.DataFragment"/> or <see cref="T:System.Exception"/>
+            </summary>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.#ctor(Granados.SSHConnection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="connection">connection object</param>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.#ctor(Granados.IO.IGranadosSocket)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="socket">socket for sending SSH packet</param>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.OnData(Granados.IO.DataFragment)">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.OnClosed">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.OnError(System.Exception)">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+            <param name="error"></param>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.EnqueueDataFragment(Granados.IO.DataFragment)">
+            <summary>
+            Enqueue a copy of the specified <see cref="T:Granados.IO.DataFragment"/>
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.EnqueueError(System.Exception)">
+            <summary>
+            Enqueue the specified <see cref="T:System.Exception"/>
+            </summary>
+            <param name="error"></param>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.SendAndWaitResponse(Granados.IO.DataFragment)">
+            <summary>
+            Send a packet then receive a response.
+            </summary>
+            <param name="data">a packet to be sent</param>
+            <returns>a packet received</returns>
+            <exception cref="T:Granados.SSHException">unprocessed incoming packet exists</exception>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.WaitResponse">
+            <summary>
+            Wait until the next response has been received.
+            </summary>
+            <returns>a packet received</returns>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.ClearQueue">
+            <summary>
+            Clear queue
+            </summary>
+        </member>
+        <member name="T:Granados.IO.SynchronizedPacketReceiver.IQueueEventListener">
+            <summary>
+            An optional interface of the <see cref="T:Granados.IO.DataFragment"/> to be sent
+            for detecting its dequeuing.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.SynchronizedPacketReceiver.IQueueEventListener.Dequeued(System.Boolean)">
+            <summary>
+            Notifies the packet was dequeued
+            </summary>
+            <param name="canceled">true if the packet was discarded.</param>
+        </member>
+        <member name="T:Granados.IO.PlainSocket">
+            <summary>
+            Socket wrapper class that have receiving loop
+            </summary>
+        </member>
+        <member name="F:Granados.IO.PlainSocket._sync">
+            <summary>
+            Object used for synchronization
+            </summary>
+        </member>
+        <member name="F:Granados.IO.PlainSocket._socket">
+            <summary>
+            Underlying .NET socket
+            </summary>
+        </member>
+        <member name="F:Granados.IO.PlainSocket._data">
+            <summary>
+            Object that received data are stored
+            </summary>
+        </member>
+        <member name="F:Granados.IO.PlainSocket._onClosedFired">
+            <summary>
+            Flag for avoiding multiple OnClosed() call
+            </summary>
+        </member>
+        <member name="F:Granados.IO.PlainSocket._asyncReadStarted">
+            <summary>
+            Whether asynchronous receiving was started
+            </summary>
+        </member>
+        <member name="F:Granados.IO.PlainSocket._handler">
+            <summary>
+            Callback handler
+            </summary>
+            <remarks>
+            This should not be null.
+            </remarks>
+        </member>
+        <member name="F:Granados.IO.PlainSocket._socketStatus">
+            <summary>
+            Current status of this object.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PlainSocket.#ctor(System.Net.Sockets.Socket,Granados.IO.IDataHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="socket">socket object (must be already connected)</param>
+            <param name="handler">callback handler (can be null if no handler is specified)</param>
+        </member>
+        <member name="M:Granados.IO.PlainSocket.SetHandler(Granados.IO.IDataHandler)">
+            <summary>
+            Set callback handler.
+            </summary>
+            <param name="handler">handler</param>
+        </member>
+        <member name="M:Granados.IO.PlainSocket.ReadIfAvailable(System.Byte[])">
+            <summary>
+            Read bytes if any data can be read.
+            </summary>
+            <remarks>
+            This method fails if asynchronous receiving is already started by RepeatAsyncRead(). 
+            </remarks>
+            <param name="buf">byte array to store data in.</param>
+            <returns>length of bytes stored</returns>
+        </member>
+        <member name="M:Granados.IO.PlainSocket.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Write data to the socket
+            </summary>
+            <param name="data">byte array that contains data to write</param>
+            <param name="offset">start index of data</param>
+            <param name="length">byte count to write</param>
+        </member>
+        <member name="M:Granados.IO.PlainSocket.Close">
+            <summary>
+            Close connection
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PlainSocket.RepeatAsyncRead">
+            <summary>
+            Start asynchronous receiving cycle.
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PlainSocket.ReceivingThread">
+            <summary>
+            Receiving thread
+            </summary>
+        </member>
+        <member name="M:Granados.IO.PlainSocket.FireOnClosed">
+            <summary>
+            Call OnClosed() callback
+            </summary>
+        </member>
+        <member name="P:Granados.IO.PlainSocket.SocketStatus">
+            <summary>
+            Get status of this object.
+            </summary>
+        </member>
+        <member name="P:Granados.IO.PlainSocket.DataAvailable">
+            <summary>
+            Get whether any received data are available on the socket
+            </summary>
+        </member>
+        <member name="T:Granados.SSH1.SSH1Connection">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSH1.SSH1Channel">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Channel.ResizeTerminal(System.Int32,System.Int32,System.Int32,System.Int32)">
+            resizes the size of terminal
+        </member>
+        <member name="M:Granados.SSH1.SSH1Channel.Transmit(System.Byte[])">
+            transmits channel data 
+        </member>
+        <member name="M:Granados.SSH1.SSH1Channel.Transmit(System.Byte[],System.Int32,System.Int32)">
+            transmits channel data 
+        </member>
+        <member name="M:Granados.SSH1.SSH1Channel.Close">
+            closes this channel
+        </member>
+        <member name="T:Granados.SSH1.SSH1PacketType">
+            <summary>
+            SSH1 Packet type (message number)
+            </summary>
+        </member>
+        <member name="T:Granados.SSH1.ISSH1PacketBuilder">
+            <summary>
+            <see cref="T:Granados.IO.IPacketBuilder"/> specialized for SSH1.
+            </summary>
+        </member>
+        <member name="T:Granados.SSH1.SSH1Packet">
+            <summary>
+            SSH1 packet builder.
+            </summary>
+            <remarks>
+            The instances of this class share single thread-local buffer.
+            You should be careful that only single instance is used while constructing a packet.
+            </remarks>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Packet.#ctor(Granados.SSH1.SSH1PacketType)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type">packet type (message number)</param>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Packet.GetImage(Granados.Crypto.Cipher)">
+            <summary>
+            Gets the binary image of this packet.
+            </summary>
+            <param name="cipher">cipher algorithm, or null if no encryption.</param>
+            <returns>data</returns>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Packet.BuildImage">
+            <summary>
+            Build packet binary data
+            </summary>
+            <returns>a byte buffer</returns>
+        </member>
+        <member name="P:Granados.SSH1.SSH1Packet.Payload">
+            <summary>
+            Implements <see cref="T:Granados.IO.IPacketBuilder"/>
+            </summary>
+        </member>
+        <member name="T:Granados.SSH1.SSH1PayloadImageBuilder">
+            <summary>
+            SSH1 packet payload builder.
+            </summary>
+            <remarks>
+            This class is used for constructing temporary byte image according to the SSH1 format.
+            </remarks>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PayloadImageBuilder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PayloadImageBuilder.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="initialCapacity">initial capacity of the payload buffer.</param>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PayloadImageBuilder.Clear">
+            <summary>
+            Clear the <see cref="P:Granados.SSH1.SSH1PayloadImageBuilder.Payload"/>.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PayloadImageBuilder.GetBytes">
+            <summary>
+            Get content of the <see cref="P:Granados.SSH1.SSH1PayloadImageBuilder.Payload"/>.
+            </summary>
+            <returns>byte array</returns>
+        </member>
+        <member name="P:Granados.SSH1.SSH1PayloadImageBuilder.Payload">
+            <summary>
+            Implements <see cref="T:Granados.IO.IPacketBuilder"/>
+            </summary>
+        </member>
+        <member name="T:Granados.SSH1.SSH1PacketBuilderMixin">
+            <summary>
+            Extension methods for <see cref="T:Granados.SSH1.ISSH1PacketBuilder"/>.
+            </summary>
+            <seealso cref="T:Granados.IO.PacketBuilderMixin"/>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PacketBuilderMixin.WriteBigInteger``1(``0,Granados.Mono.Math.BigInteger)">
+            <summary>
+            Writes BigInteger according to the SSH 1.5 specification
+            </summary>
+            <param name="packet"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:Granados.SSH1.SSH1PacketizerPacketHandler">
+            <summary>
+            A bridge handler that delegates <see cref="T:Granados.SSH1.SSH1Packetizer"/>'s events to <see cref="T:Granados.SSH1.SSH1Connection"/>.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PacketizerPacketHandler.#ctor(Granados.SSH1.SSH1Connection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="connection">SSH1 connection object</param>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PacketizerPacketHandler.OnData(Granados.IO.DataFragment)">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PacketizerPacketHandler.OnError(System.Exception)">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1PacketizerPacketHandler.OnClosed">
+            <summary>
+            Implements <see cref="T:Granados.IO.IDataHandler"/>
+            </summary>
+        </member>
+        <member name="T:Granados.SSH1.SSH1Packetizer">
+            <summary>
+            <see cref="T:Granados.IO.IDataHandler"/> that extracts SSH packet from the data stream
+            and passes it to another <see cref="T:Granados.IO.IDataHandler"/>.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Packetizer.#ctor(Granados.IO.IDataHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="handler">a handler that SSH packets are passed to</param>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Packetizer.SetCipher(Granados.Crypto.Cipher,System.Boolean)">
+            <summary>
+            Set cipher settings.
+            </summary>
+            <param name="cipher">cipher algorithm, or null if not specified.</param>
+            <param name="checkMac">specifies whether CRC check is performed.</param>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Packetizer.FilterData(Granados.IO.DataFragment)">
+            <summary>
+            Implements <see cref="T:Granados.IO.FilterDataHandler"/>.
+            </summary>
+            <param name="data">fragment of the data stream</param>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Packetizer.ProcessBuffer">
+            <summary>
+            Extracts SSH packet from the internal buffer and passes it to the next handler.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH1.SSH1Packetizer.ConstructPacket">
+            <summary>
+            Extracts SSH packet from the internal buffer.
+            </summary>
+            <returns>
+            true if one SSH packet has been extracted.
+            in this case, _packetImage contains Packet Type field and Data field of the SSH packet.
+            </returns>
+        </member>
+        <member name="T:Granados.SSH1.SSH1UserAuthKey">
+            <summary>
+            private key for user authentication
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Granados.SSH1.SSH1UserAuthKey.#ctor(System.String,System.String)">
+            <summary>
+            constructs from file
+            </summary>
+            <param name="path">file name</param>
+            <param name="passphrase">passphrase or empty string if passphrase is not required</param>
+        </member>
+        <member name="T:Granados.SSH2.SSH2Connection">
+            <summary>
+            SSH2
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Connection.#ctor(Granados.SSHConnectionParameter,Granados.IO.IGranadosSocket,Granados.ISSHConnectionEventReceiver,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="param"></param>
+            <param name="strm"></param>
+            <param name="r"></param>
+            <param name="serverVersion"></param>
+            <param name="clientVersion"></param>
+        </member>
+        <member name="T:Granados.SSH2.SSH2Channel">
+            Channel
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSH2.KeyExchanger">
+            Key Exchange
+        </member>
+        <member name="T:Granados.SSH2.SSH2PacketType">
+            <summary>
+            SSH2 Packet type (message number)
+            </summary>
+        </member>
+        <member name="T:Granados.SSH2.SSH2PayloadImageBuilder">
+            <summary>
+            SSH2 packet payload builder.
+            </summary>
+            <remarks>
+            This class is used for constructing temporary byte image according to the SSH2 format.
+            </remarks>
+        </member>
+        <member name="M:Granados.SSH2.SSH2PayloadImageBuilder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2PayloadImageBuilder.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="initialCapacity">initial capacity of the payload buffer.</param>
+        </member>
+        <member name="M:Granados.SSH2.SSH2PayloadImageBuilder.Clear">
+            <summary>
+            Clear the <see cref="P:Granados.SSH2.SSH2PayloadImageBuilder.Payload"/>.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2PayloadImageBuilder.GetBytes">
+            <summary>
+            Get content of the <see cref="P:Granados.SSH2.SSH2PayloadImageBuilder.Payload"/>.
+            </summary>
+            <returns>byte array</returns>
+        </member>
+        <member name="P:Granados.SSH2.SSH2PayloadImageBuilder.Payload">
+            <summary>
+            Implements <see cref="T:Granados.IO.IPacketBuilder"/>
+            </summary>
+        </member>
+        <member name="T:Granados.SSH2.SSH2PacketBuilderMixin">
+            <summary>
+            Extension methods for <see cref="T:Granados.SSH2.ISSH2PacketBuilder"/>.
+            </summary>
+            <seealso cref="T:Granados.IO.PacketBuilderMixin"/>
+        </member>
+        <member name="M:Granados.SSH2.SSH2PacketBuilderMixin.WriteBigInteger``1(``0,Granados.Mono.Math.BigInteger)">
+            <summary>
+            Writes BigInteger according to the SSH 2.0 specification
+            </summary>
+            <param name="packet"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:Granados.SSH2.SSH2Packetizer">
+            <summary>
+            <see cref="T:Granados.IO.IDataHandler"/> that extracts SSH packet from the data stream
+            and passes it to another <see cref="T:Granados.IO.IDataHandler"/>.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packetizer.#ctor(Granados.IO.IDataHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="handler">a handler that SSH packets are passed to</param>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packetizer.SetCipher(Granados.Crypto.Cipher,Granados.Crypto.MAC)">
+            <summary>
+            Set cipher settings.
+            </summary>
+            <param name="cipher">cipher algorithm, or null if not specified.</param>
+            <param name="mac">MAC algorithm, or null if not specified.</param>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packetizer.FilterData(Granados.IO.DataFragment)">
+            <summary>
+            Implements <see cref="T:Granados.IO.FilterDataHandler"/>.
+            </summary>
+            <param name="data">fragment of the data stream</param>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packetizer.ProcessBuffer">
+            <summary>
+            Extracts SSH packet from the internal buffer and passes it to the next handler.
+            </summary>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packetizer.IsMsgNewKeys(Granados.IO.DataFragment)">
+            <summary>
+            Check if a SSH packet is SSH_MSG_NEWKEYS.
+            </summary>
+            <param name="packet">a SSH packet</param>
+            <returns>true if a SSH packet is SSH_MSG_NEWKEYS.</returns>
+        </member>
+        <member name="M:Granados.SSH2.SSH2Packetizer.ConstructPacket">
+            <summary>
+            Extracts SSH packet from the internal buffer.
+            </summary>
+            <returns>
+            true if one SSH packet has been extracted.
+            in this case, _packetImage contains payload part of the SSH packet.
+            </returns>
+        </member>
+        <member name="T:Granados.SSH2.SSH2UserAuthKey">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSH2.SSH2UserAuthKey.SSH2KeyWriter">
+            <summary>
+            Adapter class that adds <see cref="T:Granados.PKI.IKeyWriter"/> functionality to the <see cref="T:Granados.SSH2.ISSH2PacketBuilder"/>.
+            </summary>
+        </member>
+        <member name="T:Granados.SSH2.DisconnectReason">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSH2.ChannelOpenFailureReason">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSHException">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.SSHProtocol">
+            <summary>
+            <ja>SSHプロトコルの種類を示します</ja>
+            <en>Kind of SSH protocol</en>
+            </summary>
+        </member>
+        <member name="F:Granados.SSHProtocol.SSH1">
+            <summary>
+            <ja>SSH1</ja>
+            <en>SSH1</en>
+            </summary>
+        </member>
+        <member name="F:Granados.SSHProtocol.SSH2">
+            <summary>
+            <ja>SSH2</ja>
+            <en>SSH2</en>
+            </summary>
+        </member>
+        <member name="T:Granados.CipherAlgorithm">
+            <summary>
+            <ja>
+            アルゴリズムの種類を示します。
+            </ja>
+            <en>
+            Kind of algorithm
+            </en>
+            </summary>
+        </member>
+        <member name="F:Granados.CipherAlgorithm.TripleDES">
+            <summary>
+            TripleDES
+            </summary>
+        </member>
+        <member name="F:Granados.CipherAlgorithm.Blowfish">
+            <summary>
+            BlowFish
+            </summary>
+        </member>
+        <member name="F:Granados.CipherAlgorithm.AES128">
+            <summary>
+            <ja>AES128（SSH2のみ有効）</ja>
+            <en>AES128（SSH2 only）</en>
+            </summary>
+        </member>
+        <member name="F:Granados.CipherAlgorithm.AES192">
+            <summary>
+            <ja>AES192（SSH2のみ有効）</ja>
+            <en>AES192（SSH2 only）</en>
+            </summary>
+        </member>
+        <member name="F:Granados.CipherAlgorithm.AES256">
+            <summary>
+            <ja>AES256（SSH2のみ有効）</ja>
+            <en>AES256（SSH2 only）</en>
+            </summary>
+        </member>
+        <member name="F:Granados.CipherAlgorithm.AES128CTR">
+            <summary>
+            <ja>AES128-CTR（SSH2のみ有効）</ja>
+            <en>AES128-CTR（SSH2 only）</en>
+            </summary>
+        </member>
+        <member name="F:Granados.CipherAlgorithm.AES192CTR">
+            <summary>
+            <ja>AES192-CTR（SSH2のみ有効）</ja>
+            <en>AES192-CTR（SSH2 only）</en>
+            </summary>
+        </member>
+        <member name="F:Granados.CipherAlgorithm.AES256CTR">
+            <summary>
+            <ja>AES256-CTR（SSH2のみ有効）</ja>
+            <en>AES256-CTR（SSH2 only）</en>
+            </summary>
+        </member>
+        <member name="T:Granados.AuthenticationType">
+            <summary>
+            <ja>認証方式を示します。</ja>
+            <en>Kind of authentification method</en>
+            </summary>
+        </member>
+        <member name="F:Granados.AuthenticationType.PublicKey">
+            <summary>
+            <ja>公開鍵方式</ja>
+            <en>Public key cryptosystem</en>
+            </summary>
+        </member>
+        <member name="F:Granados.AuthenticationType.Password">
+            <summary>
+            <ja>パスワード方式</ja>
+            <en>Password Authentication</en>
+            </summary>
+        </member>
+        <member name="F:Granados.AuthenticationType.KeyboardInteractive">
+            <summary>
+            <ja>キーボードインタラクティブ</ja>
+            <en>KeyboardInteractive</en>
+            </summary>
+        </member>
+        <member name="T:Granados.AuthenticationResult">
+            <summary>
+            <ja>
+            認証結果を示します。
+            </ja>
+            <en>
+            Result of authentication.
+            </en>
+            </summary>
+        </member>
+        <member name="F:Granados.AuthenticationResult.Success">
+            <summary>
+            <ja>成功</ja>
+            <en>Succeed</en>
+            </summary>
+        </member>
+        <member name="F:Granados.AuthenticationResult.Failure">
+            <summary>
+            <ja>失敗</ja>
+            <en>Failed</en>
+            </summary>
+        </member>
+        <member name="F:Granados.AuthenticationResult.Prompt">
+            <summary>
+            <ja>プロンプト</ja>
+            <en>Prompt</en>
+            </summary>
+        </member>
+        <member name="T:Granados.MACAlgorithm">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.KexAlgorithm">
+            <summary>
+            <ja>鍵交換アルゴリズム</ja>
+            <en>key exchange algorighm</en>
+            </summary>
+            <exclude/>
+        </member>
+        <member name="F:Granados.KexAlgorithm.DH_G1_SHA1">
+            <summary>diffie-hellman-group1-sha1 described in RFC4253</summary>
+        </member>
+        <member name="F:Granados.KexAlgorithm.DH_G14_SHA1">
+            <summary>diffie-hellman-group14-sha1 described in RFC4253</summary>
+        </member>
+        <member name="F:Granados.KexAlgorithm.DH_G14_SHA256">
+            <summary>diffie-hellman-group14-sha256 described in draft-ietf-curdle-ssh-kex-sha2</summary>
+        </member>
+        <member name="F:Granados.KexAlgorithm.DH_G16_SHA512">
+            <summary>diffie-hellman-group16-sha512 described in draft-ietf-curdle-ssh-kex-sha2</summary>
+        </member>
+        <member name="F:Granados.KexAlgorithm.DH_G18_SHA512">
+            <summary>diffie-hellman-group18-sha512 described in draft-ietf-curdle-ssh-kex-sha2</summary>
+        </member>
+        <member name="M:Granados.Util.SSHUtil.ClientVersionString(Granados.SSHProtocol)">
+            <summary>
+            Get version string of the Granados.
+            </summary>
+            <param name="p">SSH protocol type</param>
+            <returns>a version string</returns>
+        </member>
+        <member name="M:Granados.Util.SSHUtil.ReadInt32(System.Byte[],System.Int32)">
+            <summary>
+            Read Int32 value in network byte order.
+            </summary>
+            <param name="data">source byte array</param>
+            <param name="offset">index to start reading</param>
+            <returns>Int32 value</returns>
+        </member>
+        <member name="M:Granados.Util.SSHUtil.ReadUInt32(System.Byte[],System.Int32)">
+            <summary>
+            Read UInt32 value in network byte order.
+            </summary>
+            <param name="data">source byte array</param>
+            <param name="offset">index to start reading</param>
+            <returns>UInt32 value</returns>
+        </member>
+        <member name="M:Granados.Util.SSHUtil.WriteIntToByteArray(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Write Int32 value in network byte order.
+            </summary>
+            <param name="dst">byte array to be written</param>
+            <param name="pos">index to start writing</param>
+            <param name="data">Int32 value</param>
+        </member>
+        <member name="M:Granados.Util.SSHUtil.WriteUIntToByteArray(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            Write UInt32 value in network byte order.
+            </summary>
+            <param name="dst">byte array to be written</param>
+            <param name="pos">index to start writing</param>
+            <param name="data">UInt32 value</param>
+        </member>
+        <member name="M:Granados.Util.SSHUtil.ContainsString(System.String[],System.String)">
+            <summary>
+            Check if a string array contains a particular string.
+            </summary>
+            <param name="s">a string array</param>
+            <param name="v">a string</param>
+            <returns>true if <paramref name="s"/> contains <paramref name="v"/>.</returns>
+        </member>
+        <member name="M:Granados.Util.SSHUtil.ByteArrayEqual(System.Byte[],System.Byte[])">
+            <summary>
+            Check if the contents of two byte arrays are identical.
+            </summary>
+            <param name="d1">a byte array</param>
+            <param name="d2">a byte array</param>
+            <returns>true if the contents of two byte arrays are identical.</returns>
+        </member>
+        <member name="M:Granados.Util.SSHUtil.ByteArrayEqual(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Check if the partial contents of two byte arrays are identical.
+            </summary>
+            <param name="d1">a byte array</param>
+            <param name="o1">index of <paramref name="d1"/> to start comparison</param>
+            <param name="d2">a byte array</param>
+            <param name="o2">index of <paramref name="d2"/> to start comparison</param>
+            <param name="len">number of bytes to compare</param>
+            <returns>true if the partial contents of two byte arrays are identical.</returns>
+        </member>
+        <member name="T:Granados.Util.Strings">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.Util.StringResources">
+            <summary>
+            StringResource の概要の説明です。
+            </summary>
+        </member>
+        <member name="T:Granados.Tutorial.Tutorial">
+            Granados Tutorial
+              To learn the usage of Granados, please read the code in this file.
+            <exclude/>
+        </member>
+        <member name="T:Granados.Tutorial.Reader">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Granados.Tutorial.Tracer">
+            <summary>
+            
+            </summary>
+            <exclude/>
+        </member>
+    </members>
+</doc>

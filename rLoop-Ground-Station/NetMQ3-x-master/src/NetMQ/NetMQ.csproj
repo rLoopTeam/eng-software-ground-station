@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82934BAC-07FB-41AC-AE59-46FEE6026A40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetMQ</RootNamespace>
+    <AssemblyName>NetMQ</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\NetMQ.XML</DocumentationFile>
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>NetMQ.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Utils\StopSignaler.cs" />
+    <Compile Include="Core\Utils\Switch.cs" />
+    <Compile Include="DnsEndPoint.cs" />
+    <Compile Include="EmptyArray.cs" />
+    <Compile Include="NetMQConfig.cs" />
+    <Compile Include="INetMQPoller.cs" />
+    <Compile Include="ISocketPollableCollection.cs" />
+    <Compile Include="NetMQActor.cs" />
+    <Compile Include="EventDelegator.cs" />
+    <Compile Include="InProcActors\Actor.cs" />
+    <Compile Include="InProcActors\IShimHandler.cs" />
+    <Compile Include="InProcActors\KnownMessages.cs" />
+    <Compile Include="InProcActors\Shim.cs" />
+    <Compile Include="InterfaceCollection.cs" />
+    <Compile Include="ISocketPollable.cs" />
+    <Compile Include="IReceivingSocket.cs" />
+    <Compile Include="NetMQBeacon.cs" />
+    <Compile Include="NetMQQueue.cs" />
+    <Compile Include="NetMQProactor.cs" />
+    <Compile Include="NetMQPoller.cs" />
+    <Compile Include="NetMQScheduler.cs" />
+    <Compile Include="NetworkOrderBitsConverter.cs" />
+    <Compile Include="OutgoingSocketExtensions.cs" />
+    <Compile Include="ErrorPollingException.cs" />
+    <Compile Include="NetMQFrame.cs" />
+    <Compile Include="IOutgoingSocket.cs" />
+    <Compile Include="Monitoring\NetMQMonitorEventArgs.cs" />
+    <Compile Include="NetMQMessage.cs" />
+    <Compile Include="NetMQSocket.cs" />
+    <Compile Include="NetMQContext.cs" />
+    <Compile Include="NetMQSocketEventArgs.cs" />
+    <Compile Include="Poller.cs" />
+    <Compile Include="ReceivingSocketExtensions.cs" />
+    <Compile Include="Security\NetMQSecurityException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\CipherSuite.cs" />
+    <Compile Include="Security\V0_1\ContentType.cs" />
+    <Compile Include="Security\V0_1\HandshakeLayer.cs" />
+    <Compile Include="Security\V0_1\HandshakeMessages\ClientHelloMessage.cs" />
+    <Compile Include="Security\V0_1\HandshakeMessages\FinishedMessage.cs" />
+    <Compile Include="Security\V0_1\HandshakeMessages\HandshakeMessage.cs" />
+    <Compile Include="Security\V0_1\HandshakeMessages\CertificateMessage.cs" />
+    <Compile Include="Security\V0_1\HandshakeMessages\ServerHelloDoneMessage.cs" />
+    <Compile Include="Security\V0_1\HandshakeMessages\ServerHelloMessage.cs" />
+    <Compile Include="Security\V0_1\HandshakeMessages\ClientKeyExchangeMessage.cs" />
+    <Compile Include="Security\ISecureChannel.cs" />
+    <Compile Include="Security\V0_1\OutgoingMessageBag.cs" />
+    <Compile Include="Security\V0_1\RecordLayer.cs" />
+    <Compile Include="Security\V0_1\SecureChannel.cs" />
+    <Compile Include="Security\V0_1\SecurityParameters.cs" />
+    <Compile Include="Security\V0_1\SHA256PRF.cs" />
+    <Compile Include="Sockets\DealerSocket.cs" />
+    <Compile Include="Devices\DeviceBase.cs" />
+    <Compile Include="Devices\DeviceMode.cs" />
+    <Compile Include="Devices\DeviceRunner.cs" />
+    <Compile Include="Devices\DeviceSocketSetup.cs" />
+    <Compile Include="Devices\ForwarderDevice.cs" />
+    <Compile Include="Devices\IDevice.cs" />
+    <Compile Include="Devices\QueueDevice.cs" />
+    <Compile Include="Devices\StreamerDevice.cs" />
+    <Compile Include="Devices\ThreadedDeviceRunner.cs" />
+    <Compile Include="Monitoring\NetMQMonitor.cs" />
+    <Compile Include="NetMQException.cs" />
+    <Compile Include="Sockets\PairSocket.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy.cs" />
+    <Compile Include="Sockets\PublisherSocket.cs" />
+    <Compile Include="Sockets\PullSocket.cs" />
+    <Compile Include="Sockets\PushSocket.cs" />
+    <Compile Include="Sockets\RequestSocket.cs" />
+    <Compile Include="Sockets\ResponseSocket.cs" />
+    <Compile Include="Sockets\RouterSocket.cs" />
+    <Compile Include="SocketOptions.cs" />
+    <Compile Include="Sockets\StreamSocket.cs" />
+    <Compile Include="Sockets\SubscriberSocket.cs" />
+    <Compile Include="Sockets\XPublisherSocket.cs" />
+    <Compile Include="Sockets\XSubscriberSocket.cs" />
+    <Compile Include="NetMQTimer.cs" />
+    <Compile Include="ZmqNamespacePlaceholder.cs" />
+    <Compile Include="Core\Address.cs" />
+    <Compile Include="Endianness.cs" />
+    <Compile Include="SendReceiveOptions.cs" />
+    <Compile Include="SocketEvents.cs" />
+    <Compile Include="PollEvents.cs" />
+    <Compile Include="Core\Utils\AtomicCounter.cs" />
+    <Compile Include="Blob.cs" />
+    <Compile Include="BufferPool.cs" />
+    <Compile Include="Core\Utils\ByteArrayEqualityComparer.cs" />
+    <Compile Include="Core\Utils\StringLib.cs" />
+    <Compile Include="Core\Utils\Selector.cs" />
+    <Compile Include="Core\Transports\ByteArraySegment.cs" />
+    <Compile Include="Core\Utils\Clock.cs" />
+    <Compile Include="Core\Command.cs" />
+    <Compile Include="Core\CommandType.cs" />
+    <Compile Include="Core\Config.cs" />
+    <Compile Include="Core\Ctx.cs" />
+    <Compile Include="Core\Patterns\Dealer.cs" />
+    <Compile Include="Core\Transports\V1Decoder.cs" />
+    <Compile Include="Core\Transports\DecoderBase.cs" />
+    <Compile Include="Core\Patterns\Utils\ArrayExtensions.cs" />
+    <Compile Include="Core\Patterns\Utils\Distribution.cs" />
+    <Compile Include="Core\Transports\V1Encoder.cs" />
+    <Compile Include="Core\Transports\EncoderBase.cs" />
+    <Compile Include="ErrorCode.cs" />
+    <Compile Include="Core\ErrorHelper.cs" />
+    <Compile Include="Core\Transports\IDecoder.cs" />
+    <Compile Include="Core\Transports\IEncoder.cs" />
+    <Compile Include="Core\Transports\IEngine.cs" />
+    <Compile Include="Core\IMsgSink.cs" />
+    <Compile Include="Core\IMsgSource.cs" />
+    <Compile Include="Core\IOObject.cs" />
+    <Compile Include="Core\IOThread.cs" />
+    <Compile Include="Core\Transports\Ipc\IpcAddress.cs" />
+    <Compile Include="Core\Transports\Ipc\IpcConnector.cs" />
+    <Compile Include="Core\Transports\Ipc\IpcListener.cs" />
+    <Compile Include="Core\IPollEvents.cs" />
+    <Compile Include="Core\IProactorEvents.cs" />
+    <Compile Include="Core\ITimerEvent.cs" />
+    <Compile Include="Core\Patterns\Utils\FairQueueing.cs" />
+    <Compile Include="Core\Patterns\Utils\LoadBalancer.cs" />
+    <Compile Include="Core\Mailbox.cs" />
+    <Compile Include="Core\MonitorEvent.cs" />
+    <Compile Include="Msg.cs" />
+    <Compile Include="Core\Patterns\Utils\MultiTrie.cs" />
+    <None Include="NetMQ.nuspec" />
+    <None Include="NetMQ.snk" />
+    <Compile Include="Core\Utils\OpCode.cs" />
+    <Compile Include="Core\Options.cs" />
+    <Compile Include="Core\Own.cs" />
+    <Compile Include="Core\Patterns\Pair.cs" />
+    <Compile Include="Core\Transports\Pgm\PgmAddress.cs" />
+    <Compile Include="Core\Transports\Pgm\PgmListener.cs" />
+    <Compile Include="Core\Transports\Pgm\PgmSender.cs" />
+    <Compile Include="Core\Transports\Pgm\PgmSession.cs" />
+    <Compile Include="Core\Transports\Pgm\PgmSocket.cs" />
+    <Compile Include="Core\Pipe.cs" />
+    <Compile Include="Core\Utils\Poller.cs" />
+    <Compile Include="Core\Utils\PollerBase.cs" />
+    <Compile Include="Core\Utils\Proactor.cs" />
+    <Compile Include="Core\Patterns\Pub.cs" />
+    <Compile Include="Core\Patterns\Pull.cs" />
+    <Compile Include="Core\Patterns\Push.cs" />
+    <Compile Include="Core\Transports\RawDecoder.cs" />
+    <Compile Include="Core\Transports\RawEncoder.cs" />
+    <Compile Include="Core\Reaper.cs" />
+    <Compile Include="Core\Patterns\Rep.cs" />
+    <Compile Include="Core\Patterns\Req.cs" />
+    <Compile Include="Core\Patterns\Router.cs" />
+    <Compile Include="Core\SessionBase.cs" />
+    <Compile Include="Core\Utils\Signaler.cs" />
+    <Compile Include="Core\SocketBase.cs" />
+    <Compile Include="Core\Patterns\Stream.cs" />
+    <Compile Include="Core\Transports\StreamEngine.cs" />
+    <Compile Include="Core\Patterns\Sub.cs" />
+    <Compile Include="Core\Transports\Tcp\TcpAddress.cs" />
+    <Compile Include="Core\Transports\Tcp\TcpConnector.cs" />
+    <Compile Include="Core\Transports\Tcp\TcpListener.cs" />
+    <Compile Include="Core\Patterns\Utils\Trie.cs" />
+    <Compile Include="Core\Transports\V2Decoder.cs" />
+    <Compile Include="Core\Transports\V2Encoder.cs" />
+    <Compile Include="Core\Transports\V2Protocol.cs" />
+    <Compile Include="Core\Patterns\XPub.cs" />
+    <Compile Include="Core\Patterns\XSub.cs" />
+    <Compile Include="Core\Utils\SocketUtility.cs" />
+    <Compile Include="Core\YPipe.cs" />
+    <Compile Include="Core\Utils\YQueue.cs" />
+    <Compile Include="ZmqSocketType.cs" />
+    <Compile Include="Core\ZmqSocketOption.cs" />
+    <Compile Include="Core\ZObject.cs" />
+    <None Include="packages.NetMQ.config" />
+    <Compile Include="SendReceiveConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AsyncIO-b7100a54ec55d3b3fdb9334d1f46a2ec5a070c0a\Source\AsyncIO\AsyncIO.csproj">
+      <Project>{3830b7a3-0225-4fda-b155-e085e183650c}</Project>
+      <Name>AsyncIO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

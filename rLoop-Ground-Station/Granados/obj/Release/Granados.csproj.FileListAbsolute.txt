@@ -1,0 +1,8 @@
+C:\Users\David\Documents\poderosa-master\bin\Release\Granados.XML
+C:\Users\David\Documents\poderosa-master\bin\Release\Granados.dll
+C:\Users\David\Documents\poderosa-master\bin\Release\Granados.pdb
+C:\Users\David\Documents\poderosa-master\Granados\obj\Release\Granados.strings.resources
+C:\Users\David\Documents\poderosa-master\Granados\obj\Release\Granados.strings_ja.resources
+C:\Users\David\Documents\poderosa-master\Granados\obj\Release\Granados.csproj.GenerateResource.Cache
+C:\Users\David\Documents\poderosa-master\Granados\obj\Release\Granados.dll
+C:\Users\David\Documents\poderosa-master\Granados\obj\Release\Granados.pdb
