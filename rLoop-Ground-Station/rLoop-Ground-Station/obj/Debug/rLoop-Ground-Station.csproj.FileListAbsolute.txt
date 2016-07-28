@@ -19,3 +19,4 @@ C:\Users\David\Documents\Visual Studio 2013\Projects\rLoop-Ground-Station\rLoop-
 C:\Users\David\Documents\Visual Studio 2013\Projects\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.pdb
 C:\Users\David\Documents\Visual Studio 2013\Projects\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.PodStateControl.resources
 C:\Users\David\Documents\Visual Studio 2013\Projects\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.rPodSpeedometer.resources
+C:\GitHub\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\rLoop-Ground-Station.exe.config
