@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
 
 
 namespace rLoop_Ground_Station
@@ -97,6 +99,84 @@ namespace rLoop_Ground_Station
                 }
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            podStateControl2.HE1Height = trackBar1.Value;
+            podStateControl2.HE2Height = trackBar1.Value;
+            podStateControl2.HE3Height = trackBar1.Value;
+            podStateControl2.HE4Height = trackBar1.Value;
+            podStateControl2.HE5Height = trackBar1.Value;
+            podStateControl2.HE6Height = trackBar1.Value;
+            podStateControl2.HE7Height = trackBar1.Value;
+            podStateControl2.HE8Height = trackBar1.Value;
+        }
+
+        private void trackBar4_Scroll(object sender, EventArgs e)
+        {
+            podStateControl2.HE1Percent = trackBar4.Value / 100.0;
+            podStateControl2.HE2Percent = trackBar4.Value / 100.0;
+            podStateControl2.HE3Percent = trackBar4.Value / 100.0;
+            podStateControl2.HE4Percent = trackBar4.Value / 100.0;
+            podStateControl2.HE5Percent = trackBar4.Value / 100.0;
+            podStateControl2.HE6Percent = trackBar4.Value / 100.0;
+            podStateControl2.HE7Percent = trackBar4.Value / 100.0;
+            podStateControl2.HE8Percent = trackBar4.Value / 100.0;
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            podStateControl2.HE1RPM = trackBar2.Value;
+            podStateControl2.HE2RPM = trackBar2.Value;
+            podStateControl2.HE3RPM = trackBar2.Value;
+            podStateControl2.HE4RPM = trackBar2.Value;
+            podStateControl2.HE5RPM = trackBar2.Value;
+            podStateControl2.HE6RPM = trackBar2.Value;
+            podStateControl2.HE7RPM = trackBar2.Value;
+            podStateControl2.HE8RPM = trackBar2.Value;
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            podStateControl2.HE1Power = trackBar3.Value;
+            podStateControl2.HE2Power = trackBar3.Value;
+            podStateControl2.HE3Power = trackBar3.Value;
+            podStateControl2.HE4Power = trackBar3.Value;
+            podStateControl2.HE5Power = trackBar3.Value;
+            podStateControl2.HE6Power = trackBar3.Value;
+            podStateControl2.HE7Power = trackBar3.Value;
+            podStateControl2.HE8Power = trackBar3.Value;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            double newP = (podStateControl2.HE1Percent + .01) ;
+            if(newP > 1)
+                newP = 0;
+            podStateControl2.HE1Percent = newP;
+            podStateControl2.HE2Percent = newP;
+            podStateControl2.HE3Percent = newP;
+            podStateControl2.HE4Percent = newP;
+            podStateControl2.HE5Percent = newP;
+            podStateControl2.HE6Percent = newP;
+            podStateControl2.HE7Percent = newP;
+            podStateControl2.HE8Percent = newP;
+        }
+
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+            tabControl1.Size = new Size(Form1.ActiveForm.Width-28, Form1.ActiveForm.Height-28);
+            tabControl1.Location = new Point(5, 5);
+        }
+
     }
 
 
