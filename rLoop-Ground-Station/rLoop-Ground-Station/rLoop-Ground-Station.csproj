@@ -32,8 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +65,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="rLoopTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rLoopTabControl.Designer.cs">
+      <DependentUpon>rLoopTabControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="rPodNetworking.cs" />
     <Compile Include="rPodSpeedometer.cs">
       <SubType>UserControl</SubType>
@@ -80,6 +89,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rLoopTabControl.resx">
+      <DependentUpon>rLoopTabControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rPodSpeedometer.resx">
       <DependentUpon>rPodSpeedometer.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +109,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CustomTabControl\CustomTabControl.csproj">
+      <Project>{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}</Project>
+      <Name>CustomTabControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetMQ3-x-master\src\NetMQ\NetMQ.csproj">
       <Project>{82934bac-07fb-41ac-ae59-46fee6026a40}</Project>
       <Name>NetMQ</Name>

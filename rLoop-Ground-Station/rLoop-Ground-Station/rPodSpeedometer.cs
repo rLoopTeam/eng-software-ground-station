@@ -7,16 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace rLoop_Ground_Station
 {
     public partial class rPodSpeedometer : UserControl
     {
+
         public rPodSpeedometer()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
         }
+
+        public double currentSpeed = 0;
+        public double maxSpeed=450;
 
         private void rPodSpeedometer_Load(object sender, EventArgs e)
         {
@@ -26,8 +31,6 @@ namespace rLoop_Ground_Station
         {
             return new Tuple<double,double>(r*Math.Cos(degree*(2*Math.PI)/360)+x,
                 r * Math.Sin(degree * (2 * Math.PI) / 360)+y);
-
-        
         }
 
 
@@ -39,43 +42,78 @@ namespace rLoop_Ground_Station
             Font drawFont = new Font("Arial", 12);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
+            int size = this.Size.Width > this.Size.Height ? this.Size.Height : this.Size.Width;
 
-            float smallArcHeight = this.Height / 2;
-            float smallArcWidth = this.Width / 2;
-            float smallArcCenterX = this.Width / 2;
-            float smallArcCenterY = this.Height / 2;
+            float smallArcHeight = size / 2;
+            float smallArcWidth = size / 2;
+            float smallArcCenterX = size / 2;
+            float smallArcCenterY = size / 2;
 
-            e.Graphics.DrawArc(new System.Drawing.Pen(Color.White, 2), smallArcCenterX - smallArcWidth/2, smallArcCenterY - smallArcHeight/2, smallArcWidth, smallArcHeight, 135, 270);
-            double majorRin = this.Width/4+30;
-            double majorRout = this.Width/4+50;
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.FromArgb(125,255,255,255), 2), smallArcCenterX - smallArcWidth/2, smallArcCenterY - smallArcHeight/2, smallArcWidth, smallArcHeight, 135, 270);
+            double majorRin = size / 2.5;
+            double majorRout = majorRin + size/20 ;
 
             int beginDeg = 135;
             int endDeg = beginDeg+270;
-            int numOfTicks = 41;
+            int numOfTicks = 46;
             int major = 5;
             float degSep = ((float)endDeg - beginDeg) / (float)(numOfTicks-1);
 
+            Font textFont = new Font("Arial", size/30);
+            SolidBrush textBrush = new SolidBrush(Color.White);
 
             for (int i = 0; i < numOfTicks; i++)
             {
                 
                 if(i%major == 0){
-                    Tuple<double, double> innerPoint = polarToLinear(majorRin, (int)( (float)beginDeg + degSep*i), this.Size.Width / 2, this.Size.Height / 2);
-                    Tuple<double, double> outerPoint = polarToLinear(majorRout, (int)((float)beginDeg + degSep * i), this.Size.Width / 2, this.Size.Height / 2);
+                    Tuple<double, double> innerPoint = polarToLinear(majorRin, (int)((float)beginDeg + degSep * i), size / 2, size / 2);
+                    Tuple<double, double> outerPoint = polarToLinear(majorRout, (int)((float)beginDeg + degSep * i), size / 2, size / 2);
                     e.Graphics.DrawLine(new System.Drawing.Pen(Color.White, 3), new Point((int)innerPoint.Item1, (int)innerPoint.Item2), new Point((int)outerPoint.Item1, (int)outerPoint.Item2));
+
+                    Tuple<double, double> innerTextPoint = polarToLinear((majorRin+size/4)/2, (int)((float)beginDeg + degSep * i), size / 2, size / 2);
+                    int speedPoint = (int)((maxSpeed / (numOfTicks - 1)) * i);
+                    SizeF textSize = e.Graphics.MeasureString(speedPoint.ToString(), textFont);
+                    e.Graphics.DrawString(speedPoint.ToString(), textFont, textBrush, new Point((int)innerTextPoint.Item1 - (int)textSize.Width / 2, (int)innerTextPoint.Item2 - (int)textSize.Height / 2));
                 }
 
                 else
                 {
-                    Tuple<double, double> innerPoint = polarToLinear(majorRin + 5, (int)((float)beginDeg + degSep * i), this.Size.Width / 2, this.Size.Height / 2);
-                    Tuple<double, double> outerPoint = polarToLinear(majorRout - 5, (int)((float)beginDeg + degSep * i), this.Size.Width / 2, this.Size.Height / 2);
-                    e.Graphics.DrawLine(new System.Drawing.Pen(Color.White, 1), new Point((int)innerPoint.Item1, (int)innerPoint.Item2), new Point((int)outerPoint.Item1, (int)outerPoint.Item2));
+                    Tuple<double, double> innerPoint = polarToLinear(majorRin + 3, (int)((float)beginDeg + degSep * i), size / 2, size / 2);
+                    Tuple<double, double> outerPoint = polarToLinear(majorRout - 3, (int)((float)beginDeg + degSep * i), size / 2, size / 2);
+                    e.Graphics.DrawLine(new System.Drawing.Pen(Color.FromArgb(125, 255,255, 255), 2), new Point((int)innerPoint.Item1, (int)innerPoint.Item2), new Point((int)outerPoint.Item1, (int)outerPoint.Item2));
                 }
             }
 
-            double value = .3;
-            Tuple<double, double> speedPos = polarToLinear(this.Width/4, ((double)endDeg - beginDeg) * value + beginDeg, this.Width / 2, this.Height / 2);
-            fillCircle(e.Graphics,new SolidBrush(Color.Orange),(float)speedPos.Item1,(float)speedPos.Item2,(float)5.0);
+            double value = currentSpeed/maxSpeed;
+            Tuple<double, double> speedPos = polarToLinear(size / 4, ((double)endDeg - beginDeg) * value + beginDeg, size / 2, size / 2);
+//            f0 a1 0a
+
+            Font bigSpeedFont = new Font("Arial", size/13);
+            SolidBrush bigSpeedBrush = new SolidBrush(Color.White);
+            SizeF bigSpeedTextSize = e.Graphics.MeasureString("km/h",bigSpeedFont);
+            e.Graphics.DrawString("km/h", bigSpeedFont, bigSpeedBrush, (float)( size / 2 - bigSpeedTextSize.Width / 2),(float)( size * .57 - bigSpeedTextSize.Height / 2));
+
+            bigSpeedTextSize = e.Graphics.MeasureString(currentSpeed.ToString(), bigSpeedFont);
+            e.Graphics.DrawString(currentSpeed.ToString(), bigSpeedFont, bigSpeedBrush, (float)(size / 2 - bigSpeedTextSize.Width / 2), (float)(size*.43 - bigSpeedTextSize.Height / 2));
+
+            Rectangle bounds = new Rectangle((int)speedPos.Item1 - 45,(int)speedPos.Item2 - 45,90,90);
+            using (var ellipsePath = new GraphicsPath())
+            {
+                ellipsePath.AddEllipse(bounds);
+                using (var brush = new PathGradientBrush(ellipsePath))
+                {
+                    brush.CenterPoint = new PointF(bounds.Width/2f + bounds.X, bounds.Height/2f + bounds.Y);
+                    brush.CenterColor = Color.FromArgb(150,0xf0,0xa1,0x0a);
+                    brush.SurroundColors = new[] { Color.FromArgb(0,0xf0,0xa1,0x0a)};
+                    brush.FocusScales = new PointF(0, 0);
+
+                    e.Graphics.FillRectangle(brush, bounds);
+                }
+            }
+
+            fillCircle(e.Graphics, new SolidBrush(Color.FromArgb(0xf0, 0xa1, 0x0a)), (float)speedPos.Item1, (float)speedPos.Item2, (float)5.0);
+            
+
         }   
 
         public void fillCircle(Graphics g, Brush brush, float centerX, float centerY, float radius)

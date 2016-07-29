@@ -41,7 +41,7 @@ namespace rLoop_Ground_Station
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -173,11 +173,20 @@ namespace rLoop_Ground_Station
 
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
-            tabControl1.Size = new Size(Form1.ActiveForm.Width-28, Form1.ActiveForm.Height-28);
-            tabControl1.Location = new Point(5, 5);
+            rLoopTabControl.Size = new Size(Form1.ActiveForm.Width-28, Form1.ActiveForm.Height-50);
+            rLoopTabControl.Location = new Point(5, 5);
+        }
+
+        private void trackBar5_Scroll(object sender, EventArgs e)
+        {
+            rPodSpeedometer1.currentSpeed = trackBar5.Value;
+            rPodSpeedometer1.Refresh();
+        }
+
+        private void rLoopTabControl_MouseDown(object sender, MouseEventArgs e)
+        {
+
         }
 
     }
-
-
 }
