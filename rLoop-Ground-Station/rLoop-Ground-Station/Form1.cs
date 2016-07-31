@@ -173,8 +173,8 @@ namespace rLoop_Ground_Station
 
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
-            rLoopTabControl.Size = new Size(Form1.ActiveForm.Width-28, Form1.ActiveForm.Height-50);
-            rLoopTabControl.Location = new Point(5, 5);
+            customTabControl1.Size = new Size(Form1.ActiveForm.Width-28, Form1.ActiveForm.Height-50);
+            customTabControl1.Location = new Point(5, 5);
         }
 
         private void trackBar5_Scroll(object sender, EventArgs e)
