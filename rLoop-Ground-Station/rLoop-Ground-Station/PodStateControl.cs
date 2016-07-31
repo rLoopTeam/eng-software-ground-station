@@ -122,11 +122,6 @@ namespace rLoop_Ground_Station
             backgroundBuffer = new Bitmap(this.Size.Width, this.Size.Height);
             Graphics g = Graphics.FromImage(backgroundBuffer);
 
-            System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", 12);
-            SolidBrush drawBrush = new SolidBrush(Color.White);
-
-
             double imageRatio = (double)podOutlineImage.Height / podOutlineImage.Width;
             int imageWidth1 = (int)(this.Size.Height / imageRatio);
             int imageHeight1 = this.Size.Height;
@@ -144,6 +139,10 @@ namespace rLoop_Ground_Station
                 finalOutlineWidth = imageWidth2;
                 finalOutlineHeight = imageHeight2;
             }
+
+            System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
+            Font drawFont = new Font("Arial", finalOutlineHeight/40);
+            SolidBrush drawBrush = new SolidBrush(Color.White);
 
             g.DrawImage(podOutlineImage, new Rectangle(new Point(this.Width / 2 - finalOutlineWidth / 2, 0), new Size(finalOutlineWidth, finalOutlineHeight)));
 
@@ -223,13 +222,10 @@ namespace rLoop_Ground_Station
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", 12);
-            SolidBrush drawBrush = new SolidBrush(Color.White);
 
-           // if (_isNewSize())
+           if (_isNewSize())
                 redrawBackground();
-           // if (backgroundBuffer != null)
+           if (backgroundBuffer != null)
                 e.Graphics.DrawImageUnscaled(backgroundBuffer, 0, 0);
 
             //Draw the pod outline in the middle of the control
@@ -251,6 +247,10 @@ namespace rLoop_Ground_Station
                 finalOutlineWidth = imageWidth2;
                 finalOutlineHeight = imageHeight2;
             }
+
+            System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
+            Font drawFont = new Font("Arial", finalOutlineHeight / 40);
+            SolidBrush drawBrush = new SolidBrush(Color.White);
 
             double firstRow = .11;
             double secondRow = .23;

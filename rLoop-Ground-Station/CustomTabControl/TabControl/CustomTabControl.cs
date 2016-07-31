@@ -685,12 +685,12 @@ namespace System.Windows.Forms
 
 		protected override void OnPaint(PaintEventArgs e){
 			//	We must always paint the entire area of the tab control
-			if (e.ClipRectangle.Equals(this.ClientRectangle)){
+			//if (e.ClipRectangle.Equals(this.ClientRectangle)){
 				this.CustomPaint(e.Graphics);
-			} else {
+			//} else {
 				//	it is less intensive to just reinvoke the paint with the whole surface available to draw on.
-				this.Invalidate();
-			}
+			//	this.Invalidate();
+			//}
 		}
 		
 		private void CustomPaint(Graphics screenGraphics){

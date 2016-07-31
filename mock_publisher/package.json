@@ -1,9 +1,0 @@
-{
-  "main": "mock_publisher.js",
-  "scripts": {
-    "start": "node mock_publisher.js"
-  },
-  "dependencies": {
-    "zmq": "2.15.2"
-  }
-}
