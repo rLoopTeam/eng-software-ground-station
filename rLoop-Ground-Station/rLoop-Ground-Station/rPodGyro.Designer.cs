@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing.Drawing2D;
-namespace rLoop_Ground_Station
+﻿namespace rLoop_Ground_Station
 {
-    partial class rLoopTabControl
+    partial class rPodGyro
     {
         /// <summary> 
         /// Required designer variable.
@@ -40,15 +30,15 @@ namespace rLoop_Ground_Station
         {
             this.SuspendLayout();
             // 
-            // rLoopTabControl
+            // rPodGyro
             // 
-            this.Name = "rLoopTabControl";
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "rPodGyro";
+            this.Load += new System.EventHandler(this.rPodGyro_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.rPodGyro_Paint);
             this.ResumeLayout(false);
 
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
         }
 
         #endregion

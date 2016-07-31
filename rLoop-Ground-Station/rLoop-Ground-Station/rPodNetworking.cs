@@ -8,7 +8,6 @@ using System.Net.Sockets;
 using System.ComponentModel;
 using System.Threading;
 using System.IO;
-using System.Threading;
 using System.Diagnostics;
 using System.Globalization;
 using Newtonsoft.Json;
@@ -23,13 +22,16 @@ namespace rLoop_Ground_Station
         public List<nodeItem> activeNodes;
         public nodeParameterDescription nodeParameterData;
         public List<LatestNodeDataNode> LatestNodeData;
+        public bool isRunning;
 
         public rPodNetworking()
         {
+            isRunning = true;
             activeNodes = new List<nodeItem>();
             nodeParameterData = new nodeParameterDescription();
             ZMQTelemetryProcessor.NetworkClass = this;
             LatestNodeData = new List<LatestNodeDataNode>();
+            
         }
 
         public void ProcessZMQTelemetryFrame(string frame)
@@ -78,7 +80,8 @@ namespace rLoop_Ground_Station
                 newThread.Start();
             }
 
-            u.BeginReceive(new AsyncCallback(ReceiveCallback), ((UdpState)(ar.AsyncState)));
+            if (isRunning)
+                u.BeginReceive(new AsyncCallback(ReceiveCallback), ((UdpState)(ar.AsyncState)));
         }
 
         public void beginUDPListen()
@@ -93,8 +96,8 @@ namespace rLoop_Ground_Station
                 s.u = u;
 
                 Console.WriteLine("listening for messages");
+            if(isRunning)
                 u.BeginReceive(new AsyncCallback(ReceiveCallback), s);
-
         }
 
         public void uploadFile(string host_ip, string username, string password, string localFile, string remoteFile)

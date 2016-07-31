@@ -188,5 +188,10 @@ namespace rLoop_Ground_Station
 
         }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            net.isRunning = false;
+        }
+
     }
 }

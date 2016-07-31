@@ -103,144 +103,236 @@ namespace rLoop_Ground_Station
         public double HE7Power { get { return _HE7Power; } set { _HE7Power = value; this.Refresh(); } }
         public double HE8Power { get { return _HE8Power; } set { _HE8Power = value; this.Refresh(); } }
 
-#endregion
+        #endregion
+
+        int _lastWidth = 0;
+        int _lastHeight = 0;
+        Bitmap backgroundBuffer;
+
+        private bool _isNewSize()
+        {
+            bool ret = _lastWidth != this.Size.Width || _lastHeight != this.Size.Height;
+            _lastWidth = this.Size.Width;
+            _lastHeight = this.Size.Height;
+            return ret;
+        }
+
+        private void redrawBackground()
+        {
+            backgroundBuffer = new Bitmap(this.Size.Width, this.Size.Height);
+            Graphics g = Graphics.FromImage(backgroundBuffer);
+
+            System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
+            Font drawFont = new Font("Arial", 12);
+            SolidBrush drawBrush = new SolidBrush(Color.White);
+
+
+            double imageRatio = (double)podOutlineImage.Height / podOutlineImage.Width;
+            int imageWidth1 = (int)(this.Size.Height / imageRatio);
+            int imageHeight1 = this.Size.Height;
+            int imageWidth2 = this.Size.Width;
+            int imageHeight2 = (int)(this.Size.Width * imageRatio);
+            int finalOutlineWidth;
+            int finalOutlineHeight;
+            if (imageWidth1 <= this.Size.Width)
+            {
+                finalOutlineWidth = imageWidth1;
+                finalOutlineHeight = imageHeight1;
+            }
+            else
+            {
+                finalOutlineWidth = imageWidth2;
+                finalOutlineHeight = imageHeight2;
+            }
+
+            g.DrawImage(podOutlineImage, new Rectangle(new Point(this.Width / 2 - finalOutlineWidth / 2, 0), new Size(finalOutlineWidth, finalOutlineHeight)));
+
+            double firstRow = .11;
+            double secondRow = .23;
+            double thirdRow = .66;
+            double fourthRow = .76;
+            double Column1Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
+            double Column2Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
+            double Column1RPM = 2 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
+            double Column2RPM = 2 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
+            double Column1Power = 3 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
+            double Column2Power = 3 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
+
+            int HECirclesSize = (int)((double)finalOutlineWidth / 4.5);
+
+            int HE1CenterX = (int)((double)finalOutlineWidth * .250) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE2CenterX = (int)((double)finalOutlineWidth * .252) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE3CenterX = (int)((double)finalOutlineWidth * .255) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE4CenterX = (int)((double)finalOutlineWidth * .255) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE5CenterX = (int)((double)finalOutlineWidth * .757) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE6CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE7CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE8CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
+
+            int HE1CenterY = (int)((double)finalOutlineHeight * .155);
+            int HE2CenterY = (int)((double)finalOutlineHeight * .273);
+            int HE3CenterY = (int)((double)finalOutlineHeight * .695);
+            int HE4CenterY = (int)((double)finalOutlineHeight * .81);
+            int HE5CenterY = (int)((double)finalOutlineHeight * .81);
+            int HE6CenterY = (int)((double)finalOutlineHeight * .695);
+            int HE7CenterY = (int)((double)finalOutlineHeight * .273);
+            int HE8CenterY = (int)((double)finalOutlineHeight * .157);
+
+            int lineSpaceing = drawFont.Height + 2;
+
+            //HE 1 Text
+            g.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column1Height - (g.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
+            g.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column1RPM - (g.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
+            g.DrawString("Power", drawFont, drawBrush, new Point((int)(Column1Power - (g.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
+
+            //HE 2 Text
+            g.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column1Height - (g.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
+            g.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column1RPM - (g.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
+            g.DrawString("Power", drawFont, drawBrush, new Point((int)(Column1Power - (g.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
+
+            //HE 3 Text
+            g.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column1Height - (g.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
+            g.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column1RPM - (g.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
+            g.DrawString("Power", drawFont, drawBrush, new Point((int)(Column1Power - (g.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
+
+            //HE 4 Text
+            g.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column1Height - (g.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
+            g.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column1RPM - (g.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
+            g.DrawString("Power", drawFont, drawBrush, new Point((int)(Column1Power - (g.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
+
+            //HE 5 Text
+            g.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column2Height - (g.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
+            g.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column2RPM - (g.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
+            g.DrawString("Power", drawFont, drawBrush, new Point((int)(Column2Power - (g.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
+
+            //HE 6 Text
+            g.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column2Height - (g.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
+            g.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column2RPM - (g.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
+            g.DrawString("Power", drawFont, drawBrush, new Point((int)(Column2Power - (g.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
+
+            //HE 7 Text
+            g.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column2Height - (g.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
+            g.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column2RPM - (g.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
+            g.DrawString("Power", drawFont, drawBrush, new Point((int)(Column2Power - (g.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
+
+            //HE 8 Text
+            g.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column2Height - (g.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
+            g.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column2RPM - (g.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
+            g.DrawString("Power", drawFont, drawBrush, new Point((int)(Column2Power - (g.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
+        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
+            Font drawFont = new Font("Arial", 12);
+            SolidBrush drawBrush = new SolidBrush(Color.White);
+
+            if (_isNewSize())
+                redrawBackground();
+            if (backgroundBuffer != null)
+                e.Graphics.DrawImageUnscaled(backgroundBuffer, 0, 0);
+
+            //Draw the pod outline in the middle of the control
+
+            double imageRatio = (double)podOutlineImage.Height / podOutlineImage.Width;
+            int imageWidth1 = (int)(this.Size.Height / imageRatio);
+            int imageHeight1 = this.Size.Height;
+            int imageWidth2 = this.Size.Width;
+            int imageHeight2 = (int)(this.Size.Width * imageRatio);
+            int finalOutlineWidth;
+            int finalOutlineHeight;
+            if (imageWidth1 <= this.Size.Width)
+            {
+                finalOutlineWidth = imageWidth1;
+                finalOutlineHeight = imageHeight1;
+            }
+            else
+            {
+                finalOutlineWidth = imageWidth2;
+                finalOutlineHeight = imageHeight2;
+            }
+
+            double firstRow = .11;
+            double secondRow = .23;
+            double thirdRow = .66;
+            double fourthRow = .76;
+            double Column1Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
+            double Column2Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
+            double Column1RPM = 2 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
+            double Column2RPM = 2 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
+            double Column1Power = 3 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
+            double Column2Power = 3 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
+
+            int HECirclesSize = (int)((double)finalOutlineWidth / 4.5);
+
+            int HE1CenterX = (int)((double)finalOutlineWidth * .250) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE2CenterX = (int)((double)finalOutlineWidth * .252) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE3CenterX = (int)((double)finalOutlineWidth * .255) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE4CenterX = (int)((double)finalOutlineWidth * .255) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE5CenterX = (int)((double)finalOutlineWidth * .757) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE6CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE7CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
+            int HE8CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
+
+            int HE1CenterY = (int)((double)finalOutlineHeight * .155);
+            int HE2CenterY = (int)((double)finalOutlineHeight * .273);
+            int HE3CenterY = (int)((double)finalOutlineHeight * .695);
+            int HE4CenterY = (int)((double)finalOutlineHeight * .81);
+            int HE5CenterY = (int)((double)finalOutlineHeight * .81);
+            int HE6CenterY = (int)((double)finalOutlineHeight * .695);
+            int HE7CenterY = (int)((double)finalOutlineHeight * .273);
+            int HE8CenterY = (int)((double)finalOutlineHeight * .157);
+
+            int lineSpaceing = drawFont.Height + 2;
+
+            //HE 1 Text
+            e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE1Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE1Height), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0}", _HE1RPM), drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE1RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0} W", _HE1Power), drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE1Power), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE1CenterX - HECirclesSize / 2, HE1CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE1Percent * 360));
 
 
-                    System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-                    Font drawFont = new Font("Arial", 12);
-                    SolidBrush drawBrush = new SolidBrush(Color.White);
+            //HE 2 Text
+            e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE2Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE2Height), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0}", _HE2RPM), drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE2RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0} W", _HE2Power), drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE2Power), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE2CenterX - HECirclesSize / 2, HE2CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE2Percent * 360));
 
-                    //Draw the pod outline in the middle of the control
-                    double imageRatio = (double)podOutlineImage.Height / podOutlineImage.Width;
-                    int imageWidth1 = (int)(this.Size.Height / imageRatio);
-                    int imageHeight1 = this.Size.Height;
-                    int imageWidth2 = this.Size.Width;
-                    int imageHeight2 = (int)(this.Size.Width * imageRatio);
-                    int finalOutlineWidth;
-                    int finalOutlineHeight;
-                    if (imageWidth1 <= this.Size.Width)
-                    {
-                        finalOutlineWidth = imageWidth1;
-                        finalOutlineHeight = imageHeight1;
-                    }
-                    else
-                    {
-                        finalOutlineWidth = imageWidth2;
-                        finalOutlineHeight = imageHeight2;
-                    }
-                    e.Graphics.DrawImage(podOutlineImage, new Rectangle(new Point(this.Width / 2 - finalOutlineWidth / 2, 0), new Size(finalOutlineWidth, finalOutlineHeight)));
+            //HE 3 Text
+            e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE3Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE3Height), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0}", _HE3RPM), drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE3RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0} W", _HE3Power), drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE3Power), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE3CenterX - HECirclesSize / 2, HE3CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE3Percent * 360));
 
+            //HE 4 Text
+            e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE4Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE4Height), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0}", _HE4RPM), drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE4RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0} W", _HE4Power), drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE4Power), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE4CenterX - HECirclesSize / 2, HE4CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE4Percent * 360));
 
-                    double firstRow = .11;
-                    double secondRow = .23;
-                    double thirdRow = .66;
-                    double fourthRow = .76;
-                    double Column1Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
-                    double Column2Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
-                    double Column1RPM = 2 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
-                    double Column2RPM = 2 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
-                    double Column1Power = 3 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
-                    double Column2Power = 3 * ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
+            //HE 5 Text
+            e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE5Height), drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE5Height), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0}", _HE5RPM), drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE5RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0} W", _HE5Power), drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE5Power), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE5CenterX - HECirclesSize / 2, HE5CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE5Percent * 360));
 
-                    int HECirclesSize = (int)((double)finalOutlineWidth / 4.5);
+            //HE 6 Text
+            e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE6Height), drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE6Height), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0}", _HE6RPM), drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE6RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0} W", _HE6Power), drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE6Power), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE6CenterX - HECirclesSize / 2, HE6CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE6Percent * 360));
 
-                    int HE1CenterX = (int)((double)finalOutlineWidth * .250) + (this.Width / 2 - finalOutlineWidth / 2);
-                    int HE2CenterX = (int)((double)finalOutlineWidth * .252) + (this.Width / 2 - finalOutlineWidth / 2);
-                    int HE3CenterX = (int)((double)finalOutlineWidth * .255) + (this.Width / 2 - finalOutlineWidth / 2);
-                    int HE4CenterX = (int)((double)finalOutlineWidth * .255) + (this.Width / 2 - finalOutlineWidth / 2);
-                    int HE5CenterX = (int)((double)finalOutlineWidth * .757) + (this.Width / 2 - finalOutlineWidth / 2);
-                    int HE6CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
-                    int HE7CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
-                    int HE8CenterX = (int)((double)finalOutlineWidth * .754) + (this.Width / 2 - finalOutlineWidth / 2);
+            //HE 7 Text
+            e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE7Height), drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE7Height), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0}", _HE7RPM), drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE7RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0} W", _HE7Power), drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE7Power), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE7CenterX - HECirclesSize / 2, HE7CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE7Percent * 360));
 
-                    int HE1CenterY = (int)((double)finalOutlineHeight * .155);
-                    int HE2CenterY = (int)((double)finalOutlineHeight * .273);
-                    int HE3CenterY = (int)((double)finalOutlineHeight * .695);
-                    int HE4CenterY = (int)((double)finalOutlineHeight * .81);
-                    int HE5CenterY = (int)((double)finalOutlineHeight * .81);
-                    int HE6CenterY = (int)((double)finalOutlineHeight * .695);
-                    int HE7CenterY = (int)((double)finalOutlineHeight * .273);
-                    int HE8CenterY = (int)((double)finalOutlineHeight * .157);
-
-                    int lineSpaceing = drawFont.Height + 2;
-
-                    //HE 1 Text
-                    e.Graphics.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
-                    e.Graphics.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
-                    e.Graphics.DrawString("Power", drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
-                    e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE1Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE1Height), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0}", _HE1RPM), drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE1RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0} W", _HE1Power), drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE1Power), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
-                    e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE1CenterX - HECirclesSize / 2, HE1CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE1Percent * 360));
-
-
-                    //HE 2 Text
-                    e.Graphics.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
-                    e.Graphics.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
-                    e.Graphics.DrawString("Power", drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
-                    e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE2Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE2Height), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0}", _HE2RPM), drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE2RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0} W", _HE2Power), drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE2Power), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
-                    e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE2CenterX - HECirclesSize / 2, HE2CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE2Percent * 360));
-
-                    //HE 3 Text
-                    e.Graphics.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
-                    e.Graphics.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
-                    e.Graphics.DrawString("Power", drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
-                    e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE3Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE3Height), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0}", _HE3RPM), drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE3RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0} W", _HE3Power), drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE3Power), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
-                    e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE3CenterX - HECirclesSize / 2, HE3CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE3Percent * 360));
-
-                    //HE 4 Text
-                    e.Graphics.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
-                    e.Graphics.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
-                    e.Graphics.DrawString("Power", drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
-                    e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE4Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE4Height), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0}", _HE4RPM), drawFont, drawBrush, new Point((int)(Column1RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE4RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0} W", _HE4Power), drawFont, drawBrush, new Point((int)(Column1Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE4Power), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
-                    e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE4CenterX - HECirclesSize / 2, HE4CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE4Percent * 360));
-
-                    //HE 5 Text
-                    e.Graphics.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
-                    e.Graphics.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
-                    e.Graphics.DrawString("Power", drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow)));
-                    e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE5Height), drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE5Height), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0}", _HE5RPM), drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE5RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0} W", _HE5Power), drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE5Power), drawFont).ToSize().Width) / 2), (int)(this.Height * fourthRow) + lineSpaceing));
-                    e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE5CenterX - HECirclesSize / 2, HE5CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE5Percent * 360));
-
-                    //HE 6 Text
-                    e.Graphics.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
-                    e.Graphics.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
-                    e.Graphics.DrawString("Power", drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow)));
-                    e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE6Height), drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE6Height), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0}", _HE6RPM), drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE6RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0} W", _HE6Power), drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE6Power), drawFont).ToSize().Width) / 2), (int)(this.Height * thirdRow) + lineSpaceing));
-                    e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE6CenterX - HECirclesSize / 2, HE6CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE6Percent * 360));
-
-                    //HE 7 Text
-                    e.Graphics.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
-                    e.Graphics.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
-                    e.Graphics.DrawString("Power", drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow)));
-                    e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE7Height), drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE7Height), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0}", _HE7RPM), drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE7RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0} W", _HE7Power), drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE7Power), drawFont).ToSize().Width) / 2), (int)(this.Height * secondRow) + lineSpaceing));
-                    e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE7CenterX - HECirclesSize / 2, HE7CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE7Percent * 360));
-
-                    //HE 8 Text
-                    e.Graphics.DrawString("HEIGHT", drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString("HEIGHT", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
-                    e.Graphics.DrawString("RPM", drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString("RPM", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
-                    e.Graphics.DrawString("Power", drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString("Power", drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow)));
-                    e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE8Height), drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE8Height), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0}", _HE8RPM), drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE8RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
-                    e.Graphics.DrawString(string.Format("{0:0} W", _HE8Power), drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE8Power), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
-                    e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE8CenterX - HECirclesSize / 2, HE8CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE8Percent * 360));
-
-
+            //HE 8 Text
+            e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE8Height), drawFont, drawBrush, new Point((int)(Column2Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE8Height), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0}", _HE8RPM), drawFont, drawBrush, new Point((int)(Column2RPM - (e.Graphics.MeasureString(string.Format("{0:0}", _HE8RPM), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
+            e.Graphics.DrawString(string.Format("{0:0} W", _HE8Power), drawFont, drawBrush, new Point((int)(Column2Power - (e.Graphics.MeasureString(string.Format("{0:0} W", _HE8Power), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
+            e.Graphics.DrawArc(new System.Drawing.Pen(Color.Blue, 6), new Rectangle(HE8CenterX - HECirclesSize / 2, HE8CenterY - HECirclesSize / 2, HECirclesSize, HECirclesSize), -90, (int)(_HE8Percent * 360));
         }
 
 
