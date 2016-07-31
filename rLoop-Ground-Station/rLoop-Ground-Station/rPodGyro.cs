@@ -82,7 +82,7 @@ namespace rLoop_Ground_Station
 
         private void rPodGyro_Paint(object sender, PaintEventArgs e)
         {
-            if (_isNewSize())
+          //  if (_isNewSize())
                 redrawBackground();
 
             e.Graphics.DrawImageUnscaled(backgroundBuffer, 0, 0);

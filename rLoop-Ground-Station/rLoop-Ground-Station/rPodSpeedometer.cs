@@ -102,7 +102,7 @@ namespace rLoop_Ground_Station
         protected override void OnPaint(PaintEventArgs e)
         {
 
-            if (_isNewSize())
+        //    if (_isNewSize())
                 redrawBackground();
             if(backgroundBuffer != null)
                 e.Graphics.DrawImageUnscaled(backgroundBuffer, 0, 0);

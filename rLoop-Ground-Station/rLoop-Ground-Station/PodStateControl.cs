@@ -227,9 +227,9 @@ namespace rLoop_Ground_Station
             Font drawFont = new Font("Arial", 12);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
-            if (_isNewSize())
+           // if (_isNewSize())
                 redrawBackground();
-            if (backgroundBuffer != null)
+           // if (backgroundBuffer != null)
                 e.Graphics.DrawImageUnscaled(backgroundBuffer, 0, 0);
 
             //Draw the pod outline in the middle of the control
