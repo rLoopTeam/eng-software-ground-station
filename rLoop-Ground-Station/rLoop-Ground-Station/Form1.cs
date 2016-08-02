@@ -36,6 +36,16 @@ namespace rLoop_Ground_Station
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("Choose a node from the list.");
+                return;
+            }
+            if(!File.Exists(openFileDialog1.FileName))
+            {
+                MessageBox.Show("Choose a valid file.");
+                return;
+            }
             net.uploadFile(label2.Text, "root", "MoreCowbell", openFileDialog1.FileName, openFileDialog1.SafeFileName);
         }
 
@@ -173,8 +183,7 @@ namespace rLoop_Ground_Station
 
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
-            customTabControl1.Size = new Size(Form1.ActiveForm.Width-28, Form1.ActiveForm.Height-50);
-            customTabControl1.Location = new Point(5, 5);
+
         }
 
         private void trackBar5_Scroll(object sender, EventArgs e)
@@ -191,6 +200,22 @@ namespace rLoop_Ground_Station
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             net.isRunning = false;
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            customTabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
+            customTabControl1.Location = new Point(5, 5);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(listBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("Choose a node from the list.");
+                return;
+            }
+            net.changeNodeName(label2.Text, "root", "MoreCowbell", textBox1.Text);
         }
 
     }

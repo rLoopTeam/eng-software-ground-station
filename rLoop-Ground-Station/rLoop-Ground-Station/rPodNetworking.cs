@@ -100,13 +100,26 @@ namespace rLoop_Ground_Station
                 u.BeginReceive(new AsyncCallback(ReceiveCallback), s);
         }
 
-        public void uploadFile(string host_ip, string username, string password, string localFile, string remoteFile)
+        public void changeNodeName(string host_ip, string username, string password, string newName)
         {
-            using (SftpClient ssh = new SftpClient(host_ip,username,password))
+            using (SshClient ssh = new SshClient(host_ip, username, password))
             {
                 ssh.Connect();
-                FileStream stream = new FileStream(localFile,FileMode.Open);
-                if(ssh.ListDirectory("/").FirstOrDefault(x => x.Name == "teensyTemp") == null)
+                ssh.RunCommand("rm /mnt/data/config/nodename");
+                ssh.RunCommand("echo " + "\"" + newName + "\" > /mnt/data/config/nodename" );
+                ssh.RunCommand("/etc/init.d/S55telemetry restart");
+                ssh.RunCommand("/etc/init.d/S55udpBeacon restart");
+                ssh.Disconnect();
+            }
+        }
+
+        public void uploadFile(string host_ip, string username, string password, string localFile, string remoteFile)
+        {
+            using (SftpClient ssh = new SftpClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                FileStream stream = new FileStream(localFile, FileMode.Open);
+                if (ssh.ListDirectory("/").FirstOrDefault(x => x.Name == "teensyTemp") == null)
                     ssh.CreateDirectory("/teensyTemp");
                 ssh.ChangeDirectory("/teensyTemp");
                 ssh.UploadFile(stream, remoteFile);
@@ -114,7 +127,7 @@ namespace rLoop_Ground_Station
                 stream.Close();
             }
 
-            using(SshClient ssh = new SshClient(host_ip, username, password))
+            using (SshClient ssh = new SshClient(host_ip, username, password))
             {
                 ssh.Connect();
                 ssh.RunCommand("prog_teensy " + "\"/teensyTemp/" + remoteFile + "\"");
