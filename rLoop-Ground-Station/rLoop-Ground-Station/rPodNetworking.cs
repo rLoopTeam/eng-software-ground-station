@@ -17,21 +17,35 @@ using Renci.SshNet;
 
 namespace rLoop_Ground_Station
 {
+    //Could make this class static
     public class rPodNetworking
     {
-        public List<nodeItem> activeNodes;
         public nodeParameterDescription nodeParameterData;
         public List<LatestNodeDataNode> LatestNodeData;
-        public bool isRunning;
+        bool _IsRunning;
+
+        //There might be a better way to kill the threads but this should do for now
+        public bool IsRunning { set { _IsRunning = value; if (value == false) foreach (Thread t in runningThreads) t.Abort(); } get { return _IsRunning; } }
+
+        public List<Thread> runningThreads;
 
         public rPodNetworking()
         {
-            isRunning = true;
-            activeNodes = new List<nodeItem>();
+            IsRunning = true;
             nodeParameterData = new nodeParameterDescription();
+            runningThreads = new List<Thread>();
             ZMQTelemetryProcessor.NetworkClass = this;
             LatestNodeData = new List<LatestNodeDataNode>();
-            
+            rPodNodeDiscovery.FoundNewNode += new FoundNewNodeHandler(NewNodeDetected);
+        }
+
+        public void NewNodeDetected(rPodNetworkNode node)
+        {
+            ZMQTelemetryProcessor processor = new ZMQTelemetryProcessor();
+            processor.Ip = node.IP;
+            Thread newThread = new Thread(processor.zmqBeginListen);
+            runningThreads.Add(newThread);
+            newThread.Start();
         }
 
         public void ProcessZMQTelemetryFrame(string frame)
@@ -56,48 +70,6 @@ namespace rLoop_Ground_Station
                     p.Time = DateTime.Now;
                 }
             }
-
-        }
-
-        public void ReceiveCallback(IAsyncResult ar)
-        {
-            UdpClient u = (UdpClient)((UdpState)(ar.AsyncState)).u;
-            IPEndPoint e = (IPEndPoint)((UdpState)(ar.AsyncState)).e;
-
-            Byte[] receiveBytes = u.EndReceive(ar, ref e);
-            string receiveString = Encoding.ASCII.GetString(receiveBytes);
-
-            Console.WriteLine("Received: {0}", receiveString);
-            
-
-            nodeItem n = new nodeItem(receiveString.Substring(6),e.Address.ToString());
-            if (activeNodes.Contains(n) == false)
-            {
-                activeNodes.Add(n);
-                ZMQTelemetryProcessor processor = new ZMQTelemetryProcessor();
-                processor.Ip = e.Address.ToString();
-                Thread newThread = new Thread(processor.zmqBeginListen);
-                newThread.Start();
-            }
-
-            if (isRunning)
-                u.BeginReceive(new AsyncCallback(ReceiveCallback), ((UdpState)(ar.AsyncState)));
-        }
-
-        public void beginUDPListen()
-        {
-              IPEndPoint e = new IPEndPoint(IPAddress.Any, 50051);
-                UdpClient u = new UdpClient(e);
-            u.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);  
-            u.JoinMulticastGroup(IPAddress.Parse("239.3.14.159"));
-
-                UdpState s = new UdpState();
-                s.e = e;
-                s.u = u;
-
-                Console.WriteLine("listening for messages");
-            if(isRunning)
-                u.BeginReceive(new AsyncCallback(ReceiveCallback), s);
         }
 
         public void changeNodeName(string host_ip, string username, string password, string newName)
@@ -183,39 +155,6 @@ namespace rLoop_Ground_Station
         }
     }
 
-    class UdpState
-    {
-        public IPEndPoint e;
-        public UdpClient u;
-    }
-
-    public class nodeItem : IEquatable<nodeItem>
-    {
-        public string name;
-        public string ip;
-        public nodeItem()
-        {
-            name = "";
-            ip = "";
-        }
-        public nodeItem(string _name, string _ip)
-        {
-            name = _name;
-            ip = _ip;
-        }
-        public override string ToString()
-        {
-            return name.Substring(0,1).ToUpper() + name.Substring(1) + " Node";
-        }
-        public bool Equals(nodeItem n)
-        {
-            if (n.ip == ip && n.name == name)
-                return true;
-            else
-                return false;
-        }
-    }
-
     public class LatestNodeDataNode
     {
         public string NodeName;
@@ -272,7 +211,6 @@ namespace rLoop_Ground_Station
             }
         }
     }
-
 
     public class nodeTypes
     {

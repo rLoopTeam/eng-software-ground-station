@@ -72,6 +72,7 @@
       <DependentUpon>rPodGyro.cs</DependentUpon>
     </Compile>
     <Compile Include="rPodNetworking.cs" />
+    <Compile Include="rPodNodeDiscovery.cs" />
     <Compile Include="rPodSpeedometer.cs">
       <SubType>UserControl</SubType>
     </Compile>

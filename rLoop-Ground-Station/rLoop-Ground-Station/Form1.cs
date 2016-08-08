@@ -20,7 +20,10 @@ namespace rLoop_Ground_Station
         {
             InitializeComponent();
             net = new rPodNetworking();
-            net.beginUDPListen();
+            if(!rPodNodeDiscovery.beginUDPListen())
+            {
+                MessageBox.Show("There was an error listening to the network for available nodes.");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,16 +59,19 @@ namespace rLoop_Ground_Station
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            foreach (nodeItem i in net.activeNodes)
+            if (rPodNodeDiscovery.ActiveNodes != null)
             {
-                if (!listBox1.Items.Contains(i))
-                    listBox1.Items.Add(i);
+                foreach (rPodNetworkNode i in rPodNodeDiscovery.ActiveNodes)
+                {
+                    if (!listBox1.Items.Contains(i))
+                        listBox1.Items.Add(i);
+                }
             }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label2.Text = (listBox1.Items[listBox1.SelectedIndex] as nodeItem).ip;
+            label2.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IP;
         }
 
         private void UpdateDGVTimer_Tick(object sender, EventArgs e)
@@ -199,7 +205,8 @@ namespace rLoop_Ground_Station
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            net.isRunning = false;
+            net.IsRunning = false;
+            rPodNodeDiscovery.IsRunning = false;
         }
 
         private void Form1_Resize(object sender, EventArgs e)
