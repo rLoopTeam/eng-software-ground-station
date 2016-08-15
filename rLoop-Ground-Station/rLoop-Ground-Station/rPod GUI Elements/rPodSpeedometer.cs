@@ -129,7 +129,8 @@ namespace rLoop_Ground_Station
             bigSpeedTextSize = e.Graphics.MeasureString(currentSpeed.ToString(), bigSpeedFont);
             e.Graphics.DrawString(currentSpeed.ToString(), bigSpeedFont, bigSpeedBrush, (float)(size / 2 - bigSpeedTextSize.Width / 2), (float)(size*.43 - bigSpeedTextSize.Height / 2));
 
-            Rectangle bounds = new Rectangle((int)speedPos.Item1 - 45,(int)speedPos.Item2 - 45,90,90);
+            int gradientSize = (int)(size / 2.5);
+            Rectangle bounds = new Rectangle((int)speedPos.Item1 - gradientSize/2,(int)speedPos.Item2 - gradientSize/2,gradientSize,gradientSize);
             using (var ellipsePath = new GraphicsPath())
             {
                 ellipsePath.AddEllipse(bounds);

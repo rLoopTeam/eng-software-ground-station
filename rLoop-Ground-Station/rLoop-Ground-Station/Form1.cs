@@ -225,5 +225,10 @@ namespace rLoop_Ground_Station
             net.changeNodeName(label2.Text, "root", "MoreCowbell", textBox1.Text);
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

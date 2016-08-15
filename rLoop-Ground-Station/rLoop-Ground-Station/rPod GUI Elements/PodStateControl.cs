@@ -141,14 +141,14 @@ namespace rLoop_Ground_Station
             }
 
             System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", finalOutlineHeight/40);
+            Font drawFont = new Font("Arial", finalOutlineHeight/35);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             g.DrawImage(podOutlineImage, new Rectangle(new Point(this.Width / 2 - finalOutlineWidth / 2, 0), new Size(finalOutlineWidth, finalOutlineHeight)));
 
             double firstRow = .11;
             double secondRow = .23;
-            double thirdRow = .66;
+            double thirdRow = .64;
             double fourthRow = .76;
             double Column1Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
             double Column2Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);
@@ -249,12 +249,12 @@ namespace rLoop_Ground_Station
             }
 
             System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", finalOutlineHeight / 40);
+            Font drawFont = new Font("Arial", finalOutlineHeight / 35);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             double firstRow = .11;
             double secondRow = .23;
-            double thirdRow = .66;
+            double thirdRow = .64;
             double fourthRow = .76;
             double Column1Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4;
             double Column2Height = ((this.Width / 2) - (finalOutlineWidth / 2)) / 4 + this.Width / 2 + (finalOutlineWidth / 2);

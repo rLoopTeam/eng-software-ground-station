@@ -13,6 +13,14 @@ using System.Globalization;
 using NetMQ;
 using NetMQ.Sockets;
 
+/*
+ * This class is responsible for listening for the udp beacon
+ * from the Pi's and adding them to the list of available noedes.
+ * It also supports adding nodes manually if need be or working across
+ * VPN or router boundaries during development.
+ * 
+ */
+
 
 namespace rLoop_Ground_Station
 {
@@ -26,7 +34,6 @@ namespace rLoop_Ground_Station
         static UdpState s;
 
         public static event FoundNewNodeHandler FoundNewNode;
-
 
         public static bool beginUDPListen()
         {

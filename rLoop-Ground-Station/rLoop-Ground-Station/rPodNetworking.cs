@@ -14,19 +14,30 @@ using Newtonsoft.Json;
 using NetMQ;
 using NetMQ.Sockets;
 using Renci.SshNet;
+using rLoop_Ground_Station.Pod_State.Nodes;
+using rLoop_Ground_Station.Pod_State;
 
 namespace rLoop_Ground_Station
 {
+    //The top class to handle data flow
+    //between the ground station and the pod
     //Could make this class static
     public class rPodNetworking
     {
+        //constains metadata on the various parameters from the nodes
         public nodeParameterDescription nodeParameterData;
+
+        //The last frames received from the nodese
+        //Contains one entry per nod
         public List<LatestNodeDataNode> LatestNodeData;
+
+        //Used to shutdown the processing threads
         bool _IsRunning;
 
         //There might be a better way to kill the threads but this should do for now
         public bool IsRunning { set { _IsRunning = value; if (value == false) foreach (Thread t in runningThreads) t.Abort(); } get { return _IsRunning; } }
 
+        //The running threads processing ZMQ messages
         public List<Thread> runningThreads;
 
         public rPodNetworking()
@@ -39,6 +50,7 @@ namespace rLoop_Ground_Station
             rPodNodeDiscovery.FoundNewNode += new FoundNewNodeHandler(NewNodeDetected);
         }
 
+        //Called when a new node is detected on the network
         public void NewNodeDetected(rPodNetworkNode node)
         {
             ZMQTelemetryProcessor processor = new ZMQTelemetryProcessor();
@@ -48,6 +60,7 @@ namespace rLoop_Ground_Station
             newThread.Start();
         }
 
+        //Called every time a ZMQ telemetry message is received
         public void ProcessZMQTelemetryFrame(string frame)
         {
             TelemetryJSONFrame frameData = JsonConvert.DeserializeObject<TelemetryJSONFrame>(frame.Substring(9));
@@ -70,8 +83,22 @@ namespace rLoop_Ground_Station
                     p.Time = DateTime.Now;
                 }
             }
+
+            rPodStateNodeStateI podNode = rPodPodState.Nodes.FirstOrDefault(x => x.NodeName == frameData.Node);
+            if(podNode != null)
+            {
+                foreach (NodeDataPoint dp in n.DataValues) 
+                {
+                    podNode.ProcessParameter(dp.Index, dp.Value);
+                }
+                podNode.LastHeard = DateTime.Now;
+            }
         }
 
+        //Renames a node by changing the config file in the Pi and reloading the services
+        //that depend on the name.
+        //This could use some error checking or could be done by a script on the Pi instead
+        //of a pseudo bash script here.
         public void changeNodeName(string host_ip, string username, string password, string newName)
         {
             using (SshClient ssh = new SshClient(host_ip, username, password))
@@ -85,6 +112,10 @@ namespace rLoop_Ground_Station
             }
         }
 
+        //Uploades a hex file to the Pi and programs it to the Teensy
+        //Would be good to parse feedback from the Teensy cli loader
+        //Validating the file would good too.
+        //The ssh upload library is pretty unforgiving, need to parse and handle errors from it
         public void uploadFile(string host_ip, string username, string password, string localFile, string remoteFile)
         {
             using (SftpClient ssh = new SftpClient(host_ip, username, password))
@@ -107,8 +138,20 @@ namespace rLoop_Ground_Station
                 ssh.Disconnect();
             }
         }
+
+        //Allows interaction with teensy control parameters
+        //Can be used from the pod state classes or more
+        //directly from the gui during developement
+        public void setParameters(List<Tuple<int,object>> paramList)
+        {
+            //TODO: Either SSH with i2cSetParameter or write
+            //another module on the pi to listen
+            //for parameter change requests
+        }
+
     }
 
+    //The basic structure of the telemetry ZMQ frames
     public class TelemetryJSONFrame
     {
         [JsonProperty("node")]
@@ -121,6 +164,8 @@ namespace rLoop_Ground_Station
         public List<double> Data;
     }
 
+    //One of these is created for each node connection
+    //since ZMQ likes to live in it's own threads
     class ZMQTelemetryProcessor
     {
         public string Ip;
