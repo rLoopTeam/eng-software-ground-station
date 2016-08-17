@@ -36,7 +36,13 @@
             this.customTabControl1 = new System.Windows.Forms.CustomTabControl();
             this.OverviewTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
+            this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
+            this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rPodBatteryIndicator1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
+            this.rPodCurrentGauge1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
+            this.rPodBatteryVoltage1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
             this.trackBar5 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.trackBar4 = new System.Windows.Forms.TrackBar();
@@ -46,6 +52,13 @@
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.PowerNodeATab = new System.Windows.Forms.TabPage();
+            this.PowerNodeBTab = new System.Windows.Forms.TabPage();
+            this.ControlNodeTab = new System.Windows.Forms.TabPage();
+            this.CommandNodeTab = new System.Windows.Forms.TabPage();
+            this.BrakesNodeATab = new System.Windows.Forms.TabPage();
+            this.BrakesNodeBTab = new System.Windows.Forms.TabPage();
+            this.StepperNodeTab = new System.Windows.Forms.TabPage();
             this.NodeUtilitiesTab = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,16 +77,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SerialConsoleTab = new System.Windows.Forms.TabPage();
-            this.PowerNodeATab = new System.Windows.Forms.TabPage();
-            this.PowerNodeBTab = new System.Windows.Forms.TabPage();
-            this.ControlNodeTab = new System.Windows.Forms.TabPage();
-            this.CommandNodeTab = new System.Windows.Forms.TabPage();
-            this.BrakesNodeATab = new System.Windows.Forms.TabPage();
-            this.BrakesNodeBTab = new System.Windows.Forms.TabPage();
-            this.StepperNodeTab = new System.Windows.Forms.TabPage();
-            this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
-            this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
-            this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
             timer2 = new System.Windows.Forms.Timer(this.components);
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
@@ -175,8 +178,67 @@
             this.panel1.Size = new System.Drawing.Size(953, 315);
             this.panel1.TabIndex = 12;
             // 
+            // podStateControl2
+            // 
+            this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.podStateControl2.HE1Height = 12.23D;
+            this.podStateControl2.HE1Percent = 0.8D;
+            this.podStateControl2.HE1Power = 3000D;
+            this.podStateControl2.HE1RPM = 3000D;
+            this.podStateControl2.HE2Height = 12.2D;
+            this.podStateControl2.HE2Percent = 0.8D;
+            this.podStateControl2.HE2Power = 3000D;
+            this.podStateControl2.HE2RPM = 3000D;
+            this.podStateControl2.HE3Height = 12.2D;
+            this.podStateControl2.HE3Percent = 0.8D;
+            this.podStateControl2.HE3Power = 3000D;
+            this.podStateControl2.HE3RPM = 3000D;
+            this.podStateControl2.HE4Height = 12.2D;
+            this.podStateControl2.HE4Percent = 0.8D;
+            this.podStateControl2.HE4Power = 3000D;
+            this.podStateControl2.HE4RPM = 3000D;
+            this.podStateControl2.HE5Height = 12.2D;
+            this.podStateControl2.HE5Percent = 0.8D;
+            this.podStateControl2.HE5Power = 3000D;
+            this.podStateControl2.HE5RPM = 3000D;
+            this.podStateControl2.HE6Height = 12.2D;
+            this.podStateControl2.HE6Percent = 0.8D;
+            this.podStateControl2.HE6Power = 3000D;
+            this.podStateControl2.HE6RPM = 3000D;
+            this.podStateControl2.HE7Height = 12.2D;
+            this.podStateControl2.HE7Percent = 0.8D;
+            this.podStateControl2.HE7Power = 3000D;
+            this.podStateControl2.HE7RPM = 3000D;
+            this.podStateControl2.HE8Height = 12.2D;
+            this.podStateControl2.HE8Percent = 0.8D;
+            this.podStateControl2.HE8Power = 3000D;
+            this.podStateControl2.HE8RPM = 3000D;
+            this.podStateControl2.Location = new System.Drawing.Point(256, 0);
+            this.podStateControl2.Name = "podStateControl2";
+            this.podStateControl2.Size = new System.Drawing.Size(478, 315);
+            this.podStateControl2.TabIndex = 0;
+            // 
+            // rPodSpeedometer1
+            // 
+            this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
+            this.rPodSpeedometer1.Name = "rPodSpeedometer1";
+            this.rPodSpeedometer1.Size = new System.Drawing.Size(256, 315);
+            this.rPodSpeedometer1.TabIndex = 9;
+            // 
+            // rPodGyro1
+            // 
+            this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rPodGyro1.Location = new System.Drawing.Point(734, 0);
+            this.rPodGyro1.Name = "rPodGyro1";
+            this.rPodGyro1.Size = new System.Drawing.Size(219, 315);
+            this.rPodGyro1.TabIndex = 11;
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.rPodBatteryIndicator1);
+            this.panel2.Controls.Add(this.rPodCurrentGauge1);
+            this.panel2.Controls.Add(this.rPodBatteryVoltage1);
             this.panel2.Controls.Add(this.trackBar5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.trackBar4);
@@ -193,9 +255,32 @@
             this.panel2.TabIndex = 13;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // rPodBatteryIndicator1
+            // 
+            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(202, 169);
+            this.rPodBatteryIndicator1.Name = "rPodBatteryIndicator1";
+            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(193, 80);
+            this.rPodBatteryIndicator1.TabIndex = 11;
+            this.rPodBatteryIndicator1.Load += new System.EventHandler(this.rPodBatteryIndicator1_Load);
+            // 
+            // rPodCurrentGauge1
+            // 
+            this.rPodCurrentGauge1.Location = new System.Drawing.Point(23, 17);
+            this.rPodCurrentGauge1.Name = "rPodCurrentGauge1";
+            this.rPodCurrentGauge1.Size = new System.Drawing.Size(153, 140);
+            this.rPodCurrentGauge1.TabIndex = 12;
+            // 
+            // rPodBatteryVoltage1
+            // 
+            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(34, 169);
+            this.rPodBatteryVoltage1.Name = "rPodBatteryVoltage1";
+            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(142, 70);
+            this.rPodBatteryVoltage1.TabIndex = 11;
+            this.rPodBatteryVoltage1.Load += new System.EventHandler(this.rPodBatteryIndicator1_Load);
+            // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(34, 17);
+            this.trackBar5.Location = new System.Drawing.Point(751, 17);
             this.trackBar5.Maximum = 400;
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Size = new System.Drawing.Size(175, 45);
@@ -206,7 +291,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(246, 17);
+            this.label3.Location = new System.Drawing.Point(553, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 5;
@@ -214,7 +299,7 @@
             // 
             // trackBar4
             // 
-            this.trackBar4.Location = new System.Drawing.Point(316, 137);
+            this.trackBar4.Location = new System.Drawing.Point(623, 265);
             this.trackBar4.Maximum = 100;
             this.trackBar4.Name = "trackBar4";
             this.trackBar4.Size = new System.Drawing.Size(298, 45);
@@ -225,7 +310,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(246, 98);
+            this.label5.Location = new System.Drawing.Point(553, 226);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 7;
@@ -233,7 +318,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(316, 17);
+            this.trackBar1.Location = new System.Drawing.Point(623, 145);
             this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(312, 45);
@@ -242,7 +327,7 @@
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(316, 56);
+            this.trackBar2.Location = new System.Drawing.Point(623, 184);
             this.trackBar2.Maximum = 4000;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(312, 45);
@@ -251,7 +336,7 @@
             // 
             // trackBar3
             // 
-            this.trackBar3.Location = new System.Drawing.Point(316, 98);
+            this.trackBar3.Location = new System.Drawing.Point(623, 226);
             this.trackBar3.Maximum = 5000;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(298, 45);
@@ -262,7 +347,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(246, 56);
+            this.label4.Location = new System.Drawing.Point(553, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 6;
@@ -272,11 +357,75 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(246, 128);
+            this.label6.Location = new System.Drawing.Point(553, 256);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Percent";
+            // 
+            // PowerNodeATab
+            // 
+            this.PowerNodeATab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.PowerNodeATab.Location = new System.Drawing.Point(4, 27);
+            this.PowerNodeATab.Name = "PowerNodeATab";
+            this.PowerNodeATab.Padding = new System.Windows.Forms.Padding(3);
+            this.PowerNodeATab.Size = new System.Drawing.Size(959, 652);
+            this.PowerNodeATab.TabIndex = 3;
+            this.PowerNodeATab.Text = "Power A";
+            // 
+            // PowerNodeBTab
+            // 
+            this.PowerNodeBTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.PowerNodeBTab.Location = new System.Drawing.Point(4, 27);
+            this.PowerNodeBTab.Name = "PowerNodeBTab";
+            this.PowerNodeBTab.Size = new System.Drawing.Size(959, 652);
+            this.PowerNodeBTab.TabIndex = 4;
+            this.PowerNodeBTab.Text = "Power B";
+            // 
+            // ControlNodeTab
+            // 
+            this.ControlNodeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.ControlNodeTab.Location = new System.Drawing.Point(4, 27);
+            this.ControlNodeTab.Name = "ControlNodeTab";
+            this.ControlNodeTab.Size = new System.Drawing.Size(959, 652);
+            this.ControlNodeTab.TabIndex = 5;
+            this.ControlNodeTab.Text = "Control";
+            // 
+            // CommandNodeTab
+            // 
+            this.CommandNodeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.CommandNodeTab.Location = new System.Drawing.Point(4, 27);
+            this.CommandNodeTab.Name = "CommandNodeTab";
+            this.CommandNodeTab.Size = new System.Drawing.Size(959, 652);
+            this.CommandNodeTab.TabIndex = 6;
+            this.CommandNodeTab.Text = "Command";
+            // 
+            // BrakesNodeATab
+            // 
+            this.BrakesNodeATab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.BrakesNodeATab.Location = new System.Drawing.Point(4, 27);
+            this.BrakesNodeATab.Name = "BrakesNodeATab";
+            this.BrakesNodeATab.Size = new System.Drawing.Size(959, 652);
+            this.BrakesNodeATab.TabIndex = 7;
+            this.BrakesNodeATab.Text = "Brakes A";
+            // 
+            // BrakesNodeBTab
+            // 
+            this.BrakesNodeBTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.BrakesNodeBTab.Location = new System.Drawing.Point(4, 27);
+            this.BrakesNodeBTab.Name = "BrakesNodeBTab";
+            this.BrakesNodeBTab.Size = new System.Drawing.Size(959, 652);
+            this.BrakesNodeBTab.TabIndex = 8;
+            this.BrakesNodeBTab.Text = "Brakes B";
+            // 
+            // StepperNodeTab
+            // 
+            this.StepperNodeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.StepperNodeTab.Location = new System.Drawing.Point(4, 27);
+            this.StepperNodeTab.Name = "StepperNodeTab";
+            this.StepperNodeTab.Size = new System.Drawing.Size(959, 652);
+            this.StepperNodeTab.TabIndex = 9;
+            this.StepperNodeTab.Text = "Stepper";
             // 
             // NodeUtilitiesTab
             // 
@@ -455,126 +604,6 @@
             this.SerialConsoleTab.TabIndex = 2;
             this.SerialConsoleTab.Text = "Console";
             // 
-            // PowerNodeATab
-            // 
-            this.PowerNodeATab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.PowerNodeATab.Location = new System.Drawing.Point(4, 27);
-            this.PowerNodeATab.Name = "PowerNodeATab";
-            this.PowerNodeATab.Padding = new System.Windows.Forms.Padding(3);
-            this.PowerNodeATab.Size = new System.Drawing.Size(959, 652);
-            this.PowerNodeATab.TabIndex = 3;
-            this.PowerNodeATab.Text = "Power A";
-            // 
-            // PowerNodeBTab
-            // 
-            this.PowerNodeBTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.PowerNodeBTab.Location = new System.Drawing.Point(4, 27);
-            this.PowerNodeBTab.Name = "PowerNodeBTab";
-            this.PowerNodeBTab.Size = new System.Drawing.Size(959, 652);
-            this.PowerNodeBTab.TabIndex = 4;
-            this.PowerNodeBTab.Text = "Power B";
-            // 
-            // ControlNodeTab
-            // 
-            this.ControlNodeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.ControlNodeTab.Location = new System.Drawing.Point(4, 27);
-            this.ControlNodeTab.Name = "ControlNodeTab";
-            this.ControlNodeTab.Size = new System.Drawing.Size(959, 652);
-            this.ControlNodeTab.TabIndex = 5;
-            this.ControlNodeTab.Text = "Control";
-            // 
-            // CommandNodeTab
-            // 
-            this.CommandNodeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.CommandNodeTab.Location = new System.Drawing.Point(4, 27);
-            this.CommandNodeTab.Name = "CommandNodeTab";
-            this.CommandNodeTab.Size = new System.Drawing.Size(959, 652);
-            this.CommandNodeTab.TabIndex = 6;
-            this.CommandNodeTab.Text = "Command";
-            // 
-            // BrakesNodeATab
-            // 
-            this.BrakesNodeATab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.BrakesNodeATab.Location = new System.Drawing.Point(4, 27);
-            this.BrakesNodeATab.Name = "BrakesNodeATab";
-            this.BrakesNodeATab.Size = new System.Drawing.Size(959, 652);
-            this.BrakesNodeATab.TabIndex = 7;
-            this.BrakesNodeATab.Text = "Brakes A";
-            // 
-            // BrakesNodeBTab
-            // 
-            this.BrakesNodeBTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.BrakesNodeBTab.Location = new System.Drawing.Point(4, 27);
-            this.BrakesNodeBTab.Name = "BrakesNodeBTab";
-            this.BrakesNodeBTab.Size = new System.Drawing.Size(959, 652);
-            this.BrakesNodeBTab.TabIndex = 8;
-            this.BrakesNodeBTab.Text = "Brakes B";
-            // 
-            // StepperNodeTab
-            // 
-            this.StepperNodeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.StepperNodeTab.Location = new System.Drawing.Point(4, 27);
-            this.StepperNodeTab.Name = "StepperNodeTab";
-            this.StepperNodeTab.Size = new System.Drawing.Size(959, 652);
-            this.StepperNodeTab.TabIndex = 9;
-            this.StepperNodeTab.Text = "Stepper";
-            // 
-            // podStateControl2
-            // 
-            this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.podStateControl2.HE1Height = 12.23D;
-            this.podStateControl2.HE1Percent = 0.8D;
-            this.podStateControl2.HE1Power = 3000D;
-            this.podStateControl2.HE1RPM = 3000D;
-            this.podStateControl2.HE2Height = 12.2D;
-            this.podStateControl2.HE2Percent = 0.8D;
-            this.podStateControl2.HE2Power = 3000D;
-            this.podStateControl2.HE2RPM = 3000D;
-            this.podStateControl2.HE3Height = 12.2D;
-            this.podStateControl2.HE3Percent = 0.8D;
-            this.podStateControl2.HE3Power = 3000D;
-            this.podStateControl2.HE3RPM = 3000D;
-            this.podStateControl2.HE4Height = 12.2D;
-            this.podStateControl2.HE4Percent = 0.8D;
-            this.podStateControl2.HE4Power = 3000D;
-            this.podStateControl2.HE4RPM = 3000D;
-            this.podStateControl2.HE5Height = 12.2D;
-            this.podStateControl2.HE5Percent = 0.8D;
-            this.podStateControl2.HE5Power = 3000D;
-            this.podStateControl2.HE5RPM = 3000D;
-            this.podStateControl2.HE6Height = 12.2D;
-            this.podStateControl2.HE6Percent = 0.8D;
-            this.podStateControl2.HE6Power = 3000D;
-            this.podStateControl2.HE6RPM = 3000D;
-            this.podStateControl2.HE7Height = 12.2D;
-            this.podStateControl2.HE7Percent = 0.8D;
-            this.podStateControl2.HE7Power = 3000D;
-            this.podStateControl2.HE7RPM = 3000D;
-            this.podStateControl2.HE8Height = 12.2D;
-            this.podStateControl2.HE8Percent = 0.8D;
-            this.podStateControl2.HE8Power = 3000D;
-            this.podStateControl2.HE8RPM = 3000D;
-            this.podStateControl2.Location = new System.Drawing.Point(256, 0);
-            this.podStateControl2.Name = "podStateControl2";
-            this.podStateControl2.Size = new System.Drawing.Size(478, 315);
-            this.podStateControl2.TabIndex = 0;
-            // 
-            // rPodSpeedometer1
-            // 
-            this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
-            this.rPodSpeedometer1.Name = "rPodSpeedometer1";
-            this.rPodSpeedometer1.Size = new System.Drawing.Size(256, 315);
-            this.rPodSpeedometer1.TabIndex = 9;
-            // 
-            // rPodGyro1
-            // 
-            this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rPodGyro1.Location = new System.Drawing.Point(734, 0);
-            this.rPodGyro1.Name = "rPodGyro1";
-            this.rPodGyro1.Size = new System.Drawing.Size(219, 315);
-            this.rPodGyro1.TabIndex = 11;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,6 +684,9 @@
         private System.Windows.Forms.TabPage BrakesNodeATab;
         private System.Windows.Forms.TabPage BrakesNodeBTab;
         private System.Windows.Forms.TabPage StepperNodeTab;
+        private rPod_GUI_Elements.rPodBatteryVoltage rPodBatteryIndicator1;
+        private rPod_GUI_Elements.rPodBatteryVoltage rPodBatteryVoltage1;
+        private rPod_GUI_Elements.rPodCurrentGauge rPodCurrentGauge1;
     }
 }
 

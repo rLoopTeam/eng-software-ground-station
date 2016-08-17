@@ -230,5 +230,10 @@ namespace rLoop_Ground_Station
 
         }
 
+        private void rPodBatteryIndicator1_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

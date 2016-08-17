@@ -71,11 +71,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="rPod GUI Elements\rPodBatteryIndicator.cs">
+    <Compile Include="rPod GUI Elements\rPodBatteryVoltage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rPod GUI Elements\rPodBatteryIndicator.Designer.cs">
-      <DependentUpon>rPodBatteryIndicator.cs</DependentUpon>
+    <Compile Include="rPod GUI Elements\rPodBatteryVoltage.Designer.cs">
+      <DependentUpon>rPodBatteryVoltage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rPod GUI Elements\rPodCurrentGauge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="rPod GUI Elements\rPodCurrentGauge.Designer.cs">
+      <DependentUpon>rPodCurrentGauge.cs</DependentUpon>
     </Compile>
     <Compile Include="rPod GUI Elements\rPodGyro.cs">
       <SubType>UserControl</SubType>
@@ -103,8 +109,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rPod GUI Elements\rPodBatteryIndicator.resx">
-      <DependentUpon>rPodBatteryIndicator.cs</DependentUpon>
+    <EmbeddedResource Include="rPod GUI Elements\rPodBatteryVoltage.resx">
+      <DependentUpon>rPodBatteryVoltage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rPod GUI Elements\rPodCurrentGauge.resx">
+      <DependentUpon>rPodCurrentGauge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rPod GUI Elements\rPodGyro.resx">
       <DependentUpon>rPodGyro.cs</DependentUpon>

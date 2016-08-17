@@ -1,6 +1,6 @@
 ﻿namespace rLoop_Ground_Station.rPod_GUI_Elements
 {
-    partial class rPodBatteryIndicator
+    partial class rPodCurrentGauge
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // rPodBatteryIndicator
+            // rPodCurrentGauge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "rPodBatteryIndicator";
-            this.Load += new System.EventHandler(this.rPodBatteryIndicator_Load);
+            this.Name = "rPodCurrentGauge";
+            this.Load += new System.EventHandler(this.rPodCurrentGauge_Load);
             this.ResumeLayout(false);
 
         }
