@@ -13,6 +13,5 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public string NodeName;
         public bool IsAlive;
         public DateTime LastHeard;
-        public int NodeId;
     }
 }

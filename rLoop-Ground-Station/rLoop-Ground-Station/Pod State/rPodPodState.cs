@@ -28,8 +28,7 @@ namespace rLoop_Ground_Station
         static public rPodPodStateEnum rPodPodState_RunMode;
         static public rPodStateBrakeNode BrakeNodeA;
         static public rPodStateBrakeNode BrakeNodeB;
-        static public rPodStateCommandNode CommandNode;
-        static public rPodStateControlNode ControlNode;
+        static public rPodStateCommandControlNode CommandNode;
         static public rPodStateStepperNode StepperNode;
         static public rPodStatePowerNode PowerNodeA;
         static public rPodStatePowerNode PowerNodeB;
@@ -39,7 +38,6 @@ namespace rLoop_Ground_Station
             Nodes.Add(BrakeNodeA);
             Nodes.Add(BrakeNodeB);
             Nodes.Add(CommandNode);
-            Nodes.Add(ControlNode);
             Nodes.Add(StepperNode);
             Nodes.Add(PowerNodeA);
             Nodes.Add(PowerNodeB);

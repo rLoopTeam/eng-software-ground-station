@@ -61,38 +61,36 @@ namespace rLoop_Ground_Station
         }
 
         //Called every time a ZMQ telemetry message is received
-        public void ProcessZMQTelemetryFrame(string frame)
+        public void ProcessZMQTelemetryFrame(byte[] frame, string nodeName)
         {
-            TelemetryJSONFrame frameData = JsonConvert.DeserializeObject<TelemetryJSONFrame>(frame.Substring(9));
+            rPodI2CRX rxProcessor = new rPodI2CRX();
+            List<DataParameter> parameterList = rxProcessor.ProcessFrame(frame);
+
             LatestNodeDataNode n;
-            n = LatestNodeData.FirstOrDefault(x => x.NodeName == (frameData.Node));
+            n = LatestNodeData.FirstOrDefault(x => x.NodeName == (nodeName));
             if (n == null)
-                LatestNodeData.Add(new LatestNodeDataNode(frameData.Node));
+                LatestNodeData.Add(new LatestNodeDataNode(nodeName));
             n = LatestNodeData.Last();
 
-            for(int i = 0;i<frameData.Data.Count;i+=2)
+            foreach(DataParameter param in parameterList)
             {
-                NodeDataPoint p = n.DataValues.FirstOrDefault(x => x.Index == frameData.Data[i]);
+                NodeDataPoint p = n.DataValues.FirstOrDefault(x => x.Index == param.Index);
                 if (p == null)
                 {
-                    n.DataValues.Add(new NodeDataPoint(frameData.Data[i], DateTime.Now, frameData.Data[i + 1]));
+                    double data;
+                    double.TryParse( param.Data.ToString(), out data);
+                    n.DataValues.Add(new NodeDataPoint(param.Index, DateTime.Now, data));
                 }
                 else
                 {
-                    p.Value = frameData.Data[i + 1];
+                    double data;
+                    double.TryParse(param.Data.ToString(), out data);
+                    p.Value = data;
                     p.Time = DateTime.Now;
                 }
             }
 
-            rPodStateNodeStateI podNode = rPodPodState.Nodes.FirstOrDefault(x => x.NodeName == frameData.Node);
-            if(podNode != null)
-            {
-                foreach (NodeDataPoint dp in n.DataValues) 
-                {
-                    podNode.ProcessParameter(dp.Index, dp.Value);
-                }
-                podNode.LastHeard = DateTime.Now;
-            }
+            //TODO, pass each parameter to the appropriate Pod State Object
         }
 
         //Renames a node by changing the config file in the Pi and reloading the services
@@ -192,10 +190,17 @@ namespace rLoop_Ground_Station
 
             subscriber.ReceiveReady += (s, a) =>
             {
-                string reply = a.Socket.ReceiveFrameString();
-                NetworkClass.ProcessZMQTelemetryFrame(reply);
-            };
+                byte[] reply = a.Socket.ReceiveFrameBytes();
 
+                string nodeName = "";
+                int i = 10;
+                while (reply[i] != 0xd5)
+                {
+                    nodeName += (char)reply[i];
+                    i++;
+                }
+                NetworkClass.ProcessZMQTelemetryFrame(reply.Skip(i).ToArray(),nodeName);
+            };
             poller.Run();
         }
     }

@@ -54,7 +54,6 @@
     </Compile>
     <Compile Include="Pod State\Nodes\rPodStateBrakeNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStateCommandNode.cs" />
-    <Compile Include="Pod State\Nodes\rPodStateControlNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStateNodeStateI.cs" />
     <Compile Include="Pod State\Nodes\rPodStateStepperNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStatePowerNode.cs" />
@@ -89,6 +88,7 @@
     <Compile Include="rPod GUI Elements\rPodGyro.Designer.cs">
       <DependentUpon>rPodGyro.cs</DependentUpon>
     </Compile>
+    <Compile Include="rPodI2CRX.cs" />
     <Compile Include="rPodNetworking.cs" />
     <Compile Include="rPodNodeDiscovery.cs" />
     <Compile Include="rPod GUI Elements\rPodSpeedometer.cs">

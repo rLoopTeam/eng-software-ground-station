@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace rLoop_Ground_Station.Pod_State.Nodes
 {
-    public class rPodStateCommandNode : rPodStateNodeStateI
+    public class rPodStateCommandControlNode : rPodStateNodeStateI
     {
         public override void ProcessParameter(double param, double value)
         {
