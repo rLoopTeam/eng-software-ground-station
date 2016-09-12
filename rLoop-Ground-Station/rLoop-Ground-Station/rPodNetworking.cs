@@ -16,6 +16,7 @@ using NetMQ.Sockets;
 using Renci.SshNet;
 using rLoop_Ground_Station.Pod_State.Nodes;
 using rLoop_Ground_Station.Pod_State;
+using System.Timers;
 
 namespace rLoop_Ground_Station
 {
@@ -34,11 +35,18 @@ namespace rLoop_Ground_Station
         //Used to shutdown the processing threads
         bool _IsRunning;
 
-        //There might be a better way to kill the threads but this should do for now
+        //This kills everything, should be fixed to pause it
         public bool IsRunning { set { _IsRunning = value; if (value == false) foreach (Thread t in runningThreads) t.Abort(); } get { return _IsRunning; } }
+
+        //halts any discovery actions temporarily
+        public bool Paused = false;
 
         //The running threads processing ZMQ messages
         public List<Thread> runningThreads;
+
+        //Checks if we've received any data recently
+        //and tries to reconnect if not
+        public System.Timers.Timer ZMQKeepAliveTimer;
 
         public rPodNetworking()
         {
@@ -48,14 +56,41 @@ namespace rLoop_Ground_Station
             ZMQTelemetryProcessor.NetworkClass = this;
             LatestNodeData = new List<LatestNodeDataNode>();
             rPodNodeDiscovery.FoundNewNode += new FoundNewNodeHandler(NewNodeDetected);
+            ZMQKeepAliveTimer = new System.Timers.Timer(1000);
+            ZMQKeepAliveTimer.Elapsed += ZMQKeepAliveTimerCallback;
+            ZMQKeepAliveTimer.Enabled = true;
+            ZMQKeepAliveTimer.AutoReset = true;
+        }
+
+        public void ZMQKeepAliveTimerCallback(Object source, ElapsedEventArgs e)
+        {
+            if (Paused)
+                return;
+            if(rPodNodeDiscovery.ActiveNodes != null)
+                foreach (rPodNetworkNode n in rPodNodeDiscovery.ActiveNodes.ToArray())
+                {
+                    if(!n.NodeAnnounceIsAlive())
+                    {
+                        n.TelemetryProcessor.Subscriber.Disconnect(n.TelemetryProcessor.ZMQAddress);
+                        n.TelemetryProcessor.Subscriber.Close();
+                        rPodNodeDiscovery.ActiveNodes.Remove(n);
+                    }else if (!n.NodeZMQIsAlive())
+                    {
+                        n.TelemetryProcessor.Subscriber.Disconnect(n.TelemetryProcessor.ZMQAddress);
+                        n.TelemetryProcessor.Subscriber.Connect(n.TelemetryProcessor.ZMQAddress);
+                    }
+                }
         }
 
         //Called when a new node is detected on the network
         public void NewNodeDetected(rPodNetworkNode node)
         {
             ZMQTelemetryProcessor processor = new ZMQTelemetryProcessor();
+            processor.NetworkNode = node;
             processor.Ip = node.IP;
             Thread newThread = new Thread(processor.zmqBeginListen);
+            node.TelemetryProcessor = processor;
+            node.NodeZMQSeen();
             runningThreads.Add(newThread);
             newThread.Start();
         }
@@ -72,13 +107,13 @@ namespace rLoop_Ground_Station
                 LatestNodeData.Add(new LatestNodeDataNode(nodeName));
             n = LatestNodeData.Last();
 
-            foreach(DataParameter param in parameterList)
+            foreach (DataParameter param in parameterList)
             {
                 NodeDataPoint p = n.DataValues.FirstOrDefault(x => x.Index == param.Index);
                 if (p == null)
                 {
                     double data;
-                    double.TryParse( param.Data.ToString(), out data);
+                    double.TryParse(param.Data.ToString(), out data);
                     n.DataValues.Add(new NodeDataPoint(param.Index, DateTime.Now, data));
                 }
                 else
@@ -99,6 +134,8 @@ namespace rLoop_Ground_Station
         //of a pseudo bash script here.
         public void changeNodeName(string host_ip, string username, string password, string newName)
         {
+            Paused = true;
+            rPodNodeDiscovery.Paused = true;
             using (SshClient ssh = new SshClient(host_ip, username, password))
             {
                 ssh.Connect();
@@ -108,6 +145,8 @@ namespace rLoop_Ground_Station
                 ssh.RunCommand("/etc/init.d/S55udpBeacon restart");
                 ssh.Disconnect();
             }
+            Paused = false;
+            rPodNodeDiscovery.Paused = false;
         }
 
         //Uploades a hex file to the Pi and programs it to the Teensy
@@ -140,66 +179,63 @@ namespace rLoop_Ground_Station
         //Allows interaction with teensy control parameters
         //Can be used from the pod state classes or more
         //directly from the gui during developement
-        public void setParameters(List<Tuple<int,object>> paramList)
+        public bool setParameters(string node, List<DataParameter> parameters)
         {
-            //TODO: Either SSH with i2cSetParameter or write
-            //another module on the pi to listen
-            //for parameter change requests
+            rPodI2CTX formatter = new rPodI2CTX();
+            rPodNetworkNode n = rPodNodeDiscovery.ActiveNodes.FirstOrDefault(x => x.NodeNamePretty == node);
+            if (n == null)
+                return false;
+            string ip = n.IP;
+            if(n.RequestSocket == null)
+                n.RequestSocket = new RequestSocket();
+
+            n.RequestSocket.Connect("tcp://" + ip + ":6789");
+            n.RequestSocket.TrySendFrame(TimeSpan.FromSeconds(1), formatter.formatTransmitParameters(parameters));
+            string reply;
+            if (!n.RequestSocket.TryReceiveFrameString(TimeSpan.FromSeconds(1), out reply))
+                return false;
+            else if (reply == "Got It")
+                return true;
+            return false;
         }
 
     }
 
-    //The basic structure of the telemetry ZMQ frames
-    public class TelemetryJSONFrame
-    {
-        [JsonProperty("node")]
-        public string Node;
-
-        [JsonProperty("mts")]
-        public string Time;
-
-        [JsonProperty("data")]
-        public List<double> Data;
-    }
-
     //One of these is created for each node connection
     //since ZMQ likes to live in it's own threads
-    class ZMQTelemetryProcessor
+    public class ZMQTelemetryProcessor
     {
         public string Ip;
-        public static List<SubscriberSocket> subscribers;
         public static rPodNetworking NetworkClass;
+        public SubscriberSocket Subscriber;
+        public rPodNetworkNode NetworkNode;
+        public string ZMQAddress;
 
         public void zmqBeginListen(object data)
         {
-            if (subscribers == null)
-                subscribers = new List<SubscriberSocket>();
+            Subscriber = new SubscriberSocket();
 
-            SubscriberSocket subscriber = new SubscriberSocket();
-            subscribers.Add(subscriber);
+            ZMQAddress = "tcp://" + Ip + ":3000";
+            Console.WriteLine("I: Connecting to {0}...", ZMQAddress);
+            Subscriber.Connect(ZMQAddress);
 
-            string connect_to = "tcp://" + Ip + ":3000";
-            Console.WriteLine("I: Connecting to {0}...", connect_to);
-            subscriber.Connect(connect_to);
+            Subscriber.Subscribe("telemetry");
 
-            subscriber.Subscribe("telemetry");
+            var poller = new NetMQPoller { Subscriber };
 
-            subscribers.Add(subscriber);
-
-            var poller = new NetMQPoller { subscriber };
-
-            subscriber.ReceiveReady += (s, a) =>
+            Subscriber.ReceiveReady += (s, a) =>
             {
+                if (NetworkClass.Paused)
+                    return;
+                NetworkNode.NodeZMQSeen();
                 byte[] reply = a.Socket.ReceiveFrameBytes();
 
-                string nodeName = "";
                 int i = 10;
-                while (reply[i] != 0xd5)
+                while ( i < reply.Length && reply[i] != 0xd5)
                 {
-                    nodeName += (char)reply[i];
                     i++;
                 }
-                NetworkClass.ProcessZMQTelemetryFrame(reply.Skip(i).ToArray(),nodeName);
+                NetworkClass.ProcessZMQTelemetryFrame(reply.Skip(i).ToArray(), NetworkNode.NodeNameShort);
             };
             poller.Run();
         }

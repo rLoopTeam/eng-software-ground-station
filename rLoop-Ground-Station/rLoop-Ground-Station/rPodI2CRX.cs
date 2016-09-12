@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace rLoop_Ground_Station
 {
     public class DataParameter {
-        public double Index;
+        public UInt16 Index;
         public object Data;
-        public int length; //Technically for byte strings which aren't really implmented anywhere else
+        public int length; //Technically for byte arrays which aren't really implmented anywhere else
     }
 
-    //Since this one is based on ethernet it will assume it's given only a full frame of data
+    //Since this is based on a single zmq message it will assume it's be given a single full frame of data
     public class rPodI2CRX
     {
         public List<DataParameter> ProcessFrame(byte[] dataFrame)
@@ -26,7 +26,7 @@ namespace rLoop_Ground_Station
             int length = dataFrame.Length;
 
             //Check the start and end headers
-            if (dataFrame[0] != I2C_CONTROL_CHAR || dataFrame[1] != I2C_FRAME_START || dataFrame[length - 4] != I2C_CONTROL_CHAR || dataFrame[length - 3] != I2C_FRAME_END)
+            if ( dataFrame.Length > 7 && dataFrame[0] != I2C_CONTROL_CHAR || dataFrame[1] != I2C_FRAME_START || dataFrame[length - 4] != I2C_CONTROL_CHAR || dataFrame[length - 3] != I2C_FRAME_END)
                 return dataList;
 
             int i = 0;
@@ -74,7 +74,7 @@ namespace rLoop_Ground_Station
                                 int dataSize = (dataFrame[position] & 0xF0) / 16;
 
                                 DataParameter p = new DataParameter();
-                                p.Index = dataFrame[position + 1] * 256 + dataFrame[position + 2];
+                                p.Index = (UInt16)(dataFrame[position + 1] * 256 + dataFrame[position + 2]);
                                 byte[] dataBytes = dataFrame.Skip(position + 3).Take(dataSize).ToArray();
 
                                 switch(dataFrame[position]){

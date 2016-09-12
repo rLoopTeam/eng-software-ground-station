@@ -21,7 +21,7 @@
 
 using System.Diagnostics;
 using System.Net.Sockets;
-
+using System;
 using NetMQ.Core.Utils;
 
 namespace NetMQ.Core
@@ -233,7 +233,13 @@ namespace NetMQ.Core
 
             // Get a command.
             var ok = m_commandPipe.TryRead(out command);
-            Debug.Assert(ok);
+
+            //Seems to get hung up occasionally if the ZMQ socket gets messed with
+            //Debug.Assert(ok);
+
+            if (!ok)
+                Console.WriteLine("Error reading a ZMQ frame.");
+            
             return ok;
         }
 

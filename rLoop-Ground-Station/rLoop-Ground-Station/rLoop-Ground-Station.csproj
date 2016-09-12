@@ -89,6 +89,7 @@
       <DependentUpon>rPodGyro.cs</DependentUpon>
     </Compile>
     <Compile Include="rPodI2CRX.cs" />
+    <Compile Include="rPodI2CTX.cs" />
     <Compile Include="rPodNetworking.cs" />
     <Compile Include="rPodNodeDiscovery.cs" />
     <Compile Include="rPod GUI Elements\rPodSpeedometer.cs">

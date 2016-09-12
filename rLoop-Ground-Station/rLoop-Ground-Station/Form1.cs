@@ -59,6 +59,7 @@ namespace rLoop_Ground_Station
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            List<rPodNetworkNode> toRemove = new List<rPodNetworkNode>();
             if (rPodNodeDiscovery.ActiveNodes != null)
             {
                 foreach (rPodNetworkNode i in rPodNodeDiscovery.ActiveNodes)
@@ -66,18 +67,29 @@ namespace rLoop_Ground_Station
                     if (!listBox1.Items.Contains(i))
                         listBox1.Items.Add(i);
                 }
+                foreach(rPodNetworkNode i in listBox1.Items )
+                {
+                    if (!rPodNodeDiscovery.ActiveNodes.Contains(i))
+                        toRemove.Add(i);
+                }
             }
+            foreach (rPodNetworkNode i in toRemove)
+                listBox1.Items.Remove(i);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label2.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IP;
+            if(listBox1.SelectedIndex >= 0)
+                label2.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IP;
         }
 
         private void UpdateDGVTimer_Tick(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex < 0)
+            {
+                dataGridView1.Rows.Clear();
                 return;
+            }
             string node = listBox1.Items[listBox1.SelectedIndex].ToString();
             LatestNodeDataNode nodeData = net.LatestNodeData.FirstOrDefault(x => (x.NodeName.Substring(0,1).ToUpper() + x.NodeName.Substring(1) + " Node") == node);
             if (nodeData != null)
@@ -231,6 +243,92 @@ namespace rLoop_Ground_Station
         }
 
         private void rPodBatteryIndicator1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sendTestData_Click(object sender, EventArgs e)
+        {
+            if(listBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("Choose a node from the list.");
+                return;
+            }
+
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+            UInt16 index;
+            object value = null;
+            UInt16.TryParse(testDataIndexTxt.Text, out index);
+            switch(testDataType.SelectedIndex)
+            {
+                case 0:  sbyte sbyteVal;
+                    if(!sbyte.TryParse(testDataToSendTxt.Text, out sbyteVal))
+                        goto error;
+                    value = sbyteVal;
+                    break;
+                case 1: byte byteVal;
+                    if (!byte.TryParse(testDataToSendTxt.Text, out byteVal))
+                        goto error;
+                    value = byteVal;
+                    break;
+                case 2: Int16 int16Val;
+                    if (!Int16.TryParse(testDataToSendTxt.Text, out int16Val))
+                        goto error;
+                    value = int16Val;
+                    break;
+                case 3: UInt16 uint16Val;
+                    if (!UInt16.TryParse(testDataToSendTxt.Text, out uint16Val))
+                        goto error;
+                    value = uint16Val;
+                    break;
+                case 4: Int32 Int32Val;
+                    if (!Int32.TryParse(testDataToSendTxt.Text, out Int32Val))
+                        goto error;
+                    value = Int32Val;
+                    break;
+                case 5: UInt32 UInt32Val;
+                    if (!UInt32.TryParse(testDataToSendTxt.Text, out UInt32Val))
+                        goto error;
+                    value = UInt32Val;
+                    break;
+                case 6: Int64 Int64Val;
+                    if (!Int64.TryParse(testDataToSendTxt.Text, out Int64Val))
+                        goto error;
+                    value = Int64Val;
+                    break;
+                case 7: UInt64 UInt64Val;
+                    if (!UInt64.TryParse(testDataToSendTxt.Text, out UInt64Val))
+                        goto error;
+                    value = UInt64Val;
+                    break;
+                case 8: float floatVal;
+                    if (!float.TryParse(testDataToSendTxt.Text, out floatVal))
+                        goto error;
+                    value = floatVal;
+                    break;
+                case 9: double doubleVal;
+                    if (!double.TryParse(testDataToSendTxt.Text, out doubleVal))
+                        goto error;
+                    value = doubleVal;
+                    break;
+            }
+
+            DataParameter p = new DataParameter();
+            p.Index = index;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            if (!net.setParameters(listBox1.SelectedItem.ToString(), paramsToSend))
+                MessageBox.Show("There was an error sending the message.");
+
+            return;
+
+            error:
+                MessageBox.Show("Coud not parse one of the fields.");
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

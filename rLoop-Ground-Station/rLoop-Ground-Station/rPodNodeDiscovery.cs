@@ -32,6 +32,7 @@ namespace rLoop_Ground_Station
         public static bool IsRunning { get { return _IsRunning; } set { _IsRunning = value; if (value == false && s != null) s.u.Close(); } }
         static bool _IsRunning = true;
         static UdpState s;
+        public static bool Paused = false;
 
         public static event FoundNewNodeHandler FoundNewNode;
 
@@ -66,11 +67,20 @@ namespace rLoop_Ground_Station
             UdpClient u = (UdpClient)((UdpState)(ar.AsyncState)).u;
             IPEndPoint e = (IPEndPoint)((UdpState)(ar.AsyncState)).e;
 
+            if(Paused)
+            {
+                if (IsRunning)
+                    u.BeginReceive(new AsyncCallback(ReceiveCallback), ((UdpState)(ar.AsyncState)));
+                return;
+            }
+
             Byte[] receiveBytes;
 
-            try {
+            try
+            {
                 receiveBytes = u.EndReceive(ar, ref e);
-            }catch (ObjectDisposedException ex)
+            }
+            catch (ObjectDisposedException ex)
             {
                 return;
             }
@@ -80,14 +90,19 @@ namespace rLoop_Ground_Station
             Console.WriteLine("Received: {0}\n", receiveString);
 
             rPodNetworkNode n = new rPodNetworkNode(receiveString.Substring(6), e.Address.ToString(), false);
+            n.NodeAnnounceSeen();
 
-            if(ActiveNodes == null)
+            if (ActiveNodes == null)
                 ActiveNodes = new List<rPodNetworkNode>();
 
             if (ActiveNodes.Contains(n) == false)
             {
                 ActiveNodes.Add(n);
                 FoundNewNode(n);
+            }
+            else
+            {
+                ActiveNodes.FirstOrDefault(x => x.Equals(n)).NodeAnnounceSeen();
             }
 
             if (IsRunning)
@@ -104,18 +119,36 @@ namespace rLoop_Ground_Station
     public class rPodNetworkNode : IEquatable<rPodNetworkNode>
     {
         private string _nodeName;
-        public string NodeNamePretty { get {return this.ToString();}} //Basically short + " Node"
+        public string NodeNamePretty { get { return this.ToString(); } } //Basically short + " Node"
         public string NodeNameShort { get { return _nodeName; } set { _nodeName = value; } }//As read from the Pi
         public string IP;
-        public DateTime LastSeen;
+        public DateTime AnnounceLastSeen;
+        public DateTime ZMQLastSeen;
         public bool ManuallyAdded;
+        public ZMQTelemetryProcessor TelemetryProcessor;
+        public RequestSocket RequestSocket;
 
-        public void NodeSeen(){
-            LastSeen = DateTime.Now;
+        public void NodeAnnounceSeen()
+        {
+            AnnounceLastSeen = DateTime.Now;
         }
 
-        public bool NodeIsAlive(){
-            if((DateTime.Now - LastSeen) > (new TimeSpan(0,0,10)))
+        public void NodeZMQSeen()
+        {
+            ZMQLastSeen = DateTime.Now;
+        }
+
+        public bool NodeAnnounceIsAlive()
+        {
+            if ((DateTime.Now - AnnounceLastSeen) > (new TimeSpan(0, 0, 10)))
+                return false;
+            else
+                return true;
+        }
+
+        public bool NodeZMQIsAlive()
+        {
+            if ((DateTime.Now - ZMQLastSeen) > (new TimeSpan(0, 0, 1)))
                 return false;
             else
                 return true;
@@ -130,7 +163,7 @@ namespace rLoop_Ground_Station
 
         public override string ToString()
         {
-            return _nodeName.Substring(0,1).ToUpper() + _nodeName.Substring(1) + " Node";
+            return _nodeName.Substring(0, 1).ToUpper() + _nodeName.Substring(1) + " Node";
         }
         public bool Equals(rPodNetworkNode n)
         {

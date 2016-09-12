@@ -79,6 +79,12 @@
             this.units = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.testDataType = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.sendTestData = new System.Windows.Forms.Button();
+            this.testDataIndexTxt = new System.Windows.Forms.TextBox();
+            this.testDataToSendTxt = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -645,6 +651,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.testDataType);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.sendTestData);
+            this.panel3.Controls.Add(this.testDataIndexTxt);
+            this.panel3.Controls.Add(this.testDataToSendTxt);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.label7);
@@ -655,6 +667,73 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1303, 254);
             this.panel3.TabIndex = 6;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // testDataType
+            // 
+            this.testDataType.FormattingEnabled = true;
+            this.testDataType.Items.AddRange(new object[] {
+            "Int 8",
+            "UInt 8",
+            "Int 16",
+            "UInt 16",
+            "Int 32",
+            "UInt 32",
+            "Int 64",
+            "UInt 64",
+            "Float",
+            "Double"});
+            this.testDataType.Location = new System.Drawing.Point(843, 184);
+            this.testDataType.Name = "testDataType";
+            this.testDataType.Size = new System.Drawing.Size(121, 21);
+            this.testDataType.TabIndex = 12;
+            this.testDataType.Text = "Data Type";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(676, 209);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Value";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(538, 209);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Index";
+            // 
+            // sendTestData
+            // 
+            this.sendTestData.Location = new System.Drawing.Point(765, 212);
+            this.sendTestData.Name = "sendTestData";
+            this.sendTestData.Size = new System.Drawing.Size(199, 23);
+            this.sendTestData.TabIndex = 9;
+            this.sendTestData.Text = "Set Parameter";
+            this.sendTestData.UseVisualStyleBackColor = true;
+            this.sendTestData.Click += new System.EventHandler(this.sendTestData_Click);
+            // 
+            // testDataIndexTxt
+            // 
+            this.testDataIndexTxt.Location = new System.Drawing.Point(524, 186);
+            this.testDataIndexTxt.Name = "testDataIndexTxt";
+            this.testDataIndexTxt.Size = new System.Drawing.Size(65, 20);
+            this.testDataIndexTxt.TabIndex = 8;
+            this.testDataIndexTxt.Text = "5";
+            // 
+            // testDataToSendTxt
+            // 
+            this.testDataToSendTxt.Location = new System.Drawing.Point(606, 186);
+            this.testDataToSendTxt.Name = "testDataToSendTxt";
+            this.testDataToSendTxt.Size = new System.Drawing.Size(222, 20);
+            this.testDataToSendTxt.TabIndex = 7;
+            this.testDataToSendTxt.Text = "3.14159";
             // 
             // textBox1
             // 
@@ -807,6 +886,12 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage MotorTab;
         private rPod_GUI_Elements.rPodCurrentGauge rPodCurrentGauge2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button sendTestData;
+        private System.Windows.Forms.TextBox testDataIndexTxt;
+        private System.Windows.Forms.TextBox testDataToSendTxt;
+        private System.Windows.Forms.ComboBox testDataType;
     }
 }
 
