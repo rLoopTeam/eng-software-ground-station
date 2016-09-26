@@ -8,7 +8,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 {
     public class rPodStateStepperNode : rPodStateNodeStateI
     {
-        public override void ProcessParameter(double param, double value)
+        public override void ProcessParameter(List<DataParameter> parameterList)
         {
         }
     }

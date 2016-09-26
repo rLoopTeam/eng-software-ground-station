@@ -125,7 +125,11 @@ namespace rLoop_Ground_Station
                 }
             }
 
-            //TODO, pass each parameter to the appropriate Pod State Object
+            rPodStateNodeStateI nodeState = rPodPodState.Nodes.FirstOrDefault(x => x.NodeName == nodeName);
+            if(nodeState != null)
+            {
+                nodeState.ProcessParameter(parameterList);
+            }
         }
 
         //Renames a node by changing the config file in the Pi and reloading the services
@@ -176,7 +180,7 @@ namespace rLoop_Ground_Station
             }
         }
 
-        //Allows interaction with teensy control parameters
+        //Allows interaction with pod control parameters
         //Can be used from the pod state classes or more
         //directly from the gui during developement
         public bool setParameters(string node, List<DataParameter> parameters)

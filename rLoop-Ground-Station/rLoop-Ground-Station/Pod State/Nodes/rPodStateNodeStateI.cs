@@ -9,7 +9,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 {
     public abstract class rPodStateNodeStateI 
     {
-        public abstract void ProcessParameter(double param, double value);
+        public abstract void ProcessParameter(List<DataParameter> parameters);
         public string NodeName;
         public bool IsAlive;
         public DateTime LastHeard;

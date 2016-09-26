@@ -133,8 +133,6 @@ namespace rLoop_Ground_Station
 
         }
 
-
-
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             podStateControl2.HE1Height = trackBar1.Value;
@@ -333,5 +331,11 @@ namespace rLoop_Ground_Station
 
         }
 
+        private void BatteryPackAStatusTab_Tick(object sender, EventArgs e)
+        {
+            if (rPodPodState.PowerNodeA == null)
+                return;
+            BrakesAPackVoltage.Text = rPodPodState.PowerNodeA.BatteryPackVoltage.ToString() + " Volts";
+        }
     }
 }

@@ -26,8 +26,6 @@ namespace rLoop_Ground_Station
             rPodEmergencyStopState}; //Uh-oh
         static public List<rPodStateNodeStateI> Nodes;
         static public rPodPodStateEnum rPodPodState_RunMode;
-        static public rPodStateBrakeNode BrakeNodeA;
-        static public rPodStateBrakeNode BrakeNodeB;
         static public rPodStateCommandControlNode CommandNode;
         static public rPodStateStepperNode StepperNode;
         static public rPodStatePowerNode PowerNodeA;
@@ -35,8 +33,20 @@ namespace rLoop_Ground_Station
 
         static rPodPodState()
         {
-            Nodes.Add(BrakeNodeA);
-            Nodes.Add(BrakeNodeB);
+            //Be careful here, the compiler gives odd "type initializer" errors
+            //in other areas of code instead of crashing here
+
+            Nodes = new List<rPodStateNodeStateI>();
+            CommandNode = new rPodStateCommandControlNode();
+            StepperNode = new rPodStateStepperNode();
+            PowerNodeA = new rPodStatePowerNode();
+            PowerNodeB = new rPodStatePowerNode();
+
+            CommandNode.NodeName = "Command";
+            StepperNode.NodeName = "Stepper";
+            PowerNodeA.NodeName = "PowerA";
+            PowerNodeB.NodeName = "PowerB";
+
             Nodes.Add(CommandNode);
             Nodes.Add(StepperNode);
             Nodes.Add(PowerNodeA);

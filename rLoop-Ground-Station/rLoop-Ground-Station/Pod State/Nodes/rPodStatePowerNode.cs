@@ -17,6 +17,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float[,] CellPositiveTabTemperature; //Degrees C
         public float[,] CellNegativeTabTemperature; //Degrees C
         public bool[] BatteryRowDischarging; //If the BMS is currently discharging/bypassing a paralled set of cells
+        public float BatteryPackVoltage;
 
         public rPodStatePowerNode()
         {
@@ -38,8 +39,16 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
             }
         }
 
-        public override void ProcessParameter(double param, double value)
+        //Should always line up with: http://confluence.rloop.org/display/SD/Power+Node+Telemetry
+        public override void ProcessParameter(List<DataParameter> parameterList)
         {
+            foreach(DataParameter p in parameterList)
+            {
+                if(p.Index == 21 && p.Data is float)
+                {
+                    BatteryPackVoltage = (float)p.Data;
+                }
+            }
         }
     }
 }

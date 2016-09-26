@@ -29,21 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Timer timer2;
+            System.Windows.Forms.Timer HEguiDemo;
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.UpdateNodeList = new System.Windows.Forms.Timer(this.components);
             this.UpdateDGVTimer = new System.Windows.Forms.Timer(this.components);
+            this.BatteryPackAStatusTab = new System.Windows.Forms.Timer(this.components);
             this.customTabControl1 = new System.Windows.Forms.CustomTabControl();
             this.OverviewTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
-            this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
-            this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rPodCurrentGauge2 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
-            this.rPodBatteryIndicator1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
-            this.rPodCurrentGauge1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
-            this.rPodBatteryVoltage1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
             this.trackBar5 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.trackBar4 = new System.Windows.Forms.TrackBar();
@@ -91,7 +85,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SerialConsoleTab = new System.Windows.Forms.TabPage();
-            timer2 = new System.Windows.Forms.Timer(this.components);
+            this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
+            this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
+            this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
+            this.rPodCurrentGauge2 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
+            this.rPodBatteryIndicator1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
+            this.rPodCurrentGauge1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
+            this.rPodBatteryVoltage1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
+            this.BrakesAPackVoltage = new System.Windows.Forms.Label();
+            HEguiDemo = new System.Windows.Forms.Timer(this.components);
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -103,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.PowerNodeATab.SuspendLayout();
             this.customTabControl2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.NodeUtilitiesTab.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -110,28 +113,34 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timer2
+            // HEguiDemo
             // 
-            timer2.Enabled = true;
-            timer2.Interval = 50;
-            timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            HEguiDemo.Enabled = true;
+            HEguiDemo.Interval = 50;
+            HEguiDemo.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // timer1
+            // UpdateNodeList
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.UpdateNodeList.Enabled = true;
+            this.UpdateNodeList.Interval = 2000;
+            this.UpdateNodeList.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // UpdateDGVTimer
             // 
             this.UpdateDGVTimer.Enabled = true;
             this.UpdateDGVTimer.Interval = 60;
             this.UpdateDGVTimer.Tick += new System.EventHandler(this.UpdateDGVTimer_Tick);
+            // 
+            // BatteryPackAStatusTab
+            // 
+            this.BatteryPackAStatusTab.Enabled = true;
+            this.BatteryPackAStatusTab.Interval = 200;
+            this.BatteryPackAStatusTab.Tick += new System.EventHandler(this.BatteryPackAStatusTab_Tick);
             // 
             // customTabControl1
             // 
@@ -195,62 +204,6 @@
             this.panel1.Size = new System.Drawing.Size(1303, 349);
             this.panel1.TabIndex = 12;
             // 
-            // podStateControl2
-            // 
-            this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.podStateControl2.HE1Height = 12.23D;
-            this.podStateControl2.HE1Percent = 0.8D;
-            this.podStateControl2.HE1Power = 3000D;
-            this.podStateControl2.HE1RPM = 3000D;
-            this.podStateControl2.HE2Height = 12.2D;
-            this.podStateControl2.HE2Percent = 0.8D;
-            this.podStateControl2.HE2Power = 3000D;
-            this.podStateControl2.HE2RPM = 3000D;
-            this.podStateControl2.HE3Height = 12.2D;
-            this.podStateControl2.HE3Percent = 0.8D;
-            this.podStateControl2.HE3Power = 3000D;
-            this.podStateControl2.HE3RPM = 3000D;
-            this.podStateControl2.HE4Height = 12.2D;
-            this.podStateControl2.HE4Percent = 0.8D;
-            this.podStateControl2.HE4Power = 3000D;
-            this.podStateControl2.HE4RPM = 3000D;
-            this.podStateControl2.HE5Height = 12.2D;
-            this.podStateControl2.HE5Percent = 0.8D;
-            this.podStateControl2.HE5Power = 3000D;
-            this.podStateControl2.HE5RPM = 3000D;
-            this.podStateControl2.HE6Height = 12.2D;
-            this.podStateControl2.HE6Percent = 0.8D;
-            this.podStateControl2.HE6Power = 3000D;
-            this.podStateControl2.HE6RPM = 3000D;
-            this.podStateControl2.HE7Height = 12.2D;
-            this.podStateControl2.HE7Percent = 0.8D;
-            this.podStateControl2.HE7Power = 3000D;
-            this.podStateControl2.HE7RPM = 3000D;
-            this.podStateControl2.HE8Height = 12.2D;
-            this.podStateControl2.HE8Percent = 0.8D;
-            this.podStateControl2.HE8Power = 3000D;
-            this.podStateControl2.HE8RPM = 3000D;
-            this.podStateControl2.Location = new System.Drawing.Point(256, 0);
-            this.podStateControl2.Name = "podStateControl2";
-            this.podStateControl2.Size = new System.Drawing.Size(828, 349);
-            this.podStateControl2.TabIndex = 0;
-            // 
-            // rPodSpeedometer1
-            // 
-            this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
-            this.rPodSpeedometer1.Name = "rPodSpeedometer1";
-            this.rPodSpeedometer1.Size = new System.Drawing.Size(256, 349);
-            this.rPodSpeedometer1.TabIndex = 9;
-            // 
-            // rPodGyro1
-            // 
-            this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rPodGyro1.Location = new System.Drawing.Point(1084, 0);
-            this.rPodGyro1.Name = "rPodGyro1";
-            this.rPodGyro1.Size = new System.Drawing.Size(219, 349);
-            this.rPodGyro1.TabIndex = 11;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.rPodCurrentGauge2);
@@ -272,36 +225,6 @@
             this.panel2.Size = new System.Drawing.Size(1303, 360);
             this.panel2.TabIndex = 13;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // rPodCurrentGauge2
-            // 
-            this.rPodCurrentGauge2.Location = new System.Drawing.Point(208, 18);
-            this.rPodCurrentGauge2.Name = "rPodCurrentGauge2";
-            this.rPodCurrentGauge2.Size = new System.Drawing.Size(142, 140);
-            this.rPodCurrentGauge2.TabIndex = 13;
-            // 
-            // rPodBatteryIndicator1
-            // 
-            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(208, 184);
-            this.rPodBatteryIndicator1.Name = "rPodBatteryIndicator1";
-            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(142, 70);
-            this.rPodBatteryIndicator1.TabIndex = 11;
-            this.rPodBatteryIndicator1.Load += new System.EventHandler(this.rPodBatteryIndicator1_Load);
-            // 
-            // rPodCurrentGauge1
-            // 
-            this.rPodCurrentGauge1.Location = new System.Drawing.Point(23, 18);
-            this.rPodCurrentGauge1.Name = "rPodCurrentGauge1";
-            this.rPodCurrentGauge1.Size = new System.Drawing.Size(142, 140);
-            this.rPodCurrentGauge1.TabIndex = 12;
-            // 
-            // rPodBatteryVoltage1
-            // 
-            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(23, 184);
-            this.rPodBatteryVoltage1.Name = "rPodBatteryVoltage1";
-            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(142, 70);
-            this.rPodBatteryVoltage1.TabIndex = 11;
-            this.rPodBatteryVoltage1.Load += new System.EventHandler(this.rPodBatteryIndicator1_Load);
             // 
             // trackBar5
             // 
@@ -445,6 +368,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.tabPage1.Controls.Add(this.BrakesAPackVoltage);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -793,12 +717,109 @@
             this.SerialConsoleTab.TabIndex = 2;
             this.SerialConsoleTab.Text = "Console";
             // 
+            // podStateControl2
+            // 
+            this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.podStateControl2.HE1Height = 12.23D;
+            this.podStateControl2.HE1Percent = 0.8D;
+            this.podStateControl2.HE1Power = 3000D;
+            this.podStateControl2.HE1RPM = 3000D;
+            this.podStateControl2.HE2Height = 12.2D;
+            this.podStateControl2.HE2Percent = 0.8D;
+            this.podStateControl2.HE2Power = 3000D;
+            this.podStateControl2.HE2RPM = 3000D;
+            this.podStateControl2.HE3Height = 12.2D;
+            this.podStateControl2.HE3Percent = 0.8D;
+            this.podStateControl2.HE3Power = 3000D;
+            this.podStateControl2.HE3RPM = 3000D;
+            this.podStateControl2.HE4Height = 12.2D;
+            this.podStateControl2.HE4Percent = 0.8D;
+            this.podStateControl2.HE4Power = 3000D;
+            this.podStateControl2.HE4RPM = 3000D;
+            this.podStateControl2.HE5Height = 12.2D;
+            this.podStateControl2.HE5Percent = 0.8D;
+            this.podStateControl2.HE5Power = 3000D;
+            this.podStateControl2.HE5RPM = 3000D;
+            this.podStateControl2.HE6Height = 12.2D;
+            this.podStateControl2.HE6Percent = 0.8D;
+            this.podStateControl2.HE6Power = 3000D;
+            this.podStateControl2.HE6RPM = 3000D;
+            this.podStateControl2.HE7Height = 12.2D;
+            this.podStateControl2.HE7Percent = 0.8D;
+            this.podStateControl2.HE7Power = 3000D;
+            this.podStateControl2.HE7RPM = 3000D;
+            this.podStateControl2.HE8Height = 12.2D;
+            this.podStateControl2.HE8Percent = 0.8D;
+            this.podStateControl2.HE8Power = 3000D;
+            this.podStateControl2.HE8RPM = 3000D;
+            this.podStateControl2.Location = new System.Drawing.Point(256, 0);
+            this.podStateControl2.Name = "podStateControl2";
+            this.podStateControl2.Size = new System.Drawing.Size(828, 349);
+            this.podStateControl2.TabIndex = 0;
+            // 
+            // rPodSpeedometer1
+            // 
+            this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
+            this.rPodSpeedometer1.Name = "rPodSpeedometer1";
+            this.rPodSpeedometer1.Size = new System.Drawing.Size(256, 349);
+            this.rPodSpeedometer1.TabIndex = 9;
+            // 
+            // rPodGyro1
+            // 
+            this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rPodGyro1.Location = new System.Drawing.Point(1084, 0);
+            this.rPodGyro1.Name = "rPodGyro1";
+            this.rPodGyro1.Size = new System.Drawing.Size(219, 349);
+            this.rPodGyro1.TabIndex = 11;
+            // 
+            // rPodCurrentGauge2
+            // 
+            this.rPodCurrentGauge2.Location = new System.Drawing.Point(208, 18);
+            this.rPodCurrentGauge2.Name = "rPodCurrentGauge2";
+            this.rPodCurrentGauge2.Size = new System.Drawing.Size(142, 140);
+            this.rPodCurrentGauge2.TabIndex = 13;
+            // 
+            // rPodBatteryIndicator1
+            // 
+            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(208, 184);
+            this.rPodBatteryIndicator1.Name = "rPodBatteryIndicator1";
+            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(142, 70);
+            this.rPodBatteryIndicator1.TabIndex = 11;
+            this.rPodBatteryIndicator1.Load += new System.EventHandler(this.rPodBatteryIndicator1_Load);
+            // 
+            // rPodCurrentGauge1
+            // 
+            this.rPodCurrentGauge1.Location = new System.Drawing.Point(23, 18);
+            this.rPodCurrentGauge1.Name = "rPodCurrentGauge1";
+            this.rPodCurrentGauge1.Size = new System.Drawing.Size(142, 140);
+            this.rPodCurrentGauge1.TabIndex = 12;
+            // 
+            // rPodBatteryVoltage1
+            // 
+            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(23, 184);
+            this.rPodBatteryVoltage1.Name = "rPodBatteryVoltage1";
+            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(142, 70);
+            this.rPodBatteryVoltage1.TabIndex = 11;
+            this.rPodBatteryVoltage1.Load += new System.EventHandler(this.rPodBatteryIndicator1_Load);
+            // 
+            // BrakesAPackVoltage
+            // 
+            this.BrakesAPackVoltage.AutoSize = true;
+            this.BrakesAPackVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrakesAPackVoltage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BrakesAPackVoltage.Location = new System.Drawing.Point(191, 70);
+            this.BrakesAPackVoltage.Name = "BrakesAPackVoltage";
+            this.BrakesAPackVoltage.Size = new System.Drawing.Size(179, 37);
+            this.BrakesAPackVoltage.TabIndex = 1;
+            this.BrakesAPackVoltage.Text = "0.000 Volts";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1361, 770);
+            this.ClientSize = new System.Drawing.Size(1284, 770);
             this.Controls.Add(this.customTabControl1);
             this.Name = "Form1";
             this.Text = "rLoop Ground Station Control";
@@ -818,6 +839,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.PowerNodeATab.ResumeLayout(false);
             this.customTabControl2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.NodeUtilitiesTab.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -836,7 +859,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer UpdateNodeList;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn index;
@@ -892,6 +915,8 @@
         private System.Windows.Forms.TextBox testDataIndexTxt;
         private System.Windows.Forms.TextBox testDataToSendTxt;
         private System.Windows.Forms.ComboBox testDataType;
+        private System.Windows.Forms.Timer BatteryPackAStatusTab;
+        private System.Windows.Forms.Label BrakesAPackVoltage;
     }
 }
 
