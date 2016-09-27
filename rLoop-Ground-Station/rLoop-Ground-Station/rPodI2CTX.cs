@@ -202,14 +202,14 @@ namespace rLoop_Ground_Station
             addHeader(0x83, index);
             byte[] bytes = BitConverter.GetBytes(data);
 
-            addCheckedByte(bytes[7]);
-            addCheckedByte(bytes[6]);
-            addCheckedByte(bytes[5]);
-            addCheckedByte(bytes[4]);
-            addCheckedByte(bytes[3]);
-            addCheckedByte(bytes[2]);
-            addCheckedByte(bytes[1]);
             addCheckedByte(bytes[0]);
+            addCheckedByte(bytes[1]);
+            addCheckedByte(bytes[2]);
+            addCheckedByte(bytes[3]);
+            addCheckedByte(bytes[4]);
+            addCheckedByte(bytes[5]);
+            addCheckedByte(bytes[6]);
+            addCheckedByte(bytes[7]);
         }
 
         private void addParameter(UInt16 index, float data)
@@ -217,10 +217,10 @@ namespace rLoop_Ground_Station
             addHeader(0x43, index);
             byte[] bytes = BitConverter.GetBytes(data);
 
-            addCheckedByte(bytes[3]);
-            addCheckedByte(bytes[2]);
-            addCheckedByte(bytes[1]);
             addCheckedByte(bytes[0]);
+            addCheckedByte(bytes[1]);
+            addCheckedByte(bytes[2]);
+            addCheckedByte(bytes[3]);
         }
     }
 }

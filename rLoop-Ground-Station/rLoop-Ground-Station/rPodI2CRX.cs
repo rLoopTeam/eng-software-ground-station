@@ -109,11 +109,9 @@ namespace rLoop_Ground_Station
                                         p.Data = BitConverter.ToUInt64(dataBytes, 0);
                                         break;
                                     case 0x43: //float
-                                        dataBytes = dataBytes.Reverse().ToArray();
                                         p.Data = BitConverter.ToSingle(dataBytes, 0);
                                         break;
                                     case 0x83: //double
-                                        dataBytes = dataBytes.Reverse().ToArray();
                                         p.Data = BitConverter.ToDouble(dataBytes, 0);
                                         break;
                                 }
