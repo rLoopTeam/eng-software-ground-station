@@ -133,7 +133,7 @@
             this.testDataToSendTxt.Name = "testDataToSendTxt";
             this.testDataToSendTxt.Size = new System.Drawing.Size(222, 20);
             this.testDataToSendTxt.TabIndex = 13;
-            this.testDataToSendTxt.Text = "3.14159";
+            this.testDataToSendTxt.Text = "3,14159";
             // 
             // UDPTimer
             // 
