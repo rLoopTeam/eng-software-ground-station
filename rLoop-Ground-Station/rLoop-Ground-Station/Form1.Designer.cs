@@ -51,6 +51,7 @@
             this.PowerNodeATab = new System.Windows.Forms.TabPage();
             this.customTabControl2 = new System.Windows.Forms.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.BrakesAPackVoltage = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -92,7 +93,6 @@
             this.rPodBatteryIndicator1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
             this.rPodCurrentGauge1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
             this.rPodBatteryVoltage1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
-            this.BrakesAPackVoltage = new System.Windows.Forms.Label();
             HEguiDemo = new System.Windows.Forms.Timer(this.components);
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
@@ -133,7 +133,7 @@
             // UpdateDGVTimer
             // 
             this.UpdateDGVTimer.Enabled = true;
-            this.UpdateDGVTimer.Interval = 60;
+            this.UpdateDGVTimer.Interval = 50;
             this.UpdateDGVTimer.Tick += new System.EventHandler(this.UpdateDGVTimer_Tick);
             // 
             // BatteryPackAStatusTab
@@ -375,6 +375,17 @@
             this.tabPage1.Size = new System.Drawing.Size(1245, 600);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Voltages";
+            // 
+            // BrakesAPackVoltage
+            // 
+            this.BrakesAPackVoltage.AutoSize = true;
+            this.BrakesAPackVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrakesAPackVoltage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BrakesAPackVoltage.Location = new System.Drawing.Point(191, 70);
+            this.BrakesAPackVoltage.Name = "BrakesAPackVoltage";
+            this.BrakesAPackVoltage.Size = new System.Drawing.Size(179, 37);
+            this.BrakesAPackVoltage.TabIndex = 1;
+            this.BrakesAPackVoltage.Text = "0.000 Volts";
             // 
             // tabPage5
             // 
@@ -802,17 +813,6 @@
             this.rPodBatteryVoltage1.Size = new System.Drawing.Size(142, 70);
             this.rPodBatteryVoltage1.TabIndex = 11;
             this.rPodBatteryVoltage1.Load += new System.EventHandler(this.rPodBatteryIndicator1_Load);
-            // 
-            // BrakesAPackVoltage
-            // 
-            this.BrakesAPackVoltage.AutoSize = true;
-            this.BrakesAPackVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrakesAPackVoltage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BrakesAPackVoltage.Location = new System.Drawing.Point(191, 70);
-            this.BrakesAPackVoltage.Name = "BrakesAPackVoltage";
-            this.BrakesAPackVoltage.Size = new System.Drawing.Size(179, 37);
-            this.BrakesAPackVoltage.TabIndex = 1;
-            this.BrakesAPackVoltage.Text = "0.000 Volts";
             // 
             // Form1
             // 

@@ -79,8 +79,11 @@ namespace rLoop_Ground_Station
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listBox1.SelectedIndex >= 0)
+            if (listBox1.SelectedIndex >= 0)
+            {
                 label2.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IP;
+                dataGridView1.Rows.Clear();
+            }
         }
 
         private void UpdateDGVTimer_Tick(object sender, EventArgs e)

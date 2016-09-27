@@ -102,10 +102,13 @@ namespace rLoop_Ground_Station
             List<DataParameter> parameterList = rxProcessor.ProcessFrame(frame);
 
             LatestNodeDataNode n;
-            n = LatestNodeData.FirstOrDefault(x => x.NodeName == (nodeName));
-            if (n == null)
+            if (LatestNodeData.Any(x => x.NodeName == nodeName))
+                n = LatestNodeData.Single(x => x.NodeName == nodeName);
+            else
+            {
                 LatestNodeData.Add(new LatestNodeDataNode(nodeName));
-            n = LatestNodeData.Last();
+                n = LatestNodeData.Last();
+            }
 
             foreach (DataParameter param in parameterList)
             {
