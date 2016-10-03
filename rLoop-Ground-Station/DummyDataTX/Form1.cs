@@ -49,9 +49,10 @@ namespace DummyDataTX
                                 IPAddress transmitIP;
                                 if (IPAddress.TryParse("239.3.14.159", out transmitIP))
                                 {
-                                    IPEndPoint target = new IPEndPoint(transmitIP, 50051);
+                                    IPEndPoint target = new IPEndPoint(transmitIP, 54545);
                                     byte[] data = Encoding.ASCII.GetBytes(preamble + UDPAnnounceTXT.Text);
                                     udpc.Send(data , data.Length, target);
+                                    Console.WriteLine(data);
                                 }
                             }
                         }
@@ -62,10 +63,12 @@ namespace DummyDataTX
 
         private void ZMQTimer_Tick(object sender, EventArgs e)
         {
+            Console.WriteLine("ZMQ TICK");
             List<DataParameter> paramsToSend = new List<DataParameter>();
             UInt16 index;
             object value = null;
             UInt16.TryParse(testDataIndexTxt.Text, out index);
+            Console.WriteLine(testDataIndexTxt);
             switch (testDataType.SelectedIndex)
             {
                 case 0:
@@ -128,11 +131,12 @@ namespace DummyDataTX
                         goto error;
                     value = doubleVal;
                     break;
-            }
 
+            }
             DataParameter p = new DataParameter();
             p.Index = index;
             p.Data = value;
+            Console.WriteLine(p);
 
             paramsToSend.Add(p);
 
@@ -142,9 +146,10 @@ namespace DummyDataTX
             byte[] header = Encoding.ASCII.GetBytes("telemetry " + ZMQNodeTXT.Text);
             byte[] toSend = header.Concat(paramData).ToArray();
 
-            pubSocket.TrySendFrame(TimeSpan.FromSeconds(1), toSend);   
+            Console.WriteLine(paramsToSend);
+            pubSocket.TrySendFrame(TimeSpan.FromSeconds(1), toSend);
 
-            error:
+        error:
                 return;
         }
 

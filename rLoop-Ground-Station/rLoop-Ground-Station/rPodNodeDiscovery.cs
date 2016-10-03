@@ -38,7 +38,7 @@ namespace rLoop_Ground_Station
 
         public static bool beginUDPListen()
         {
-            IPEndPoint e = new IPEndPoint(IPAddress.Any, 50051);
+            IPEndPoint e = new IPEndPoint(IPAddress.Any, 54545);
             UdpClient u = new UdpClient(e);
             u.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             try

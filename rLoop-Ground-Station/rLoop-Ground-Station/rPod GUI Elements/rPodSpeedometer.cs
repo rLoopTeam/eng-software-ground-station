@@ -46,6 +46,14 @@ namespace rLoop_Ground_Station
             return ret;
         }
 
+        private int checkZero(int a)
+        {
+            if (a < 1){
+                return 1;
+            }
+            return a;
+        }
+
         private void redrawBackground()
         {
             backgroundBuffer = new Bitmap(this.Size.Width, this.Size.Height);
@@ -57,10 +65,10 @@ namespace rLoop_Ground_Station
 
             int size = this.Size.Width > this.Size.Height ? this.Size.Height : this.Size.Width;
 
-            float smallArcHeight = size / 2;
-            float smallArcWidth = size / 2;
-            float smallArcCenterX = size / 2;
-            float smallArcCenterY = size / 2;
+            float smallArcHeight = checkZero( size / 2 );
+            float smallArcWidth = checkZero(size / 2);
+            float smallArcCenterX = checkZero(size / 2);
+            float smallArcCenterY = checkZero(size / 2);
 
             g.DrawArc(new System.Drawing.Pen(Color.FromArgb(125, 255, 255, 255), 2), smallArcCenterX - smallArcWidth / 2, smallArcCenterY - smallArcHeight / 2, smallArcWidth, smallArcHeight, 135, 270);
             double majorRin = size / 2.5;
@@ -72,7 +80,13 @@ namespace rLoop_Ground_Station
             int major = 5;
             float degSep = ((float)endDeg - beginDeg) / (float)(numOfTicks - 1);
 
-            Font textFont = new Font("Arial", size / 30);
+            float fontSize = size / 30;
+            if (fontSize < 1)
+            {
+                fontSize = 1;
+            }
+
+            Font textFont = new Font("Arial", fontSize);
             SolidBrush textBrush = new SolidBrush(Color.White);
 
             for (int i = 0; i < numOfTicks; i++)
@@ -121,7 +135,12 @@ namespace rLoop_Ground_Station
             double value = currentSpeed/maxSpeed;
             Tuple<double, double> speedPos = polarToLinear(size / 4, ((double)endDeg - beginDeg) * value + beginDeg, size / 2, size / 2);
 
-            Font bigSpeedFont = new Font("Arial", size/13);
+            float fontSize = size / 13;
+            if (fontSize < 1)
+            {
+                fontSize = 1;
+            }
+            Font bigSpeedFont = new Font("Arial", fontSize);
             SolidBrush bigSpeedBrush = new SolidBrush(Color.White);
             SizeF bigSpeedTextSize = e.Graphics.MeasureString("km/h",bigSpeedFont);
             e.Graphics.DrawString("km/h", bigSpeedFont, bigSpeedBrush, (float)( size / 2 - bigSpeedTextSize.Width / 2),(float)( size * .57 - bigSpeedTextSize.Height / 2));
@@ -130,7 +149,7 @@ namespace rLoop_Ground_Station
             e.Graphics.DrawString(currentSpeed.ToString(), bigSpeedFont, bigSpeedBrush, (float)(size / 2 - bigSpeedTextSize.Width / 2), (float)(size*.43 - bigSpeedTextSize.Height / 2));
 
             int gradientSize = (int)(size / 2.5);
-            Rectangle bounds = new Rectangle((int)speedPos.Item1 - gradientSize/2,(int)speedPos.Item2 - gradientSize/2,gradientSize,gradientSize);
+            Rectangle bounds = new Rectangle((int)speedPos.Item1 - gradientSize/2,(int)speedPos.Item2 - gradientSize/2,checkZero(gradientSize),checkZero(gradientSize));
             using (var ellipsePath = new GraphicsPath())
             {
                 ellipsePath.AddEllipse(bounds);

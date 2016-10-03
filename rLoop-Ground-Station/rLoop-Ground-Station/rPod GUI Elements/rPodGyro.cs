@@ -62,6 +62,10 @@ namespace rLoop_Ground_Station
             finalOutlineWidth = this.Size.Width;
             finalOutlineHeight = this.Size.Height / 2;
             fontSize = this.Size.Height / 20;
+            if (fontSize < 1)
+            {
+                fontSize = 1;
+            }
             drawFont = new Font("Arial", fontSize);
             fontHeight = drawFont.Height;
             fontPadding = (int)((this.Height / 2.0 - fontHeight * 3.0) / 4.0);

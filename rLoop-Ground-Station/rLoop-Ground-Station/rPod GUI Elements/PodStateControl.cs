@@ -129,6 +129,7 @@ namespace rLoop_Ground_Station
             int imageHeight2 = (int)(this.Size.Width * imageRatio);
             int finalOutlineWidth;
             int finalOutlineHeight;
+            float fontSize;
             if (imageWidth1 <= this.Size.Width)
             {
                 finalOutlineWidth = imageWidth1;
@@ -140,8 +141,14 @@ namespace rLoop_Ground_Station
                 finalOutlineHeight = imageHeight2;
             }
 
-            System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", finalOutlineHeight/35);
+            fontSize = finalOutlineHeight / 35;
+            if (fontSize < 1)
+            {
+                fontSize = 1;
+            }
+            
+                System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
+            Font drawFont = new Font("Arial", fontSize);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             g.DrawImage(podOutlineImage, new Rectangle(new Point(this.Width / 2 - finalOutlineWidth / 2, 0), new Size(finalOutlineWidth, finalOutlineHeight)));
@@ -237,6 +244,7 @@ namespace rLoop_Ground_Station
             int imageHeight2 = (int)(this.Size.Width * imageRatio);
             int finalOutlineWidth;
             int finalOutlineHeight;
+            float fontSize;
             if (imageWidth1 <= this.Size.Width)
             {
                 finalOutlineWidth = imageWidth1;
@@ -248,8 +256,14 @@ namespace rLoop_Ground_Station
                 finalOutlineHeight = imageHeight2;
             }
 
+            fontSize = finalOutlineHeight / 35;
+            if (fontSize < 1)
+            {
+                fontSize = 1;
+            }
+
             System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", finalOutlineHeight / 35);
+            Font drawFont = new Font("Arial", fontSize);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             double firstRow = .11;
@@ -284,6 +298,11 @@ namespace rLoop_Ground_Station
             int HE8CenterY = (int)((double)finalOutlineHeight * .157);
 
             int lineSpaceing = drawFont.Height + 2;
+
+            if (HECirclesSize < 1)
+            {
+                HECirclesSize = 1;
+            }
 
             //HE 1 Text
             e.Graphics.DrawString(string.Format("{0:0.0} mm", _HE1Height), drawFont, drawBrush, new Point((int)(Column1Height - (e.Graphics.MeasureString(string.Format("{0:0.0} mm", _HE1Height), drawFont).ToSize().Width) / 2), (int)(this.Height * firstRow) + lineSpaceing));
