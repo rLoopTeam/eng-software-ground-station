@@ -18,6 +18,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float[,] CellNegativeTabTemperature; //Degrees C
         public bool[] BatteryRowDischarging; //If the BMS is currently discharging/bypassing a paralled set of cells
         public float BatteryPackVoltage;
+        public float BatteryPackTemperature;
 
         public rPodStatePowerNode()
         {
@@ -47,6 +48,11 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 if(p.Index == 21 && p.Data is float)
                 {
                     BatteryPackVoltage = (float)p.Data;
+                }
+
+                if (p.Index == 22 && p.Data is float)
+                {
+                    BatteryPackTemperature = (float)p.Data;
                 }
             }
         }

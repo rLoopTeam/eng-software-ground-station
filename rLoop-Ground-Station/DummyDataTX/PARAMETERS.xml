@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Parameters_Table>  
+  <parameter>  
+    <index>21</index>
+    <value>7.9</value>  
+    <datatype>Float</datatype>  
+  </parameter>
+  <parameter>  
+    <index>22</index>
+    <value>9</value>  
+    <datatype>UInt 8</datatype>  
+  </parameter>
+</Parameters_Table>

@@ -224,8 +224,14 @@ namespace rLoop_Ground_Station
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            customTabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
-            customTabControl1.Location = new Point(5, 5);
+            try {
+                customTabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
+                customTabControl1.Location = new Point(5, 5);
+            }
+            catch (Exception formResizeException)
+            {
+                Console.Write(formResizeException.StackTrace);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -339,6 +345,7 @@ namespace rLoop_Ground_Station
             if (rPodPodState.PowerNodeA == null)
                 return;
             BrakesAPackVoltage.Text = rPodPodState.PowerNodeA.BatteryPackVoltage.ToString() + " Volts";
+            BrakesAPackTemperature.Text = rPodPodState.PowerNodeA.BatteryPackTemperature.ToString() + " degC";
         }
     }
 }
