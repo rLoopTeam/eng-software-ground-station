@@ -265,7 +265,7 @@
             this.Name = "Form1";
             this.Text = "Test Data";
             //this.Closing += new System.EventHandler(this.Form1_Closing);
-            this.Closing += this.Form1_Closing;
+            //this.Closing += this.Form1_Closing;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParametersDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTypesDataSet)).EndInit();

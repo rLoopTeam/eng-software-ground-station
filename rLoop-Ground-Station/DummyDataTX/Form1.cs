@@ -33,13 +33,17 @@ namespace DummyDataTX
 
         }
 
+        /*
+        //
+        // Need to move this functionality to a button or something
+        //
         private void Form1_Closing(Object sender, System.ComponentModel.CancelEventArgs e)
         {
             Console.WriteLine("Save!");
             string path = PARAMETERS_XML_PATH;
             DataSet ds = (DataSet)dataGridView1.DataSource;
             ds.WriteXml(path);
-        }
+        }*/
 
 
         private void UDPTimer_Tick(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace DummyDataTX
 
         private void ZMQTimer_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine("ZMQ TICK");
+            Console.WriteLine("TX: ZMQ TICK");
             List<DataParameter> paramsToSend = new List<DataParameter>();
             
             // parameter grid
@@ -87,15 +91,21 @@ namespace DummyDataTX
             {
                 try
                 {
-                    Console.WriteLine("========");
+                    Console.WriteLine("TX: ========");
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
+                        if (row.IsNewRow)
+                            continue;
+
                         object cell1Value = row.Cells[0].Value;
                         object cell2Value = row.Cells[1].Value;
                         object cell3Value = row.Cells[2].Value;
 
                         if (cell1Value == null || cell2Value == null || cell3Value == null)
+                        {
+                            Console.WriteLine("TX: Cell value is null: "+cell1Value + ", " + cell2Value + ", " + cell3Value);
                             continue;
+                        }
 
                         string parameterIndex = cell1Value.ToString(); ;
                         string parameterValue = cell2Value.ToString();
@@ -182,7 +192,8 @@ namespace DummyDataTX
 
                         // add parameter to the list of parameters to send
                         paramsToSend.Add(p);
-                        Console.WriteLine(index + ": " + value + "(" + parameterType + ")");
+                        Console.WriteLine("TX: " + index + ": " + value + "(" + parameterType + ")");
+
                     }
                 } catch(Exception ee) {
                     Console.WriteLine("ERROR: Something wrong with data table");
