@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Types_Table>  
+  <data_type>  
+    <value>0</value>
+    <name>Int 8</name>
+  </data_type>
+  <data_type>
+    <value>1</value>
+    <name>UInt 8</name>
+  </data_type>
+</Types_Table>
