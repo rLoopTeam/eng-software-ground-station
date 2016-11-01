@@ -24,3 +24,31 @@ C:\Github\eng-software-ground-station - Copy\rLoop-Ground-Station\rLoop-Ground-S
 C:\Github\eng-software-ground-station - Copy\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.pdb
 C:\Github\eng-software-ground-station - Copy\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.rPodGyro.resources
 C:\Github\eng-software-ground-station - Copy\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\parameters.json
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\rLoop-Ground-Station.exe.config
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.exe
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.pdb
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\g6034.png
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\parameters.json
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\rLoop-Ground-Station.exe
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\rLoop-Ground-Station.pdb
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\JacksonSoft.CustomTabControl.dll
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\NetMQ.dll
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\Newtonsoft.Json.dll
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\Renci.SshNet.dll
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\AsyncIO.dll
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\JacksonSoft.CustomTabControl.pdb
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\NetMQ.pdb
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\Newtonsoft.Json.xml
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\Renci.SshNet.pdb
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\Renci.SshNet.xml
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\bin\Debug\AsyncIO.pdb
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.csprojResolveAssemblyReference.cache
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.Form1.resources
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.PodStateControl.resources
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.Properties.Resources.resources
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage.resources
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge.resources
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.rPodGyro.resources
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.rPodSpeedometer.resources
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.csproj.GenerateResource.Cache
