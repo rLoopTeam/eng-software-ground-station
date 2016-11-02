@@ -43,32 +43,30 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         //Should always line up with: http://confluence.rloop.org/display/SD/Power+Node+Telemetry
         public override void ProcessParameter(List<DataParameter> parameterList)
         {
-            int y = 0;
-            int x = 0;
+            int batteryCellRowIndex;
+            int batteryCellColumnIndex;
+
             foreach (DataParameter p in parameterList)
             {
-                
+               
                 if (p.Index >= 3 && p.Index <= 20 && p.Data is float)
                 {
+                    batteryCellRowIndex = (p.Index - 3) / 6;
+                    batteryCellColumnIndex = (p.Index - 3) % 6;
+
                     // store the parameter value into the 2D storage array
                     try
                     {
-                        CellVoltages[y, x] = (float)parameterList[p.Index].Data;
+                        Console.WriteLine("RX Voltage parameter: "+parameterList[p.Index].Data.ToString());
+                        CellVoltages[batteryCellRowIndex, batteryCellColumnIndex] = (float)parameterList[p.Index].Data;
+                        Console.WriteLine("RX Voltage [y:" + batteryCellRowIndex + ", x:" + batteryCellColumnIndex + "] " + parameterList[p.Index].Data.ToString());
                     }
                     catch (Exception eeee)
                     {
-                        Console.WriteLine("RX [y:" + y + ", x:" + x + "] parameter is NULL!!");
+                        Console.WriteLine("RX Voltage [y:" + batteryCellRowIndex + ", x:" + batteryCellColumnIndex + "]");
+                        Console.WriteLine(eeee.Message);
                     }
 
-                    // manipulate iterator indices to convert the 1D array into the 2D array
-                    x += 1;
-                    if (x > 5)
-                    {
-                        y += 1;
-                        if (y > 17)
-                            y = 0;
-                        x = 0;
-                    }
                     continue;
                 }
 
@@ -85,26 +83,19 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
 
                 /*
-                * Indices 23 - 129 are the temperature sensors for the positive tabs of the battery cells
+                * Indices 23 - 130 are the temperature sensors for the positive tabs of the battery cells
                 */
-                if (p.Index >= 23 && p.Index < 130 && p.Data is float)
+                if (p.Index >= 23 && p.Index <= 130 && p.Data is float)
                 {
+                    batteryCellRowIndex = (p.Index - 23) / 6;
+                    batteryCellColumnIndex = (p.Index - 23) % 6;
+
                     // store the parameter value into the 2D storage array
                     try { 
-                        CellPositiveTabTemperature[y, x] = (float)parameterList[p.Index].Data;
+                        CellPositiveTabTemperature[batteryCellRowIndex, batteryCellColumnIndex] = (float)parameterList[p.Index].Data;
                     } catch(Exception eeee)
                     {
-                        Console.WriteLine("RX [y:" + y + ", x:" + x + "] parameter is NULL!!");
-                    }
-                    
-                    // manipulate iterator indices to convert the 1D array into the 2D array
-                    x += 1;
-                    if (x > 5)
-                    {
-                        y += 1;
-                        if (y > 17)
-                            y = 0;
-                        x = 0;
+                        Console.WriteLine("RX [y:" + batteryCellRowIndex + ", x:" + batteryCellColumnIndex + "] parameter is NULL!!");
                     }
                     continue;
                 }
@@ -113,26 +104,19 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 /*
                 * Indices 131 - 238 are the temperature sensors for the positive tabs of the battery cells
                 */
-                if (p.Index >= 131 && p.Index < 238 && p.Data is float)
+                if (p.Index >= 131 && p.Index <= 238 && p.Data is float)
                 {
+                    batteryCellRowIndex = (p.Index - 131) / 6;
+                    batteryCellColumnIndex = (p.Index - 131) % 6;
+
                     // store the parameter value into the 2D storage array
                     try
                     {
-                        CellNegativeTabTemperature[y, x] = (float)parameterList[p.Index].Data;
+                        CellNegativeTabTemperature[batteryCellRowIndex, batteryCellColumnIndex] = (float)parameterList[p.Index].Data;
                     }
                     catch (Exception eeee)
                     {
-                        Console.WriteLine("RX [y:" + y + ", x:" + x + "] parameter is NULL!!");
-                    }
-
-                    // manipulate iterator indices to convert the 1D array into the 2D array
-                    x += 1;
-                    if (x > 5)
-                    {
-                        y += 1;
-                        if (y > 17)
-                            y = 0;
-                        x = 0;
+                        Console.WriteLine("RX [y:" + batteryCellRowIndex + ", x:" + batteryCellColumnIndex + "] parameter is NULL!!");
                     }
                     continue;
                 }
