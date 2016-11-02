@@ -13,6 +13,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         //Temperature sensors on the positive and negative tab of each cell
         //Temperature sensors between each cells
         //Battery Cells: 1 - 18, A - F
+        public float[] RowVoltage;
         public float[,] CellVoltages; //Volts
         public float[,] CellPositiveTabTemperature; //Degrees C
         public float[,] CellNegativeTabTemperature; //Degrees C
@@ -26,11 +27,13 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
             CellPositiveTabTemperature = new float[18, 6];
             CellNegativeTabTemperature = new float[18, 6];
             BatteryRowDischarging = new bool[18];
+            RowVoltage = new float[18];
 
 
             for (int y = 0; y < 18; y++)
             {
                 BatteryRowDischarging[y] = false;
+                RowVoltage[y] = -1;
                 for (int x = 0; x < 6; x++)
                 {
                     CellVoltages[y, x] = -1;
@@ -51,19 +54,17 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                
                 if (p.Index >= 3 && p.Index <= 20 && p.Data is float)
                 {
-                    batteryCellRowIndex = (p.Index - 3) / 6;
-                    batteryCellColumnIndex = (p.Index - 3) % 6;
+                    batteryCellRowIndex = (p.Index - 3) % 18;
 
                     // store the parameter value into the 2D storage array
                     try
                     {
                         Console.WriteLine("RX Voltage parameter: "+parameterList[p.Index].Data.ToString());
-                        CellVoltages[batteryCellRowIndex, batteryCellColumnIndex] = (float)parameterList[p.Index].Data;
-                        Console.WriteLine("RX Voltage [y:" + batteryCellRowIndex + ", x:" + batteryCellColumnIndex + "] " + parameterList[p.Index].Data.ToString());
+                        RowVoltage[batteryCellRowIndex] = (float)parameterList[p.Index].Data;
                     }
                     catch (Exception eeee)
                     {
-                        Console.WriteLine("RX Voltage [y:" + batteryCellRowIndex + ", x:" + batteryCellColumnIndex + "]");
+                        Console.WriteLine("RX Voltage [y:" + batteryCellRowIndex + "]");
                         Console.WriteLine(eeee.Message);
                     }
 
@@ -78,7 +79,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
                 if (p.Index == 22 && p.Data is float)
                 {
-                    BatteryPackVoltage = (float)p.Data;
+                    BatteryPackTemperature = (float)p.Data;
                 }
 
 

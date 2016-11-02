@@ -25,6 +25,7 @@ namespace rLoop_Ground_Station
         String stateCellNegativeTemperature;
         String stateCellPositiveTemperature;
         String stateRowDischarge;
+        String stateRowVoltage;
 
         rPodNetworking net;
         Label[,] lblCellRowsTempPositiveTabs;
@@ -469,10 +470,8 @@ namespace rLoop_Ground_Station
             BrakesAPackVoltage.Text = "Voltage: " + rPodPodState.PowerNodeA.BatteryPackVoltage.ToString() + "V";
             BrakesAPackTemperature.Text = "Temperature: " + rPodPodState.PowerNodeA.BatteryPackTemperature.ToString() + "°C";
 
-            float totalRowVoltage;
             for (int y = 0; y < GRID_ROWS; y++)
             {
-                totalRowVoltage = 0;
                 for (int x = 0; x < GRID_CELL_COLUMNS; x++)
                 {
                     stateCellNegativeTemperature = rPodPodState.PowerNodeA.CellNegativeTabTemperature[y, x].ToString() + "°C";
@@ -484,14 +483,17 @@ namespace rLoop_Ground_Station
                         lblCellRowsTempPositiveTabs[y, x].Text = stateCellPositiveTemperature;
 
 
-                    totalRowVoltage += rPodPodState.PowerNodeA.CellVoltages[y, x];
+                    //totalRowVoltage += rPodPodState.PowerNodeA.CellVoltages[y, x];
+                    //totalRowVoltage = rPodPodState.PowerNodeA.RowVoltage[y];
+                    //Console.WriteLine(rPodPodState.PowerNodeA.CellVoltages[0, 0] + " " + rPodPodState.PowerNodeA.CellVoltages[0, 1]);
                 }
                 stateRowDischarge = rPodPodState.PowerNodeA.BatteryRowDischarging[y].ToString();
                 if (lblCellRowsTransistors[y].Text != stateRowDischarge)
                     lblCellRowsTransistors[y].Text = stateRowDischarge;
 
-                if (lblCellRowsVoltages[y].Text != totalRowVoltage + "V")
-                    lblCellRowsVoltages[y].Text = totalRowVoltage + "V";
+                stateRowVoltage = rPodPodState.PowerNodeA.RowVoltage[y] + "V";
+                if (lblCellRowsVoltages[y].Text != stateRowVoltage)
+                    lblCellRowsVoltages[y].Text = stateRowVoltage;
             }
         }
     }
