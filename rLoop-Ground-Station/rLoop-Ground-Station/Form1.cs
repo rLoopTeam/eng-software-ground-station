@@ -21,6 +21,11 @@ namespace rLoop_Ground_Station
         int GRID_CELL_COLUMNS = 6;
         //------------------------------------------------
 
+        // strings for displaying the battery grid values
+        String stateCellNegativeTemperature;
+        String stateCellPositiveTemperature;
+        String stateRowDischarge;
+
         rPodNetworking net;
         Label[,] lblCellRowsTempPositiveTabs;
         Label[,] lblCellRowsTempNegativeTabs;
@@ -455,6 +460,7 @@ namespace rLoop_Ground_Station
 
         }
 
+
         private void BatteryPackAStatusTab_Tick(object sender, EventArgs e)
         {
             if (rPodPodState.PowerNodeA == null)
@@ -469,12 +475,23 @@ namespace rLoop_Ground_Station
                 totalRowVoltage = 0;
                 for (int x = 0; x < GRID_CELL_COLUMNS; x++)
                 {
-                    lblCellRowsTempNegativeTabs[y, x].Text = rPodPodState.PowerNodeA.CellNegativeTabTemperature[y, x].ToString() + "°C";
-                    lblCellRowsTempPositiveTabs[y, x].Text = rPodPodState.PowerNodeA.CellPositiveTabTemperature[y, x].ToString() + "°C";
+                    stateCellNegativeTemperature = rPodPodState.PowerNodeA.CellNegativeTabTemperature[y, x].ToString() + "°C";
+                    stateCellPositiveTemperature = rPodPodState.PowerNodeA.CellPositiveTabTemperature[y, x].ToString() + "°C";
+                    if (lblCellRowsTempNegativeTabs[y, x].Text != stateCellNegativeTemperature)
+                        lblCellRowsTempNegativeTabs[y, x].Text = stateCellNegativeTemperature;
+
+                    if (lblCellRowsTempPositiveTabs[y, x].Text != stateCellPositiveTemperature)
+                        lblCellRowsTempPositiveTabs[y, x].Text = stateCellPositiveTemperature;
+
+
                     totalRowVoltage += rPodPodState.PowerNodeA.CellVoltages[y, x];
                 }
-                lblCellRowsTransistors[y].Text = rPodPodState.PowerNodeA.BatteryRowDischarging[y].ToString();
-                lblCellRowsVoltages[y].Text = totalRowVoltage + "V";
+                stateRowDischarge = rPodPodState.PowerNodeA.BatteryRowDischarging[y].ToString();
+                if (lblCellRowsTransistors[y].Text != stateRowDischarge)
+                    lblCellRowsTransistors[y].Text = stateRowDischarge;
+
+                if (lblCellRowsVoltages[y].Text != totalRowVoltage + "V")
+                    lblCellRowsVoltages[y].Text = totalRowVoltage + "V";
             }
         }
     }
