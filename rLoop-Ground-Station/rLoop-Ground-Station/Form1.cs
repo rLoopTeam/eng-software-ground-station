@@ -9,21 +9,141 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
-
+using System.Windows.Documents;
 
 namespace rLoop_Ground_Station
 {
     public partial class Form1 : Form
     {
+        // Grid settings
+        //------------------------------------------------
+        int GRID_ROWS = 18;
+        int GRID_CELL_COLUMNS = 6;
+        //------------------------------------------------
+
+        // strings for displaying the battery grid values
+        String stateCellNegativeTemperature;
+        String stateCellPositiveTemperature;
+        String stateRowDischarge;
+        String stateRowVoltage;
+
         rPodNetworking net;
+        Label[,] lblCellRowsTempPositiveTabs;
+        Label[,] lblCellRowsTempNegativeTabs;
+        Label[] lblCellRowsTransistors;
+        Label[] lblCellRowsVoltages;
+
         public Form1()
         {
             InitializeComponent();
             net = new rPodNetworking();
-            if(!rPodNodeDiscovery.beginUDPListen())
+
+            // arrays to store all the labels in the grid
+            lblCellRowsTempPositiveTabs = new Label[18, 6];
+            lblCellRowsTempNegativeTabs = new Label[18, 6];
+            lblCellRowsTransistors = new Label[18];
+            lblCellRowsVoltages = new Label[18];
+            if (!rPodNodeDiscovery.beginUDPListen())
             {
                 MessageBox.Show("There was an error listening to the network for available nodes.");
             }
+
+            generateBatteryTable();
+        }
+
+        private void generateBatteryTable()
+        {
+            FlowLayoutPanel headerRow = new   FlowLayoutPanel();
+            headerRow.AutoSize = true;
+            headerRow.FlowDirection = FlowDirection.LeftToRight;
+            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            FlowLayoutPanel row;
+            Label label;
+            bool isOdd;
+
+            // create the header labels
+            for (int x = 0; x < GRID_CELL_COLUMNS; x++)
+            {
+                isOdd = (x % 2) == 1;
+                // add top labels
+                Label labelTop = new Label();
+                labelTop.Text = alphabet[x].ToString();
+                labelTop.Margin = new Padding(40, 0, 23, 0);
+                labelTop.Location = new System.Drawing.Point( 50 * x , 15);
+                labelTop.Size = new System.Drawing.Size(30, 25);
+                labelTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                labelTop.ForeColor = System.Drawing.SystemColors.ButtonFace;
+                labelTop.Name = "header" + x;
+                headerRow.Controls.Add(labelTop);
+            }
+            this.flowLayoutPanel1.Controls.Add(headerRow);
+
+            // rows
+            for (int y = 0; y < GRID_ROWS; y++)
+            {                
+                // create row
+                row = new FlowLayoutPanel();
+                //row.BorderStyle = BorderStyle.Fixed3D;
+                row.AutoSize = true;
+                row.FlowDirection = FlowDirection.LeftToRight;
+
+                // We multiply by two because the interface shows two temperature values per column
+                for (int x = 0; x < 2 * GRID_CELL_COLUMNS; x++) 
+                {
+                    isOdd = (x % 2) == 1;
+
+                    // create label and append to row
+                    label = new Label();
+                    label.Margin = new Padding(0, 0, 15 * (isOdd?0:1), 0); // add spacing between odd columns. Could be replaced with a better component
+                    label.Text = "";
+                    label.Location = new System.Drawing.Point( 30 * x, 15 * y );
+                    label.Size = new System.Drawing.Size(40, 20);
+                    label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+                    label.Name = "cell" + x + y;
+
+                    // store label to array (temperature negative/positive, voltage, transistor )
+                    if (!isOdd)
+                    {
+                        int ix = ((x / 2) - 1) + 1;
+                        lblCellRowsTempNegativeTabs[y, ix] = label;
+                    }
+                    else
+                    {
+                        int ix = (int)(((x / 2) - 1) + 1.5);
+                        lblCellRowsTempPositiveTabs[y, ix] = label;
+                    }
+
+                    // add to interface
+                    row.Controls.Add(label);
+
+                    if (x == 11)
+                    {
+                        int transistorValue = 0;
+                        Label transistorLabel = new Label();
+                        transistorLabel.Text = transistorValue.ToString();
+                        transistorLabel.Location = new System.Drawing.Point(110 * x, 135 * y);
+                        transistorLabel.Size = new System.Drawing.Size(65, 15);
+                        transistorLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+                        transistorLabel.Name = "transistor" + x + y;
+                        lblCellRowsTransistors[y] = transistorLabel;
+                        row.Controls.Add(transistorLabel);
+
+
+                        int rowVoltageValue = 0;
+                        Label rowVoltageLabel = new Label();
+                        rowVoltageLabel.Text = rowVoltageValue + "V";
+                        rowVoltageLabel.Location = new System.Drawing.Point(110 * x, 160 * y);
+                        rowVoltageLabel.Size = new System.Drawing.Size(65, 15);
+                        rowVoltageLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+                        rowVoltageLabel.Name = "rowVoltage" + x + y;
+                        lblCellRowsVoltages[y] = rowVoltageLabel;
+                        row.Controls.Add(rowVoltageLabel);
+                    }
+                }
+                this.flowLayoutPanel1.Controls.Add(row);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -224,8 +344,15 @@ namespace rLoop_Ground_Station
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            customTabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
-            customTabControl1.Location = new Point(5, 5);
+            try {
+                if (Form1.ActiveForm != null)
+                    customTabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
+                customTabControl1.Location = new Point(5, 5);
+            }
+            catch (Exception formResizeException)
+            {
+                Console.Write(formResizeException.StackTrace);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -334,11 +461,40 @@ namespace rLoop_Ground_Station
 
         }
 
+
         private void BatteryPackAStatusTab_Tick(object sender, EventArgs e)
         {
             if (rPodPodState.PowerNodeA == null)
                 return;
-            BrakesAPackVoltage.Text = rPodPodState.PowerNodeA.BatteryPackVoltage.ToString() + " Volts";
+
+            BrakesAPackVoltage.Text = "Voltage: " + rPodPodState.PowerNodeA.BatteryPackVoltage.ToString() + "V";
+            BrakesAPackTemperature.Text = "Temperature: " + rPodPodState.PowerNodeA.BatteryPackTemperature.ToString() + "°C";
+
+            for (int y = 0; y < GRID_ROWS; y++)
+            {
+                for (int x = 0; x < GRID_CELL_COLUMNS; x++)
+                {
+                    stateCellNegativeTemperature = rPodPodState.PowerNodeA.CellNegativeTabTemperature[y, x].ToString() + "°C";
+                    stateCellPositiveTemperature = rPodPodState.PowerNodeA.CellPositiveTabTemperature[y, x].ToString() + "°C";
+                    if (lblCellRowsTempNegativeTabs[y, x].Text != stateCellNegativeTemperature)
+                        lblCellRowsTempNegativeTabs[y, x].Text = stateCellNegativeTemperature;
+
+                    if (lblCellRowsTempPositiveTabs[y, x].Text != stateCellPositiveTemperature)
+                        lblCellRowsTempPositiveTabs[y, x].Text = stateCellPositiveTemperature;
+
+
+                    //totalRowVoltage += rPodPodState.PowerNodeA.CellVoltages[y, x];
+                    //totalRowVoltage = rPodPodState.PowerNodeA.RowVoltage[y];
+                    //Console.WriteLine(rPodPodState.PowerNodeA.CellVoltages[0, 0] + " " + rPodPodState.PowerNodeA.CellVoltages[0, 1]);
+                }
+                stateRowDischarge = rPodPodState.PowerNodeA.BatteryRowDischarging[y].ToString();
+                if (lblCellRowsTransistors[y].Text != stateRowDischarge)
+                    lblCellRowsTransistors[y].Text = stateRowDischarge;
+
+                stateRowVoltage = rPodPodState.PowerNodeA.RowVoltage[y] + "V";
+                if (lblCellRowsVoltages[y].Text != stateRowVoltage)
+                    lblCellRowsVoltages[y].Text = stateRowVoltage;
+            }
         }
     }
 }
