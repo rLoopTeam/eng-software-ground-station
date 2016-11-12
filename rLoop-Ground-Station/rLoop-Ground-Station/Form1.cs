@@ -49,7 +49,44 @@ namespace rLoop_Ground_Station
             }
 
             generateBatteryTable();
+
+            // listen for tab navigation
+            customTabControl1.Selected += new TabControlEventHandler(customTabControl1_SelectedIndexChanged);
         }
+
+        private void customTabControl1_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+            TabPage current = (sender as TabControl).SelectedTab;
+            switch (current.Name)
+            {
+                case "OverviewTab":
+                    HEguiDemo.Enabled = true;
+                    UpdateNodeList.Enabled = false;
+                    UpdateDGVTimer.Enabled = false;
+                    BatteryPackAStatusTab.Enabled = false;
+                    break;
+                case "PowerNodeATab":
+                    HEguiDemo.Enabled = false;
+                    UpdateNodeList.Enabled = false;
+                    UpdateDGVTimer.Enabled = false;
+                    BatteryPackAStatusTab.Enabled = true;
+                    break;
+                case "NodeUtilitiesTab":
+                    HEguiDemo.Enabled = false;
+                    UpdateNodeList.Enabled = true;
+                    UpdateDGVTimer.Enabled = true;
+                    BatteryPackAStatusTab.Enabled = false;
+                    break;
+                default:
+                    HEguiDemo.Enabled = false;
+                    UpdateNodeList.Enabled = false;
+                    UpdateDGVTimer.Enabled = false;
+                    BatteryPackAStatusTab.Enabled = false;
+                    break;
+
+            }
+        }
+
 
         private void generateBatteryTable()
         {
@@ -495,6 +532,11 @@ namespace rLoop_Ground_Station
                 if (lblCellRowsVoltages[y].Text != stateRowVoltage)
                     lblCellRowsVoltages[y].Text = stateRowVoltage;
             }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
