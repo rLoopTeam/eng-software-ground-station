@@ -201,7 +201,8 @@ namespace rLoop_Ground_Station
         {
             addHeader(0x83, index);
             byte[] bytes = BitConverter.GetBytes(data);
-
+            if (BitConverter.IsLittleEndian)
+                Array.Reverse(bytes);
             addCheckedByte(bytes[0]);
             addCheckedByte(bytes[1]);
             addCheckedByte(bytes[2]);
@@ -216,7 +217,8 @@ namespace rLoop_Ground_Station
         {
             addHeader(0x43, index);
             byte[] bytes = BitConverter.GetBytes(data);
-
+            if (BitConverter.IsLittleEndian)
+                Array.Reverse(bytes);
             addCheckedByte(bytes[0]);
             addCheckedByte(bytes[1]);
             addCheckedByte(bytes[2]);
