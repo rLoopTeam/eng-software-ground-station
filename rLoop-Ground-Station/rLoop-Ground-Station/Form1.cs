@@ -533,9 +533,26 @@ namespace rLoop_Ground_Station
                     lblCellRowsVoltages[y].Text = stateRowVoltage;
             }
         }
-
+        
         private void label10_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void TESTTabTimer_Tick(object sender, EventArgs e)
+        {
+            if (rPodPodState.FlightControlUnitNode == null)
+                return;
+
+            // these are the actual labels that need to be updated
+            lblCGHeight.Text = rPodPodState.FlightControlUnitNode.CGHeight + "m";
+            lblXCG.Text = rPodPodState.FlightControlUnitNode.XCG + "m";
+            lblYCG.Text = rPodPodState.FlightControlUnitNode.YCG + "m";
+            lblPitch.Text = rPodPodState.FlightControlUnitNode.Pitch + "m";
+            lblYaw.Text = rPodPodState.FlightControlUnitNode.Yaw + "m";
+            lblRoll.Text = rPodPodState.FlightControlUnitNode.Roll + "m";
+            lblAcceleration.Text = rPodPodState.FlightControlUnitNode.Acceleration + "m";
+            lblSpeed.Text = rPodPodState.FlightControlUnitNode.Speed + "m";
 
         }
     }

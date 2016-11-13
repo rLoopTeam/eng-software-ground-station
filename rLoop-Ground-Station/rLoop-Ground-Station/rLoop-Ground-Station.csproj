@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Pod State\Nodes\rPodStateBrakeNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStateCommandNode.cs" />
+    <Compile Include="Pod State\Nodes\rPodStateFlightControlUnitNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStateNodeStateI.cs" />
     <Compile Include="Pod State\Nodes\rPodStateStepperNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStatePowerNode.cs" />

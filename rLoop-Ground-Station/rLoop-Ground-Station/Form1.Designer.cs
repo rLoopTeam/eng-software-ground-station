@@ -91,59 +91,31 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SerialConsoleTab = new System.Windows.Forms.TabPage();
             this.testTab = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.acc = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.lblLMForward2MLP = new System.Windows.Forms.Label();
-            this.lblLMForward1MLP = new System.Windows.Forms.Label();
-            this.lblLMFT2MLP = new System.Windows.Forms.Label();
-            this.lblFT1MLP = new System.Windows.Forms.Label();
-            this.lblLMForwardLimitSwitch2 = new System.Windows.Forms.Label();
-            this.lblLMForwardLimitSwitch1 = new System.Windows.Forms.Label();
-            this.lblLMLimitSwitch2 = new System.Windows.Forms.Label();
-            this.lblLMLimitSwitch1 = new System.Windows.Forms.Label();
-            this.lblAuxPropEnabled = new System.Windows.Forms.Label();
-            this.lblIBDS2Value = new System.Windows.Forms.Label();
-            this.lblIBDS1Value = new System.Windows.Forms.Label();
-            this.lblS4Value = new System.Windows.Forms.Label();
-            this.lblS3Value = new System.Windows.Forms.Label();
-            this.lblS2Value = new System.Windows.Forms.Label();
-            this.lblS1Value = new System.Windows.Forms.Label();
-            this.lblRightMLP = new System.Windows.Forms.Label();
-            this.lblLeftMLP = new System.Windows.Forms.Label();
-            this.lblEBRightLimitSwitch = new System.Windows.Forms.Label();
-            this.lblEBLeftLimitSwitch = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.lblOperatingMode = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.txtFt2DirectionCommand = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.sendButton = new System.Windows.Forms.Button();
+            this.txtFt1DirectionCommand = new System.Windows.Forms.TextBox();
             this.lblAcceleration = new System.Windows.Forms.Label();
             this.lblSpeed = new System.Windows.Forms.Label();
             this.lblYaw = new System.Windows.Forms.Label();
@@ -152,31 +124,60 @@
             this.lblYCG = new System.Windows.Forms.Label();
             this.lblXCG = new System.Windows.Forms.Label();
             this.lblCGHeight = new System.Windows.Forms.Label();
-            this.txtFt1DirectionCommand = new System.Windows.Forms.TextBox();
-            this.sendButton = new System.Windows.Forms.Button();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.txtFt2DirectionCommand = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.lblOperatingMode = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.lblRightMLP = new System.Windows.Forms.Label();
+            this.lblLeftMLP = new System.Windows.Forms.Label();
+            this.lblEBRightLimitSwitch = new System.Windows.Forms.Label();
+            this.lblEBLeftLimitSwitch = new System.Windows.Forms.Label();
+            this.lblIBDS2Value = new System.Windows.Forms.Label();
+            this.lblIBDS1Value = new System.Windows.Forms.Label();
+            this.lblS4Value = new System.Windows.Forms.Label();
+            this.lblS3Value = new System.Windows.Forms.Label();
+            this.lblS2Value = new System.Windows.Forms.Label();
+            this.lblS1Value = new System.Windows.Forms.Label();
+            this.lblAuxPropEnabled = new System.Windows.Forms.Label();
+            this.lblLMForward2MLP = new System.Windows.Forms.Label();
+            this.lblLMForward1MLP = new System.Windows.Forms.Label();
+            this.lblLMFT2MLP = new System.Windows.Forms.Label();
+            this.lblFT1MLP = new System.Windows.Forms.Label();
+            this.lblLMForwardLimitSwitch2 = new System.Windows.Forms.Label();
+            this.lblLMForwardLimitSwitch1 = new System.Windows.Forms.Label();
+            this.lblLMLimitSwitch2 = new System.Windows.Forms.Label();
+            this.lblLMLimitSwitch1 = new System.Windows.Forms.Label();
+            this.acc = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TESTTabTimer = new System.Windows.Forms.Timer(this.components);
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1021,589 +1022,240 @@
             this.testTab.TabIndex = 6;
             this.testTab.Text = "TEST";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(45, 36);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(247, 37);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Operating mode";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(44, 115);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(233, 37);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Lift mechanism";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(1187, 36);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(230, 37);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Aux propulsion";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(1187, 135);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(194, 37);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Eddy brakes";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(1187, 355);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(262, 37);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Distance sensors";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(701, 36);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(234, 37);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Pod kinematics";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(47, 161);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(180, 26);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "LM 1 Limit switch";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(47, 202);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(180, 26);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "LM 2 Limit switch";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(46, 241);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(251, 26);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "LM forward 1 limit switch";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(46, 276);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(251, 26);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "LM forward 2 limit switch";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(46, 313);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(123, 26);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "LM ft1 MLP";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(46, 351);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(123, 26);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "LM ft2 MLP";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(46, 394);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(189, 26);
-            this.label22.TabIndex = 12;
-            this.label22.Text = "LM forward 1 MLP";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(46, 432);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(189, 26);
-            this.label23.TabIndex = 13;
-            this.label23.Text = "LM forward 2 MLP";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(1186, 82);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(284, 26);
-            this.label24.TabIndex = 14;
-            this.label24.Text = "Auxiliary propulsion enabled";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(1191, 183);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(190, 26);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "EB left limit switch";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(1191, 218);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(203, 26);
-            this.label26.TabIndex = 16;
-            this.label26.Text = "EB right limit switch";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(1191, 256);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(128, 26);
-            this.label27.TabIndex = 17;
-            this.label27.Text = "EB left MLP";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(1191, 294);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(141, 26);
-            this.label28.TabIndex = 18;
-            this.label28.Text = "EB right MLP";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(1189, 403);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(131, 26);
-            this.label30.TabIndex = 20;
-            this.label30.Text = "HD s1 value";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(1189, 442);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(131, 26);
-            this.label31.TabIndex = 21;
-            this.label31.Text = "HD s2 value";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(1189, 482);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(131, 26);
-            this.label32.TabIndex = 22;
-            this.label32.Text = "HD s3 value";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(1189, 521);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(131, 26);
-            this.label33.TabIndex = 23;
-            this.label33.Text = "HD s4 value";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(1189, 558);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(140, 26);
-            this.label34.TabIndex = 24;
-            this.label34.Text = "IBDS 1 value";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(1189, 592);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(140, 26);
-            this.label35.TabIndex = 25;
-            this.label35.Text = "IBDS 2 value";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(51, 73);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(168, 26);
-            this.label36.TabIndex = 26;
-            this.label36.Text = "Operating mode";
-            // 
-            // acc
-            // 
-            this.acc.AutoSize = true;
-            this.acc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acc.ForeColor = System.Drawing.Color.White;
-            this.acc.Location = new System.Drawing.Point(702, 356);
-            this.acc.Name = "acc";
-            this.acc.Size = new System.Drawing.Size(132, 26);
-            this.acc.TabIndex = 34;
-            this.acc.Text = "Acceleration";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.White;
-            this.label38.Location = new System.Drawing.Point(702, 318);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(75, 26);
-            this.label38.TabIndex = 33;
-            this.label38.Text = "Speed";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(702, 275);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(56, 26);
-            this.label39.TabIndex = 32;
-            this.label39.Text = "Yaw";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.Color.White;
-            this.label40.Location = new System.Drawing.Point(702, 237);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(50, 26);
-            this.label40.TabIndex = 31;
-            this.label40.Text = "Roll";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.Color.White;
-            this.label41.Location = new System.Drawing.Point(702, 200);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(61, 26);
-            this.label41.TabIndex = 30;
-            this.label41.Text = "Pitch";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(702, 165);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(67, 26);
-            this.label42.TabIndex = 29;
-            this.label42.Text = "Y CG";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(703, 126);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(66, 26);
-            this.label43.TabIndex = 28;
-            this.label43.Text = "X CG";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(703, 85);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(110, 26);
-            this.label44.TabIndex = 27;
-            this.label44.Text = "CG height";
-            // 
-            // lblLMForward2MLP
-            // 
-            this.lblLMForward2MLP.AutoSize = true;
-            this.lblLMForward2MLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLMForward2MLP.ForeColor = System.Drawing.Color.White;
-            this.lblLMForward2MLP.Location = new System.Drawing.Point(363, 433);
-            this.lblLMForward2MLP.Name = "lblLMForward2MLP";
-            this.lblLMForward2MLP.Size = new System.Drawing.Size(24, 26);
-            this.lblLMForward2MLP.TabIndex = 42;
-            this.lblLMForward2MLP.Text = "0";
-            // 
-            // lblLMForward1MLP
-            // 
-            this.lblLMForward1MLP.AutoSize = true;
-            this.lblLMForward1MLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLMForward1MLP.ForeColor = System.Drawing.Color.White;
-            this.lblLMForward1MLP.Location = new System.Drawing.Point(363, 395);
-            this.lblLMForward1MLP.Name = "lblLMForward1MLP";
-            this.lblLMForward1MLP.Size = new System.Drawing.Size(24, 26);
-            this.lblLMForward1MLP.TabIndex = 41;
-            this.lblLMForward1MLP.Text = "0";
-            // 
-            // lblLMFT2MLP
-            // 
-            this.lblLMFT2MLP.AutoSize = true;
-            this.lblLMFT2MLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLMFT2MLP.ForeColor = System.Drawing.Color.White;
-            this.lblLMFT2MLP.Location = new System.Drawing.Point(363, 352);
-            this.lblLMFT2MLP.Name = "lblLMFT2MLP";
-            this.lblLMFT2MLP.Size = new System.Drawing.Size(24, 26);
-            this.lblLMFT2MLP.TabIndex = 40;
-            this.lblLMFT2MLP.Text = "0";
-            // 
-            // lblFT1MLP
-            // 
-            this.lblFT1MLP.AutoSize = true;
-            this.lblFT1MLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFT1MLP.ForeColor = System.Drawing.Color.White;
-            this.lblFT1MLP.Location = new System.Drawing.Point(363, 314);
-            this.lblFT1MLP.Name = "lblFT1MLP";
-            this.lblFT1MLP.Size = new System.Drawing.Size(24, 26);
-            this.lblFT1MLP.TabIndex = 39;
-            this.lblFT1MLP.Text = "0";
-            // 
-            // lblLMForwardLimitSwitch2
-            // 
-            this.lblLMForwardLimitSwitch2.AutoSize = true;
-            this.lblLMForwardLimitSwitch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLMForwardLimitSwitch2.ForeColor = System.Drawing.Color.White;
-            this.lblLMForwardLimitSwitch2.Location = new System.Drawing.Point(363, 277);
-            this.lblLMForwardLimitSwitch2.Name = "lblLMForwardLimitSwitch2";
-            this.lblLMForwardLimitSwitch2.Size = new System.Drawing.Size(24, 26);
-            this.lblLMForwardLimitSwitch2.TabIndex = 38;
-            this.lblLMForwardLimitSwitch2.Text = "0";
-            // 
-            // lblLMForwardLimitSwitch1
-            // 
-            this.lblLMForwardLimitSwitch1.AutoSize = true;
-            this.lblLMForwardLimitSwitch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLMForwardLimitSwitch1.ForeColor = System.Drawing.Color.White;
-            this.lblLMForwardLimitSwitch1.Location = new System.Drawing.Point(363, 242);
-            this.lblLMForwardLimitSwitch1.Name = "lblLMForwardLimitSwitch1";
-            this.lblLMForwardLimitSwitch1.Size = new System.Drawing.Size(24, 26);
-            this.lblLMForwardLimitSwitch1.TabIndex = 37;
-            this.lblLMForwardLimitSwitch1.Text = "0";
-            // 
-            // lblLMLimitSwitch2
-            // 
-            this.lblLMLimitSwitch2.AutoSize = true;
-            this.lblLMLimitSwitch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLMLimitSwitch2.ForeColor = System.Drawing.Color.White;
-            this.lblLMLimitSwitch2.Location = new System.Drawing.Point(364, 203);
-            this.lblLMLimitSwitch2.Name = "lblLMLimitSwitch2";
-            this.lblLMLimitSwitch2.Size = new System.Drawing.Size(24, 26);
-            this.lblLMLimitSwitch2.TabIndex = 36;
-            this.lblLMLimitSwitch2.Text = "0";
-            // 
-            // lblLMLimitSwitch1
-            // 
-            this.lblLMLimitSwitch1.AutoSize = true;
-            this.lblLMLimitSwitch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLMLimitSwitch1.ForeColor = System.Drawing.Color.White;
-            this.lblLMLimitSwitch1.Location = new System.Drawing.Point(364, 162);
-            this.lblLMLimitSwitch1.Name = "lblLMLimitSwitch1";
-            this.lblLMLimitSwitch1.Size = new System.Drawing.Size(24, 26);
-            this.lblLMLimitSwitch1.TabIndex = 35;
-            this.lblLMLimitSwitch1.Text = "0";
-            // 
-            // lblAuxPropEnabled
-            // 
-            this.lblAuxPropEnabled.AutoSize = true;
-            this.lblAuxPropEnabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuxPropEnabled.ForeColor = System.Drawing.Color.White;
-            this.lblAuxPropEnabled.Location = new System.Drawing.Point(1503, 82);
-            this.lblAuxPropEnabled.Name = "lblAuxPropEnabled";
-            this.lblAuxPropEnabled.Size = new System.Drawing.Size(24, 26);
-            this.lblAuxPropEnabled.TabIndex = 43;
-            this.lblAuxPropEnabled.Text = "0";
-            // 
-            // lblIBDS2Value
-            // 
-            this.lblIBDS2Value.AutoSize = true;
-            this.lblIBDS2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIBDS2Value.ForeColor = System.Drawing.Color.White;
-            this.lblIBDS2Value.Location = new System.Drawing.Point(1500, 594);
-            this.lblIBDS2Value.Name = "lblIBDS2Value";
-            this.lblIBDS2Value.Size = new System.Drawing.Size(24, 26);
-            this.lblIBDS2Value.TabIndex = 49;
-            this.lblIBDS2Value.Text = "0";
-            // 
-            // lblIBDS1Value
-            // 
-            this.lblIBDS1Value.AutoSize = true;
-            this.lblIBDS1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIBDS1Value.ForeColor = System.Drawing.Color.White;
-            this.lblIBDS1Value.Location = new System.Drawing.Point(1500, 556);
-            this.lblIBDS1Value.Name = "lblIBDS1Value";
-            this.lblIBDS1Value.Size = new System.Drawing.Size(24, 26);
-            this.lblIBDS1Value.TabIndex = 48;
-            this.lblIBDS1Value.Text = "0";
-            // 
-            // lblS4Value
-            // 
-            this.lblS4Value.AutoSize = true;
-            this.lblS4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblS4Value.ForeColor = System.Drawing.Color.White;
-            this.lblS4Value.Location = new System.Drawing.Point(1500, 519);
-            this.lblS4Value.Name = "lblS4Value";
-            this.lblS4Value.Size = new System.Drawing.Size(24, 26);
-            this.lblS4Value.TabIndex = 47;
-            this.lblS4Value.Text = "0";
-            // 
-            // lblS3Value
-            // 
-            this.lblS3Value.AutoSize = true;
-            this.lblS3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblS3Value.ForeColor = System.Drawing.Color.White;
-            this.lblS3Value.Location = new System.Drawing.Point(1500, 484);
-            this.lblS3Value.Name = "lblS3Value";
-            this.lblS3Value.Size = new System.Drawing.Size(24, 26);
-            this.lblS3Value.TabIndex = 46;
-            this.lblS3Value.Text = "0";
-            // 
-            // lblS2Value
-            // 
-            this.lblS2Value.AutoSize = true;
-            this.lblS2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblS2Value.ForeColor = System.Drawing.Color.White;
-            this.lblS2Value.Location = new System.Drawing.Point(1501, 445);
-            this.lblS2Value.Name = "lblS2Value";
-            this.lblS2Value.Size = new System.Drawing.Size(24, 26);
-            this.lblS2Value.TabIndex = 45;
-            this.lblS2Value.Text = "0";
-            // 
-            // lblS1Value
-            // 
-            this.lblS1Value.AutoSize = true;
-            this.lblS1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblS1Value.ForeColor = System.Drawing.Color.White;
-            this.lblS1Value.Location = new System.Drawing.Point(1501, 404);
-            this.lblS1Value.Name = "lblS1Value";
-            this.lblS1Value.Size = new System.Drawing.Size(24, 26);
-            this.lblS1Value.TabIndex = 44;
-            this.lblS1Value.Text = "0";
-            // 
-            // lblRightMLP
-            // 
-            this.lblRightMLP.AutoSize = true;
-            this.lblRightMLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRightMLP.ForeColor = System.Drawing.Color.White;
-            this.lblRightMLP.Location = new System.Drawing.Point(1503, 299);
-            this.lblRightMLP.Name = "lblRightMLP";
-            this.lblRightMLP.Size = new System.Drawing.Size(24, 26);
-            this.lblRightMLP.TabIndex = 53;
-            this.lblRightMLP.Text = "0";
-            // 
-            // lblLeftMLP
-            // 
-            this.lblLeftMLP.AutoSize = true;
-            this.lblLeftMLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeftMLP.ForeColor = System.Drawing.Color.White;
-            this.lblLeftMLP.Location = new System.Drawing.Point(1503, 264);
-            this.lblLeftMLP.Name = "lblLeftMLP";
-            this.lblLeftMLP.Size = new System.Drawing.Size(24, 26);
-            this.lblLeftMLP.TabIndex = 52;
-            this.lblLeftMLP.Text = "0";
-            // 
-            // lblEBRightLimitSwitch
-            // 
-            this.lblEBRightLimitSwitch.AutoSize = true;
-            this.lblEBRightLimitSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEBRightLimitSwitch.ForeColor = System.Drawing.Color.White;
-            this.lblEBRightLimitSwitch.Location = new System.Drawing.Point(1504, 225);
-            this.lblEBRightLimitSwitch.Name = "lblEBRightLimitSwitch";
-            this.lblEBRightLimitSwitch.Size = new System.Drawing.Size(24, 26);
-            this.lblEBRightLimitSwitch.TabIndex = 51;
-            this.lblEBRightLimitSwitch.Text = "0";
-            // 
-            // lblEBLeftLimitSwitch
-            // 
-            this.lblEBLeftLimitSwitch.AutoSize = true;
-            this.lblEBLeftLimitSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEBLeftLimitSwitch.ForeColor = System.Drawing.Color.White;
-            this.lblEBLeftLimitSwitch.Location = new System.Drawing.Point(1504, 184);
-            this.lblEBLeftLimitSwitch.Name = "lblEBLeftLimitSwitch";
-            this.lblEBLeftLimitSwitch.Size = new System.Drawing.Size(24, 26);
-            this.lblEBLeftLimitSwitch.TabIndex = 50;
-            this.lblEBLeftLimitSwitch.Text = "0";
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.White;
+            this.label49.Location = new System.Drawing.Point(54, 924);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(189, 26);
+            this.label49.TabIndex = 87;
+            this.label49.Text = "LM forward 2 MLP";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(688, 914);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(133, 44);
+            this.button9.TabIndex = 86;
+            this.button9.Text = "Send";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(371, 912);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(290, 44);
+            this.textBox6.TabIndex = 85;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(53, 869);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(189, 26);
+            this.label50.TabIndex = 84;
+            this.label50.Text = "LM forward 1 MLP";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(687, 859);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(133, 44);
+            this.button10.TabIndex = 83;
+            this.button10.Text = "Send";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(370, 857);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(290, 44);
+            this.textBox7.TabIndex = 82;
+            // 
+            // lblOperatingMode
+            // 
+            this.lblOperatingMode.AutoSize = true;
+            this.lblOperatingMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperatingMode.ForeColor = System.Drawing.Color.White;
+            this.lblOperatingMode.Location = new System.Drawing.Point(366, 73);
+            this.lblOperatingMode.Name = "lblOperatingMode";
+            this.lblOperatingMode.Size = new System.Drawing.Size(24, 26);
+            this.lblOperatingMode.TabIndex = 81;
+            this.lblOperatingMode.Text = "0";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.White;
+            this.label47.Location = new System.Drawing.Point(54, 795);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(138, 26);
+            this.label47.TabIndex = 80;
+            this.label47.Text = "LMA ft2 MLP";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(688, 785);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(133, 44);
+            this.button7.TabIndex = 79;
+            this.button7.Text = "Send";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(371, 783);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(290, 44);
+            this.textBox4.TabIndex = 78;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.White;
+            this.label48.Location = new System.Drawing.Point(53, 740);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(138, 26);
+            this.label48.TabIndex = 77;
+            this.label48.Text = "LMA ft1 MLP";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(687, 730);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(133, 44);
+            this.button8.TabIndex = 76;
+            this.button8.Text = "Send";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(370, 728);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(290, 44);
+            this.textBox5.TabIndex = 75;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(53, 674);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(266, 26);
+            this.label45.TabIndex = 74;
+            this.label45.Text = "LMA forward 2 limit switch";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(687, 664);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(133, 44);
+            this.button5.TabIndex = 73;
+            this.button5.Text = "Send";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(370, 662);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(290, 44);
+            this.textBox2.TabIndex = 72;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(52, 619);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(266, 26);
+            this.label46.TabIndex = 71;
+            this.label46.Text = "LMA forward 1 limit switch";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(686, 609);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(133, 44);
+            this.button6.TabIndex = 70;
+            this.button6.Text = "Send";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(369, 607);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(290, 44);
+            this.textBox3.TabIndex = 69;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.White;
+            this.label37.Location = new System.Drawing.Point(52, 551);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(287, 26);
+            this.label37.TabIndex = 68;
+            this.label37.Text = "LMA ft2 Direction Command";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(686, 541);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(133, 44);
+            this.button4.TabIndex = 67;
+            this.button4.Text = "Send";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // txtFt2DirectionCommand
+            // 
+            this.txtFt2DirectionCommand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFt2DirectionCommand.Location = new System.Drawing.Point(369, 539);
+            this.txtFt2DirectionCommand.Name = "txtFt2DirectionCommand";
+            this.txtFt2DirectionCommand.Size = new System.Drawing.Size(290, 44);
+            this.txtFt2DirectionCommand.TabIndex = 66;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(51, 496);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(287, 26);
+            this.label29.TabIndex = 65;
+            this.label29.Text = "LMA ft1 Direction Command";
+            // 
+            // sendButton
+            // 
+            this.sendButton.Location = new System.Drawing.Point(685, 486);
+            this.sendButton.Name = "sendButton";
+            this.sendButton.Size = new System.Drawing.Size(133, 44);
+            this.sendButton.TabIndex = 64;
+            this.sendButton.Text = "Send";
+            this.sendButton.UseVisualStyleBackColor = true;
+            // 
+            // txtFt1DirectionCommand
+            // 
+            this.txtFt1DirectionCommand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFt1DirectionCommand.Location = new System.Drawing.Point(368, 484);
+            this.txtFt1DirectionCommand.Name = "txtFt1DirectionCommand";
+            this.txtFt1DirectionCommand.Size = new System.Drawing.Size(290, 44);
+            this.txtFt1DirectionCommand.TabIndex = 63;
             // 
             // lblAcceleration
             // 
@@ -1693,240 +1345,593 @@
             this.lblCGHeight.TabIndex = 55;
             this.lblCGHeight.Text = "0";
             // 
-            // txtFt1DirectionCommand
+            // lblRightMLP
             // 
-            this.txtFt1DirectionCommand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFt1DirectionCommand.Location = new System.Drawing.Point(368, 484);
-            this.txtFt1DirectionCommand.Name = "txtFt1DirectionCommand";
-            this.txtFt1DirectionCommand.Size = new System.Drawing.Size(290, 44);
-            this.txtFt1DirectionCommand.TabIndex = 63;
+            this.lblRightMLP.AutoSize = true;
+            this.lblRightMLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRightMLP.ForeColor = System.Drawing.Color.White;
+            this.lblRightMLP.Location = new System.Drawing.Point(1503, 299);
+            this.lblRightMLP.Name = "lblRightMLP";
+            this.lblRightMLP.Size = new System.Drawing.Size(24, 26);
+            this.lblRightMLP.TabIndex = 53;
+            this.lblRightMLP.Text = "0";
             // 
-            // sendButton
+            // lblLeftMLP
             // 
-            this.sendButton.Location = new System.Drawing.Point(685, 486);
-            this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(133, 44);
-            this.sendButton.TabIndex = 64;
-            this.sendButton.Text = "Send";
-            this.sendButton.UseVisualStyleBackColor = true;
+            this.lblLeftMLP.AutoSize = true;
+            this.lblLeftMLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeftMLP.ForeColor = System.Drawing.Color.White;
+            this.lblLeftMLP.Location = new System.Drawing.Point(1503, 264);
+            this.lblLeftMLP.Name = "lblLeftMLP";
+            this.lblLeftMLP.Size = new System.Drawing.Size(24, 26);
+            this.lblLeftMLP.TabIndex = 52;
+            this.lblLeftMLP.Text = "0";
             // 
-            // label29
+            // lblEBRightLimitSwitch
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(51, 496);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(287, 26);
-            this.label29.TabIndex = 65;
-            this.label29.Text = "LMA ft1 Direction Command";
+            this.lblEBRightLimitSwitch.AutoSize = true;
+            this.lblEBRightLimitSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEBRightLimitSwitch.ForeColor = System.Drawing.Color.White;
+            this.lblEBRightLimitSwitch.Location = new System.Drawing.Point(1504, 225);
+            this.lblEBRightLimitSwitch.Name = "lblEBRightLimitSwitch";
+            this.lblEBRightLimitSwitch.Size = new System.Drawing.Size(24, 26);
+            this.lblEBRightLimitSwitch.TabIndex = 51;
+            this.lblEBRightLimitSwitch.Text = "0";
             // 
-            // label37
+            // lblEBLeftLimitSwitch
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(52, 551);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(287, 26);
-            this.label37.TabIndex = 68;
-            this.label37.Text = "LMA ft2 Direction Command";
+            this.lblEBLeftLimitSwitch.AutoSize = true;
+            this.lblEBLeftLimitSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEBLeftLimitSwitch.ForeColor = System.Drawing.Color.White;
+            this.lblEBLeftLimitSwitch.Location = new System.Drawing.Point(1504, 184);
+            this.lblEBLeftLimitSwitch.Name = "lblEBLeftLimitSwitch";
+            this.lblEBLeftLimitSwitch.Size = new System.Drawing.Size(24, 26);
+            this.lblEBLeftLimitSwitch.TabIndex = 50;
+            this.lblEBLeftLimitSwitch.Text = "0";
             // 
-            // button4
+            // lblIBDS2Value
             // 
-            this.button4.Location = new System.Drawing.Point(686, 541);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 44);
-            this.button4.TabIndex = 67;
-            this.button4.Text = "Send";
-            this.button4.UseVisualStyleBackColor = true;
+            this.lblIBDS2Value.AutoSize = true;
+            this.lblIBDS2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIBDS2Value.ForeColor = System.Drawing.Color.White;
+            this.lblIBDS2Value.Location = new System.Drawing.Point(1500, 594);
+            this.lblIBDS2Value.Name = "lblIBDS2Value";
+            this.lblIBDS2Value.Size = new System.Drawing.Size(24, 26);
+            this.lblIBDS2Value.TabIndex = 49;
+            this.lblIBDS2Value.Text = "0";
             // 
-            // txtFt2DirectionCommand
+            // lblIBDS1Value
             // 
-            this.txtFt2DirectionCommand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFt2DirectionCommand.Location = new System.Drawing.Point(369, 539);
-            this.txtFt2DirectionCommand.Name = "txtFt2DirectionCommand";
-            this.txtFt2DirectionCommand.Size = new System.Drawing.Size(290, 44);
-            this.txtFt2DirectionCommand.TabIndex = 66;
+            this.lblIBDS1Value.AutoSize = true;
+            this.lblIBDS1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIBDS1Value.ForeColor = System.Drawing.Color.White;
+            this.lblIBDS1Value.Location = new System.Drawing.Point(1500, 556);
+            this.lblIBDS1Value.Name = "lblIBDS1Value";
+            this.lblIBDS1Value.Size = new System.Drawing.Size(24, 26);
+            this.lblIBDS1Value.TabIndex = 48;
+            this.lblIBDS1Value.Text = "0";
             // 
-            // label45
+            // lblS4Value
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(53, 674);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(266, 26);
-            this.label45.TabIndex = 74;
-            this.label45.Text = "LMA forward 2 limit switch";
+            this.lblS4Value.AutoSize = true;
+            this.lblS4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblS4Value.ForeColor = System.Drawing.Color.White;
+            this.lblS4Value.Location = new System.Drawing.Point(1500, 519);
+            this.lblS4Value.Name = "lblS4Value";
+            this.lblS4Value.Size = new System.Drawing.Size(24, 26);
+            this.lblS4Value.TabIndex = 47;
+            this.lblS4Value.Text = "0";
             // 
-            // button5
+            // lblS3Value
             // 
-            this.button5.Location = new System.Drawing.Point(687, 664);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(133, 44);
-            this.button5.TabIndex = 73;
-            this.button5.Text = "Send";
-            this.button5.UseVisualStyleBackColor = true;
+            this.lblS3Value.AutoSize = true;
+            this.lblS3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblS3Value.ForeColor = System.Drawing.Color.White;
+            this.lblS3Value.Location = new System.Drawing.Point(1500, 484);
+            this.lblS3Value.Name = "lblS3Value";
+            this.lblS3Value.Size = new System.Drawing.Size(24, 26);
+            this.lblS3Value.TabIndex = 46;
+            this.lblS3Value.Text = "0";
             // 
-            // textBox2
+            // lblS2Value
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(370, 662);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(290, 44);
-            this.textBox2.TabIndex = 72;
+            this.lblS2Value.AutoSize = true;
+            this.lblS2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblS2Value.ForeColor = System.Drawing.Color.White;
+            this.lblS2Value.Location = new System.Drawing.Point(1501, 445);
+            this.lblS2Value.Name = "lblS2Value";
+            this.lblS2Value.Size = new System.Drawing.Size(24, 26);
+            this.lblS2Value.TabIndex = 45;
+            this.lblS2Value.Text = "0";
             // 
-            // label46
+            // lblS1Value
             // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(52, 619);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(266, 26);
-            this.label46.TabIndex = 71;
-            this.label46.Text = "LMA forward 1 limit switch";
+            this.lblS1Value.AutoSize = true;
+            this.lblS1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblS1Value.ForeColor = System.Drawing.Color.White;
+            this.lblS1Value.Location = new System.Drawing.Point(1501, 404);
+            this.lblS1Value.Name = "lblS1Value";
+            this.lblS1Value.Size = new System.Drawing.Size(24, 26);
+            this.lblS1Value.TabIndex = 44;
+            this.lblS1Value.Text = "0";
             // 
-            // button6
+            // lblAuxPropEnabled
             // 
-            this.button6.Location = new System.Drawing.Point(686, 609);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(133, 44);
-            this.button6.TabIndex = 70;
-            this.button6.Text = "Send";
-            this.button6.UseVisualStyleBackColor = true;
+            this.lblAuxPropEnabled.AutoSize = true;
+            this.lblAuxPropEnabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuxPropEnabled.ForeColor = System.Drawing.Color.White;
+            this.lblAuxPropEnabled.Location = new System.Drawing.Point(1503, 82);
+            this.lblAuxPropEnabled.Name = "lblAuxPropEnabled";
+            this.lblAuxPropEnabled.Size = new System.Drawing.Size(24, 26);
+            this.lblAuxPropEnabled.TabIndex = 43;
+            this.lblAuxPropEnabled.Text = "0";
             // 
-            // textBox3
+            // lblLMForward2MLP
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(369, 607);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(290, 44);
-            this.textBox3.TabIndex = 69;
+            this.lblLMForward2MLP.AutoSize = true;
+            this.lblLMForward2MLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLMForward2MLP.ForeColor = System.Drawing.Color.White;
+            this.lblLMForward2MLP.Location = new System.Drawing.Point(363, 433);
+            this.lblLMForward2MLP.Name = "lblLMForward2MLP";
+            this.lblLMForward2MLP.Size = new System.Drawing.Size(24, 26);
+            this.lblLMForward2MLP.TabIndex = 42;
+            this.lblLMForward2MLP.Text = "0";
             // 
-            // label47
+            // lblLMForward1MLP
             // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.White;
-            this.label47.Location = new System.Drawing.Point(54, 795);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(138, 26);
-            this.label47.TabIndex = 80;
-            this.label47.Text = "LMA ft2 MLP";
+            this.lblLMForward1MLP.AutoSize = true;
+            this.lblLMForward1MLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLMForward1MLP.ForeColor = System.Drawing.Color.White;
+            this.lblLMForward1MLP.Location = new System.Drawing.Point(363, 395);
+            this.lblLMForward1MLP.Name = "lblLMForward1MLP";
+            this.lblLMForward1MLP.Size = new System.Drawing.Size(24, 26);
+            this.lblLMForward1MLP.TabIndex = 41;
+            this.lblLMForward1MLP.Text = "0";
             // 
-            // button7
+            // lblLMFT2MLP
             // 
-            this.button7.Location = new System.Drawing.Point(688, 785);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(133, 44);
-            this.button7.TabIndex = 79;
-            this.button7.Text = "Send";
-            this.button7.UseVisualStyleBackColor = true;
+            this.lblLMFT2MLP.AutoSize = true;
+            this.lblLMFT2MLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLMFT2MLP.ForeColor = System.Drawing.Color.White;
+            this.lblLMFT2MLP.Location = new System.Drawing.Point(363, 352);
+            this.lblLMFT2MLP.Name = "lblLMFT2MLP";
+            this.lblLMFT2MLP.Size = new System.Drawing.Size(24, 26);
+            this.lblLMFT2MLP.TabIndex = 40;
+            this.lblLMFT2MLP.Text = "0";
             // 
-            // textBox4
+            // lblFT1MLP
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(371, 783);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(290, 44);
-            this.textBox4.TabIndex = 78;
+            this.lblFT1MLP.AutoSize = true;
+            this.lblFT1MLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFT1MLP.ForeColor = System.Drawing.Color.White;
+            this.lblFT1MLP.Location = new System.Drawing.Point(363, 314);
+            this.lblFT1MLP.Name = "lblFT1MLP";
+            this.lblFT1MLP.Size = new System.Drawing.Size(24, 26);
+            this.lblFT1MLP.TabIndex = 39;
+            this.lblFT1MLP.Text = "0";
             // 
-            // label48
+            // lblLMForwardLimitSwitch2
             // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(53, 740);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(138, 26);
-            this.label48.TabIndex = 77;
-            this.label48.Text = "LMA ft1 MLP";
+            this.lblLMForwardLimitSwitch2.AutoSize = true;
+            this.lblLMForwardLimitSwitch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLMForwardLimitSwitch2.ForeColor = System.Drawing.Color.White;
+            this.lblLMForwardLimitSwitch2.Location = new System.Drawing.Point(363, 277);
+            this.lblLMForwardLimitSwitch2.Name = "lblLMForwardLimitSwitch2";
+            this.lblLMForwardLimitSwitch2.Size = new System.Drawing.Size(24, 26);
+            this.lblLMForwardLimitSwitch2.TabIndex = 38;
+            this.lblLMForwardLimitSwitch2.Text = "0";
             // 
-            // button8
+            // lblLMForwardLimitSwitch1
             // 
-            this.button8.Location = new System.Drawing.Point(687, 730);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(133, 44);
-            this.button8.TabIndex = 76;
-            this.button8.Text = "Send";
-            this.button8.UseVisualStyleBackColor = true;
+            this.lblLMForwardLimitSwitch1.AutoSize = true;
+            this.lblLMForwardLimitSwitch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLMForwardLimitSwitch1.ForeColor = System.Drawing.Color.White;
+            this.lblLMForwardLimitSwitch1.Location = new System.Drawing.Point(363, 242);
+            this.lblLMForwardLimitSwitch1.Name = "lblLMForwardLimitSwitch1";
+            this.lblLMForwardLimitSwitch1.Size = new System.Drawing.Size(24, 26);
+            this.lblLMForwardLimitSwitch1.TabIndex = 37;
+            this.lblLMForwardLimitSwitch1.Text = "0";
             // 
-            // textBox5
+            // lblLMLimitSwitch2
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(370, 728);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(290, 44);
-            this.textBox5.TabIndex = 75;
+            this.lblLMLimitSwitch2.AutoSize = true;
+            this.lblLMLimitSwitch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLMLimitSwitch2.ForeColor = System.Drawing.Color.White;
+            this.lblLMLimitSwitch2.Location = new System.Drawing.Point(364, 203);
+            this.lblLMLimitSwitch2.Name = "lblLMLimitSwitch2";
+            this.lblLMLimitSwitch2.Size = new System.Drawing.Size(24, 26);
+            this.lblLMLimitSwitch2.TabIndex = 36;
+            this.lblLMLimitSwitch2.Text = "0";
             // 
-            // lblOperatingMode
+            // lblLMLimitSwitch1
             // 
-            this.lblOperatingMode.AutoSize = true;
-            this.lblOperatingMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOperatingMode.ForeColor = System.Drawing.Color.White;
-            this.lblOperatingMode.Location = new System.Drawing.Point(366, 73);
-            this.lblOperatingMode.Name = "lblOperatingMode";
-            this.lblOperatingMode.Size = new System.Drawing.Size(24, 26);
-            this.lblOperatingMode.TabIndex = 81;
-            this.lblOperatingMode.Text = "0";
+            this.lblLMLimitSwitch1.AutoSize = true;
+            this.lblLMLimitSwitch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLMLimitSwitch1.ForeColor = System.Drawing.Color.White;
+            this.lblLMLimitSwitch1.Location = new System.Drawing.Point(364, 162);
+            this.lblLMLimitSwitch1.Name = "lblLMLimitSwitch1";
+            this.lblLMLimitSwitch1.Size = new System.Drawing.Size(24, 26);
+            this.lblLMLimitSwitch1.TabIndex = 35;
+            this.lblLMLimitSwitch1.Text = "0";
             // 
-            // label49
+            // acc
             // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.Color.White;
-            this.label49.Location = new System.Drawing.Point(54, 924);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(189, 26);
-            this.label49.TabIndex = 87;
-            this.label49.Text = "LM forward 2 MLP";
+            this.acc.AutoSize = true;
+            this.acc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acc.ForeColor = System.Drawing.Color.White;
+            this.acc.Location = new System.Drawing.Point(702, 356);
+            this.acc.Name = "acc";
+            this.acc.Size = new System.Drawing.Size(132, 26);
+            this.acc.TabIndex = 34;
+            this.acc.Text = "Acceleration";
             // 
-            // button9
+            // label38
             // 
-            this.button9.Location = new System.Drawing.Point(688, 914);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(133, 44);
-            this.button9.TabIndex = 86;
-            this.button9.Text = "Send";
-            this.button9.UseVisualStyleBackColor = true;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.White;
+            this.label38.Location = new System.Drawing.Point(702, 318);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(75, 26);
+            this.label38.TabIndex = 33;
+            this.label38.Text = "Speed";
             // 
-            // textBox6
+            // label39
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(371, 912);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(290, 44);
-            this.textBox6.TabIndex = 85;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.White;
+            this.label39.Location = new System.Drawing.Point(702, 275);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(56, 26);
+            this.label39.TabIndex = 32;
+            this.label39.Text = "Yaw";
             // 
-            // label50
+            // label40
             // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(53, 869);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(189, 26);
-            this.label50.TabIndex = 84;
-            this.label50.Text = "LM forward 1 MLP";
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.White;
+            this.label40.Location = new System.Drawing.Point(702, 237);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(50, 26);
+            this.label40.TabIndex = 31;
+            this.label40.Text = "Roll";
             // 
-            // button10
+            // label41
             // 
-            this.button10.Location = new System.Drawing.Point(687, 859);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(133, 44);
-            this.button10.TabIndex = 83;
-            this.button10.Text = "Send";
-            this.button10.UseVisualStyleBackColor = true;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.White;
+            this.label41.Location = new System.Drawing.Point(702, 200);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(61, 26);
+            this.label41.TabIndex = 30;
+            this.label41.Text = "Pitch";
             // 
-            // textBox7
+            // label42
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(370, 857);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(290, 44);
-            this.textBox7.TabIndex = 82;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.White;
+            this.label42.Location = new System.Drawing.Point(702, 165);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(67, 26);
+            this.label42.TabIndex = 29;
+            this.label42.Text = "Y CG";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.Color.White;
+            this.label43.Location = new System.Drawing.Point(703, 126);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(66, 26);
+            this.label43.TabIndex = 28;
+            this.label43.Text = "X CG";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.White;
+            this.label44.Location = new System.Drawing.Point(703, 85);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(110, 26);
+            this.label44.TabIndex = 27;
+            this.label44.Text = "CG height";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(51, 73);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(168, 26);
+            this.label36.TabIndex = 26;
+            this.label36.Text = "Operating mode";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(1189, 592);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(140, 26);
+            this.label35.TabIndex = 25;
+            this.label35.Text = "IBDS 2 value";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(1189, 558);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(140, 26);
+            this.label34.TabIndex = 24;
+            this.label34.Text = "IBDS 1 value";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(1189, 521);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(131, 26);
+            this.label33.TabIndex = 23;
+            this.label33.Text = "HD s4 value";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(1189, 482);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(131, 26);
+            this.label32.TabIndex = 22;
+            this.label32.Text = "HD s3 value";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(1189, 442);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(131, 26);
+            this.label31.TabIndex = 21;
+            this.label31.Text = "HD s2 value";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(1189, 403);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(131, 26);
+            this.label30.TabIndex = 20;
+            this.label30.Text = "HD s1 value";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(1191, 294);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(141, 26);
+            this.label28.TabIndex = 18;
+            this.label28.Text = "EB right MLP";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(1191, 256);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(128, 26);
+            this.label27.TabIndex = 17;
+            this.label27.Text = "EB left MLP";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(1191, 218);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(203, 26);
+            this.label26.TabIndex = 16;
+            this.label26.Text = "EB right limit switch";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(1191, 183);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(190, 26);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "EB left limit switch";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(1186, 82);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(284, 26);
+            this.label24.TabIndex = 14;
+            this.label24.Text = "Auxiliary propulsion enabled";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(46, 432);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(189, 26);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "LM forward 2 MLP";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(46, 394);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(189, 26);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "LM forward 1 MLP";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(46, 351);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(123, 26);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "LM ft2 MLP";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(46, 313);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(123, 26);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "LM ft1 MLP";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(46, 276);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(251, 26);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "LM forward 2 limit switch";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(46, 241);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(251, 26);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "LM forward 1 limit switch";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(47, 202);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(180, 26);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "LM 2 Limit switch";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(47, 161);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(180, 26);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "LM 1 Limit switch";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(701, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(234, 37);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Pod kinematics";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(1187, 355);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(262, 37);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Distance sensors";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(1187, 135);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(194, 37);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Eddy brakes";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(1187, 36);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(230, 37);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Aux propulsion";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(44, 115);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(233, 37);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Lift mechanism";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(45, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(247, 37);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Operating mode";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // TESTTabTimer
+            // 
+            this.TESTTabTimer.Tick += new System.EventHandler(this.TESTTabTimer_Tick);
             // 
             // Form1
             // 
@@ -2119,6 +2124,7 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Timer TESTTabTimer;
     }
 }
 
