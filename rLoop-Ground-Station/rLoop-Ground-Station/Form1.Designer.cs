@@ -1931,6 +1931,8 @@
             // 
             // TESTTabTimer
             // 
+            this.TESTTabTimer.Enabled = true;
+            this.TESTTabTimer.Interval = 200;
             this.TESTTabTimer.Tick += new System.EventHandler(this.TESTTabTimer_Tick);
             // 
             // Form1
