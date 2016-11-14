@@ -17,6 +17,20 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float Speed;
         public float Acceleration;
 
+        public float EBLeftLimitSwitch;
+        public float EBRightLimitSwitch;
+        public float EBLeftMLP;
+        public float EBRightMLP;
+        public float EBLeftDistance;
+        public float EBRightDistance;
+
+        public float HDS1Value;
+        public float HDS2Value;
+        public float HDS3Value;
+        public float HDS4Value;
+        public float IBDS1Value;
+        public float IBDS2Value;
+
         public rPodStateFlightControlUnitNode()
         {
         }
@@ -57,6 +71,56 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 if (p.Index == 7 && p.Data is float)
                 {
                     Acceleration = (float)p.Data;
+                }
+
+                if (p.Index == 8 && p.Data is float)
+                {
+                    EBLeftLimitSwitch = (float)p.Data;
+                }
+                if (p.Index == 9 && p.Data is float)
+                {
+                    EBRightLimitSwitch = (float)p.Data;
+                }
+                if (p.Index == 10 && p.Data is float)
+                {
+                    EBLeftMLP = (float)p.Data;
+                }
+                if (p.Index == 11 && p.Data is float)
+                {
+                    EBRightMLP = (float)p.Data;
+                }
+                if (p.Index == 10 && p.Data is float)
+                {
+                    EBLeftDistance = (float)p.Data;
+                }
+                if (p.Index == 11 && p.Data is float)
+                {
+                    EBRightDistance = (float)p.Data;
+                }
+
+                if (p.Index == 12 && p.Data is float)
+                {
+                    HDS1Value = (float)p.Data;
+                }
+                if (p.Index == 13 && p.Data is float)
+                {
+                    HDS2Value = (float)p.Data;
+                }
+                if (p.Index == 14 && p.Data is float)
+                {
+                    HDS3Value = (float)p.Data;
+                }
+                if (p.Index == 15 && p.Data is float)
+                {
+                    HDS4Value = (float)p.Data;
+                }
+                if (p.Index == 16 && p.Data is float)
+                {
+                    IBDS1Value = (float)p.Data;
+                }
+                if (p.Index == 17 && p.Data is float)
+                {
+                    HDS2Value = (float)p.Data;
                 }
             }
         }

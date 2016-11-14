@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace rLoop_Ground_Station.Pod_State.Nodes
 {
-    public class rPodStateLandingControlUnitNode : rPodStateNodeStateI
+    public class rPodStateLandingGearUnitNode : rPodStateNodeStateI
     {
         public float LM1LimitSwitch;
         public float LM2LimitSwitch;
@@ -17,7 +17,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float LMAForward1MLP;
         public float LMAForward2MLP;
 
-        public rPodStateLandingControlUnitNode()
+        public rPodStateLandingGearUnitNode()
         {
         }
 

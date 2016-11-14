@@ -40,4 +40,24 @@
     <value>7</value>
     <datatype>Float</datatype>
   </parameter>
+  <parameter>
+    <index>8</index>
+    <value>8</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>9</index>
+    <value>9</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>10</index>
+    <value>10</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>11</index>
+    <value>11</value>
+    <datatype>Float</datatype>
+  </parameter>
 </Parameters_Table>
