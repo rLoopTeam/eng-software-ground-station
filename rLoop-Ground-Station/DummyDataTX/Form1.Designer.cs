@@ -49,6 +49,8 @@
             this.Types_Table = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
             this.dataColumn2 = new System.Data.DataColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtParameterPath = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParametersDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTypesDataSet)).BeginInit();
@@ -245,12 +247,35 @@
             // 
             this.dataColumn2.ColumnName = "name";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(623, 142);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 25);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Parameter File";
+            // 
+            // txtParameterPath
+            // 
+            this.txtParameterPath.Location = new System.Drawing.Point(623, 179);
+            this.txtParameterPath.Margin = new System.Windows.Forms.Padding(6);
+            this.txtParameterPath.Name = "txtParameterPath";
+            this.txtParameterPath.Size = new System.Drawing.Size(300, 31);
+            this.txtParameterPath.TabIndex = 20;
+            this.txtParameterPath.Text = "PARAMETERS.xml";
+            this.txtParameterPath.Leave += new System.EventHandler(this.txtParameterPath_Leave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(974, 699);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtParameterPath);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.testDataType);
             this.Controls.Add(this.label9);
@@ -264,8 +289,6 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Test Data";
-            //this.Closing += new System.EventHandler(this.Form1_Closing);
-            //this.Closing += this.Form1_Closing;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParametersDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTypesDataSet)).EndInit();
@@ -297,6 +320,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn index;
         private System.Windows.Forms.DataGridViewTextBoxColumn value;
         private System.Windows.Forms.DataGridViewComboBoxColumn datatype;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtParameterPath;
     }
 }
 

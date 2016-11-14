@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" ?>
+<Parameters_Table>
+  <parameter>
+    <index>0</index>
+    <value>0</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>1</index>
+    <value>1</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>2</index>
+    <value>2</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>3</index>
+    <value>3</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>4</index>
+    <value>4</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>5</index>
+    <value>5</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>6</index>
+    <value>6</value>
+    <datatype>Float</datatype>
+  </parameter>
+  <parameter>
+    <index>7</index>
+    <value>7</value>
+    <datatype>Float</datatype>
+  </parameter>
+</Parameters_Table>

@@ -21,16 +21,17 @@ namespace DummyDataTX
     public partial class Form1 : Form
     {
         PublisherSocket pubSocket;
-        string PARAMETERS_XML_PATH = @"PARAMETERS.xml";
+        //string PARAMETERS_XML_PATH = @"PARAMETERS.xml";
+        string PARAMETERS_XML_PATH;
 
         public Form1()
         {
 
             InitializeComponent();
+            PARAMETERS_XML_PATH = txtParameterPath.Text;
             testDataType.SelectedIndex = 8;
             pubSocket = new PublisherSocket("tcp://*:3000");
             populateDataGrid();
-
         }
 
         /*
@@ -91,7 +92,7 @@ namespace DummyDataTX
             {
                 try
                 {
-                    Console.WriteLine("TX: ========");
+                    //Console.WriteLine("TX: ========");
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         if (row.IsNewRow)
@@ -192,7 +193,7 @@ namespace DummyDataTX
 
                         // add parameter to the list of parameters to send
                         paramsToSend.Add(p);
-                        Console.WriteLine("TX: " + index + ": " + value + "(" + parameterType + ")");
+                        //Console.WriteLine("TX: " + index + ": " + value + "(" + parameterType + ")");
 
                     }
                 } catch(Exception ee) {
@@ -204,8 +205,8 @@ namespace DummyDataTX
                 Console.WriteLine("gridview is null");
             }
 
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+            //dataGridView1.Update();
+            //dataGridView1.Refresh();
 
             rPodI2CTX formatter = new rPodI2CTX();
 
@@ -250,6 +251,15 @@ namespace DummyDataTX
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtParameterPath_Leave(object sender, System.EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            //populateDataGrid();
+            dataGridView1.Update();
+            dataGridView1.Refresh();
         }
     }
 }
