@@ -34,6 +34,7 @@
             this.UpdateNodeList = new System.Windows.Forms.Timer(this.components);
             this.UpdateDGVTimer = new System.Windows.Forms.Timer(this.components);
             this.BatteryPackAStatusTab = new System.Windows.Forms.Timer(this.components);
+            this.tmrUpdateNodeUtilStats = new System.Windows.Forms.Timer(this.components);
             this.customTabControl1 = new System.Windows.Forms.CustomTabControl();
             this.OverviewTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -173,7 +174,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tmrUpdateNodeUtilStats = new System.Windows.Forms.Timer(this.components);
             this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
             this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
             this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
@@ -228,6 +228,12 @@
             this.BatteryPackAStatusTab.Enabled = true;
             this.BatteryPackAStatusTab.Interval = 200;
             this.BatteryPackAStatusTab.Tick += new System.EventHandler(this.BatteryPackAStatusTab_Tick);
+            // 
+            // tmrUpdateNodeUtilStats
+            // 
+            this.tmrUpdateNodeUtilStats.Enabled = true;
+            this.tmrUpdateNodeUtilStats.Interval = 1000;
+            this.tmrUpdateNodeUtilStats.Tick += new System.EventHandler(this.tmrUpdateNodeUtilStats_Tick);
             // 
             // customTabControl1
             // 
@@ -1914,12 +1920,6 @@
             this.label10.Text = "Operating mode";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // tmrUpdateNodeUtilStats
-            // 
-            this.tmrUpdateNodeUtilStats.Enabled = true;
-            this.tmrUpdateNodeUtilStats.Interval = 1000;
-            this.tmrUpdateNodeUtilStats.Tick += new System.EventHandler(this.tmrUpdateNodeUtilStats_Tick);
-            // 
             // podStateControl2
             // 
             this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1955,10 +1955,10 @@
             this.podStateControl2.HE8Percent = 0.8D;
             this.podStateControl2.HE8Power = 3000D;
             this.podStateControl2.HE8RPM = 3000D;
-            this.podStateControl2.Location = new System.Drawing.Point(256, 0);
+            this.podStateControl2.Location = new System.Drawing.Point(484, 0);
             this.podStateControl2.Margin = new System.Windows.Forms.Padding(6);
             this.podStateControl2.Name = "podStateControl2";
-            this.podStateControl2.Size = new System.Drawing.Size(773, 298);
+            this.podStateControl2.Size = new System.Drawing.Size(545, 298);
             this.podStateControl2.TabIndex = 0;
             // 
             // rPodSpeedometer1
@@ -1967,7 +1967,7 @@
             this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
             this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(6);
             this.rPodSpeedometer1.Name = "rPodSpeedometer1";
-            this.rPodSpeedometer1.Size = new System.Drawing.Size(256, 298);
+            this.rPodSpeedometer1.Size = new System.Drawing.Size(484, 298);
             this.rPodSpeedometer1.TabIndex = 9;
             // 
             // rPodGyro1
@@ -2020,11 +2020,13 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1292, 734);
             this.Controls.Add(this.customTabControl1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "rLoop Ground Station Control";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.customTabControl1.ResumeLayout(false);
             this.OverviewTab.ResumeLayout(false);

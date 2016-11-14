@@ -205,7 +205,7 @@ namespace rLoop_Ground_Station
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -596,6 +596,30 @@ namespace rLoop_Ground_Station
                 return;
             }
             rPodNetworking.setNodeTime(lblSelectedNodeIp.Text, "root", "MoreCowbell");
+        }
+
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            //Don't try and process every random key hit on the form's control
+            if ((e.Modifiers & Keys.Control) != Keys.Control)
+                return;
+
+            //Use CTRL+Digit to change tabs in the window
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D1)
+                customTabControl1.SelectedIndex = 0;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D2)
+                customTabControl1.SelectedIndex = 1;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D3)
+                customTabControl1.SelectedIndex = 2;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D4)
+                customTabControl1.SelectedIndex = 3;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D5)
+                customTabControl1.SelectedIndex = 4;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D6)
+                customTabControl1.SelectedIndex = 5;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D7)
+                customTabControl1.SelectedIndex = 6;
         }
     }
 }
