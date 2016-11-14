@@ -108,3 +108,4 @@ C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Sta
 C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.rPodGyro.resources
 C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.rPodSpeedometer.resources
 C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.csproj.GenerateResource.Cache
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.TabPanels.TestingTabPage.resources

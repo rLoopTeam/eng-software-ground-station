@@ -102,6 +102,12 @@
       <DependentUpon>rPodSpeedometer.cs</DependentUpon>
     </Compile>
     <Compile Include="Pod State\rPodPodState.cs" />
+    <Compile Include="TabPanels\TestingTabPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPanels\TestingTabPage.Designer.cs">
+      <DependentUpon>TestingTabPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rPod GUI Elements\rPodSpeedometer.resx">
       <DependentUpon>rPodSpeedometer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPanels\TestingTabPage.resx">
+      <DependentUpon>TestingTabPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="parameters.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
