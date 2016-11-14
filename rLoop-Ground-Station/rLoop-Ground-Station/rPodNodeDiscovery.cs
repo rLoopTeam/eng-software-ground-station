@@ -13,6 +13,7 @@ using System.Globalization;
 using NetMQ;
 using NetMQ.Sockets;
 
+
 /*
  * This class is responsible for listening for the udp beacon
  * from the Pi's and adding them to the list of available noedes.
@@ -67,7 +68,7 @@ namespace rLoop_Ground_Station
             UdpClient u = (UdpClient)((UdpState)(ar.AsyncState)).u;
             IPEndPoint e = (IPEndPoint)((UdpState)(ar.AsyncState)).e;
 
-            if(Paused)
+            if (Paused)
             {
                 if (IsRunning)
                     u.BeginReceive(new AsyncCallback(ReceiveCallback), ((UdpState)(ar.AsyncState)));
@@ -89,22 +90,33 @@ namespace rLoop_Ground_Station
 
             Console.WriteLine("Received: {0}\n", receiveString);
 
-            rPodNetworkNode n = new rPodNetworkNode(receiveString.Substring(6), e.Address.ToString(), false);
-            n.NodeAnnounceSeen();
-
-            if (ActiveNodes == null)
-                ActiveNodes = new List<rPodNetworkNode>();
-
-            if (ActiveNodes.Contains(n) == false)
+            string[] tokens = receiveString.Split(',');
+            if (tokens.Length == 5)
             {
-                ActiveNodes.Add(n);
-                FoundNewNode(n);
-            }
-            else
-            {
-                ActiveNodes.FirstOrDefault(x => x.Equals(n)).NodeAnnounceSeen();
-            }
+                if (tokens[0] == "rPod!")
+                {
+                    int id = int.Parse(tokens[1]);
+                    DateTime PiTime = DateTime.Parse(tokens[3]);
+                    bool logging = false;
+                    if (tokens[4] == "yes")
+                        logging = true;
+                    rPodNetworkNode n = new rPodNetworkNode(tokens[2], e.Address.ToString(), false, logging, PiTime);
+                    n.NodeAnnounceSeen(logging, PiTime);
 
+                    if (ActiveNodes == null)
+                        ActiveNodes = new List<rPodNetworkNode>();
+
+                    if (ActiveNodes.Contains(n) == false)
+                    {
+                        ActiveNodes.Add(n);
+                        FoundNewNode(n);
+                    }
+                    else
+                    {
+                        ActiveNodes.FirstOrDefault(x => x.Equals(n)).NodeAnnounceSeen(logging, PiTime);
+                    }
+                }
+            }
             if (IsRunning)
                 u.BeginReceive(new AsyncCallback(ReceiveCallback), ((UdpState)(ar.AsyncState)));
         }
@@ -127,10 +139,16 @@ namespace rLoop_Ground_Station
         public bool ManuallyAdded;
         public ZMQTelemetryProcessor TelemetryProcessor;
         public RequestSocket RequestSocket;
+        public bool IsDataLogging;
+        public DateTime NodeTime;
 
-        public void NodeAnnounceSeen()
+        public void NodeAnnounceSeen(bool isLogging, DateTime nodeTime)
         {
+            IsDataLogging = isLogging;
+            NodeTime = nodeTime;
             AnnounceLastSeen = DateTime.Now;
+            if ((nodeTime - DateTime.Now).TotalMinutes > 5 || (nodeTime - DateTime.Now).TotalMinutes < -5)
+                rPodNetworking.setNodeTime(IP, "root", "MoreCowbell");
         }
 
         public void NodeZMQSeen()
@@ -154,11 +172,13 @@ namespace rLoop_Ground_Station
                 return true;
         }
 
-        public rPodNetworkNode(string name, string ip, bool manual)
+        public rPodNetworkNode(string name, string ip, bool manual, bool isDataLogging, DateTime nodeTime)
         {
             _nodeName = name;
             IP = ip;
             ManuallyAdded = manual;
+            IsDataLogging = isDataLogging;
+            NodeTime = nodeTime;
         }
 
         public override string ToString()

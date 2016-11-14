@@ -66,15 +66,16 @@ namespace rLoop_Ground_Station
         {
             if (Paused)
                 return;
-            if(rPodNodeDiscovery.ActiveNodes != null)
+            if (rPodNodeDiscovery.ActiveNodes != null)
                 foreach (rPodNetworkNode n in rPodNodeDiscovery.ActiveNodes.ToArray())
                 {
-                    if(!n.NodeAnnounceIsAlive())
+                    if (!n.NodeAnnounceIsAlive())
                     {
                         n.TelemetryProcessor.Subscriber.Disconnect(n.TelemetryProcessor.ZMQAddress);
                         n.TelemetryProcessor.Subscriber.Close();
                         rPodNodeDiscovery.ActiveNodes.Remove(n);
-                    }else if (!n.NodeZMQIsAlive())
+                    }
+                    else if (!n.NodeZMQIsAlive())
                     {
                         n.TelemetryProcessor.Subscriber.Disconnect(n.TelemetryProcessor.ZMQAddress);
                         n.TelemetryProcessor.Subscriber.Connect(n.TelemetryProcessor.ZMQAddress);
@@ -129,7 +130,7 @@ namespace rLoop_Ground_Station
             }
 
             rPodStateNodeStateI nodeState = rPodPodState.Nodes.FirstOrDefault(x => x.NodeName == nodeName);
-            if(nodeState != null)
+            if (nodeState != null)
             {
                 nodeState.ProcessParameter(parameterList);
             }
@@ -147,7 +148,7 @@ namespace rLoop_Ground_Station
             {
                 ssh.Connect();
                 ssh.RunCommand("rm /mnt/data/config/nodename");
-                ssh.RunCommand("echo " + "\"" + newName + "\" > /mnt/data/config/nodename" );
+                ssh.RunCommand("echo " + "\"" + newName + "\" > /mnt/data/config/nodename");
                 ssh.RunCommand("/etc/init.d/S55telemetry restart");
                 ssh.RunCommand("/etc/init.d/S55udpBeacon restart");
                 ssh.Disconnect();
@@ -155,6 +156,68 @@ namespace rLoop_Ground_Station
             Paused = false;
             rPodNodeDiscovery.Paused = false;
         }
+
+        //Starts the data logging daemon
+        public void startNodeDataLogging(string host_ip, string username, string password)
+        {
+            using (SshClient ssh = new SshClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                ssh.RunCommand("/etc/init.d/datalogging start");
+                ssh.Disconnect();
+            }
+            rPodNodeDiscovery.Paused = false;
+        }
+
+        //Stops the data logging daemon
+        public void stopNodeDataLogging(string host_ip, string username, string password)
+        {
+            using (SshClient ssh = new SshClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                ssh.RunCommand("/etc/init.d/datalogging stop");
+                ssh.Disconnect();
+            }
+            rPodNodeDiscovery.Paused = false;
+        }
+
+        //Sets the clock on the Pi
+        public static void setNodeTime(string host_ip, string username, string password)
+        {
+            DateTime currentTime = DateTime.Now;
+            string dateString = '"' + currentTime.Year.ToString() + "-" + currentTime.Month.ToString() + "-" + currentTime.Day.ToString() + " " + currentTime.Hour + ":" + currentTime.Minute.ToString() + ":" + currentTime.Second.ToString() + '"';
+            using (SshClient ssh = new SshClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                ssh.RunCommand("date " + dateString);
+                ssh.Disconnect();
+            }
+            rPodNodeDiscovery.Paused = false;
+        }
+
+        //Renames a node by changing the config file in the Pi and reloading the services
+        //that depend on the name.
+        //This could use some error checking or could be done by a script on the Pi instead
+        //of a pseudo bash script here.
+        public void changeBaudrate(string host_ip, string username, string password, string newBaud)
+        {
+            Paused = true;
+            rPodNodeDiscovery.Paused = true;
+            using (SshClient ssh = new SshClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                ssh.RunCommand("rm /mnt/data/config/serialbaud");
+                ssh.RunCommand("echo " + "\"" + newBaud + "\" > /mnt/data/config/serialbaud");
+                ssh.RunCommand("/etc/init.d/S56uartSetParameter stop");
+                ssh.RunCommand("/etc/init.d/S55telemetry stop");
+                ssh.RunCommand("/etc/init.d/S56uartSetParameter start");
+                ssh.RunCommand("/etc/init.d/S55telemetry start");
+                ssh.Disconnect();
+            }
+            Paused = false;
+            rPodNodeDiscovery.Paused = false;
+        }
+
 
         //Uploades a hex file to the Pi and programs it to the Teensy
         //Would be good to parse feedback from the Teensy cli loader
@@ -193,14 +256,17 @@ namespace rLoop_Ground_Station
             if (n == null)
                 return false;
             string ip = n.IP;
-            if(n.RequestSocket == null)
+            if (n.RequestSocket == null)
                 n.RequestSocket = new RequestSocket();
 
             n.RequestSocket.Connect("tcp://" + ip + ":6789");
             n.RequestSocket.TrySendFrame(TimeSpan.FromSeconds(1), formatter.formatTransmitParameters(parameters));
             string reply;
             if (!n.RequestSocket.TryReceiveFrameString(TimeSpan.FromSeconds(1), out reply))
+            {
+                n.RequestSocket.Disconnect("tcp://" + ip + ":6789");
                 return false;
+            }
             else if (reply == "Got It")
                 return true;
             return false;
@@ -238,7 +304,7 @@ namespace rLoop_Ground_Station
                 byte[] reply = a.Socket.ReceiveFrameBytes();
 
                 int i = 10;
-                while ( i < reply.Length && reply[i] != 0xd5)
+                while (i < reply.Length && reply[i] != 0xd5)
                 {
                     i++;
                 }
@@ -290,9 +356,9 @@ namespace rLoop_Ground_Station
                     foreach (var item2 in item.Value)
                     {
                         NodeParameterDefinition pd = new NodeParameterDefinition();
-                        t.ParameterDefs.Add(pd); 
+                        t.ParameterDefs.Add(pd);
                         pd.Index = item2[0];
-                        if(item2[1] != null)
+                        if (item2[1] != null)
                             pd.Min = item2[1];
                         if (item2[2] != null)
                             pd.Max = item2[2];
@@ -300,7 +366,7 @@ namespace rLoop_Ground_Station
                         pd.Description = item2[4];
                     }
                 }
-                
+
             }
         }
     }
