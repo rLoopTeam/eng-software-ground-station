@@ -178,6 +178,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.TESTTabTimer = new System.Windows.Forms.Timer(this.components);
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -930,6 +932,8 @@
             // testTab
             // 
             this.testTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.testTab.Controls.Add(this.button12);
+            this.testTab.Controls.Add(this.button11);
             this.testTab.Controls.Add(this.label49);
             this.testTab.Controls.Add(this.button9);
             this.testTab.Controls.Add(this.textBox6);
@@ -1029,9 +1033,9 @@
             this.label49.ForeColor = System.Drawing.Color.White;
             this.label49.Location = new System.Drawing.Point(54, 924);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(189, 26);
+            this.label49.Size = new System.Drawing.Size(306, 26);
             this.label49.TabIndex = 87;
-            this.label49.Text = "LM forward 2 MLP";
+            this.label49.Text = "LM forward 2 speed command";
             // 
             // button9
             // 
@@ -1057,9 +1061,9 @@
             this.label50.ForeColor = System.Drawing.Color.White;
             this.label50.Location = new System.Drawing.Point(53, 869);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(189, 26);
+            this.label50.Size = new System.Drawing.Size(306, 26);
             this.label50.TabIndex = 84;
-            this.label50.Text = "LM forward 1 MLP";
+            this.label50.Text = "LM forward 1 speed command";
             // 
             // button10
             // 
@@ -1096,9 +1100,9 @@
             this.label47.ForeColor = System.Drawing.Color.White;
             this.label47.Location = new System.Drawing.Point(54, 795);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(138, 26);
+            this.label47.Size = new System.Drawing.Size(255, 26);
             this.label47.TabIndex = 80;
-            this.label47.Text = "LMA ft2 MLP";
+            this.label47.Text = "LMA ft2 speed command";
             // 
             // button7
             // 
@@ -1124,9 +1128,9 @@
             this.label48.ForeColor = System.Drawing.Color.White;
             this.label48.Location = new System.Drawing.Point(53, 740);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(138, 26);
+            this.label48.Size = new System.Drawing.Size(255, 26);
             this.label48.TabIndex = 77;
-            this.label48.Text = "LMA ft1 MLP";
+            this.label48.Text = "LMA ft1 speed command";
             // 
             // button8
             // 
@@ -1152,9 +1156,9 @@
             this.label45.ForeColor = System.Drawing.Color.White;
             this.label45.Location = new System.Drawing.Point(53, 674);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(266, 26);
+            this.label45.Size = new System.Drawing.Size(344, 26);
             this.label45.TabIndex = 74;
-            this.label45.Text = "LMA forward 2 limit switch";
+            this.label45.Text = "LMA forward 2 direction command";
             // 
             // button5
             // 
@@ -1180,9 +1184,9 @@
             this.label46.ForeColor = System.Drawing.Color.White;
             this.label46.Location = new System.Drawing.Point(52, 619);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(266, 26);
+            this.label46.Size = new System.Drawing.Size(344, 26);
             this.label46.TabIndex = 71;
-            this.label46.Text = "LMA forward 1 limit switch";
+            this.label46.Text = "LMA forward 1 direction command";
             // 
             // button6
             // 
@@ -1935,6 +1939,24 @@
             this.TESTTabTimer.Interval = 200;
             this.TESTTabTimer.Tick += new System.EventHandler(this.TESTTabTimer_Tick);
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(1186, 838);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(133, 112);
+            this.button11.TabIndex = 88;
+            this.button11.Text = "Safe";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(1369, 838);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(133, 112);
+            this.button12.TabIndex = 89;
+            this.button12.Text = "Pod stop";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2127,6 +2149,8 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Timer TESTTabTimer;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
     }
 }
 
