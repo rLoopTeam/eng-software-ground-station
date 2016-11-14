@@ -183,6 +183,12 @@ namespace rLoop_Ground_Station
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            label1.Text = openFileDialog1.FileName;
+        }
+
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
@@ -200,7 +206,7 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Choose a valid file.");
                 return;
             }
-            net.uploadFile(lblSelectedNodeIp.Text, "root", "MoreCowbell", openFileDialog1.FileName, openFileDialog1.SafeFileName);
+            net.uploadFile(label2.Text, "root", "MoreCowbell", openFileDialog1.FileName, openFileDialog1.SafeFileName);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -227,25 +233,12 @@ namespace rLoop_Ground_Station
             foreach (rPodNetworkNode i in toRemove)
                 listBox1.Items.Remove(i);
         }
-        
-        private void updateNodeStats()
-        {
-            if (listBox1.SelectedIndex >= 0)
-            {
-                lblSelectedNodeIp.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IP;
-                if ((listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IsDataLogging)
-                    lblSelectedNodeDataLogging.Text = "Data logging on.";
-                else
-                    lblSelectedNodeDataLogging.Text = "Data logging off.";
-                lblSelectedNodeTime.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).NodeTime.ToString();
-            }
-        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex >= 0)
             {
-                 updateNodeStats();
+                label2.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IP;
                 dataGridView1.Rows.Clear();
             }
         }
@@ -406,7 +399,7 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Choose a node from the list.");
                 return;
             }
-            net.changeNodeName(lblSelectedNodeIp.Text, "root", "MoreCowbell", textBox1.Text);
+            net.changeNodeName(label2.Text, "root", "MoreCowbell", textBox1.Text);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -585,80 +578,6 @@ namespace rLoop_Ground_Station
             lblEBRightLimitSwitch.Text = rPodPodState.BrakeNode.EBRightLimitSwitch + "m";
             lblLeftMLP.Text = rPodPodState.BrakeNode.EBLeftMLP + "m";
             lblRightMLP.Text = rPodPodState.BrakeNode.EBRightMLP + "m";
-        }
-        
-         private void Form1_KeyUp(object sender, KeyEventArgs e)
-        {		        {
-            //Don't try and process every random key hit on the form's control
-            if ((e.Modifiers & Keys.Control) != Keys.Control)
-                return;
-            //Use CTRL+Digit to change tabs in the window
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D1)
-                customTabControl1.SelectedIndex = 0;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D2)
-                customTabControl1.SelectedIndex = 1;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D3)
-                customTabControl1.SelectedIndex = 2;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D4)
-                customTabControl1.SelectedIndex = 3;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D5)
-                customTabControl1.SelectedIndex = 4;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D6)
-                customTabControl1.SelectedIndex = 5;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D7)
-                customTabControl1.SelectedIndex = 6;
-        }
-
-        private void btnNewBaudRate_Click(object sender, EventArgs e)
-        {
-            int newBaud;
-            if (int.TryParse(txtNewBaud.Text, out newBaud)) {
-                if (listBox1.SelectedIndex < 0)
-                {
-                    MessageBox.Show("Choose a node from the list.");
-                    return;
-                }
-                net.changeBaudrate(lblSelectedNodeIp.Text, "root", "MoreCowbell", txtNewBaud.Text);
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid integer for the baud rate.");
-            }
-        }
-
-        private void btnStartDataLogging_Click(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedIndex < 0)
-            {
-                MessageBox.Show("Choose a node from the list.");
-                return;
-            }
-            net.startNodeDataLogging(lblSelectedNodeIp.Text, "root", "MoreCowbell");
-        }
-
-        private void btnStopDataLogging_Click(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedIndex < 0)
-            {
-                MessageBox.Show("Choose a node from the list.");
-                return;
-            }
-            net.stopNodeDataLogging(lblSelectedNodeIp.Text, "root", "MoreCowbell");
-        }
-
-        private void tmrUpdateNodeUtilStats_Tick(object sender, EventArgs e)
-        {
-            updateNodeStats();
-        }
-
-        private void btnSyncPiClk_Click(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedIndex < 0)
-            {
-                MessageBox.Show("Choose a node from the list.");
-                return;
-            }
-            rPodNetworking.setNodeTime(lblSelectedNodeIp.Text, "root", "MoreCowbell");
         }
 
         private void label18_Click(object sender, EventArgs e)
