@@ -586,12 +586,33 @@ namespace rLoop_Ground_Station
             lblLeftMLP.Text = rPodPodState.BrakeNode.EBLeftMLP + "m";
             lblRightMLP.Text = rPodPodState.BrakeNode.EBRightMLP + "m";
         }
+        
+         private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {		        {
+            //Don't try and process every random key hit on the form's control
+            if ((e.Modifiers & Keys.Control) != Keys.Control)
+                return;
+            //Use CTRL+Digit to change tabs in the window
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D1)
+                customTabControl1.SelectedIndex = 0;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D2)
+                customTabControl1.SelectedIndex = 1;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D3)
+                customTabControl1.SelectedIndex = 2;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D4)
+                customTabControl1.SelectedIndex = 3;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D5)
+                customTabControl1.SelectedIndex = 4;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D6)
+                customTabControl1.SelectedIndex = 5;
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D7)
+                customTabControl1.SelectedIndex = 6;
+        }
 
         private void btnNewBaudRate_Click(object sender, EventArgs e)
         {
             int newBaud;
-            if (int.TryParse(txtNewBaud.Text, out newBaud))
-            {
+            if (int.TryParse(txtNewBaud.Text, out newBaud)) {
                 if (listBox1.SelectedIndex < 0)
                 {
                     MessageBox.Show("Choose a node from the list.");
@@ -640,29 +661,9 @@ namespace rLoop_Ground_Station
             rPodNetworking.setNodeTime(lblSelectedNodeIp.Text, "root", "MoreCowbell");
         }
 
-
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        private void label18_Click(object sender, EventArgs e)
         {
-            //Don't try and process every random key hit on the form's control
-            if ((e.Modifiers & Keys.Control) != Keys.Control)
-                return;
 
-            //Use CTRL+Digit to change tabs in the window
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D1)
-                customTabControl1.SelectedIndex = 0;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D2)
-                customTabControl1.SelectedIndex = 1;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D3)
-                customTabControl1.SelectedIndex = 2;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D4)
-                customTabControl1.SelectedIndex = 3;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D5)
-                customTabControl1.SelectedIndex = 4;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D6)
-                customTabControl1.SelectedIndex = 5;
-            if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D7)
-                customTabControl1.SelectedIndex = 6;
         }
-
     }
 }
