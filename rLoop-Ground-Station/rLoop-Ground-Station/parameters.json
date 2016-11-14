@@ -65,5 +65,33 @@
 	],
 	"power": [],
 	"control": [],
-	"hdk": []
+	"hdk": [],
+		"Loopback": [
+		[0,	0,		0,	"NA",	"uint8 test"],
+		[1,	0,		0,	"NA",	"int8 test"],
+		[2,	0,		0,	"NA",	"uint16 test"],
+		[3,	0,		0,	"NA",	"int16 test"],
+		[4,	0,		0,	"NA",	"uint32 test"],
+		[5,	0,		0,	"NA",	"int32 test"],
+		[6,	0,		0,	"NA",	"uint64 test"],
+		[7,	0,		0,	"NA",	"int64 test"],
+		[8,	0,		0,	"NA",	"float test"],
+		[9,	0,		0,	"NA",	"double test"],
+		[10,	0,		0,	"NA",	"counter test"],
+		
+	],
+	"Loopback2": [
+		[0,	0,		0,	"NA",	"uint8 test"],
+		[1,	0,		0,	"NA",	"int8 test"],
+		[2,	0,		0,	"NA",	"uint16 test"],
+		[3,	0,		0,	"NA",	"int16 test"],
+		[4,	0,		0,	"NA",	"uint32 test"],
+		[5,	0,		0,	"NA",	"int32 test"],
+		[6,	0,		0,	"NA",	"uint64 test"],
+		[7,	0,		0,	"NA",	"int64 test"],
+		[8,	0,		0,	"NA",	"float test"],
+		[9,	0,		0,	"NA",	"double test"],
+		[10,	0,		0,	"NA",	"counter test"],
+		
+	]
 }

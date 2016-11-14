@@ -156,6 +156,30 @@ namespace rLoop_Ground_Station
             rPodNodeDiscovery.Paused = false;
         }
 
+        //Renames a node by changing the config file in the Pi and reloading the services
+        //that depend on the name.
+        //This could use some error checking or could be done by a script on the Pi instead
+        //of a pseudo bash script here.
+        public void changeBaudrate(string host_ip, string username, string password, string newBaud)
+        {
+            Paused = true;
+            rPodNodeDiscovery.Paused = true;
+            using (SshClient ssh = new SshClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                ssh.RunCommand("rm /mnt/data/config/serialbaud");
+                ssh.RunCommand("echo " + "\"" + newBaud + "\" > /mnt/data/config/serialbaud");
+                ssh.RunCommand("/etc/init.d/S56uartSetParameter stop");
+                ssh.RunCommand("/etc/init.d/S55telemetry stop");
+                ssh.RunCommand("/etc/init.d/S56uartSetParameter start");
+                ssh.RunCommand("/etc/init.d/S55telemetry start");
+                ssh.Disconnect();
+            }
+            Paused = false;
+            rPodNodeDiscovery.Paused = false;
+        }
+
+
         //Uploades a hex file to the Pi and programs it to the Teensy
         //Would be good to parse feedback from the Teensy cli loader
         //Validating the file would good too.
@@ -195,12 +219,15 @@ namespace rLoop_Ground_Station
             string ip = n.IP;
             if(n.RequestSocket == null)
                 n.RequestSocket = new RequestSocket();
-
+            
             n.RequestSocket.Connect("tcp://" + ip + ":6789");
             n.RequestSocket.TrySendFrame(TimeSpan.FromSeconds(1), formatter.formatTransmitParameters(parameters));
             string reply;
             if (!n.RequestSocket.TryReceiveFrameString(TimeSpan.FromSeconds(1), out reply))
+            {
+                n.RequestSocket.Disconnect("tcp://" + ip + ":6789");
                 return false;
+            }
             else if (reply == "Got It")
                 return true;
             return false;

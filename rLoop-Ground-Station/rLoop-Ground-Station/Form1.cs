@@ -538,5 +538,22 @@ namespace rLoop_Ground_Station
         {
 
         }
+
+        private void btnNewBaudRate_Click(object sender, EventArgs e)
+        {
+            int newBaud;
+            if (int.TryParse(txtNewBaud.Text, out newBaud)) {
+                if (listBox1.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Choose a node from the list.");
+                    return;
+                }
+                net.changeBaudrate(label2.Text, "root", "MoreCowbell", txtNewBaud.Text);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid integer for the baud rate.");
+            }
+        }
     }
 }
