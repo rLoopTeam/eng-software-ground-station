@@ -156,6 +156,44 @@ namespace rLoop_Ground_Station
             rPodNodeDiscovery.Paused = false;
         }
 
+        //Starts the data logging daemon
+        public void startNodeDataLogging(string host_ip, string username, string password)
+        {
+            using (SshClient ssh = new SshClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                ssh.RunCommand("/etc/init.d/datalogging start");
+                ssh.Disconnect();
+            }
+            rPodNodeDiscovery.Paused = false;
+        }
+
+        //Stops the data logging daemon
+        public void stopNodeDataLogging(string host_ip, string username, string password)
+        {
+            using (SshClient ssh = new SshClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                ssh.RunCommand("/etc/init.d/datalogging stop");
+                ssh.Disconnect();
+            }
+            rPodNodeDiscovery.Paused = false;
+        }
+
+        //Sets the clock on the Pi
+        public static void setNodeTime(string host_ip, string username, string password)
+        {
+            DateTime currentTime = DateTime.Now;
+            string dateString = '"' + currentTime.Year.ToString() + "-" + currentTime.Month.ToString() + "-" + currentTime.Day.ToString() + " " + currentTime.Hour + ":" + currentTime.Minute.ToString() + ":" + currentTime.Second.ToString() + '"';
+            using (SshClient ssh = new SshClient(host_ip, username, password))
+            {
+                ssh.Connect();
+                ssh.RunCommand("date "+dateString);
+                ssh.Disconnect();
+            }
+            rPodNodeDiscovery.Paused = false;
+        }
+
         //Renames a node by changing the config file in the Pi and reloading the services
         //that depend on the name.
         //This could use some error checking or could be done by a script on the Pi instead

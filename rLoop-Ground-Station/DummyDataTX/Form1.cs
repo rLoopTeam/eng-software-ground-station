@@ -48,7 +48,7 @@ namespace DummyDataTX
 
         private void UDPTimer_Tick(object sender, EventArgs e)
         {
-            String preamble = "rPod! ";
+            String preamble = "rPod!,0,";
             //Send UDP Announce on every interface on the system
             foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
             {
@@ -70,7 +70,7 @@ namespace DummyDataTX
                                 if (IPAddress.TryParse("239.3.14.159", out transmitIP))
                                 {
                                     IPEndPoint target = new IPEndPoint(transmitIP, 50051);
-                                    byte[] data = Encoding.ASCII.GetBytes(preamble + UDPAnnounceTXT.Text);
+                                    byte[] data = Encoding.ASCII.GetBytes(preamble + UDPAnnounceTXT.Text + "," + DateTime.Now.ToString() + ",no");
                                     udpc.Send(data , data.Length, target);
                                     //Console.WriteLine(data);
                                 }

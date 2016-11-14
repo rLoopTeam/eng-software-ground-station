@@ -183,12 +183,6 @@ namespace rLoop_Ground_Station
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-            label1.Text = openFileDialog1.FileName;
-        }
-
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
@@ -206,7 +200,7 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Choose a valid file.");
                 return;
             }
-            net.uploadFile(label2.Text, "root", "MoreCowbell", openFileDialog1.FileName, openFileDialog1.SafeFileName);
+            net.uploadFile(lblSelectedNodeIp.Text, "root", "MoreCowbell", openFileDialog1.FileName, openFileDialog1.SafeFileName);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -234,11 +228,24 @@ namespace rLoop_Ground_Station
                 listBox1.Items.Remove(i);
         }
 
+        private void updateNodeStats()
+        {
+            if (listBox1.SelectedIndex >= 0)
+            {
+                lblSelectedNodeIp.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IP;
+                if ((listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IsDataLogging)
+                    lblSelectedNodeDataLogging.Text = "Data logging on.";
+                else
+                    lblSelectedNodeDataLogging.Text = "Data logging off.";
+                lblSelectedNodeTime.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).NodeTime.ToString();
+            }
+        }
+
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex >= 0)
             {
-                label2.Text = (listBox1.Items[listBox1.SelectedIndex] as rPodNetworkNode).IP;
+                updateNodeStats();
                 dataGridView1.Rows.Clear();
             }
         }
@@ -399,7 +406,7 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Choose a node from the list.");
                 return;
             }
-            net.changeNodeName(label2.Text, "root", "MoreCowbell", textBox1.Text);
+            net.changeNodeName(lblSelectedNodeIp.Text, "root", "MoreCowbell", textBox1.Text);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -548,12 +555,47 @@ namespace rLoop_Ground_Station
                     MessageBox.Show("Choose a node from the list.");
                     return;
                 }
-                net.changeBaudrate(label2.Text, "root", "MoreCowbell", txtNewBaud.Text);
+                net.changeBaudrate(lblSelectedNodeIp.Text, "root", "MoreCowbell", txtNewBaud.Text);
             }
             else
             {
                 MessageBox.Show("Please enter a valid integer for the baud rate.");
             }
+        }
+
+        private void btnStartDataLogging_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("Choose a node from the list.");
+                return;
+            }
+            net.startNodeDataLogging(lblSelectedNodeIp.Text, "root", "MoreCowbell");
+        }
+
+        private void btnStopDataLogging_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("Choose a node from the list.");
+                return;
+            }
+            net.stopNodeDataLogging(lblSelectedNodeIp.Text, "root", "MoreCowbell");
+        }
+
+        private void tmrUpdateNodeUtilStats_Tick(object sender, EventArgs e)
+        {
+            updateNodeStats();
+        }
+
+        private void btnSyncPiClk_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("Choose a node from the list.");
+                return;
+            }
+            rPodNetworking.setNodeTime(lblSelectedNodeIp.Text, "root", "MoreCowbell");
         }
     }
 }
