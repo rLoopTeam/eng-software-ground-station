@@ -32,6 +32,7 @@ namespace rLoop_Ground_Station
         static public rPodStatePowerNode PowerNodeB;
         static public rPodStateFlightControlUnitNode FlightControlUnitNode;
         static public rPodStateLandingControlUnitNode LandingControlUnitNode;
+        static public rPodStateBrakeNode BrakeNode;
 
         static rPodPodState()
         {
@@ -45,6 +46,7 @@ namespace rLoop_Ground_Station
             PowerNodeB = new rPodStatePowerNode();
             FlightControlUnitNode = new rPodStateFlightControlUnitNode();
             LandingControlUnitNode = new rPodStateLandingControlUnitNode();
+            BrakeNode = new rPodStateBrakeNode();
 
             CommandNode.NodeName = "Command";
             StepperNode.NodeName = "Stepper";
@@ -52,6 +54,7 @@ namespace rLoop_Ground_Station
             PowerNodeB.NodeName = "PowerB";
             FlightControlUnitNode.NodeName = "FlightControlUnit";
             LandingControlUnitNode.NodeName = "LandingControlUnit";
+            BrakeNode.NodeName = "BrakeNode";
 
             Nodes.Add(CommandNode);
             Nodes.Add(StepperNode);
@@ -59,6 +62,7 @@ namespace rLoop_Ground_Station
             Nodes.Add(PowerNodeB);
             Nodes.Add(FlightControlUnitNode);
             Nodes.Add(LandingControlUnitNode);
+            Nodes.Add(BrakeNode);
         }
     }
 }

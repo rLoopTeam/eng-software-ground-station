@@ -567,6 +567,17 @@ namespace rLoop_Ground_Station
             lblLMFT2MLP.Text = rPodPodState.LandingControlUnitNode.LMAft2MLP + "m";
             lblLMForward1MLP.Text = rPodPodState.LandingControlUnitNode.LMAForward1MLP + "m";
             lblLMForward2MLP.Text = rPodPodState.LandingControlUnitNode.LMAForward2MLP + "m";
+
+
+
+            if (rPodPodState.LandingControlUnitNode == null)
+                return;
+
+            // update Brake lables
+            lblEBLeftLimitSwitch.Text = rPodPodState.BrakeNode.EBLeftLimitSwitch + "m";
+            lblEBRightLimitSwitch.Text = rPodPodState.BrakeNode.EBRightLimitSwitch + "m";
+            lblLeftMLP.Text = rPodPodState.BrakeNode.EBLeftMLP + "m";
+            lblRightMLP.Text = rPodPodState.BrakeNode.EBRightMLP + "m";
         }
 
         private void label18_Click(object sender, EventArgs e)
