@@ -554,6 +554,24 @@ namespace rLoop_Ground_Station
             lblAcceleration.Text = rPodPodState.FlightControlUnitNode.Acceleration + "m";
             lblSpeed.Text = rPodPodState.FlightControlUnitNode.Speed + "m";
 
+
+            if (rPodPodState.LandingControlUnitNode == null)
+                return;
+
+            // update LCU lables
+            lblLMLimitSwitch1.Text = rPodPodState.LandingControlUnitNode.LM1LimitSwitch + "m";
+            lblLMLimitSwitch2.Text = rPodPodState.LandingControlUnitNode.LM2LimitSwitch + "m";
+            lblLMForwardLimitSwitch1.Text = rPodPodState.LandingControlUnitNode.LMForward1LimitSwitch + "m";
+            lblLMForwardLimitSwitch2.Text = rPodPodState.LandingControlUnitNode.LMForward2LimitSwitch + "m";
+            lblFT1MLP.Text = rPodPodState.LandingControlUnitNode.LMAft1MLP + "m";
+            lblLMFT2MLP.Text = rPodPodState.LandingControlUnitNode.LMAft2MLP + "m";
+            lblLMForward1MLP.Text = rPodPodState.LandingControlUnitNode.LMAForward1MLP + "m";
+            lblLMForward2MLP.Text = rPodPodState.LandingControlUnitNode.LMAForward2MLP + "m";
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
