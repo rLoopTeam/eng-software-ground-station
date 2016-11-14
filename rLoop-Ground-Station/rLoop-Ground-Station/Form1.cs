@@ -621,5 +621,10 @@ namespace rLoop_Ground_Station
             if ((Control.ModifierKeys & Keys.Control) == Keys.Control && e.KeyCode == Keys.D7)
                 customTabControl1.SelectedIndex = 6;
         }
+
+        private void btnAllPodStop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
