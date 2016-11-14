@@ -51,7 +51,7 @@ namespace rLoop_Ground_Station
             generateBatteryTable();
 
             // listen for tab navigation
-            customTabControl1.Selected += new TabControlEventHandler(customTabControl1_SelectedIndexChanged);
+            tabControl1.Selected += new TabControlEventHandler(customTabControl1_SelectedIndexChanged);
         }
 
         private void customTabControl1_SelectedIndexChanged(Object sender, EventArgs e)
@@ -183,11 +183,6 @@ namespace rLoop_Ground_Station
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-            label1.Text = openFileDialog1.FileName;
-        }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
@@ -383,8 +378,8 @@ namespace rLoop_Ground_Station
         {
             try {
                 if (Form1.ActiveForm != null)
-                    customTabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
-                customTabControl1.Location = new Point(5, 5);
+                    tabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
+                tabControl1.Location = new Point(5, 5);
             }
             catch (Exception formResizeException)
             {
