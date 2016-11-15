@@ -56,11 +56,14 @@ namespace rLoop_Ground_Station
 
         private void redrawBackground()
         {
+
             backgroundBuffer = new Bitmap(this.Size.Width, this.Size.Height);
             Graphics g = Graphics.FromImage(backgroundBuffer);
 
+            float DPIFactor = 96 / g.DpiX;
+
             System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", 12);
+            Font drawFont = new Font("Arial", 12 * DPIFactor);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             int size = this.Size.Width > this.Size.Height ? this.Size.Height : this.Size.Width;
@@ -80,7 +83,7 @@ namespace rLoop_Ground_Station
             int major = 5;
             float degSep = ((float)endDeg - beginDeg) / (float)(numOfTicks - 1);
 
-            float fontSize = size / 30;
+            float fontSize = size / 30 * DPIFactor;
             if (fontSize < 1)
             {
                 fontSize = 1;
@@ -121,8 +124,10 @@ namespace rLoop_Ground_Station
             if(backgroundBuffer != null)
                 e.Graphics.DrawImageUnscaled(backgroundBuffer, 0, 0);
 
+            float DPIsf = 96 / e.Graphics.DpiX;
+
             System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", 12);
+            Font drawFont = new Font("Arial", 12 * DPIsf);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             int size = this.Size.Width > this.Size.Height ? this.Size.Height : this.Size.Width;
@@ -135,7 +140,7 @@ namespace rLoop_Ground_Station
             double value = currentSpeed/maxSpeed;
             Tuple<double, double> speedPos = polarToLinear(size / 4, ((double)endDeg - beginDeg) * value + beginDeg, size / 2, size / 2);
 
-            float fontSize = size / 13;
+            float fontSize = size / 13 * DPIsf;
             if (fontSize < 1)
             {
                 fontSize = 1;

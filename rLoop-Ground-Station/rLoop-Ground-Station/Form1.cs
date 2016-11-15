@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using System.Windows.Documents;
+using System.Runtime.InteropServices;
+
+
 
 namespace rLoop_Ground_Station
 {
@@ -205,7 +208,8 @@ namespace rLoop_Ground_Station
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            float DPIsf = this.CreateGraphics().DpiX / 96;
+            customTabControl1.Padding = new Point( (int)(customTabControl1.Padding.X * DPIsf), (int)(customTabControl1.Padding.Y * DPIsf));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -386,11 +390,22 @@ namespace rLoop_Ground_Station
             rPodNodeDiscovery.IsRunning = false;
         }
 
+        public float getScalingFactor()
+        {
+
+            float thisDPI = this.CreateGraphics().DpiX;
+            return thisDPI / 96;
+        }
+
         private void Form1_Resize(object sender, EventArgs e)
         {
             try {
                 if (Form1.ActiveForm != null)
+                {
                     customTabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
+                    float fontSize = (float)(7.87 * getScalingFactor());
+                    customTabControl1.Font = new Font("Microsoft Sans Serif",fontSize);
+                }
                 customTabControl1.Location = new Point(5, 5);
             }
             catch (Exception formResizeException)

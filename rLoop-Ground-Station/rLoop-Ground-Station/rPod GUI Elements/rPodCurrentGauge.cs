@@ -54,7 +54,7 @@ namespace rLoop_Ground_Station.rPod_GUI_Elements
             Graphics g = Graphics.FromImage(backgroundBuffer);
 
             System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", 12);
+            Font drawFont = new Font("Arial", 12 * 96 / g.DpiX);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             int size = this.Size.Width > this.Size.Height ? this.Size.Height : this.Size.Width;
@@ -74,7 +74,7 @@ namespace rLoop_Ground_Station.rPod_GUI_Elements
             int major = 5;
             float degSep = ((float)endDeg - beginDeg) / (float)(numOfTicks - 1);
 
-            Font textFont = new Font("Arial", size / 30);
+            Font textFont = new Font("Arial", size / 30 * 96 / g.DpiX);
             SolidBrush textBrush = new SolidBrush(Color.White);
 
             for (int i = 0; i < numOfTicks; i++)
@@ -110,7 +110,7 @@ namespace rLoop_Ground_Station.rPod_GUI_Elements
                 e.Graphics.DrawImageUnscaled(backgroundBuffer, 0, 0);
 
             System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Black);
-            Font drawFont = new Font("Arial", 12);
+            Font drawFont = new Font("Arial", 12 * 96 / e.Graphics.DpiX);
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             int size = this.Size.Width > this.Size.Height ? this.Size.Height : this.Size.Width;
@@ -123,7 +123,7 @@ namespace rLoop_Ground_Station.rPod_GUI_Elements
             double value = Current / maxCurrent;
             Tuple<double, double> speedPos = polarToLinear(size / 4, ((double)endDeg - beginDeg) * value + beginDeg, size / 2, size / 2);
 
-            Font bigSpeedFont = new Font("Arial", size/13);
+            Font bigSpeedFont = new Font("Arial", size/13 * 96 / e.Graphics.DpiX);
             SolidBrush bigSpeedBrush = new SolidBrush(Color.White);
             SizeF bigSpeedTextSize = e.Graphics.MeasureString("Amps", bigSpeedFont);
             e.Graphics.DrawString("Amps", bigSpeedFont, bigSpeedBrush, (float)( size / 2 - bigSpeedTextSize.Width / 2),(float)( size * .57 - bigSpeedTextSize.Height / 2));

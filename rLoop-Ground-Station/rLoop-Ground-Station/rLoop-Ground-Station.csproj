@@ -134,6 +134,7 @@
     <EmbeddedResource Include="TabPanels\TestingTabPage.resx">
       <DependentUpon>TestingTabPage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DeclareDPIAware.manifest" />
     <None Include="parameters.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

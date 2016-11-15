@@ -141,7 +141,7 @@ namespace rLoop_Ground_Station
                 finalOutlineHeight = imageHeight2;
             }
 
-            fontSize = finalOutlineHeight / 35;
+            fontSize = finalOutlineHeight / 35 * 96 / g.DpiX; 
             if (fontSize < 1)
             {
                 fontSize = 1;
@@ -256,7 +256,7 @@ namespace rLoop_Ground_Station
                 finalOutlineHeight = imageHeight2;
             }
 
-            fontSize = finalOutlineHeight / 35;
+            fontSize = finalOutlineHeight / 35 * 96 / e.Graphics.DpiX;
             if (fontSize < 1)
             {
                 fontSize = 1;
