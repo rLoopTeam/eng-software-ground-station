@@ -324,10 +324,10 @@ namespace rLoop_Ground_Station
 
     public class NodeDataPoint
     {
-        public double Index;
+        public UInt16 Index;
         public DateTime Time;
         public double Value; //Not ideal but double should work for most things.
-        public NodeDataPoint(double index, DateTime time, double value)
+        public NodeDataPoint(UInt16 index, DateTime time, double value)
         {
             Index = index;
             Time = time;

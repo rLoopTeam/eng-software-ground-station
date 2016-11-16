@@ -37,7 +37,14 @@
             this.customTabControl1 = new System.Windows.Forms.CustomTabControl();
             this.OverviewTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
+            this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
+            this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rPodCurrentGauge2 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
+            this.rPodBatteryIndicator1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
+            this.rPodCurrentGauge1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
+            this.rPodBatteryVoltage1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
             this.PowerNodeATab = new System.Windows.Forms.TabPage();
             this.customTabControl2 = new System.Windows.Forms.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -59,41 +66,34 @@
             this.units = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSelectedNodeIp = new System.Windows.Forms.Label();
+            this.lblSelectedNodeDataLogging = new System.Windows.Forms.Label();
+            this.lblSelectedNodeTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnStartDataLogging = new System.Windows.Forms.Button();
-            this.testDataIndexTxt = new System.Windows.Forms.TextBox();
-            this.testDataType = new System.Windows.Forms.ComboBox();
             this.btnStopDataLogging = new System.Windows.Forms.Button();
             this.txtNewBaud = new System.Windows.Forms.TextBox();
-            this.testDataToSendTxt = new System.Windows.Forms.TextBox();
             this.btnNewBaudRate = new System.Windows.Forms.Button();
-            this.sendTestData = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.testDataType = new System.Windows.Forms.ComboBox();
+            this.sendTestData = new System.Windows.Forms.Button();
+            this.testDataIndexTxt = new System.Windows.Forms.TextBox();
+            this.testDataToSendTxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblSelectedNodeTime = new System.Windows.Forms.Label();
-            this.lblSelectedNodeDataLogging = new System.Windows.Forms.Label();
-            this.lblSelectedNodeIp = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SerialConsoleTab = new System.Windows.Forms.TabPage();
             this.testTab = new System.Windows.Forms.TabPage();
-            this.brakesTab = new System.Windows.Forms.TabPage();
-            this.LGUTab = new System.Windows.Forms.TabPage();
-            this.FCUTab = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
-            this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
-            this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
-            this.rPodCurrentGauge2 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
-            this.rPodBatteryIndicator1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
-            this.rPodCurrentGauge1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
-            this.rPodBatteryVoltage1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
             this.testingTabPage1 = new rLoop_Ground_Station.TabPanels.TestingTabPage();
+            this.brakesTab = new System.Windows.Forms.TabPage();
             this.brakesTabPage1 = new rLoop_Ground_Station.TabPanels.BrakesTabPage();
+            this.LGUTab = new System.Windows.Forms.TabPage();
             this.lguTabPage1 = new rLoop_Ground_Station.TabPanels.LGUTabPage();
+            this.FCUTab = new System.Windows.Forms.TabPage();
             this.fcu1 = new rLoop_Ground_Station.TabPanels.FCU();
-            this.label1 = new System.Windows.Forms.Label();
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,12 +105,12 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.testTab.SuspendLayout();
             this.brakesTab.SuspendLayout();
             this.LGUTab.SuspendLayout();
             this.FCUTab.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -203,6 +203,65 @@
             this.panel1.Size = new System.Drawing.Size(1549, 427);
             this.panel1.TabIndex = 12;
             // 
+            // podStateControl2
+            // 
+            this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.podStateControl2.HE1Height = 12.23D;
+            this.podStateControl2.HE1Percent = 0.8D;
+            this.podStateControl2.HE1Power = 3000D;
+            this.podStateControl2.HE1RPM = 3000D;
+            this.podStateControl2.HE2Height = 12.2D;
+            this.podStateControl2.HE2Percent = 0.8D;
+            this.podStateControl2.HE2Power = 3000D;
+            this.podStateControl2.HE2RPM = 3000D;
+            this.podStateControl2.HE3Height = 12.2D;
+            this.podStateControl2.HE3Percent = 0.8D;
+            this.podStateControl2.HE3Power = 3000D;
+            this.podStateControl2.HE3RPM = 3000D;
+            this.podStateControl2.HE4Height = 12.2D;
+            this.podStateControl2.HE4Percent = 0.8D;
+            this.podStateControl2.HE4Power = 3000D;
+            this.podStateControl2.HE4RPM = 3000D;
+            this.podStateControl2.HE5Height = 12.2D;
+            this.podStateControl2.HE5Percent = 0.8D;
+            this.podStateControl2.HE5Power = 3000D;
+            this.podStateControl2.HE5RPM = 3000D;
+            this.podStateControl2.HE6Height = 12.2D;
+            this.podStateControl2.HE6Percent = 0.8D;
+            this.podStateControl2.HE6Power = 3000D;
+            this.podStateControl2.HE6RPM = 3000D;
+            this.podStateControl2.HE7Height = 12.2D;
+            this.podStateControl2.HE7Percent = 0.8D;
+            this.podStateControl2.HE7Power = 3000D;
+            this.podStateControl2.HE7RPM = 3000D;
+            this.podStateControl2.HE8Height = 12.2D;
+            this.podStateControl2.HE8Percent = 0.8D;
+            this.podStateControl2.HE8Power = 3000D;
+            this.podStateControl2.HE8RPM = 3000D;
+            this.podStateControl2.Location = new System.Drawing.Point(512, 0);
+            this.podStateControl2.Margin = new System.Windows.Forms.Padding(12);
+            this.podStateControl2.Name = "podStateControl2";
+            this.podStateControl2.Size = new System.Drawing.Size(599, 427);
+            this.podStateControl2.TabIndex = 0;
+            // 
+            // rPodSpeedometer1
+            // 
+            this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
+            this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodSpeedometer1.Name = "rPodSpeedometer1";
+            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 427);
+            this.rPodSpeedometer1.TabIndex = 9;
+            // 
+            // rPodGyro1
+            // 
+            this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rPodGyro1.Location = new System.Drawing.Point(1111, 0);
+            this.rPodGyro1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodGyro1.Name = "rPodGyro1";
+            this.rPodGyro1.Size = new System.Drawing.Size(438, 427);
+            this.rPodGyro1.TabIndex = 11;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.rPodCurrentGauge2);
@@ -214,6 +273,38 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1549, 430);
             this.panel2.TabIndex = 13;
+            // 
+            // rPodCurrentGauge2
+            // 
+            this.rPodCurrentGauge2.Location = new System.Drawing.Point(380, 11);
+            this.rPodCurrentGauge2.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodCurrentGauge2.Name = "rPodCurrentGauge2";
+            this.rPodCurrentGauge2.Size = new System.Drawing.Size(250, 229);
+            this.rPodCurrentGauge2.TabIndex = 13;
+            // 
+            // rPodBatteryIndicator1
+            // 
+            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(36, 268);
+            this.rPodBatteryIndicator1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodBatteryIndicator1.Name = "rPodBatteryIndicator1";
+            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(233, 113);
+            this.rPodBatteryIndicator1.TabIndex = 11;
+            // 
+            // rPodCurrentGauge1
+            // 
+            this.rPodCurrentGauge1.Location = new System.Drawing.Point(31, 0);
+            this.rPodCurrentGauge1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodCurrentGauge1.Name = "rPodCurrentGauge1";
+            this.rPodCurrentGauge1.Size = new System.Drawing.Size(238, 240);
+            this.rPodCurrentGauge1.TabIndex = 12;
+            // 
+            // rPodBatteryVoltage1
+            // 
+            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(400, 268);
+            this.rPodBatteryVoltage1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodBatteryVoltage1.Name = "rPodBatteryVoltage1";
+            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(250, 113);
+            this.rPodBatteryVoltage1.TabIndex = 11;
             // 
             // PowerNodeATab
             // 
@@ -451,6 +542,59 @@
             this.panel3.Size = new System.Drawing.Size(1549, 254);
             this.panel3.TabIndex = 6;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeIp, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeDataLogging, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeTime, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(278, 51);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 173);
+            this.tableLayoutPanel2.TabIndex = 14;
+            // 
+            // lblSelectedNodeIp
+            // 
+            this.lblSelectedNodeIp.AutoSize = true;
+            this.lblSelectedNodeIp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectedNodeIp.ForeColor = System.Drawing.Color.White;
+            this.lblSelectedNodeIp.Location = new System.Drawing.Point(3, 0);
+            this.lblSelectedNodeIp.Name = "lblSelectedNodeIp";
+            this.lblSelectedNodeIp.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeIp.Size = new System.Drawing.Size(31, 35);
+            this.lblSelectedNodeIp.TabIndex = 4;
+            this.lblSelectedNodeIp.Text = "IP";
+            // 
+            // lblSelectedNodeDataLogging
+            // 
+            this.lblSelectedNodeDataLogging.AutoSize = true;
+            this.lblSelectedNodeDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectedNodeDataLogging.ForeColor = System.Drawing.Color.White;
+            this.lblSelectedNodeDataLogging.Location = new System.Drawing.Point(3, 35);
+            this.lblSelectedNodeDataLogging.Name = "lblSelectedNodeDataLogging";
+            this.lblSelectedNodeDataLogging.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeDataLogging.Size = new System.Drawing.Size(130, 35);
+            this.lblSelectedNodeDataLogging.TabIndex = 4;
+            this.lblSelectedNodeDataLogging.Text = "data logging";
+            // 
+            // lblSelectedNodeTime
+            // 
+            this.lblSelectedNodeTime.AutoSize = true;
+            this.lblSelectedNodeTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectedNodeTime.ForeColor = System.Drawing.Color.White;
+            this.lblSelectedNodeTime.Location = new System.Drawing.Point(3, 70);
+            this.lblSelectedNodeTime.Name = "lblSelectedNodeTime";
+            this.lblSelectedNodeTime.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeTime.Size = new System.Drawing.Size(59, 35);
+            this.lblSelectedNodeTime.TabIndex = 4;
+            this.lblSelectedNodeTime.Text = "Time";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
@@ -493,14 +637,58 @@
             this.btnStartDataLogging.UseVisualStyleBackColor = true;
             this.btnStartDataLogging.Click += new System.EventHandler(this.btnStartDataLogging_Click);
             // 
-            // testDataIndexTxt
+            // btnStopDataLogging
             // 
-            this.testDataIndexTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testDataIndexTxt.Location = new System.Drawing.Point(279, 135);
-            this.testDataIndexTxt.Name = "testDataIndexTxt";
-            this.testDataIndexTxt.Size = new System.Drawing.Size(212, 38);
-            this.testDataIndexTxt.TabIndex = 8;
-            this.testDataIndexTxt.Text = "5";
+            this.btnStopDataLogging.AutoSize = true;
+            this.btnStopDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStopDataLogging.Location = new System.Drawing.Point(589, 52);
+            this.btnStopDataLogging.Name = "btnStopDataLogging";
+            this.btnStopDataLogging.Size = new System.Drawing.Size(250, 45);
+            this.btnStopDataLogging.TabIndex = 5;
+            this.btnStopDataLogging.Text = "Stop Data Logging";
+            this.btnStopDataLogging.UseVisualStyleBackColor = true;
+            this.btnStopDataLogging.Click += new System.EventHandler(this.btnStopDataLogging_Click);
+            // 
+            // txtNewBaud
+            // 
+            this.txtNewBaud.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewBaud.Location = new System.Drawing.Point(279, 3);
+            this.txtNewBaud.Name = "txtNewBaud";
+            this.txtNewBaud.Size = new System.Drawing.Size(143, 38);
+            this.txtNewBaud.TabIndex = 6;
+            this.txtNewBaud.Text = "57600";
+            // 
+            // btnNewBaudRate
+            // 
+            this.btnNewBaudRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewBaudRate.Location = new System.Drawing.Point(279, 52);
+            this.btnNewBaudRate.Name = "btnNewBaudRate";
+            this.btnNewBaudRate.Size = new System.Drawing.Size(304, 45);
+            this.btnNewBaudRate.TabIndex = 5;
+            this.btnNewBaudRate.Text = "Change UART Baud";
+            this.btnNewBaudRate.UseVisualStyleBackColor = true;
+            this.btnNewBaudRate.Click += new System.EventHandler(this.btnNewBaudRate_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(255, 38);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "New Node Name";
+            // 
+            // button3
+            // 
+            this.button3.AutoSize = true;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(3, 52);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(270, 45);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Change Node Name";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // testDataType
             // 
@@ -523,47 +711,6 @@
             this.testDataType.TabIndex = 12;
             this.testDataType.Text = "Data Type";
             // 
-            // btnStopDataLogging
-            // 
-            this.btnStopDataLogging.AutoSize = true;
-            this.btnStopDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStopDataLogging.Location = new System.Drawing.Point(589, 52);
-            this.btnStopDataLogging.Name = "btnStopDataLogging";
-            this.btnStopDataLogging.Size = new System.Drawing.Size(250, 45);
-            this.btnStopDataLogging.TabIndex = 5;
-            this.btnStopDataLogging.Text = "Stop Data Logging";
-            this.btnStopDataLogging.UseVisualStyleBackColor = true;
-            this.btnStopDataLogging.Click += new System.EventHandler(this.btnStopDataLogging_Click);
-            // 
-            // txtNewBaud
-            // 
-            this.txtNewBaud.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewBaud.Location = new System.Drawing.Point(279, 3);
-            this.txtNewBaud.Name = "txtNewBaud";
-            this.txtNewBaud.Size = new System.Drawing.Size(143, 38);
-            this.txtNewBaud.TabIndex = 6;
-            this.txtNewBaud.Text = "57600";
-            // 
-            // testDataToSendTxt
-            // 
-            this.testDataToSendTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testDataToSendTxt.Location = new System.Drawing.Point(279, 179);
-            this.testDataToSendTxt.Name = "testDataToSendTxt";
-            this.testDataToSendTxt.Size = new System.Drawing.Size(212, 38);
-            this.testDataToSendTxt.TabIndex = 7;
-            this.testDataToSendTxt.Text = "3.14159";
-            // 
-            // btnNewBaudRate
-            // 
-            this.btnNewBaudRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewBaudRate.Location = new System.Drawing.Point(279, 52);
-            this.btnNewBaudRate.Name = "btnNewBaudRate";
-            this.btnNewBaudRate.Size = new System.Drawing.Size(304, 45);
-            this.btnNewBaudRate.TabIndex = 5;
-            this.btnNewBaudRate.Text = "Change UART Baud";
-            this.btnNewBaudRate.UseVisualStyleBackColor = true;
-            this.btnNewBaudRate.Click += new System.EventHandler(this.btnNewBaudRate_Click);
-            // 
             // sendTestData
             // 
             this.sendTestData.AutoSize = true;
@@ -576,26 +723,35 @@
             this.sendTestData.UseVisualStyleBackColor = true;
             this.sendTestData.Click += new System.EventHandler(this.sendTestData_Click);
             // 
-            // textBox1
+            // testDataIndexTxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 38);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "New Node Name";
+            this.testDataIndexTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testDataIndexTxt.Location = new System.Drawing.Point(279, 135);
+            this.testDataIndexTxt.Name = "testDataIndexTxt";
+            this.testDataIndexTxt.Size = new System.Drawing.Size(212, 38);
+            this.testDataIndexTxt.TabIndex = 8;
+            this.testDataIndexTxt.Text = "5";
             // 
-            // button3
+            // testDataToSendTxt
             // 
-            this.button3.AutoSize = true;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(3, 52);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(270, 45);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Change Node Name";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.testDataToSendTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testDataToSendTxt.Location = new System.Drawing.Point(279, 179);
+            this.testDataToSendTxt.Name = "testDataToSendTxt";
+            this.testDataToSendTxt.Size = new System.Drawing.Size(212, 38);
+            this.testDataToSendTxt.TabIndex = 7;
+            this.testDataToSendTxt.Text = "3.14159";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(190, 176);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 31);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Value";
             // 
             // label8
             // 
@@ -619,42 +775,6 @@
             this.label7.Size = new System.Drawing.Size(188, 25);
             this.label7.TabIndex = 4;
             this.label7.Text = "Discovered Nodes";
-            // 
-            // lblSelectedNodeTime
-            // 
-            this.lblSelectedNodeTime.AutoSize = true;
-            this.lblSelectedNodeTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedNodeTime.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeTime.Location = new System.Drawing.Point(3, 70);
-            this.lblSelectedNodeTime.Name = "lblSelectedNodeTime";
-            this.lblSelectedNodeTime.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblSelectedNodeTime.Size = new System.Drawing.Size(59, 35);
-            this.lblSelectedNodeTime.TabIndex = 4;
-            this.lblSelectedNodeTime.Text = "Time";
-            // 
-            // lblSelectedNodeDataLogging
-            // 
-            this.lblSelectedNodeDataLogging.AutoSize = true;
-            this.lblSelectedNodeDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedNodeDataLogging.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeDataLogging.Location = new System.Drawing.Point(3, 35);
-            this.lblSelectedNodeDataLogging.Name = "lblSelectedNodeDataLogging";
-            this.lblSelectedNodeDataLogging.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblSelectedNodeDataLogging.Size = new System.Drawing.Size(130, 35);
-            this.lblSelectedNodeDataLogging.TabIndex = 4;
-            this.lblSelectedNodeDataLogging.Text = "data logging";
-            // 
-            // lblSelectedNodeIp
-            // 
-            this.lblSelectedNodeIp.AutoSize = true;
-            this.lblSelectedNodeIp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedNodeIp.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeIp.Location = new System.Drawing.Point(3, 0);
-            this.lblSelectedNodeIp.Name = "lblSelectedNodeIp";
-            this.lblSelectedNodeIp.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblSelectedNodeIp.Size = new System.Drawing.Size(31, 35);
-            this.lblSelectedNodeIp.TabIndex = 4;
-            this.lblSelectedNodeIp.Text = "IP";
             // 
             // listBox1
             // 
@@ -689,6 +809,15 @@
             this.testTab.TabIndex = 6;
             this.testTab.Text = "TEST";
             // 
+            // testingTabPage1
+            // 
+            this.testingTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.testingTabPage1.Location = new System.Drawing.Point(14, 3);
+            this.testingTabPage1.Margin = new System.Windows.Forms.Padding(6);
+            this.testingTabPage1.Name = "testingTabPage1";
+            this.testingTabPage1.Size = new System.Drawing.Size(1350, 866);
+            this.testingTabPage1.TabIndex = 0;
+            // 
             // brakesTab
             // 
             this.brakesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
@@ -698,6 +827,15 @@
             this.brakesTab.Size = new System.Drawing.Size(1555, 863);
             this.brakesTab.TabIndex = 7;
             this.brakesTab.Text = "Brakes";
+            // 
+            // brakesTabPage1
+            // 
+            this.brakesTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.brakesTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.brakesTabPage1.Location = new System.Drawing.Point(0, 0);
+            this.brakesTabPage1.Name = "brakesTabPage1";
+            this.brakesTabPage1.Size = new System.Drawing.Size(1555, 863);
+            this.brakesTabPage1.TabIndex = 0;
             // 
             // LGUTab
             // 
@@ -709,6 +847,15 @@
             this.LGUTab.TabIndex = 8;
             this.LGUTab.Text = "LGU";
             // 
+            // lguTabPage1
+            // 
+            this.lguTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.lguTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lguTabPage1.Location = new System.Drawing.Point(0, 0);
+            this.lguTabPage1.Name = "lguTabPage1";
+            this.lguTabPage1.Size = new System.Drawing.Size(1555, 863);
+            this.lguTabPage1.TabIndex = 0;
+            // 
             // FCUTab
             // 
             this.FCUTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
@@ -719,161 +866,15 @@
             this.FCUTab.TabIndex = 9;
             this.FCUTab.Text = "FCU";
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeIp, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeDataLogging, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeTime, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(278, 51);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 173);
-            this.tableLayoutPanel2.TabIndex = 14;
-            // 
-            // podStateControl2
-            // 
-            this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.podStateControl2.HE1Height = 12.23D;
-            this.podStateControl2.HE1Percent = 0.8D;
-            this.podStateControl2.HE1Power = 3000D;
-            this.podStateControl2.HE1RPM = 3000D;
-            this.podStateControl2.HE2Height = 12.2D;
-            this.podStateControl2.HE2Percent = 0.8D;
-            this.podStateControl2.HE2Power = 3000D;
-            this.podStateControl2.HE2RPM = 3000D;
-            this.podStateControl2.HE3Height = 12.2D;
-            this.podStateControl2.HE3Percent = 0.8D;
-            this.podStateControl2.HE3Power = 3000D;
-            this.podStateControl2.HE3RPM = 3000D;
-            this.podStateControl2.HE4Height = 12.2D;
-            this.podStateControl2.HE4Percent = 0.8D;
-            this.podStateControl2.HE4Power = 3000D;
-            this.podStateControl2.HE4RPM = 3000D;
-            this.podStateControl2.HE5Height = 12.2D;
-            this.podStateControl2.HE5Percent = 0.8D;
-            this.podStateControl2.HE5Power = 3000D;
-            this.podStateControl2.HE5RPM = 3000D;
-            this.podStateControl2.HE6Height = 12.2D;
-            this.podStateControl2.HE6Percent = 0.8D;
-            this.podStateControl2.HE6Power = 3000D;
-            this.podStateControl2.HE6RPM = 3000D;
-            this.podStateControl2.HE7Height = 12.2D;
-            this.podStateControl2.HE7Percent = 0.8D;
-            this.podStateControl2.HE7Power = 3000D;
-            this.podStateControl2.HE7RPM = 3000D;
-            this.podStateControl2.HE8Height = 12.2D;
-            this.podStateControl2.HE8Percent = 0.8D;
-            this.podStateControl2.HE8Power = 3000D;
-            this.podStateControl2.HE8RPM = 3000D;
-            this.podStateControl2.Location = new System.Drawing.Point(512, 0);
-            this.podStateControl2.Margin = new System.Windows.Forms.Padding(12);
-            this.podStateControl2.Name = "podStateControl2";
-            this.podStateControl2.Size = new System.Drawing.Size(599, 427);
-            this.podStateControl2.TabIndex = 0;
-            // 
-            // rPodSpeedometer1
-            // 
-            this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
-            this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodSpeedometer1.Name = "rPodSpeedometer1";
-            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 427);
-            this.rPodSpeedometer1.TabIndex = 9;
-            // 
-            // rPodGyro1
-            // 
-            this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rPodGyro1.Location = new System.Drawing.Point(1111, 0);
-            this.rPodGyro1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodGyro1.Name = "rPodGyro1";
-            this.rPodGyro1.Size = new System.Drawing.Size(438, 427);
-            this.rPodGyro1.TabIndex = 11;
-            // 
-            // rPodCurrentGauge2
-            // 
-            this.rPodCurrentGauge2.Location = new System.Drawing.Point(380, 11);
-            this.rPodCurrentGauge2.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodCurrentGauge2.Name = "rPodCurrentGauge2";
-            this.rPodCurrentGauge2.Size = new System.Drawing.Size(250, 229);
-            this.rPodCurrentGauge2.TabIndex = 13;
-            // 
-            // rPodBatteryIndicator1
-            // 
-            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(36, 268);
-            this.rPodBatteryIndicator1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodBatteryIndicator1.Name = "rPodBatteryIndicator1";
-            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(233, 113);
-            this.rPodBatteryIndicator1.TabIndex = 11;
-            // 
-            // rPodCurrentGauge1
-            // 
-            this.rPodCurrentGauge1.Location = new System.Drawing.Point(31, 0);
-            this.rPodCurrentGauge1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodCurrentGauge1.Name = "rPodCurrentGauge1";
-            this.rPodCurrentGauge1.Size = new System.Drawing.Size(238, 240);
-            this.rPodCurrentGauge1.TabIndex = 12;
-            // 
-            // rPodBatteryVoltage1
-            // 
-            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(400, 268);
-            this.rPodBatteryVoltage1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodBatteryVoltage1.Name = "rPodBatteryVoltage1";
-            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(250, 113);
-            this.rPodBatteryVoltage1.TabIndex = 11;
-            // 
-            // testingTabPage1
-            // 
-            this.testingTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.testingTabPage1.Location = new System.Drawing.Point(14, 3);
-            this.testingTabPage1.Margin = new System.Windows.Forms.Padding(6);
-            this.testingTabPage1.Name = "testingTabPage1";
-            this.testingTabPage1.Size = new System.Drawing.Size(1350, 866);
-            this.testingTabPage1.TabIndex = 0;
-            // 
-            // brakesTabPage1
-            // 
-            this.brakesTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.brakesTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.brakesTabPage1.Location = new System.Drawing.Point(0, 0);
-            this.brakesTabPage1.Name = "brakesTabPage1";
-            this.brakesTabPage1.Size = new System.Drawing.Size(1555, 863);
-            this.brakesTabPage1.TabIndex = 0;
-            // 
-            // lguTabPage1
-            // 
-            this.lguTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.lguTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lguTabPage1.Location = new System.Drawing.Point(0, 0);
-            this.lguTabPage1.Name = "lguTabPage1";
-            this.lguTabPage1.Size = new System.Drawing.Size(1555, 863);
-            this.lguTabPage1.TabIndex = 0;
-            // 
             // fcu1
             // 
             this.fcu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.fcu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fcu1.ForeColor = System.Drawing.Color.Silver;
             this.fcu1.Location = new System.Drawing.Point(0, 0);
             this.fcu1.Name = "fcu1";
             this.fcu1.Size = new System.Drawing.Size(1555, 863);
             this.fcu1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(190, 176);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 31);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Value";
             // 
             // Form1
             // 
@@ -902,14 +903,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.testTab.ResumeLayout(false);
             this.brakesTab.ResumeLayout(false);
             this.LGUTab.ResumeLayout(false);
             this.FCUTab.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

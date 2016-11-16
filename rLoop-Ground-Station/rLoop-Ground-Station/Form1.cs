@@ -267,7 +267,7 @@ namespace rLoop_Ground_Station
                     bool found = false;
                     foreach(DataGridViewRow row in dataGridView1.Rows)
                     {
-                        if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == p.Index.ToString())
+                        if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == ("0x" + p.Index.ToString("X4")))
                         {
                             row.Cells[1].Value = p.Value.ToString();
                             found = true;
@@ -277,7 +277,7 @@ namespace rLoop_Ground_Station
                     if(!found)
                     {
                         int row = dataGridView1.Rows.Add();
-                        dataGridView1.Rows[row].Cells[0].Value = p.Index.ToString();
+                        dataGridView1.Rows[row].Cells[0].Value = "0x"+ p.Index.ToString("X4");
                         dataGridView1.Rows[row].Cells[1].Value = p.Value;
 
                         nodeTypes t = rPodNetworking.nodeParameterData.NodeTypes.FirstOrDefault(x => node == (x.Name.Substring(0, 1).ToUpper() + x.Name.Substring(1) + " Node"));
@@ -347,7 +347,10 @@ namespace rLoop_Ground_Station
             List<DataParameter> paramsToSend = new List<DataParameter>();
             UInt16 index;
             object value = null;
-            UInt16.TryParse(testDataIndexTxt.Text, out index);
+            if (testDataIndexTxt.Text.Substring(0, 2) == "0x")
+                index = Convert.ToUInt16(testDataIndexTxt.Text.Substring(2), 16);
+            else
+                UInt16.TryParse(testDataIndexTxt.Text, out index);
             switch(testDataType.SelectedIndex)
             {
                 case 0:  sbyte sbyteVal;
