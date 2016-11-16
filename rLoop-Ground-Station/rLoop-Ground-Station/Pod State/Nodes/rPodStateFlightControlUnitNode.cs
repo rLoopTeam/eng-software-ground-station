@@ -182,7 +182,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
             paramsToSend.Add(p);
 
             DataParameter p2 = new DataParameter();
-            p2.Index = 0xA001;
+            p2.Index = 0x5001;
             p2.Data = (UInt32)(0x00000000);
 
             paramsToSend.Add(p2);
