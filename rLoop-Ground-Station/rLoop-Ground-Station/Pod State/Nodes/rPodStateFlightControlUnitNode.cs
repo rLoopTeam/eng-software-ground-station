@@ -140,6 +140,132 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
         #endregion
 
+        #region EBLowLevelCommand
+
+        public bool SetEBLeftMicroStepsPerRevolution(UInt32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+            
+            DataParameter p = new DataParameter();
+            p.Index = 0x5150;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBLeftMaxAcceleration(Int32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5151;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBLeftLinearMicronsPerRevolution(Int32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5152;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBLeftStepsPerRevolution(UInt32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5153;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBLeftMaxAngularVeolocity(Int32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5154;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBRightMicroStepsPerRevolution(UInt32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5160;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBRightMaxAcceleration(Int32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5161;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBRightLinearMicronsPerRevolution(Int32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5162;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBRightStepsPerRevolution(UInt32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5163;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        public bool SetEBRightMaxAngularVeolocity(Int32 value)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5164;
+            p.Data = value;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+        #endregion
+
+        #region Misc Commansdok
+
         public rPodStateFlightControlUnitNode()
         {
         }
@@ -189,6 +315,8 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
             return SendCommand(paramsToSend);
         }
+
+        #endregion
 
         //Should always line up with: http://confluence.rloop.org/display/SD/FCU+Node+Telemetry
         public override void ProcessParameter(List<DataParameter> parameterList)

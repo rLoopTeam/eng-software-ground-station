@@ -734,16 +734,16 @@
             this.comboBrakeParameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBrakeParameters.FormattingEnabled = true;
             this.comboBrakeParameters.Items.AddRange(new object[] {
-            "Left - micro-steps per revolution (10)",
-            "Left - max acceleration, microns / sec^2 (10,000)",
-            "Left - Linear Microns per revolution (10,000)",
-            "Left - Steper per ervolution (200)",
-            "Left - Max Angluar Velocity (300)",
-            "Right - micro-steps per revolution (10)",
-            "Right - max acceleration, microns / sec^2 (10,000)",
-            "Right - Linear Microns per revolution (10,000)",
-            "Right - Steper per ervolution (200)",
-            "Right - Max Angluar Velocity (300)"});
+            "Left - micro-steps per revolution",
+            "Left - max acceleration, microns / sec^2",
+            "Left - Linear Microns per revolution",
+            "Left - Steps per revolution",
+            "Left - Max Angluar Velocity",
+            "Right - micro-steps per revolution",
+            "Right - max acceleration, microns / sec^2",
+            "Right - Linear Microns per revolution",
+            "Right - Steps per revolution",
+            "Right - Max Angluar Velocity"});
             this.comboBrakeParameters.Location = new System.Drawing.Point(770, 137);
             this.comboBrakeParameters.Name = "comboBrakeParameters";
             this.comboBrakeParameters.Size = new System.Drawing.Size(626, 41);

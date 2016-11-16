@@ -201,7 +201,6 @@ namespace rLoop_Ground_Station
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.TopMost = true;
             this.WindowState = FormWindowState.Maximized;
 
             float DPIsf = this.CreateGraphics().DpiX / 96;

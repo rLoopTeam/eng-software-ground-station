@@ -94,9 +94,11 @@
             this.lblAccel1Y = new System.Windows.Forms.Label();
             this.lblPusherSwitchAVal = new System.Windows.Forms.Label();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -128,7 +130,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblContrast3, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.lblContrast2Val, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.lblContrast3Val, 1, 11);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 106);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -144,7 +146,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(431, 765);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(380, 764);
             this.tableLayoutPanel1.TabIndex = 279;
             // 
             // lblHeight1
@@ -463,7 +465,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblPositionVal, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.lblSpeedVal, 1, 9);
             this.tableLayoutPanel2.Controls.Add(this.lblAccelVal, 1, 10);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(540, 106);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(512, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 16;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -482,7 +484,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(434, 765);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 764);
             this.tableLayoutPanel2.TabIndex = 279;
             // 
             // lblRoll
@@ -831,7 +833,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblAccel1XVal, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.lblAccel1Y, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.lblPusherSwitchAVal, 1, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1067, 106);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1021, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 16;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -850,7 +852,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(434, 765);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(347, 764);
             this.tableLayoutPanel3.TabIndex = 279;
             // 
             // lblPusherSwitchA
@@ -1039,18 +1041,36 @@
             this.updateTimer.Enabled = true;
             this.updateTimer.Tick += new System.EventHandler(this.updateTimer_Tick);
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.AutoSize = true;
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(37, 91);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1530, 770);
+            this.tableLayoutPanel4.TabIndex = 280;
+            // 
             // FCU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.Controls.Add(this.tableLayoutPanel3);
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.lblFCUHeading);
             this.ForeColor = System.Drawing.Color.Silver;
             this.Name = "FCU";
-            this.Size = new System.Drawing.Size(1895, 883);
+            this.Size = new System.Drawing.Size(1584, 883);
             this.Load += new System.EventHandler(this.FCU_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -1058,6 +1078,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1130,5 +1152,6 @@
         private System.Windows.Forms.Label lblAccel1Y;
         private System.Windows.Forms.Label lblPusherSwitchAVal;
         private System.Windows.Forms.Timer updateTimer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
     }
 }

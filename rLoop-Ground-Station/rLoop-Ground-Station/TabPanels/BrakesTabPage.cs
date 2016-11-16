@@ -81,7 +81,122 @@ namespace rLoop_Ground_Station.TabPanels
 
         private void btnBrakeParameter_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not implemented yet!");
+            
+
+            switch (comboBrakeParameters.SelectedText)
+            {
+                case "Left - micro-steps per revolution": //U32
+                    UInt32 UInt32Val;
+                    if (!UInt32.TryParse(txtBrakeParameter.Text, out UInt32Val))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBLeftMicroStepsPerRevolution(UInt32Val);
+                    }
+                    break;
+                case "Left - max acceleration, microns / sec^2": //S32
+                    Int32 Int32Val1;
+                    if (!Int32.TryParse(txtBrakeParameter.Text, out Int32Val1))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBLeftMaxAcceleration(Int32Val1);
+                    }
+                    break;
+                case "Left - Linear Microns per revolution": //S32
+                    Int32 Int32Val2;
+                    if (!Int32.TryParse(txtBrakeParameter.Text, out Int32Val2))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBLeftLinearMicronsPerRevolution(Int32Val2);
+                    }
+                    break;
+                case "Left - Steps per revolution": //U32
+                    UInt32 UInt32Val3;
+                    if (!UInt32.TryParse(txtBrakeParameter.Text, out UInt32Val3))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBLeftStepsPerRevolution(UInt32Val3);
+                    }
+                    break;
+                case "Left - Max Angluar Velocity": //S32
+                    Int32 Int32Val4;
+                    if (!Int32.TryParse(txtBrakeParameter.Text, out Int32Val4))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBLeftMaxAngularVeolocity(Int32Val4) ;
+                    }
+                    break;
+                case "Right - micro-steps per revolution": //U32
+                    UInt32 Int32Val5;
+                    if (!UInt32.TryParse(txtBrakeParameter.Text, out Int32Val5))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBRightMicroStepsPerRevolution(Int32Val5);
+                    }
+                    break;
+                case "Right - max acceleration, microns / sec^2": //S32
+                    Int32 Int32Val6;
+                    if (!Int32.TryParse(txtBrakeParameter.Text, out Int32Val6))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBRightMaxAcceleration(Int32Val6);
+                    }
+                    break;
+                case "Right - Linear Microns per revolution": //S32
+                    Int32 Int32Val7;
+                    if (!Int32.TryParse(txtBrakeParameter.Text, out Int32Val7))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBRightLinearMicronsPerRevolution(Int32Val7);
+                    }
+                    break;
+                case "Right - Steps per revolution": //U32
+                    UInt32 Int32Val8;
+                    if (!UInt32.TryParse(txtBrakeParameter.Text, out Int32Val8))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBRightStepsPerRevolution(Int32Val8);
+                    }
+                    break;
+                case "Right - Max Angluar Velocity": //S32
+                    Int32 Int32Val9;
+                    if (!Int32.TryParse(txtBrakeParameter.Text, out Int32Val9))
+                    {
+                        MessageBox.Show("Could not parse the value. Command not sent.");
+                    }
+                    else
+                    {
+                        rPodPodState.FlightControlUnitNode.SetEBRightMaxAngularVeolocity(Int32Val9);
+                    }
+                    break;
+            }
+
         }
     }
 }

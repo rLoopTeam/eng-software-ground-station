@@ -14,6 +14,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public bool IsAlive;
         public DateTime LastHeard;
         public bool PodStopped;
+        public static int HeartbeatRate;
 
         public bool SendCommand(List<DataParameter> commands)
         {

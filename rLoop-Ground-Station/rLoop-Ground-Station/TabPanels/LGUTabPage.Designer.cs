@@ -37,7 +37,7 @@
             this.lblAft2SpeedTitle = new System.Windows.Forms.Label();
             this.radioAft2Down = new System.Windows.Forms.RadioButton();
             this.btnAft2DirSend = new System.Windows.Forms.Button();
-            this.label68 = new System.Windows.Forms.Label();
+            this.lblLandingGearUnitTItle = new System.Windows.Forms.Label();
             this.lblAft2MLPVal = new System.Windows.Forms.Label();
             this.lblAft1MLPVal = new System.Windows.Forms.Label();
             this.lblForward2MLPVal = new System.Windows.Forms.Label();
@@ -82,6 +82,8 @@
             this.btnFwd1SpeedSend = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupAft2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBAft2Speed)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -92,6 +94,8 @@
             this.groupForward1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBFwd1Speed)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAft2SpeedSend
@@ -119,7 +123,7 @@
             this.groupAft2.Margin = new System.Windows.Forms.Padding(2);
             this.groupAft2.Name = "groupAft2";
             this.groupAft2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupAft2.Size = new System.Drawing.Size(731, 201);
+            this.groupAft2.Size = new System.Drawing.Size(696, 201);
             this.groupAft2.TabIndex = 270;
             this.groupAft2.TabStop = false;
             this.groupAft2.Text = "Aft 2";
@@ -192,16 +196,19 @@
             this.btnAft2DirSend.Text = "Send";
             this.btnAft2DirSend.UseVisualStyleBackColor = true;
             // 
-            // label68
+            // lblLandingGearUnitTItle
             // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.ForeColor = System.Drawing.Color.White;
-            this.label68.Location = new System.Drawing.Point(128, 60);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(414, 55);
-            this.label68.TabIndex = 267;
-            this.label68.Text = "Landing Gear Unit";
+            this.lblLandingGearUnitTItle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblLandingGearUnitTItle.AutoSize = true;
+            this.lblLandingGearUnitTItle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLandingGearUnitTItle.ForeColor = System.Drawing.Color.White;
+            this.lblLandingGearUnitTItle.Location = new System.Drawing.Point(3, 0);
+            this.lblLandingGearUnitTItle.Name = "lblLandingGearUnitTItle";
+            this.lblLandingGearUnitTItle.Size = new System.Drawing.Size(414, 174);
+            this.lblLandingGearUnitTItle.TabIndex = 267;
+            this.lblLandingGearUnitTItle.Text = "Landing Gear Unit";
+            this.lblLandingGearUnitTItle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAft2MLPVal
             // 
@@ -448,7 +455,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblAft2SwitchVal, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblForward1MLP, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.lblF1SwitchVal, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(59, 155);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 177);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -462,7 +469,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(559, 713);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 699);
             this.tableLayoutPanel1.TabIndex = 277;
             // 
             // groupAft1
@@ -480,7 +487,7 @@
             this.groupAft1.Margin = new System.Windows.Forms.Padding(2);
             this.groupAft1.Name = "groupAft1";
             this.groupAft1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupAft1.Size = new System.Drawing.Size(731, 199);
+            this.groupAft1.Size = new System.Drawing.Size(696, 199);
             this.groupAft1.TabIndex = 270;
             this.groupAft1.TabStop = false;
             this.groupAft1.Text = "Aft 1";
@@ -578,7 +585,7 @@
             this.groupForward2.Margin = new System.Windows.Forms.Padding(2);
             this.groupForward2.Name = "groupForward2";
             this.groupForward2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupForward2.Size = new System.Drawing.Size(731, 199);
+            this.groupForward2.Size = new System.Drawing.Size(696, 199);
             this.groupForward2.TabIndex = 270;
             this.groupForward2.TabStop = false;
             this.groupForward2.Text = "Forward 2";
@@ -663,6 +670,7 @@
             // 
             // groupForward1
             // 
+            this.groupForward1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupForward1.Controls.Add(this.lblFwd1SpeedVal);
             this.groupForward1.Controls.Add(this.trackBFwd1Speed);
             this.groupForward1.Controls.Add(this.radioFwd1Up);
@@ -676,7 +684,7 @@
             this.groupForward1.Margin = new System.Windows.Forms.Padding(2);
             this.groupForward1.Name = "groupForward1";
             this.groupForward1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupForward1.Size = new System.Drawing.Size(731, 199);
+            this.groupForward1.Size = new System.Drawing.Size(696, 199);
             this.groupForward1.TabIndex = 270;
             this.groupForward1.TabStop = false;
             this.groupForward1.Text = "Forward 1";
@@ -767,14 +775,14 @@
             this.tableLayoutPanel2.Controls.Add(this.groupForward2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.groupAft2, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.groupAft1, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(663, 60);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(709, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(756, 814);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(700, 814);
             this.tableLayoutPanel2.TabIndex = 278;
             // 
             // updateTimer
@@ -782,14 +790,47 @@
             this.updateTimer.Enabled = true;
             this.updateTimer.Tick += new System.EventHandler(this.updateTimer_Tick);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1412, 885);
+            this.tableLayoutPanel3.TabIndex = 279;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.lblLandingGearUnitTItle, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(50, 3);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.85816F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.14185F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(653, 879);
+            this.tableLayoutPanel4.TabIndex = 279;
+            // 
             // LGUTabPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label68);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "LGUTabPage";
             this.Size = new System.Drawing.Size(1456, 915);
             this.Load += new System.EventHandler(this.LGUTabPage_Load);
@@ -808,8 +849,10 @@
             this.groupForward1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBFwd1Speed)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -819,7 +862,7 @@
         private System.Windows.Forms.RadioButton radioAft2Up;
         private System.Windows.Forms.RadioButton radioAft2Down;
         private System.Windows.Forms.Button btnAft2DirSend;
-        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label lblLandingGearUnitTItle;
         private System.Windows.Forms.Label lblAft2MLPVal;
         private System.Windows.Forms.Label lblAft1MLPVal;
         private System.Windows.Forms.Label lblForward2MLPVal;
@@ -867,5 +910,7 @@
         private System.Windows.Forms.Label lblFwd2SpeedVal;
         private System.Windows.Forms.Label lblFwd1SpeedVal;
         private System.Windows.Forms.Timer updateTimer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
     }
 }
