@@ -92,6 +92,7 @@
             this.lguTabPage1 = new rLoop_Ground_Station.TabPanels.LGUTabPage();
             this.FCUTab = new System.Windows.Forms.TabPage();
             this.fcu1 = new rLoop_Ground_Station.TabPanels.FCU();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,6 +108,7 @@
             this.brakesTab.SuspendLayout();
             this.LGUTab.SuspendLayout();
             this.FCUTab.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -527,18 +529,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.testDataType);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.sendTestData);
-            this.panel3.Controls.Add(this.testDataIndexTxt);
-            this.panel3.Controls.Add(this.testDataToSendTxt);
-            this.panel3.Controls.Add(this.txtNewBaud);
-            this.panel3.Controls.Add(this.btnStopDataLogging);
-            this.panel3.Controls.Add(this.btnStartDataLogging);
-            this.panel3.Controls.Add(this.btnNewBaudRate);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.lblSelectedNodeTime);
             this.panel3.Controls.Add(this.lblSelectedNodeDataLogging);
@@ -564,9 +555,9 @@
             "UInt 64",
             "Float",
             "Double"});
-            this.testDataType.Location = new System.Drawing.Point(818, 144);
+            this.testDataType.Location = new System.Drawing.Point(439, 135);
             this.testDataType.Name = "testDataType";
-            this.testDataType.Size = new System.Drawing.Size(121, 21);
+            this.testDataType.Size = new System.Drawing.Size(180, 21);
             this.testDataType.TabIndex = 12;
             this.testDataType.Text = "Data Type";
             // 
@@ -574,7 +565,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(651, 169);
+            this.label9.Location = new System.Drawing.Point(221, 176);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(34, 13);
             this.label9.TabIndex = 11;
@@ -584,7 +575,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(513, 169);
+            this.label8.Location = new System.Drawing.Point(3, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 10;
@@ -592,7 +583,8 @@
             // 
             // sendTestData
             // 
-            this.sendTestData.Location = new System.Drawing.Point(956, 144);
+            this.sendTestData.AutoSize = true;
+            this.sendTestData.Location = new System.Drawing.Point(657, 135);
             this.sendTestData.Name = "sendTestData";
             this.sendTestData.Size = new System.Drawing.Size(138, 23);
             this.sendTestData.TabIndex = 9;
@@ -602,7 +594,7 @@
             // 
             // testDataIndexTxt
             // 
-            this.testDataIndexTxt.Location = new System.Drawing.Point(499, 146);
+            this.testDataIndexTxt.Location = new System.Drawing.Point(3, 135);
             this.testDataIndexTxt.Name = "testDataIndexTxt";
             this.testDataIndexTxt.Size = new System.Drawing.Size(65, 20);
             this.testDataIndexTxt.TabIndex = 8;
@@ -610,15 +602,15 @@
             // 
             // testDataToSendTxt
             // 
-            this.testDataToSendTxt.Location = new System.Drawing.Point(581, 146);
+            this.testDataToSendTxt.Location = new System.Drawing.Point(221, 135);
             this.testDataToSendTxt.Name = "testDataToSendTxt";
-            this.testDataToSendTxt.Size = new System.Drawing.Size(222, 20);
+            this.testDataToSendTxt.Size = new System.Drawing.Size(212, 20);
             this.testDataToSendTxt.TabIndex = 7;
             this.testDataToSendTxt.Text = "3.14159";
             // 
             // txtNewBaud
             // 
-            this.txtNewBaud.Location = new System.Drawing.Point(696, 50);
+            this.txtNewBaud.Location = new System.Drawing.Point(439, 3);
             this.txtNewBaud.Name = "txtNewBaud";
             this.txtNewBaud.Size = new System.Drawing.Size(143, 20);
             this.txtNewBaud.TabIndex = 6;
@@ -626,7 +618,8 @@
             // 
             // btnStopDataLogging
             // 
-            this.btnStopDataLogging.Location = new System.Drawing.Point(860, 87);
+            this.btnStopDataLogging.AutoSize = true;
+            this.btnStopDataLogging.Location = new System.Drawing.Point(657, 47);
             this.btnStopDataLogging.Name = "btnStopDataLogging";
             this.btnStopDataLogging.Size = new System.Drawing.Size(143, 31);
             this.btnStopDataLogging.TabIndex = 5;
@@ -636,7 +629,8 @@
             // 
             // btnStartDataLogging
             // 
-            this.btnStartDataLogging.Location = new System.Drawing.Point(860, 50);
+            this.btnStartDataLogging.AutoSize = true;
+            this.btnStartDataLogging.Location = new System.Drawing.Point(657, 3);
             this.btnStartDataLogging.Name = "btnStartDataLogging";
             this.btnStartDataLogging.Size = new System.Drawing.Size(143, 31);
             this.btnStartDataLogging.TabIndex = 5;
@@ -646,7 +640,7 @@
             // 
             // btnNewBaudRate
             // 
-            this.btnNewBaudRate.Location = new System.Drawing.Point(696, 76);
+            this.btnNewBaudRate.Location = new System.Drawing.Point(439, 47);
             this.btnNewBaudRate.Name = "btnNewBaudRate";
             this.btnNewBaudRate.Size = new System.Drawing.Size(143, 31);
             this.btnNewBaudRate.TabIndex = 5;
@@ -656,7 +650,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(537, 50);
+            this.textBox1.Location = new System.Drawing.Point(221, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(136, 20);
             this.textBox1.TabIndex = 6;
@@ -664,7 +658,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(537, 76);
+            this.button3.AutoSize = true;
+            this.button3.Location = new System.Drawing.Point(221, 47);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 31);
             this.button3.TabIndex = 5;
@@ -677,7 +672,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(90, 22);
+            this.label7.Location = new System.Drawing.Point(51, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(188, 25);
             this.label7.TabIndex = 4;
@@ -716,9 +711,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(29, 50);
+            this.listBox1.Location = new System.Drawing.Point(29, 51);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(326, 147);
+            this.listBox1.Size = new System.Drawing.Size(222, 173);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -810,6 +805,36 @@
             this.fcu1.Size = new System.Drawing.Size(1555, 863);
             this.fcu1.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.btnStartDataLogging, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.testDataIndexTxt, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.testDataType, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnStopDataLogging, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtNewBaud, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.testDataToSendTxt, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnNewBaudRate, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.sendTestData, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 1, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(548, 13);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(873, 222);
+            this.tableLayoutPanel1.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -841,6 +866,8 @@
             this.brakesTab.ResumeLayout(false);
             this.LGUTab.ResumeLayout(false);
             this.FCUTab.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -909,6 +936,7 @@
         private TabPanels.LGUTabPage lguTabPage1;
         private TabPanels.BrakesTabPage brakesTabPage1;
         private TabPanels.FCU fcu1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
