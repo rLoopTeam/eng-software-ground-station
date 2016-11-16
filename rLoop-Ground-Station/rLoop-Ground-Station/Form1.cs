@@ -205,6 +205,7 @@ namespace rLoop_Ground_Station
             this.WindowState = FormWindowState.Maximized;
 
             float DPIsf = this.CreateGraphics().DpiX / 96;
+            customTabControl1.Font = new Font(customTabControl1.Font.FontFamily, customTabControl1.Font.Size * DPIsf);
             customTabControl1.Padding = new Point( (int)(customTabControl1.Padding.X * DPIsf), (int)(customTabControl1.Padding.Y * DPIsf));
         }
 

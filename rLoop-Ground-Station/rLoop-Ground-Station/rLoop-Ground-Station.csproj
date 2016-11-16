@@ -105,6 +105,12 @@
     <Compile Include="TabPanels\BrakesTabPage.Designer.cs">
       <DependentUpon>BrakesTabPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabPanels\FCU.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPanels\FCU.Designer.cs">
+      <DependentUpon>FCU.cs</DependentUpon>
+    </Compile>
     <Compile Include="TabPanels\LGUTabPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabPanels\BrakesTabPage.resx">
       <DependentUpon>BrakesTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPanels\FCU.resx">
+      <DependentUpon>FCU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPanels\LGUTabPage.resx">
       <DependentUpon>LGUTabPage.cs</DependentUpon>

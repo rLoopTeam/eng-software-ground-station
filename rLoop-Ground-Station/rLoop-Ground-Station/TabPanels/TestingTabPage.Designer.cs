@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label51 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.txtEBRightSpeedCommand = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.txtEBLeftSpeedCommand = new System.Windows.Forms.TextBox();
-            this.btnEBLeftDirectionCommandSend = new System.Windows.Forms.Button();
             this.label69 = new System.Windows.Forms.Label();
             this.lblEBRightDistanceBeam = new System.Windows.Forms.Label();
             this.lblEBLeftDistanceBeam = new System.Windows.Forms.Label();
@@ -89,89 +82,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.TESTTabTimer = new System.Windows.Forms.Timer(this.components);
-            this.gbLeftDirectionCommand = new System.Windows.Forms.GroupBox();
-            this.rbEBLeftDirectionCommand2 = new System.Windows.Forms.RadioButton();
-            this.rbEBLeftDirectionCommand1 = new System.Windows.Forms.RadioButton();
-            this.gbRightDirectionCommand = new System.Windows.Forms.GroupBox();
-            this.rbEBRightDirectionCommand2 = new System.Windows.Forms.RadioButton();
-            this.rbEBRightDirectionCommand1 = new System.Windows.Forms.RadioButton();
-            this.btnEBRightDirectionCommandSend = new System.Windows.Forms.Button();
-            this.trackBrakePos = new System.Windows.Forms.TrackBar();
-            this.lblBrakePosition = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.lblBrakePosSP = new System.Windows.Forms.Label();
-            this.btnSendBrakePos = new System.Windows.Forms.Button();
-            this.gbLeftDirectionCommand.SuspendLayout();
-            this.gbRightDirectionCommand.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBrakePos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.ForeColor = System.Drawing.Color.White;
-            this.label51.Location = new System.Drawing.Point(1016, 452);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(125, 13);
-            this.label51.TabIndex = 232;
-            this.label51.Text = "EB right speed command";
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(1180, 452);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(108, 40);
-            this.button13.TabIndex = 231;
-            this.button13.Text = "Send";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // txtEBRightSpeedCommand
-            // 
-            this.txtEBRightSpeedCommand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEBRightSpeedCommand.Location = new System.Drawing.Point(1018, 469);
-            this.txtEBRightSpeedCommand.Name = "txtEBRightSpeedCommand";
-            this.txtEBRightSpeedCommand.Size = new System.Drawing.Size(146, 26);
-            this.txtEBRightSpeedCommand.TabIndex = 230;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.ForeColor = System.Drawing.Color.White;
-            this.label52.Location = new System.Drawing.Point(1016, 371);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(119, 13);
-            this.label52.TabIndex = 229;
-            this.label52.Text = "EB left speed command";
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(1180, 371);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(108, 40);
-            this.button14.TabIndex = 228;
-            this.button14.Text = "Send";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // txtEBLeftSpeedCommand
-            // 
-            this.txtEBLeftSpeedCommand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEBLeftSpeedCommand.Location = new System.Drawing.Point(1018, 388);
-            this.txtEBLeftSpeedCommand.Name = "txtEBLeftSpeedCommand";
-            this.txtEBLeftSpeedCommand.Size = new System.Drawing.Size(146, 26);
-            this.txtEBLeftSpeedCommand.TabIndex = 227;
-            // 
-            // btnEBLeftDirectionCommandSend
-            // 
-            this.btnEBLeftDirectionCommandSend.ForeColor = System.Drawing.Color.Black;
-            this.btnEBLeftDirectionCommandSend.Location = new System.Drawing.Point(162, 16);
-            this.btnEBLeftDirectionCommandSend.Name = "btnEBLeftDirectionCommandSend";
-            this.btnEBLeftDirectionCommandSend.Size = new System.Drawing.Size(108, 44);
-            this.btnEBLeftDirectionCommandSend.TabIndex = 222;
-            this.btnEBLeftDirectionCommandSend.Text = "Send";
-            this.btnEBLeftDirectionCommandSend.UseVisualStyleBackColor = true;
             // 
             // label69
             // 
@@ -752,116 +665,6 @@
             this.TESTTabTimer.Interval = 200;
             this.TESTTabTimer.Tick += new System.EventHandler(this.TESTTabTimer_Tick);
             // 
-            // gbLeftDirectionCommand
-            // 
-            this.gbLeftDirectionCommand.Controls.Add(this.rbEBLeftDirectionCommand2);
-            this.gbLeftDirectionCommand.Controls.Add(this.rbEBLeftDirectionCommand1);
-            this.gbLeftDirectionCommand.Controls.Add(this.btnEBLeftDirectionCommandSend);
-            this.gbLeftDirectionCommand.ForeColor = System.Drawing.Color.White;
-            this.gbLeftDirectionCommand.Location = new System.Drawing.Point(726, 350);
-            this.gbLeftDirectionCommand.Margin = new System.Windows.Forms.Padding(2);
-            this.gbLeftDirectionCommand.Name = "gbLeftDirectionCommand";
-            this.gbLeftDirectionCommand.Padding = new System.Windows.Forms.Padding(2);
-            this.gbLeftDirectionCommand.Size = new System.Drawing.Size(276, 70);
-            this.gbLeftDirectionCommand.TabIndex = 233;
-            this.gbLeftDirectionCommand.TabStop = false;
-            this.gbLeftDirectionCommand.Text = "EB left direction command";
-            // 
-            // rbEBLeftDirectionCommand2
-            // 
-            this.rbEBLeftDirectionCommand2.AutoSize = true;
-            this.rbEBLeftDirectionCommand2.Location = new System.Drawing.Point(83, 31);
-            this.rbEBLeftDirectionCommand2.Margin = new System.Windows.Forms.Padding(2);
-            this.rbEBLeftDirectionCommand2.Name = "rbEBLeftDirectionCommand2";
-            this.rbEBLeftDirectionCommand2.Size = new System.Drawing.Size(65, 17);
-            this.rbEBLeftDirectionCommand2.TabIndex = 1;
-            this.rbEBLeftDirectionCommand2.TabStop = true;
-            this.rbEBLeftDirectionCommand2.Text = "Outward";
-            this.rbEBLeftDirectionCommand2.UseVisualStyleBackColor = true;
-            // 
-            // rbEBLeftDirectionCommand1
-            // 
-            this.rbEBLeftDirectionCommand1.AutoSize = true;
-            this.rbEBLeftDirectionCommand1.Location = new System.Drawing.Point(11, 31);
-            this.rbEBLeftDirectionCommand1.Margin = new System.Windows.Forms.Padding(2);
-            this.rbEBLeftDirectionCommand1.Name = "rbEBLeftDirectionCommand1";
-            this.rbEBLeftDirectionCommand1.Size = new System.Drawing.Size(57, 17);
-            this.rbEBLeftDirectionCommand1.TabIndex = 0;
-            this.rbEBLeftDirectionCommand1.TabStop = true;
-            this.rbEBLeftDirectionCommand1.Text = "Inward";
-            this.rbEBLeftDirectionCommand1.UseVisualStyleBackColor = true;
-            // 
-            // gbRightDirectionCommand
-            // 
-            this.gbRightDirectionCommand.Controls.Add(this.rbEBRightDirectionCommand2);
-            this.gbRightDirectionCommand.Controls.Add(this.rbEBRightDirectionCommand1);
-            this.gbRightDirectionCommand.Controls.Add(this.btnEBRightDirectionCommandSend);
-            this.gbRightDirectionCommand.ForeColor = System.Drawing.Color.White;
-            this.gbRightDirectionCommand.Location = new System.Drawing.Point(726, 432);
-            this.gbRightDirectionCommand.Margin = new System.Windows.Forms.Padding(2);
-            this.gbRightDirectionCommand.Name = "gbRightDirectionCommand";
-            this.gbRightDirectionCommand.Padding = new System.Windows.Forms.Padding(2);
-            this.gbRightDirectionCommand.Size = new System.Drawing.Size(276, 70);
-            this.gbRightDirectionCommand.TabIndex = 234;
-            this.gbRightDirectionCommand.TabStop = false;
-            this.gbRightDirectionCommand.Text = "EB right direction command";
-            // 
-            // rbEBRightDirectionCommand2
-            // 
-            this.rbEBRightDirectionCommand2.AutoSize = true;
-            this.rbEBRightDirectionCommand2.Location = new System.Drawing.Point(83, 31);
-            this.rbEBRightDirectionCommand2.Margin = new System.Windows.Forms.Padding(2);
-            this.rbEBRightDirectionCommand2.Name = "rbEBRightDirectionCommand2";
-            this.rbEBRightDirectionCommand2.Size = new System.Drawing.Size(65, 17);
-            this.rbEBRightDirectionCommand2.TabIndex = 1;
-            this.rbEBRightDirectionCommand2.TabStop = true;
-            this.rbEBRightDirectionCommand2.Text = "Outward";
-            this.rbEBRightDirectionCommand2.UseVisualStyleBackColor = true;
-            // 
-            // rbEBRightDirectionCommand1
-            // 
-            this.rbEBRightDirectionCommand1.AutoSize = true;
-            this.rbEBRightDirectionCommand1.Location = new System.Drawing.Point(11, 31);
-            this.rbEBRightDirectionCommand1.Margin = new System.Windows.Forms.Padding(2);
-            this.rbEBRightDirectionCommand1.Name = "rbEBRightDirectionCommand1";
-            this.rbEBRightDirectionCommand1.Size = new System.Drawing.Size(57, 17);
-            this.rbEBRightDirectionCommand1.TabIndex = 0;
-            this.rbEBRightDirectionCommand1.TabStop = true;
-            this.rbEBRightDirectionCommand1.Text = "Inward";
-            this.rbEBRightDirectionCommand1.UseVisualStyleBackColor = true;
-            // 
-            // btnEBRightDirectionCommandSend
-            // 
-            this.btnEBRightDirectionCommandSend.ForeColor = System.Drawing.Color.Black;
-            this.btnEBRightDirectionCommandSend.Location = new System.Drawing.Point(162, 16);
-            this.btnEBRightDirectionCommandSend.Name = "btnEBRightDirectionCommandSend";
-            this.btnEBRightDirectionCommandSend.Size = new System.Drawing.Size(108, 44);
-            this.btnEBRightDirectionCommandSend.TabIndex = 222;
-            this.btnEBRightDirectionCommandSend.Text = "Send";
-            this.btnEBRightDirectionCommandSend.UseVisualStyleBackColor = true;
-            // 
-            // trackBrakePos
-            // 
-            this.trackBrakePos.LargeChange = 1;
-            this.trackBrakePos.Location = new System.Drawing.Point(36, 641);
-            this.trackBrakePos.Maximum = 250;
-            this.trackBrakePos.Name = "trackBrakePos";
-            this.trackBrakePos.Size = new System.Drawing.Size(431, 45);
-            this.trackBrakePos.TabIndex = 242;
-            this.trackBrakePos.TickFrequency = 10;
-            this.trackBrakePos.Scroll += new System.EventHandler(this.trackBrakePos_Scroll);
-            // 
-            // lblBrakePosition
-            // 
-            this.lblBrakePosition.AutoSize = true;
-            this.lblBrakePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrakePosition.ForeColor = System.Drawing.Color.White;
-            this.lblBrakePosition.Location = new System.Drawing.Point(66, 689);
-            this.lblBrakePosition.Name = "lblBrakePosition";
-            this.lblBrakePosition.Size = new System.Drawing.Size(104, 13);
-            this.lblBrakePosition.TabIndex = 140;
-            this.lblBrakePosition.Text = "Set I-Beam Distance";
-            // 
             // trackBar2
             // 
             this.trackBar2.Location = new System.Drawing.Point(266, 1128);
@@ -869,43 +672,12 @@
             this.trackBar2.Size = new System.Drawing.Size(389, 45);
             this.trackBar2.TabIndex = 242;
             // 
-            // lblBrakePosSP
-            // 
-            this.lblBrakePosSP.AutoSize = true;
-            this.lblBrakePosSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrakePosSP.ForeColor = System.Drawing.Color.White;
-            this.lblBrakePosSP.Location = new System.Drawing.Point(189, 689);
-            this.lblBrakePosSP.Name = "lblBrakePosSP";
-            this.lblBrakePosSP.Size = new System.Drawing.Size(32, 13);
-            this.lblBrakePosSP.TabIndex = 140;
-            this.lblBrakePosSP.Text = "0 mm";
-            // 
-            // btnSendBrakePos
-            // 
-            this.btnSendBrakePos.Location = new System.Drawing.Point(484, 641);
-            this.btnSendBrakePos.Name = "btnSendBrakePos";
-            this.btnSendBrakePos.Size = new System.Drawing.Size(108, 36);
-            this.btnSendBrakePos.TabIndex = 243;
-            this.btnSendBrakePos.Text = "Send";
-            this.btnSendBrakePos.UseVisualStyleBackColor = true;
-            this.btnSendBrakePos.Click += new System.EventHandler(this.btnSendBrakePos_Click);
-            // 
             // TestingTabPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.Controls.Add(this.btnSendBrakePos);
             this.Controls.Add(this.trackBar2);
-            this.Controls.Add(this.trackBrakePos);
-            this.Controls.Add(this.gbRightDirectionCommand);
-            this.Controls.Add(this.gbLeftDirectionCommand);
-            this.Controls.Add(this.label51);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.txtEBRightSpeedCommand);
-            this.Controls.Add(this.label52);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.txtEBLeftSpeedCommand);
             this.Controls.Add(this.label69);
             this.Controls.Add(this.lblEBRightDistanceBeam);
             this.Controls.Add(this.lblEBLeftDistanceBeam);
@@ -952,8 +724,6 @@
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.lblBrakePosSP);
-            this.Controls.Add(this.lblBrakePosition);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -962,11 +732,6 @@
             this.Controls.Add(this.label10);
             this.Name = "TestingTabPage";
             this.Size = new System.Drawing.Size(1350, 747);
-            this.gbLeftDirectionCommand.ResumeLayout(false);
-            this.gbLeftDirectionCommand.PerformLayout();
-            this.gbRightDirectionCommand.ResumeLayout(false);
-            this.gbRightDirectionCommand.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBrakePos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -974,14 +739,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.TextBox txtEBRightSpeedCommand;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.TextBox txtEBLeftSpeedCommand;
-        private System.Windows.Forms.Button btnEBLeftDirectionCommandSend;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label lblEBRightDistanceBeam;
         private System.Windows.Forms.Label lblEBLeftDistanceBeam;
@@ -1035,17 +792,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Timer TESTTabTimer;
-        private System.Windows.Forms.GroupBox gbLeftDirectionCommand;
-        private System.Windows.Forms.RadioButton rbEBLeftDirectionCommand2;
-        private System.Windows.Forms.RadioButton rbEBLeftDirectionCommand1;
-        private System.Windows.Forms.GroupBox gbRightDirectionCommand;
-        private System.Windows.Forms.RadioButton rbEBRightDirectionCommand2;
-        private System.Windows.Forms.RadioButton rbEBRightDirectionCommand1;
-        private System.Windows.Forms.Button btnEBRightDirectionCommandSend;
-        private System.Windows.Forms.TrackBar trackBrakePos;
-        private System.Windows.Forms.Label lblBrakePosition;
         private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.Label lblBrakePosSP;
-        private System.Windows.Forms.Button btnSendBrakePos;
     }
 }

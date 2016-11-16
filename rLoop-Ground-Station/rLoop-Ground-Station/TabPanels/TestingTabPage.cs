@@ -104,12 +104,12 @@ namespace rLoop_Ground_Station.TabPanels
 
         private void trackBrakePos_Scroll(object sender, EventArgs e)
         {
-            lblBrakePosSP.Text = ((float)trackBrakePos.Value / 10).ToString() + " mm";
+           // lblBrakePosSP.Text = ((float)trackBrakePos.Value / 10).ToString() + " mm";
         }
 
         private void btnSendBrakePos_Click(object sender, EventArgs e)
         {
-            rPodPodState.FlightControlUnitNode.setIBeamDistance((float)trackBrakePos.Value / 10);
+           // rPodPodState.FlightControlUnitNode.setIBeamDistance((float)trackBrakePos.Value / 10);
         }
     }
 }
