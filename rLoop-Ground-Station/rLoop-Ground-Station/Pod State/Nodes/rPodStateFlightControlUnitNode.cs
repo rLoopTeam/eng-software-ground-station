@@ -17,6 +17,9 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float Speed;
         public float Acceleration;
 
+
+        #region EddyBrakes
+
         /// <summary>
         /// left eddy brakes screw position in mm
         /// </summary>
@@ -28,25 +31,114 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float EBRightScrewPosition;
 
         /// <summary>
-        /// left eddy brake, exend limit switch. 0 = open, 1 = closed
+        /// 0 = open, 1 = closed
         /// </summary>
-        
+        public byte EBLeftLimitSwitchExtend;
 
-        public float EBLeftLimitSwitch;
-        public float EBRightLimitSwitch;
-        public float EBLeftMLP;
-        public float EBRightMLP;
-        public float EBLeftDistance;
-        public float EBRightDistance;
+        /// <summary>
+        /// 0 = open, 1 = closed
+        /// </summary>
+        public byte EBRightLimitSwitchExtend;
 
+        /// <summary>
+        /// 0 = open, 1 = closed
+        /// </summary>
+        public byte EBLeftLimitSwitchRetract;
+
+        /// <summary>
+        /// 0 = open, 1 = closed
+        /// </summary>
+        public byte EBRightLimitSwitchRetract;
+
+        /// <summary>
+        /// in mm
+        /// </summary>
+        public float EBLeftIBeamDist;
+
+        /// <summary>
+        /// in mm
+        /// </summary>
+        public float EBRightIBeamDist;
+
+        public UInt16 EBLeftMLPADCRaw;
+        public UInt16 EBRightMLPADCRaw;
+
+        /// <summary>
+        /// in mm
+        /// </summary>
+        public float EBLeftMLPScaled;
+
+        /// <summary>
+        /// in mm
+        /// </summary>
+        public float EBRightMLPScaled;
+        #endregion
+
+        #region OptoNCDT Lasers
+
+        /// <summary>
+        /// Height distance sensor 1 in mm
+        /// </summary>
         public float HDS1Value;
+
+        /// <summary>
+        /// Height distance sensor 2 in mm
+        /// </summary>
         public float HDS2Value;
+
+        /// <summary>
+        /// Height distance sensor 3 in mm
+        /// </summary>
         public float HDS3Value;
+
+        /// <summary>
+        /// Height distance sensor 4 in mm
+        /// </summary>
         public float HDS4Value;
+
+        /// <summary>
+        /// Height I-Beam sensor 1 in mm
+        /// </summary>
         public float IBDS1Value;
+
+        /// <summary>
+        /// Height I-Beam sensor 2 in mm
+        /// </summary>
         public float IBDS2Value;
 
+        #endregion
 
+        #region Pusher
+        /// <summary>
+        /// Pusher Switch A. 0 = Open, 1 = Closed
+        /// </summary>
+        public byte PusherSwitchA;
+        /// <summary>
+        /// Pusher Switch B. 0 = Open, 1 = Closed
+        /// </summary>
+        public byte PusherSwitchB;
+        /// <summary>
+        /// Pusher State, need to look at enum
+        /// </summary>
+        public byte PusherState;
+        #endregion
+
+        #region Gyro
+
+        /// <summary>
+        /// Gyro 1 X-Axis, units?
+        /// </summary>
+        public Int16 Accel1X;
+        /// <summary>
+        /// Gyro 1 Y-Axis, units?
+        /// </summary>
+        public Int16 Accel1Y;
+        /// <summary>
+        /// Gyro 1 Z-Axis, units?
+        /// </summary>
+        public Int16 Accel1Z;
+
+        #endregion
 
         public rPodStateFlightControlUnitNode()
         {
@@ -105,88 +197,82 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
             foreach (DataParameter p in parameterList)
             {
-                if (p.Index == 0 && p.Data is float)
-                {
-                    CGHeight = (float)p.Data;
-                }
-                if (p.Index == 1 && p.Data is float)
-                {
-                    XCG = (float)p.Data;
-                }
-                if (p.Index == 2 && p.Data is float)
-                {
-                    YCG = (float)p.Data;
-                }
-                if (p.Index == 3 && p.Data is float)
-                {
-                    Pitch = (float)p.Data;
-                }
-                if (p.Index == 4 && p.Data is float)
-                {
-                    Yaw = (float)p.Data;
-                }
-                if (p.Index == 5 && p.Data is float)
-                {
-                    Roll = (float)p.Data;
-                }
-                if (p.Index == 6 && p.Data is float)
-                {
-                    Speed = (float)p.Data;
-                }
-                if (p.Index == 7 && p.Data is float)
-                {
-                    Acceleration = (float)p.Data;
-                }
 
-                if (p.Index == 8 && p.Data is float)
-                {
-                    EBLeftLimitSwitch = (float)p.Data;
-                }
-                if (p.Index == 9 && p.Data is float)
-                {
-                    EBRightLimitSwitch = (float)p.Data;
-                }
-                if (p.Index == 10 && p.Data is float)
-                {
-                    EBLeftMLP = (float)p.Data;
-                }
-                if (p.Index == 11 && p.Data is float)
-                {
-                    EBRightMLP = (float)p.Data;
-                }
-                if (p.Index == 10 && p.Data is float)
-                {
-                    EBLeftDistance = (float)p.Data;
-                }
-                if (p.Index == 11 && p.Data is float)
-                {
-                    EBRightDistance = (float)p.Data;
-                }
+                #region Brakes
+                if (p.Index == 0x5200 && p.Data is float)
+                    EBLeftScrewPosition = (float)p.Data;
+                if (p.Index == 0x5201 && p.Data is float)
+                    EBRightScrewPosition = (float)p.Data;
 
-                if (p.Index == 12 && p.Data is float)
+                if (p.Index == 0x5202 && p.Data is byte)
+                    EBLeftLimitSwitchExtend = (byte)p.Data;
+                if (p.Index == 0x5203 && p.Data is byte)
+                    EBRightLimitSwitchExtend = (byte)p.Data;
+                if (p.Index == 0x5204 && p.Data is byte)
+                    EBLeftLimitSwitchRetract = (byte)p.Data;
+                if (p.Index == 0x5205 && p.Data is byte)
+                    EBRightLimitSwitchRetract = (byte)p.Data;
+                if (p.Index == 0x5206 && p.Data is float)
+                    EBLeftIBeamDist = (float)p.Data;
+                if (p.Index == 0x5207 && p.Data is float)
+                    EBRightIBeamDist = (float)p.Data;
+                if (p.Index == 0x5208 && p.Data is UInt16)
+                    EBLeftMLPADCRaw = (UInt16)p.Data;
+                if (p.Index == 0x5209 && p.Data is UInt16)
+                    EBRightMLPADCRaw = (UInt16)p.Data;
+                if (p.Index == 0x520A && p.Data is float)
+                    EBLeftMLPScaled = (float)p.Data;
+                if (p.Index == 0x520B && p.Data is float)
+                    EBRightMLPScaled = (float)p.Data;
+                #endregion
+
+                #region OptoNCDT Parameters 0x5300 - 0x5305
+
+                if (p.Index == 0x5300 && p.Data is float)
                 {
                     HDS1Value = (float)p.Data;
                 }
-                if (p.Index == 13 && p.Data is float)
+                if (p.Index == 0x5301 && p.Data is float)
                 {
                     HDS2Value = (float)p.Data;
                 }
-                if (p.Index == 14 && p.Data is float)
+                if (p.Index == 0x5302 && p.Data is float)
                 {
                     HDS3Value = (float)p.Data;
                 }
-                if (p.Index == 15 && p.Data is float)
+                if (p.Index == 0x5303 && p.Data is float)
                 {
                     HDS4Value = (float)p.Data;
                 }
-                if (p.Index == 16 && p.Data is float)
+                if (p.Index == 0x5304 && p.Data is float)
                 {
                     IBDS1Value = (float)p.Data;
                 }
-                if (p.Index == 17 && p.Data is float)
+                if (p.Index == 0x5305 && p.Data is float)
                 {
                     HDS2Value = (float)p.Data;
                 }
+
+                #endregion
+
+                #region Pusher
+                if (p.Index == 0x5400 && p.Data is byte)
+                    PusherSwitchA = (byte)p.Data;
+                if (p.Index == 0x5401 && p.Data is byte)
+                    PusherSwitchB = (byte)p.Data;
+                if (p.Index == 0x5402 && p.Data is byte)
+                    PusherState = (byte)p.Data;
+                #endregion
+
+                #region Accel Parameter
+                if (p.Index == 0x5500 && p.Data is Int16)
+                    Accel1X = (Int16)p.Data;
+                if (p.Index == 0x5501 && p.Data is Int16)
+                    Accel1Y = (Int16)p.Data;
+                if (p.Index == 0x5502 && p.Data is Int16)
+                    Accel1Z = (Int16)p.Data;
+                #endregion
+
             }
         }
     }

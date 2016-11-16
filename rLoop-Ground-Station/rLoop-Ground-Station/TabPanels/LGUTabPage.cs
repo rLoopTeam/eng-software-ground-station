@@ -21,5 +21,10 @@ namespace rLoop_Ground_Station.TabPanels
         {
 
         }
+
+        private void updateTimer_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
