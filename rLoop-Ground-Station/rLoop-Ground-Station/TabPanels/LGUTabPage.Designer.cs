@@ -98,7 +98,7 @@
             // 
             this.btnAft2SpeedSend.ForeColor = System.Drawing.Color.Black;
             this.btnAft2SpeedSend.Location = new System.Drawing.Point(1062, 265);
-            this.btnAft2SpeedSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAft2SpeedSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnAft2SpeedSend.Name = "btnAft2SpeedSend";
             this.btnAft2SpeedSend.Size = new System.Drawing.Size(216, 85);
             this.btnAft2SpeedSend.TabIndex = 273;
@@ -117,9 +117,9 @@
             this.groupAft2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupAft2.ForeColor = System.Drawing.Color.White;
             this.groupAft2.Location = new System.Drawing.Point(4, 1177);
-            this.groupAft2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupAft2.Margin = new System.Windows.Forms.Padding(4);
             this.groupAft2.Name = "groupAft2";
-            this.groupAft2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupAft2.Padding = new System.Windows.Forms.Padding(4);
             this.groupAft2.Size = new System.Drawing.Size(1462, 384);
             this.groupAft2.TabIndex = 270;
             this.groupAft2.TabStop = false;
@@ -141,7 +141,7 @@
             // trackBAft2Speed
             // 
             this.trackBAft2Speed.Location = new System.Drawing.Point(718, 150);
-            this.trackBAft2Speed.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.trackBAft2Speed.Margin = new System.Windows.Forms.Padding(6);
             this.trackBAft2Speed.Name = "trackBAft2Speed";
             this.trackBAft2Speed.Size = new System.Drawing.Size(584, 90);
             this.trackBAft2Speed.TabIndex = 278;
@@ -151,7 +151,7 @@
             this.radioAft2Up.AutoSize = true;
             this.radioAft2Up.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioAft2Up.Location = new System.Drawing.Point(104, 117);
-            this.radioAft2Up.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioAft2Up.Margin = new System.Windows.Forms.Padding(4);
             this.radioAft2Up.Name = "radioAft2Up";
             this.radioAft2Up.Size = new System.Drawing.Size(134, 71);
             this.radioAft2Up.TabIndex = 1;
@@ -176,7 +176,7 @@
             this.radioAft2Down.AutoSize = true;
             this.radioAft2Down.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioAft2Down.Location = new System.Drawing.Point(376, 117);
-            this.radioAft2Down.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioAft2Down.Margin = new System.Windows.Forms.Padding(4);
             this.radioAft2Down.Name = "radioAft2Down";
             this.radioAft2Down.Size = new System.Drawing.Size(208, 71);
             this.radioAft2Down.TabIndex = 0;
@@ -188,12 +188,13 @@
             // 
             this.btnAft2DirSend.ForeColor = System.Drawing.Color.Black;
             this.btnAft2DirSend.Location = new System.Drawing.Point(212, 265);
-            this.btnAft2DirSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAft2DirSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnAft2DirSend.Name = "btnAft2DirSend";
             this.btnAft2DirSend.Size = new System.Drawing.Size(216, 85);
             this.btnAft2DirSend.TabIndex = 222;
             this.btnAft2DirSend.Text = "Send";
             this.btnAft2DirSend.UseVisualStyleBackColor = true;
+            this.btnAft2DirSend.Click += new System.EventHandler(this.LMAft2Direction_Click);
             // 
             // label68
             // 
@@ -453,7 +454,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblForward1MLP, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.lblF1SwitchVal, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(118, 298);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
@@ -482,9 +483,9 @@
             this.groupAft1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupAft1.ForeColor = System.Drawing.Color.White;
             this.groupAft1.Location = new System.Drawing.Point(4, 786);
-            this.groupAft1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupAft1.Margin = new System.Windows.Forms.Padding(4);
             this.groupAft1.Name = "groupAft1";
-            this.groupAft1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupAft1.Padding = new System.Windows.Forms.Padding(4);
             this.groupAft1.Size = new System.Drawing.Size(1462, 383);
             this.groupAft1.TabIndex = 270;
             this.groupAft1.TabStop = false;
@@ -506,7 +507,7 @@
             // trackBAft1Speed
             // 
             this.trackBAft1Speed.Location = new System.Drawing.Point(718, 150);
-            this.trackBAft1Speed.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.trackBAft1Speed.Margin = new System.Windows.Forms.Padding(6);
             this.trackBAft1Speed.Name = "trackBAft1Speed";
             this.trackBAft1Speed.Size = new System.Drawing.Size(584, 90);
             this.trackBAft1Speed.TabIndex = 278;
@@ -516,7 +517,7 @@
             this.radioAft1Up.AutoSize = true;
             this.radioAft1Up.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioAft1Up.Location = new System.Drawing.Point(104, 117);
-            this.radioAft1Up.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioAft1Up.Margin = new System.Windows.Forms.Padding(4);
             this.radioAft1Up.Name = "radioAft1Up";
             this.radioAft1Up.Size = new System.Drawing.Size(134, 71);
             this.radioAft1Up.TabIndex = 1;
@@ -541,7 +542,7 @@
             this.radioAft1Down.AutoSize = true;
             this.radioAft1Down.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioAft1Down.Location = new System.Drawing.Point(376, 117);
-            this.radioAft1Down.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioAft1Down.Margin = new System.Windows.Forms.Padding(4);
             this.radioAft1Down.Name = "radioAft1Down";
             this.radioAft1Down.Size = new System.Drawing.Size(208, 71);
             this.radioAft1Down.TabIndex = 0;
@@ -553,18 +554,19 @@
             // 
             this.btnAft1DirSend.ForeColor = System.Drawing.Color.Black;
             this.btnAft1DirSend.Location = new System.Drawing.Point(212, 265);
-            this.btnAft1DirSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAft1DirSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnAft1DirSend.Name = "btnAft1DirSend";
             this.btnAft1DirSend.Size = new System.Drawing.Size(216, 85);
             this.btnAft1DirSend.TabIndex = 222;
             this.btnAft1DirSend.Text = "Send";
             this.btnAft1DirSend.UseVisualStyleBackColor = true;
+            this.btnAft1DirSend.Click += new System.EventHandler(this.LMAft1Direction_Click);
             // 
             // btnAft1SpeedSend
             // 
             this.btnAft1SpeedSend.ForeColor = System.Drawing.Color.Black;
             this.btnAft1SpeedSend.Location = new System.Drawing.Point(1062, 248);
-            this.btnAft1SpeedSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAft1SpeedSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnAft1SpeedSend.Name = "btnAft1SpeedSend";
             this.btnAft1SpeedSend.Size = new System.Drawing.Size(216, 85);
             this.btnAft1SpeedSend.TabIndex = 273;
@@ -583,9 +585,9 @@
             this.groupForward2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupForward2.ForeColor = System.Drawing.Color.White;
             this.groupForward2.Location = new System.Drawing.Point(4, 395);
-            this.groupForward2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupForward2.Margin = new System.Windows.Forms.Padding(4);
             this.groupForward2.Name = "groupForward2";
-            this.groupForward2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupForward2.Padding = new System.Windows.Forms.Padding(4);
             this.groupForward2.Size = new System.Drawing.Size(1462, 383);
             this.groupForward2.TabIndex = 270;
             this.groupForward2.TabStop = false;
@@ -607,7 +609,7 @@
             // trackBFwd2Speed
             // 
             this.trackBFwd2Speed.Location = new System.Drawing.Point(718, 150);
-            this.trackBFwd2Speed.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.trackBFwd2Speed.Margin = new System.Windows.Forms.Padding(6);
             this.trackBFwd2Speed.Name = "trackBFwd2Speed";
             this.trackBFwd2Speed.Size = new System.Drawing.Size(584, 90);
             this.trackBFwd2Speed.TabIndex = 278;
@@ -617,7 +619,7 @@
             this.radioFwd2Up.AutoSize = true;
             this.radioFwd2Up.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioFwd2Up.Location = new System.Drawing.Point(104, 117);
-            this.radioFwd2Up.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioFwd2Up.Margin = new System.Windows.Forms.Padding(4);
             this.radioFwd2Up.Name = "radioFwd2Up";
             this.radioFwd2Up.Size = new System.Drawing.Size(134, 71);
             this.radioFwd2Up.TabIndex = 1;
@@ -642,7 +644,7 @@
             this.radioFwd2Down.AutoSize = true;
             this.radioFwd2Down.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioFwd2Down.Location = new System.Drawing.Point(376, 117);
-            this.radioFwd2Down.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioFwd2Down.Margin = new System.Windows.Forms.Padding(4);
             this.radioFwd2Down.Name = "radioFwd2Down";
             this.radioFwd2Down.Size = new System.Drawing.Size(208, 71);
             this.radioFwd2Down.TabIndex = 0;
@@ -654,18 +656,19 @@
             // 
             this.btnFwd2DirSend.ForeColor = System.Drawing.Color.Black;
             this.btnFwd2DirSend.Location = new System.Drawing.Point(212, 265);
-            this.btnFwd2DirSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFwd2DirSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnFwd2DirSend.Name = "btnFwd2DirSend";
             this.btnFwd2DirSend.Size = new System.Drawing.Size(216, 85);
             this.btnFwd2DirSend.TabIndex = 222;
             this.btnFwd2DirSend.Text = "Send";
             this.btnFwd2DirSend.UseVisualStyleBackColor = true;
+            this.btnFwd2DirSend.Click += new System.EventHandler(this.LMForward2Direction_Click);
             // 
             // btnFwd2SpeedSend
             // 
             this.btnFwd2SpeedSend.ForeColor = System.Drawing.Color.Black;
             this.btnFwd2SpeedSend.Location = new System.Drawing.Point(1062, 265);
-            this.btnFwd2SpeedSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFwd2SpeedSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnFwd2SpeedSend.Name = "btnFwd2SpeedSend";
             this.btnFwd2SpeedSend.Size = new System.Drawing.Size(216, 85);
             this.btnFwd2SpeedSend.TabIndex = 273;
@@ -684,9 +687,9 @@
             this.groupForward1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupForward1.ForeColor = System.Drawing.Color.White;
             this.groupForward1.Location = new System.Drawing.Point(4, 4);
-            this.groupForward1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupForward1.Margin = new System.Windows.Forms.Padding(4);
             this.groupForward1.Name = "groupForward1";
-            this.groupForward1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupForward1.Padding = new System.Windows.Forms.Padding(4);
             this.groupForward1.Size = new System.Drawing.Size(1462, 383);
             this.groupForward1.TabIndex = 270;
             this.groupForward1.TabStop = false;
@@ -708,7 +711,7 @@
             // trackBFwd1Speed
             // 
             this.trackBFwd1Speed.Location = new System.Drawing.Point(718, 150);
-            this.trackBFwd1Speed.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.trackBFwd1Speed.Margin = new System.Windows.Forms.Padding(6);
             this.trackBFwd1Speed.Name = "trackBFwd1Speed";
             this.trackBFwd1Speed.Size = new System.Drawing.Size(584, 90);
             this.trackBFwd1Speed.TabIndex = 278;
@@ -718,7 +721,7 @@
             this.radioFwd1Up.AutoSize = true;
             this.radioFwd1Up.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioFwd1Up.Location = new System.Drawing.Point(104, 117);
-            this.radioFwd1Up.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioFwd1Up.Margin = new System.Windows.Forms.Padding(4);
             this.radioFwd1Up.Name = "radioFwd1Up";
             this.radioFwd1Up.Size = new System.Drawing.Size(134, 71);
             this.radioFwd1Up.TabIndex = 1;
@@ -743,7 +746,7 @@
             this.radioFwd1Down.AutoSize = true;
             this.radioFwd1Down.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioFwd1Down.Location = new System.Drawing.Point(376, 117);
-            this.radioFwd1Down.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioFwd1Down.Margin = new System.Windows.Forms.Padding(4);
             this.radioFwd1Down.Name = "radioFwd1Down";
             this.radioFwd1Down.Size = new System.Drawing.Size(208, 71);
             this.radioFwd1Down.TabIndex = 0;
@@ -755,19 +758,19 @@
             // 
             this.btnFwd1DirSend.ForeColor = System.Drawing.Color.Black;
             this.btnFwd1DirSend.Location = new System.Drawing.Point(212, 265);
-            this.btnFwd1DirSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFwd1DirSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnFwd1DirSend.Name = "btnFwd1DirSend";
             this.btnFwd1DirSend.Size = new System.Drawing.Size(216, 85);
             this.btnFwd1DirSend.TabIndex = 222;
             this.btnFwd1DirSend.Text = "Send";
             this.btnFwd1DirSend.UseVisualStyleBackColor = true;
-            this.btnFwd1DirSend.Click += new System.EventHandler(this.EBForward1Direction_Click);
+            this.btnFwd1DirSend.Click += new System.EventHandler(this.LMForward1Direction_Click);
             // 
             // btnFwd1SpeedSend
             // 
             this.btnFwd1SpeedSend.ForeColor = System.Drawing.Color.Black;
             this.btnFwd1SpeedSend.Location = new System.Drawing.Point(1062, 248);
-            this.btnFwd1SpeedSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFwd1SpeedSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnFwd1SpeedSend.Name = "btnFwd1SpeedSend";
             this.btnFwd1SpeedSend.Size = new System.Drawing.Size(216, 85);
             this.btnFwd1SpeedSend.TabIndex = 273;
@@ -783,7 +786,7 @@
             this.tableLayoutPanel2.Controls.Add(this.groupAft2, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.groupAft1, 0, 2);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(1326, 115);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -806,7 +809,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label68);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LGUTabPage";
             this.Size = new System.Drawing.Size(2912, 1760);
             this.Load += new System.EventHandler(this.LGUTabPage_Load);

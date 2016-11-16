@@ -14,7 +14,7 @@ namespace rLoop_Ground_Station
             foreach (var control in container.Controls)
             {
                 RadioButton radio = control as RadioButton;
-                if (radio != null && radio.Checked == true)
+                if (radio != null && radio.Checked)
                 {
                     return radio;
                 }
