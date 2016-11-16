@@ -71,7 +71,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblSelectedNodeTime = new System.Windows.Forms.Label();
             this.lblSelectedNodeDataLogging = new System.Windows.Forms.Label();
@@ -94,6 +93,7 @@
             this.brakesTabPage1 = new rLoop_Ground_Station.TabPanels.BrakesTabPage();
             this.lguTabPage1 = new rLoop_Ground_Station.TabPanels.LGUTabPage();
             this.fcu1 = new rLoop_Ground_Station.TabPanels.FCU();
+            this.label1 = new System.Windows.Forms.Label();
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -411,6 +411,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(1549, 603);
             this.dataGridView1.TabIndex = 5;
             // 
@@ -458,23 +459,23 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.btnStartDataLogging, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.testDataIndexTxt, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.testDataType, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnStopDataLogging, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNewBaud, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.testDataToSendTxt, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnNewBaudRate, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.sendTestData, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.testDataType, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.sendTestData, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.testDataIndexTxt, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.testDataToSendTxt, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(548, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.07207F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.22523F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.16216F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(954, 222);
@@ -484,9 +485,9 @@
             // 
             this.btnStartDataLogging.AutoSize = true;
             this.btnStartDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartDataLogging.Location = new System.Drawing.Point(675, 3);
+            this.btnStartDataLogging.Location = new System.Drawing.Point(589, 3);
             this.btnStartDataLogging.Name = "btnStartDataLogging";
-            this.btnStartDataLogging.Size = new System.Drawing.Size(250, 38);
+            this.btnStartDataLogging.Size = new System.Drawing.Size(250, 43);
             this.btnStartDataLogging.TabIndex = 5;
             this.btnStartDataLogging.Text = "Start Data Logging";
             this.btnStartDataLogging.UseVisualStyleBackColor = true;
@@ -495,15 +496,15 @@
             // testDataIndexTxt
             // 
             this.testDataIndexTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testDataIndexTxt.Location = new System.Drawing.Point(3, 135);
+            this.testDataIndexTxt.Location = new System.Drawing.Point(279, 135);
             this.testDataIndexTxt.Name = "testDataIndexTxt";
-            this.testDataIndexTxt.Size = new System.Drawing.Size(65, 38);
+            this.testDataIndexTxt.Size = new System.Drawing.Size(212, 38);
             this.testDataIndexTxt.TabIndex = 8;
             this.testDataIndexTxt.Text = "5";
             // 
             // testDataType
             // 
-            this.testDataType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testDataType.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testDataType.FormattingEnabled = true;
             this.testDataType.Items.AddRange(new object[] {
             "Int 8",
@@ -516,9 +517,9 @@
             "UInt 64",
             "Float",
             "Double"});
-            this.testDataType.Location = new System.Drawing.Point(365, 135);
+            this.testDataType.Location = new System.Drawing.Point(589, 135);
             this.testDataType.Name = "testDataType";
-            this.testDataType.Size = new System.Drawing.Size(180, 33);
+            this.testDataType.Size = new System.Drawing.Size(198, 39);
             this.testDataType.TabIndex = 12;
             this.testDataType.Text = "Data Type";
             // 
@@ -526,9 +527,9 @@
             // 
             this.btnStopDataLogging.AutoSize = true;
             this.btnStopDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStopDataLogging.Location = new System.Drawing.Point(675, 47);
+            this.btnStopDataLogging.Location = new System.Drawing.Point(589, 52);
             this.btnStopDataLogging.Name = "btnStopDataLogging";
-            this.btnStopDataLogging.Size = new System.Drawing.Size(250, 38);
+            this.btnStopDataLogging.Size = new System.Drawing.Size(250, 45);
             this.btnStopDataLogging.TabIndex = 5;
             this.btnStopDataLogging.Text = "Stop Data Logging";
             this.btnStopDataLogging.UseVisualStyleBackColor = true;
@@ -537,7 +538,7 @@
             // txtNewBaud
             // 
             this.txtNewBaud.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewBaud.Location = new System.Drawing.Point(365, 3);
+            this.txtNewBaud.Location = new System.Drawing.Point(279, 3);
             this.txtNewBaud.Name = "txtNewBaud";
             this.txtNewBaud.Size = new System.Drawing.Size(143, 38);
             this.txtNewBaud.TabIndex = 6;
@@ -546,7 +547,7 @@
             // testDataToSendTxt
             // 
             this.testDataToSendTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testDataToSendTxt.Location = new System.Drawing.Point(89, 135);
+            this.testDataToSendTxt.Location = new System.Drawing.Point(279, 179);
             this.testDataToSendTxt.Name = "testDataToSendTxt";
             this.testDataToSendTxt.Size = new System.Drawing.Size(212, 38);
             this.testDataToSendTxt.TabIndex = 7;
@@ -555,9 +556,9 @@
             // btnNewBaudRate
             // 
             this.btnNewBaudRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewBaudRate.Location = new System.Drawing.Point(365, 47);
+            this.btnNewBaudRate.Location = new System.Drawing.Point(279, 52);
             this.btnNewBaudRate.Name = "btnNewBaudRate";
-            this.btnNewBaudRate.Size = new System.Drawing.Size(304, 38);
+            this.btnNewBaudRate.Size = new System.Drawing.Size(304, 45);
             this.btnNewBaudRate.TabIndex = 5;
             this.btnNewBaudRate.Text = "Change UART Baud";
             this.btnNewBaudRate.UseVisualStyleBackColor = true;
@@ -567,7 +568,7 @@
             // 
             this.sendTestData.AutoSize = true;
             this.sendTestData.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendTestData.Location = new System.Drawing.Point(365, 179);
+            this.sendTestData.Location = new System.Drawing.Point(589, 179);
             this.sendTestData.Name = "sendTestData";
             this.sendTestData.Size = new System.Drawing.Size(198, 40);
             this.sendTestData.TabIndex = 9;
@@ -578,7 +579,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(89, 3);
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(255, 38);
             this.textBox1.TabIndex = 6;
@@ -588,9 +589,9 @@
             // 
             this.button3.AutoSize = true;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(89, 47);
+            this.button3.Location = new System.Drawing.Point(3, 52);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(270, 38);
+            this.button3.Size = new System.Drawing.Size(270, 45);
             this.button3.TabIndex = 5;
             this.button3.Text = "Change Node Name";
             this.button3.UseVisualStyleBackColor = true;
@@ -598,25 +599,15 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 176);
+            this.label8.Location = new System.Drawing.Point(193, 132);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 31);
             this.label8.TabIndex = 10;
             this.label8.Text = "Index";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(89, 176);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 31);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Value";
             // 
             // label7
             // 
@@ -872,6 +863,18 @@
             this.fcu1.Size = new System.Drawing.Size(1555, 863);
             this.fcu1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(190, 176);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 31);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Value";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -956,7 +959,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private rPod_GUI_Elements.rPodCurrentGauge rPodCurrentGauge2;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button sendTestData;
         private System.Windows.Forms.TextBox testDataIndexTxt;
@@ -977,6 +979,7 @@
         private TabPanels.FCU fcu1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
