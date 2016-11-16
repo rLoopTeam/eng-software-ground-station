@@ -163,7 +163,7 @@
             this.customTabControl1.DisplayStyleProvider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.customTabControl1.DisplayStyleProvider.Opacity = 1F;
             this.customTabControl1.DisplayStyleProvider.Overlap = 0;
-            this.customTabControl1.DisplayStyleProvider.Padding = new System.Drawing.Point(10, 7);
+            this.customTabControl1.DisplayStyleProvider.Padding = new System.Drawing.Point(8, 4);
             this.customTabControl1.DisplayStyleProvider.Radius = 3;
             this.customTabControl1.DisplayStyleProvider.ShowTabCloser = false;
             this.customTabControl1.DisplayStyleProvider.TextColor = System.Drawing.Color.White;
@@ -181,10 +181,10 @@
             this.OverviewTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.OverviewTab.Controls.Add(this.panel1);
             this.OverviewTab.Controls.Add(this.panel2);
-            this.OverviewTab.Location = new System.Drawing.Point(4, 31);
+            this.OverviewTab.Location = new System.Drawing.Point(4, 25);
             this.OverviewTab.Name = "OverviewTab";
             this.OverviewTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OverviewTab.Size = new System.Drawing.Size(1555, 857);
+            this.OverviewTab.Size = new System.Drawing.Size(1555, 863);
             this.OverviewTab.TabIndex = 0;
             this.OverviewTab.Text = "Overview";
             // 
@@ -196,7 +196,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1549, 421);
+            this.panel1.Size = new System.Drawing.Size(1549, 427);
             this.panel1.TabIndex = 12;
             // 
             // podStateControl2
@@ -237,7 +237,7 @@
             this.podStateControl2.Location = new System.Drawing.Point(512, 0);
             this.podStateControl2.Margin = new System.Windows.Forms.Padding(12);
             this.podStateControl2.Name = "podStateControl2";
-            this.podStateControl2.Size = new System.Drawing.Size(599, 421);
+            this.podStateControl2.Size = new System.Drawing.Size(599, 427);
             this.podStateControl2.TabIndex = 0;
             // 
             // rPodSpeedometer1
@@ -246,7 +246,7 @@
             this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
             this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(12);
             this.rPodSpeedometer1.Name = "rPodSpeedometer1";
-            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 421);
+            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 427);
             this.rPodSpeedometer1.TabIndex = 9;
             // 
             // rPodGyro1
@@ -255,7 +255,7 @@
             this.rPodGyro1.Location = new System.Drawing.Point(1111, 0);
             this.rPodGyro1.Margin = new System.Windows.Forms.Padding(12);
             this.rPodGyro1.Name = "rPodGyro1";
-            this.rPodGyro1.Size = new System.Drawing.Size(438, 421);
+            this.rPodGyro1.Size = new System.Drawing.Size(438, 427);
             this.rPodGyro1.TabIndex = 11;
             // 
             // panel2
@@ -265,7 +265,7 @@
             this.panel2.Controls.Add(this.rPodCurrentGauge1);
             this.panel2.Controls.Add(this.rPodBatteryVoltage1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 424);
+            this.panel2.Location = new System.Drawing.Point(3, 430);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1549, 430);
             this.panel2.TabIndex = 13;
@@ -306,10 +306,10 @@
             // 
             this.PowerNodeATab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.PowerNodeATab.Controls.Add(this.customTabControl2);
-            this.PowerNodeATab.Location = new System.Drawing.Point(4, 31);
+            this.PowerNodeATab.Location = new System.Drawing.Point(4, 25);
             this.PowerNodeATab.Name = "PowerNodeATab";
             this.PowerNodeATab.Padding = new System.Windows.Forms.Padding(3);
-            this.PowerNodeATab.Size = new System.Drawing.Size(1555, 857);
+            this.PowerNodeATab.Size = new System.Drawing.Size(1555, 863);
             this.PowerNodeATab.TabIndex = 3;
             this.PowerNodeATab.Text = "Power A";
             // 
@@ -436,19 +436,19 @@
             // PowerNodeBTab
             // 
             this.PowerNodeBTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.PowerNodeBTab.Location = new System.Drawing.Point(4, 31);
+            this.PowerNodeBTab.Location = new System.Drawing.Point(4, 25);
             this.PowerNodeBTab.Name = "PowerNodeBTab";
-            this.PowerNodeBTab.Size = new System.Drawing.Size(1555, 857);
+            this.PowerNodeBTab.Size = new System.Drawing.Size(1555, 863);
             this.PowerNodeBTab.TabIndex = 4;
             this.PowerNodeBTab.Text = "Power B";
             // 
             // AuxPropTab
             // 
             this.AuxPropTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.AuxPropTab.Location = new System.Drawing.Point(4, 31);
+            this.AuxPropTab.Location = new System.Drawing.Point(4, 25);
             this.AuxPropTab.Margin = new System.Windows.Forms.Padding(2);
             this.AuxPropTab.Name = "AuxPropTab";
-            this.AuxPropTab.Size = new System.Drawing.Size(1555, 857);
+            this.AuxPropTab.Size = new System.Drawing.Size(1555, 863);
             this.AuxPropTab.TabIndex = 5;
             this.AuxPropTab.Text = "Aux Prop";
             // 
@@ -458,17 +458,17 @@
             this.NodeUtilitiesTab.Controls.Add(this.panel5);
             this.NodeUtilitiesTab.Controls.Add(this.panel4);
             this.NodeUtilitiesTab.Controls.Add(this.panel3);
-            this.NodeUtilitiesTab.Location = new System.Drawing.Point(4, 31);
+            this.NodeUtilitiesTab.Location = new System.Drawing.Point(4, 25);
             this.NodeUtilitiesTab.Name = "NodeUtilitiesTab";
             this.NodeUtilitiesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.NodeUtilitiesTab.Size = new System.Drawing.Size(1555, 857);
+            this.NodeUtilitiesTab.Size = new System.Drawing.Size(1555, 863);
             this.NodeUtilitiesTab.TabIndex = 1;
             this.NodeUtilitiesTab.Text = "Node Utilities";
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(3, 754);
+            this.panel5.Location = new System.Drawing.Point(3, 760);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1549, 100);
             this.panel5.TabIndex = 8;
@@ -479,7 +479,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 257);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1549, 597);
+            this.panel4.Size = new System.Drawing.Size(1549, 603);
             this.panel4.TabIndex = 7;
             // 
             // dataGridView1
@@ -498,7 +498,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1549, 597);
+            this.dataGridView1.Size = new System.Drawing.Size(1549, 603);
             this.dataGridView1.TabIndex = 5;
             // 
             // index
@@ -725,10 +725,10 @@
             // SerialConsoleTab
             // 
             this.SerialConsoleTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.SerialConsoleTab.Location = new System.Drawing.Point(4, 31);
+            this.SerialConsoleTab.Location = new System.Drawing.Point(4, 25);
             this.SerialConsoleTab.Name = "SerialConsoleTab";
             this.SerialConsoleTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SerialConsoleTab.Size = new System.Drawing.Size(1555, 857);
+            this.SerialConsoleTab.Size = new System.Drawing.Size(1555, 863);
             this.SerialConsoleTab.TabIndex = 2;
             this.SerialConsoleTab.Text = "Console";
             // 
@@ -737,10 +737,10 @@
             this.testTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.testTab.Controls.Add(this.testingTabPage1);
             this.testTab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.testTab.Location = new System.Drawing.Point(4, 31);
+            this.testTab.Location = new System.Drawing.Point(4, 25);
             this.testTab.Margin = new System.Windows.Forms.Padding(2);
             this.testTab.Name = "testTab";
-            this.testTab.Size = new System.Drawing.Size(1555, 857);
+            this.testTab.Size = new System.Drawing.Size(1555, 863);
             this.testTab.TabIndex = 6;
             this.testTab.Text = "TEST";
             // 
@@ -757,9 +757,9 @@
             // 
             this.brakesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.brakesTab.Controls.Add(this.brakesTabPage1);
-            this.brakesTab.Location = new System.Drawing.Point(4, 31);
+            this.brakesTab.Location = new System.Drawing.Point(4, 25);
             this.brakesTab.Name = "brakesTab";
-            this.brakesTab.Size = new System.Drawing.Size(1555, 857);
+            this.brakesTab.Size = new System.Drawing.Size(1555, 863);
             this.brakesTab.TabIndex = 7;
             this.brakesTab.Text = "Brakes";
             // 
@@ -769,16 +769,16 @@
             this.brakesTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.brakesTabPage1.Location = new System.Drawing.Point(0, 0);
             this.brakesTabPage1.Name = "brakesTabPage1";
-            this.brakesTabPage1.Size = new System.Drawing.Size(1555, 857);
+            this.brakesTabPage1.Size = new System.Drawing.Size(1555, 863);
             this.brakesTabPage1.TabIndex = 0;
             // 
             // LGUTab
             // 
             this.LGUTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.LGUTab.Controls.Add(this.lguTabPage1);
-            this.LGUTab.Location = new System.Drawing.Point(4, 31);
+            this.LGUTab.Location = new System.Drawing.Point(4, 25);
             this.LGUTab.Name = "LGUTab";
-            this.LGUTab.Size = new System.Drawing.Size(1555, 857);
+            this.LGUTab.Size = new System.Drawing.Size(1555, 863);
             this.LGUTab.TabIndex = 8;
             this.LGUTab.Text = "LGU";
             // 
@@ -788,16 +788,16 @@
             this.lguTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lguTabPage1.Location = new System.Drawing.Point(0, 0);
             this.lguTabPage1.Name = "lguTabPage1";
-            this.lguTabPage1.Size = new System.Drawing.Size(1555, 857);
+            this.lguTabPage1.Size = new System.Drawing.Size(1555, 863);
             this.lguTabPage1.TabIndex = 0;
             // 
             // FCUTab
             // 
             this.FCUTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.FCUTab.Controls.Add(this.fcu1);
-            this.FCUTab.Location = new System.Drawing.Point(4, 31);
+            this.FCUTab.Location = new System.Drawing.Point(4, 25);
             this.FCUTab.Name = "FCUTab";
-            this.FCUTab.Size = new System.Drawing.Size(1555, 857);
+            this.FCUTab.Size = new System.Drawing.Size(1555, 863);
             this.FCUTab.TabIndex = 9;
             this.FCUTab.Text = "FCU";
             // 
@@ -807,7 +807,7 @@
             this.fcu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fcu1.Location = new System.Drawing.Point(0, 0);
             this.fcu1.Name = "fcu1";
-            this.fcu1.Size = new System.Drawing.Size(1555, 857);
+            this.fcu1.Size = new System.Drawing.Size(1555, 863);
             this.fcu1.TabIndex = 0;
             // 
             // Form1
