@@ -99,6 +99,12 @@
       <DependentUpon>rPodSpeedometer.cs</DependentUpon>
     </Compile>
     <Compile Include="Pod State\rPodPodState.cs" />
+    <Compile Include="TabPanels\BrakesTabPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPanels\BrakesTabPage.Designer.cs">
+      <DependentUpon>BrakesTabPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="TabPanels\LGUTabPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rPod GUI Elements\rPodSpeedometer.resx">
       <DependentUpon>rPodSpeedometer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPanels\BrakesTabPage.resx">
+      <DependentUpon>BrakesTabPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPanels\LGUTabPage.resx">
       <DependentUpon>LGUTabPage.cs</DependentUpon>

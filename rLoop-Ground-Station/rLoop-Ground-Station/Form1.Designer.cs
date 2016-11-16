@@ -90,6 +90,7 @@
             this.LGUTab = new System.Windows.Forms.TabPage();
             this.lguTabPage1 = new rLoop_Ground_Station.TabPanels.LGUTabPage();
             this.FCUTab = new System.Windows.Forms.TabPage();
+            this.brakesTabPage1 = new rLoop_Ground_Station.TabPanels.BrakesTabPage();
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.testTab.SuspendLayout();
+            this.brakesTab.SuspendLayout();
             this.LGUTab.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,7 +182,7 @@
             this.OverviewTab.Location = new System.Drawing.Point(4, 27);
             this.OverviewTab.Name = "OverviewTab";
             this.OverviewTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OverviewTab.Size = new System.Drawing.Size(1405, 795);
+            this.OverviewTab.Size = new System.Drawing.Size(1555, 861);
             this.OverviewTab.TabIndex = 0;
             this.OverviewTab.Text = "Overview";
             // 
@@ -192,7 +194,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1399, 359);
+            this.panel1.Size = new System.Drawing.Size(1549, 425);
             this.panel1.TabIndex = 12;
             // 
             // podStateControl2
@@ -233,7 +235,7 @@
             this.podStateControl2.Location = new System.Drawing.Point(512, 0);
             this.podStateControl2.Margin = new System.Windows.Forms.Padding(12);
             this.podStateControl2.Name = "podStateControl2";
-            this.podStateControl2.Size = new System.Drawing.Size(449, 359);
+            this.podStateControl2.Size = new System.Drawing.Size(599, 425);
             this.podStateControl2.TabIndex = 0;
             // 
             // rPodSpeedometer1
@@ -242,16 +244,16 @@
             this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
             this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(12);
             this.rPodSpeedometer1.Name = "rPodSpeedometer1";
-            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 359);
+            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 425);
             this.rPodSpeedometer1.TabIndex = 9;
             // 
             // rPodGyro1
             // 
             this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rPodGyro1.Location = new System.Drawing.Point(961, 0);
+            this.rPodGyro1.Location = new System.Drawing.Point(1111, 0);
             this.rPodGyro1.Margin = new System.Windows.Forms.Padding(12);
             this.rPodGyro1.Name = "rPodGyro1";
-            this.rPodGyro1.Size = new System.Drawing.Size(438, 359);
+            this.rPodGyro1.Size = new System.Drawing.Size(438, 425);
             this.rPodGyro1.TabIndex = 11;
             // 
             // panel2
@@ -261,9 +263,9 @@
             this.panel2.Controls.Add(this.rPodCurrentGauge1);
             this.panel2.Controls.Add(this.rPodBatteryVoltage1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 362);
+            this.panel2.Location = new System.Drawing.Point(3, 428);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1399, 430);
+            this.panel2.Size = new System.Drawing.Size(1549, 430);
             this.panel2.TabIndex = 13;
             // 
             // rPodCurrentGauge2
@@ -305,7 +307,7 @@
             this.PowerNodeATab.Location = new System.Drawing.Point(4, 27);
             this.PowerNodeATab.Name = "PowerNodeATab";
             this.PowerNodeATab.Padding = new System.Windows.Forms.Padding(3);
-            this.PowerNodeATab.Size = new System.Drawing.Size(1405, 795);
+            this.PowerNodeATab.Size = new System.Drawing.Size(1555, 861);
             this.PowerNodeATab.TabIndex = 3;
             this.PowerNodeATab.Text = "Power A";
             // 
@@ -434,7 +436,7 @@
             this.PowerNodeBTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.PowerNodeBTab.Location = new System.Drawing.Point(4, 27);
             this.PowerNodeBTab.Name = "PowerNodeBTab";
-            this.PowerNodeBTab.Size = new System.Drawing.Size(1405, 795);
+            this.PowerNodeBTab.Size = new System.Drawing.Size(1555, 861);
             this.PowerNodeBTab.TabIndex = 4;
             this.PowerNodeBTab.Text = "Power B";
             // 
@@ -444,7 +446,7 @@
             this.AuxPropTab.Location = new System.Drawing.Point(4, 27);
             this.AuxPropTab.Margin = new System.Windows.Forms.Padding(2);
             this.AuxPropTab.Name = "AuxPropTab";
-            this.AuxPropTab.Size = new System.Drawing.Size(1405, 795);
+            this.AuxPropTab.Size = new System.Drawing.Size(1555, 861);
             this.AuxPropTab.TabIndex = 5;
             this.AuxPropTab.Text = "Aux Prop";
             // 
@@ -457,16 +459,16 @@
             this.NodeUtilitiesTab.Location = new System.Drawing.Point(4, 27);
             this.NodeUtilitiesTab.Name = "NodeUtilitiesTab";
             this.NodeUtilitiesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.NodeUtilitiesTab.Size = new System.Drawing.Size(1405, 795);
+            this.NodeUtilitiesTab.Size = new System.Drawing.Size(1555, 861);
             this.NodeUtilitiesTab.TabIndex = 1;
             this.NodeUtilitiesTab.Text = "Node Utilities";
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(3, 692);
+            this.panel5.Location = new System.Drawing.Point(3, 758);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1399, 100);
+            this.panel5.Size = new System.Drawing.Size(1549, 100);
             this.panel5.TabIndex = 8;
             // 
             // panel4
@@ -475,7 +477,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 257);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1399, 535);
+            this.panel4.Size = new System.Drawing.Size(1549, 601);
             this.panel4.TabIndex = 7;
             // 
             // dataGridView1
@@ -494,7 +496,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1399, 535);
+            this.dataGridView1.Size = new System.Drawing.Size(1549, 601);
             this.dataGridView1.TabIndex = 5;
             // 
             // index
@@ -543,7 +545,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1399, 254);
+            this.panel3.Size = new System.Drawing.Size(1549, 254);
             this.panel3.TabIndex = 6;
             // 
             // testDataType
@@ -724,7 +726,7 @@
             this.SerialConsoleTab.Location = new System.Drawing.Point(4, 27);
             this.SerialConsoleTab.Name = "SerialConsoleTab";
             this.SerialConsoleTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SerialConsoleTab.Size = new System.Drawing.Size(1405, 795);
+            this.SerialConsoleTab.Size = new System.Drawing.Size(1555, 861);
             this.SerialConsoleTab.TabIndex = 2;
             this.SerialConsoleTab.Text = "Console";
             // 
@@ -736,7 +738,7 @@
             this.testTab.Location = new System.Drawing.Point(4, 27);
             this.testTab.Margin = new System.Windows.Forms.Padding(2);
             this.testTab.Name = "testTab";
-            this.testTab.Size = new System.Drawing.Size(1405, 795);
+            this.testTab.Size = new System.Drawing.Size(1555, 861);
             this.testTab.TabIndex = 6;
             this.testTab.Text = "TEST";
             // 
@@ -752,9 +754,10 @@
             // brakesTab
             // 
             this.brakesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.brakesTab.Controls.Add(this.brakesTabPage1);
             this.brakesTab.Location = new System.Drawing.Point(4, 27);
             this.brakesTab.Name = "brakesTab";
-            this.brakesTab.Size = new System.Drawing.Size(1405, 795);
+            this.brakesTab.Size = new System.Drawing.Size(1555, 861);
             this.brakesTab.TabIndex = 7;
             this.brakesTab.Text = "Brakes";
             // 
@@ -782,9 +785,18 @@
             this.FCUTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.FCUTab.Location = new System.Drawing.Point(4, 27);
             this.FCUTab.Name = "FCUTab";
-            this.FCUTab.Size = new System.Drawing.Size(1405, 795);
+            this.FCUTab.Size = new System.Drawing.Size(1555, 861);
             this.FCUTab.TabIndex = 9;
             this.FCUTab.Text = "FCU";
+            // 
+            // brakesTabPage1
+            // 
+            this.brakesTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.brakesTabPage1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.brakesTabPage1.Location = new System.Drawing.Point(0, 0);
+            this.brakesTabPage1.Name = "brakesTabPage1";
+            this.brakesTabPage1.Size = new System.Drawing.Size(1555, 928);
+            this.brakesTabPage1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -814,6 +826,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.testTab.ResumeLayout(false);
+            this.brakesTab.ResumeLayout(false);
             this.LGUTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -881,6 +894,7 @@
         private System.Windows.Forms.TabPage LGUTab;
         private System.Windows.Forms.TabPage FCUTab;
         private TabPanels.LGUTabPage lguTabPage1;
+        private TabPanels.BrakesTabPage brakesTabPage1;
     }
 }
 
