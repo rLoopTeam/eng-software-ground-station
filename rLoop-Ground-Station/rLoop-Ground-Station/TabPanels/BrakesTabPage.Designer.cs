@@ -73,6 +73,12 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -359,6 +365,7 @@
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.38283F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.61717F));
@@ -443,9 +450,9 @@
             this.label4.Location = new System.Drawing.Point(314, 326);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 5, 3, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 33);
+            this.label4.Size = new System.Drawing.Size(145, 33);
             this.label4.TabIndex = 258;
-            this.label4.Text = "Closed";
+            this.label4.Text = "20.23 mm";
             // 
             // label5
             // 
@@ -482,9 +489,9 @@
             this.label7.Location = new System.Drawing.Point(314, 283);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 5, 3, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 33);
+            this.label7.Size = new System.Drawing.Size(145, 33);
             this.label7.TabIndex = 257;
-            this.label7.Text = "Closed";
+            this.label7.Text = "20.23 mm";
             // 
             // label8
             // 
@@ -534,9 +541,9 @@
             this.label11.Location = new System.Drawing.Point(314, 111);
             this.label11.Margin = new System.Windows.Forms.Padding(10, 5, 3, 5);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(145, 33);
+            this.label11.Size = new System.Drawing.Size(106, 33);
             this.label11.TabIndex = 253;
-            this.label11.Text = "20.33 mm";
+            this.label11.Text = "Closed";
             // 
             // label12
             // 
@@ -586,9 +593,9 @@
             this.label15.Location = new System.Drawing.Point(314, 154);
             this.label15.Margin = new System.Windows.Forms.Padding(10, 5, 3, 5);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(145, 33);
+            this.label15.Size = new System.Drawing.Size(106, 33);
             this.label15.TabIndex = 254;
-            this.label15.Text = "20.33 mm";
+            this.label15.Text = "Closed";
             // 
             // label16
             // 
@@ -735,17 +742,87 @@
             "Right - Linear Microns per revolution (10,000)",
             "Right - Steper per ervolution (200)",
             "Right - Max Angluar Velocity (300)"});
-            this.comboBox1.Location = new System.Drawing.Point(750, 137);
+            this.comboBox1.Location = new System.Drawing.Point(770, 137);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(740, 41);
+            this.comboBox1.Size = new System.Drawing.Size(626, 41);
             this.comboBox1.TabIndex = 280;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(770, 200);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(626, 40);
+            this.textBox1.TabIndex = 281;
+            this.textBox1.Text = "random value";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(949, 258);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(303, 76);
+            this.button1.TabIndex = 282;
+            this.button1.Text = "Set Parameter";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(962, 446);
+            this.label26.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(282, 33);
+            this.label26.TabIndex = 244;
+            this.label26.Text = "Set I-Beam Distance";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(963, 498);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(223, 40);
+            this.textBox2.TabIndex = 283;
+            this.textBox2.Text = "0 ... 25";
+            // 
+            // label27
+            // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(1196, 503);
+            this.label27.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 33);
+            this.label27.TabIndex = 244;
+            this.label27.Text = "mm";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(958, 567);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(303, 76);
+            this.button2.TabIndex = 282;
+            this.button2.Text = "Set Parameter";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // BrakesTabPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -808,5 +885,11 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button button2;
     }
 }
