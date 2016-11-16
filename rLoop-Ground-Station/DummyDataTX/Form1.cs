@@ -71,7 +71,7 @@ namespace DummyDataTX
                                 if (IPAddress.TryParse("239.3.14.159", out transmitIP))
                                 {
                                     IPEndPoint target = new IPEndPoint(transmitIP, 50051);
-                                    byte[] data = Encoding.ASCII.GetBytes(preamble + UDPAnnounceTXT.Text + "," + DateTime.Now.ToString() + ",no");
+                                    byte[] data = Encoding.ASCII.GetBytes(preamble + UDPAnnounceTXT.Text + "," + DateTime.Now.ToString("MM/dd/yyyy H:m:s") + ",no");
                                     udpc.Send(data , data.Length, target);
                                     //Console.WriteLine(data);
                                 }

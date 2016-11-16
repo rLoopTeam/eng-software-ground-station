@@ -97,7 +97,7 @@ namespace rLoop_Ground_Station
                 if (tokens[0] == "rPod!")
                 {
                     int id = int.Parse(tokens[1]);
-                    DateTime PiTime = DateTime.Parse(tokens[3]);
+                    DateTime PiTime = DateTime.Parse(tokens[3], new CultureInfo("en-US"));
                     bool logging = false;
                     if (tokens[4] == "yes")
                         logging = true;
