@@ -26,5 +26,10 @@ namespace rLoop_Ground_Station.TabPanels
         {
 
         }
+
+        private void EBForward1Direction_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show( Utility.GetCheckedRadio(this.Parent).Text );
+        }
     }
 }
