@@ -37,14 +37,7 @@
             this.customTabControl1 = new System.Windows.Forms.CustomTabControl();
             this.OverviewTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
-            this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
-            this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rPodCurrentGauge2 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
-            this.rPodBatteryIndicator1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
-            this.rPodCurrentGauge1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
-            this.rPodBatteryVoltage1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
             this.PowerNodeATab = new System.Windows.Forms.TabPage();
             this.customTabControl2 = new System.Windows.Forms.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -66,18 +59,19 @@
             this.units = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.testDataType = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.sendTestData = new System.Windows.Forms.Button();
-            this.testDataIndexTxt = new System.Windows.Forms.TextBox();
-            this.testDataToSendTxt = new System.Windows.Forms.TextBox();
-            this.txtNewBaud = new System.Windows.Forms.TextBox();
-            this.btnStopDataLogging = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnStartDataLogging = new System.Windows.Forms.Button();
+            this.testDataIndexTxt = new System.Windows.Forms.TextBox();
+            this.testDataType = new System.Windows.Forms.ComboBox();
+            this.btnStopDataLogging = new System.Windows.Forms.Button();
+            this.txtNewBaud = new System.Windows.Forms.TextBox();
+            this.testDataToSendTxt = new System.Windows.Forms.TextBox();
             this.btnNewBaudRate = new System.Windows.Forms.Button();
+            this.sendTestData = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblSelectedNodeTime = new System.Windows.Forms.Label();
             this.lblSelectedNodeDataLogging = new System.Windows.Forms.Label();
@@ -85,14 +79,21 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SerialConsoleTab = new System.Windows.Forms.TabPage();
             this.testTab = new System.Windows.Forms.TabPage();
-            this.testingTabPage1 = new rLoop_Ground_Station.TabPanels.TestingTabPage();
             this.brakesTab = new System.Windows.Forms.TabPage();
-            this.brakesTabPage1 = new rLoop_Ground_Station.TabPanels.BrakesTabPage();
             this.LGUTab = new System.Windows.Forms.TabPage();
-            this.lguTabPage1 = new rLoop_Ground_Station.TabPanels.LGUTabPage();
             this.FCUTab = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.podStateControl2 = new rLoop_Ground_Station.PodStateControl();
+            this.rPodSpeedometer1 = new rLoop_Ground_Station.rPodSpeedometer();
+            this.rPodGyro1 = new rLoop_Ground_Station.rPodGyro();
+            this.rPodCurrentGauge2 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
+            this.rPodBatteryIndicator1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
+            this.rPodCurrentGauge1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodCurrentGauge();
+            this.rPodBatteryVoltage1 = new rLoop_Ground_Station.rPod_GUI_Elements.rPodBatteryVoltage();
+            this.testingTabPage1 = new rLoop_Ground_Station.TabPanels.TestingTabPage();
+            this.brakesTabPage1 = new rLoop_Ground_Station.TabPanels.BrakesTabPage();
+            this.lguTabPage1 = new rLoop_Ground_Station.TabPanels.LGUTabPage();
             this.fcu1 = new rLoop_Ground_Station.TabPanels.FCU();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,11 +105,12 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.testTab.SuspendLayout();
             this.brakesTab.SuspendLayout();
             this.LGUTab.SuspendLayout();
             this.FCUTab.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -201,65 +203,6 @@
             this.panel1.Size = new System.Drawing.Size(1549, 427);
             this.panel1.TabIndex = 12;
             // 
-            // podStateControl2
-            // 
-            this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.podStateControl2.HE1Height = 12.23D;
-            this.podStateControl2.HE1Percent = 0.8D;
-            this.podStateControl2.HE1Power = 3000D;
-            this.podStateControl2.HE1RPM = 3000D;
-            this.podStateControl2.HE2Height = 12.2D;
-            this.podStateControl2.HE2Percent = 0.8D;
-            this.podStateControl2.HE2Power = 3000D;
-            this.podStateControl2.HE2RPM = 3000D;
-            this.podStateControl2.HE3Height = 12.2D;
-            this.podStateControl2.HE3Percent = 0.8D;
-            this.podStateControl2.HE3Power = 3000D;
-            this.podStateControl2.HE3RPM = 3000D;
-            this.podStateControl2.HE4Height = 12.2D;
-            this.podStateControl2.HE4Percent = 0.8D;
-            this.podStateControl2.HE4Power = 3000D;
-            this.podStateControl2.HE4RPM = 3000D;
-            this.podStateControl2.HE5Height = 12.2D;
-            this.podStateControl2.HE5Percent = 0.8D;
-            this.podStateControl2.HE5Power = 3000D;
-            this.podStateControl2.HE5RPM = 3000D;
-            this.podStateControl2.HE6Height = 12.2D;
-            this.podStateControl2.HE6Percent = 0.8D;
-            this.podStateControl2.HE6Power = 3000D;
-            this.podStateControl2.HE6RPM = 3000D;
-            this.podStateControl2.HE7Height = 12.2D;
-            this.podStateControl2.HE7Percent = 0.8D;
-            this.podStateControl2.HE7Power = 3000D;
-            this.podStateControl2.HE7RPM = 3000D;
-            this.podStateControl2.HE8Height = 12.2D;
-            this.podStateControl2.HE8Percent = 0.8D;
-            this.podStateControl2.HE8Power = 3000D;
-            this.podStateControl2.HE8RPM = 3000D;
-            this.podStateControl2.Location = new System.Drawing.Point(512, 0);
-            this.podStateControl2.Margin = new System.Windows.Forms.Padding(12);
-            this.podStateControl2.Name = "podStateControl2";
-            this.podStateControl2.Size = new System.Drawing.Size(599, 427);
-            this.podStateControl2.TabIndex = 0;
-            // 
-            // rPodSpeedometer1
-            // 
-            this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
-            this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodSpeedometer1.Name = "rPodSpeedometer1";
-            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 427);
-            this.rPodSpeedometer1.TabIndex = 9;
-            // 
-            // rPodGyro1
-            // 
-            this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rPodGyro1.Location = new System.Drawing.Point(1111, 0);
-            this.rPodGyro1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodGyro1.Name = "rPodGyro1";
-            this.rPodGyro1.Size = new System.Drawing.Size(438, 427);
-            this.rPodGyro1.TabIndex = 11;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.rPodCurrentGauge2);
@@ -271,38 +214,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1549, 430);
             this.panel2.TabIndex = 13;
-            // 
-            // rPodCurrentGauge2
-            // 
-            this.rPodCurrentGauge2.Location = new System.Drawing.Point(380, 11);
-            this.rPodCurrentGauge2.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodCurrentGauge2.Name = "rPodCurrentGauge2";
-            this.rPodCurrentGauge2.Size = new System.Drawing.Size(250, 229);
-            this.rPodCurrentGauge2.TabIndex = 13;
-            // 
-            // rPodBatteryIndicator1
-            // 
-            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(36, 268);
-            this.rPodBatteryIndicator1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodBatteryIndicator1.Name = "rPodBatteryIndicator1";
-            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(233, 113);
-            this.rPodBatteryIndicator1.TabIndex = 11;
-            // 
-            // rPodCurrentGauge1
-            // 
-            this.rPodCurrentGauge1.Location = new System.Drawing.Point(31, 0);
-            this.rPodCurrentGauge1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodCurrentGauge1.Name = "rPodCurrentGauge1";
-            this.rPodCurrentGauge1.Size = new System.Drawing.Size(238, 240);
-            this.rPodCurrentGauge1.TabIndex = 12;
-            // 
-            // rPodBatteryVoltage1
-            // 
-            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(400, 268);
-            this.rPodBatteryVoltage1.Margin = new System.Windows.Forms.Padding(12);
-            this.rPodBatteryVoltage1.Name = "rPodBatteryVoltage1";
-            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(250, 113);
-            this.rPodBatteryVoltage1.TabIndex = 11;
             // 
             // PowerNodeATab
             // 
@@ -529,11 +440,9 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.tableLayoutPanel2);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.lblSelectedNodeTime);
-            this.panel3.Controls.Add(this.lblSelectedNodeDataLogging);
-            this.panel3.Controls.Add(this.lblSelectedNodeIp);
             this.panel3.Controls.Add(this.listBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(3, 3);
@@ -541,8 +450,60 @@
             this.panel3.Size = new System.Drawing.Size(1549, 254);
             this.panel3.TabIndex = 6;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.btnStartDataLogging, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.testDataIndexTxt, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.testDataType, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnStopDataLogging, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtNewBaud, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.testDataToSendTxt, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnNewBaudRate, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.sendTestData, 2, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(548, 13);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(954, 222);
+            this.tableLayoutPanel1.TabIndex = 13;
+            // 
+            // btnStartDataLogging
+            // 
+            this.btnStartDataLogging.AutoSize = true;
+            this.btnStartDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartDataLogging.Location = new System.Drawing.Point(675, 3);
+            this.btnStartDataLogging.Name = "btnStartDataLogging";
+            this.btnStartDataLogging.Size = new System.Drawing.Size(250, 38);
+            this.btnStartDataLogging.TabIndex = 5;
+            this.btnStartDataLogging.Text = "Start Data Logging";
+            this.btnStartDataLogging.UseVisualStyleBackColor = true;
+            this.btnStartDataLogging.Click += new System.EventHandler(this.btnStartDataLogging_Click);
+            // 
+            // testDataIndexTxt
+            // 
+            this.testDataIndexTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testDataIndexTxt.Location = new System.Drawing.Point(3, 135);
+            this.testDataIndexTxt.Name = "testDataIndexTxt";
+            this.testDataIndexTxt.Size = new System.Drawing.Size(65, 38);
+            this.testDataIndexTxt.TabIndex = 8;
+            this.testDataIndexTxt.Text = "5";
+            // 
             // testDataType
             // 
+            this.testDataType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testDataType.FormattingEnabled = true;
             this.testDataType.Items.AddRange(new object[] {
             "Int 8",
@@ -555,117 +516,107 @@
             "UInt 64",
             "Float",
             "Double"});
-            this.testDataType.Location = new System.Drawing.Point(439, 135);
+            this.testDataType.Location = new System.Drawing.Point(365, 135);
             this.testDataType.Name = "testDataType";
-            this.testDataType.Size = new System.Drawing.Size(180, 21);
+            this.testDataType.Size = new System.Drawing.Size(180, 33);
             this.testDataType.TabIndex = 12;
             this.testDataType.Text = "Data Type";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(221, 176);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Value";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Index";
-            // 
-            // sendTestData
-            // 
-            this.sendTestData.AutoSize = true;
-            this.sendTestData.Location = new System.Drawing.Point(657, 135);
-            this.sendTestData.Name = "sendTestData";
-            this.sendTestData.Size = new System.Drawing.Size(138, 23);
-            this.sendTestData.TabIndex = 9;
-            this.sendTestData.Text = "Set Parameter";
-            this.sendTestData.UseVisualStyleBackColor = true;
-            this.sendTestData.Click += new System.EventHandler(this.sendTestData_Click);
-            // 
-            // testDataIndexTxt
-            // 
-            this.testDataIndexTxt.Location = new System.Drawing.Point(3, 135);
-            this.testDataIndexTxt.Name = "testDataIndexTxt";
-            this.testDataIndexTxt.Size = new System.Drawing.Size(65, 20);
-            this.testDataIndexTxt.TabIndex = 8;
-            this.testDataIndexTxt.Text = "5";
-            // 
-            // testDataToSendTxt
-            // 
-            this.testDataToSendTxt.Location = new System.Drawing.Point(221, 135);
-            this.testDataToSendTxt.Name = "testDataToSendTxt";
-            this.testDataToSendTxt.Size = new System.Drawing.Size(212, 20);
-            this.testDataToSendTxt.TabIndex = 7;
-            this.testDataToSendTxt.Text = "3.14159";
-            // 
-            // txtNewBaud
-            // 
-            this.txtNewBaud.Location = new System.Drawing.Point(439, 3);
-            this.txtNewBaud.Name = "txtNewBaud";
-            this.txtNewBaud.Size = new System.Drawing.Size(143, 20);
-            this.txtNewBaud.TabIndex = 6;
-            this.txtNewBaud.Text = "57600";
             // 
             // btnStopDataLogging
             // 
             this.btnStopDataLogging.AutoSize = true;
-            this.btnStopDataLogging.Location = new System.Drawing.Point(657, 47);
+            this.btnStopDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStopDataLogging.Location = new System.Drawing.Point(675, 47);
             this.btnStopDataLogging.Name = "btnStopDataLogging";
-            this.btnStopDataLogging.Size = new System.Drawing.Size(143, 31);
+            this.btnStopDataLogging.Size = new System.Drawing.Size(250, 38);
             this.btnStopDataLogging.TabIndex = 5;
             this.btnStopDataLogging.Text = "Stop Data Logging";
             this.btnStopDataLogging.UseVisualStyleBackColor = true;
             this.btnStopDataLogging.Click += new System.EventHandler(this.btnStopDataLogging_Click);
             // 
-            // btnStartDataLogging
+            // txtNewBaud
             // 
-            this.btnStartDataLogging.AutoSize = true;
-            this.btnStartDataLogging.Location = new System.Drawing.Point(657, 3);
-            this.btnStartDataLogging.Name = "btnStartDataLogging";
-            this.btnStartDataLogging.Size = new System.Drawing.Size(143, 31);
-            this.btnStartDataLogging.TabIndex = 5;
-            this.btnStartDataLogging.Text = "Start Data Logging";
-            this.btnStartDataLogging.UseVisualStyleBackColor = true;
-            this.btnStartDataLogging.Click += new System.EventHandler(this.btnStartDataLogging_Click);
+            this.txtNewBaud.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewBaud.Location = new System.Drawing.Point(365, 3);
+            this.txtNewBaud.Name = "txtNewBaud";
+            this.txtNewBaud.Size = new System.Drawing.Size(143, 38);
+            this.txtNewBaud.TabIndex = 6;
+            this.txtNewBaud.Text = "57600";
+            // 
+            // testDataToSendTxt
+            // 
+            this.testDataToSendTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testDataToSendTxt.Location = new System.Drawing.Point(89, 135);
+            this.testDataToSendTxt.Name = "testDataToSendTxt";
+            this.testDataToSendTxt.Size = new System.Drawing.Size(212, 38);
+            this.testDataToSendTxt.TabIndex = 7;
+            this.testDataToSendTxt.Text = "3.14159";
             // 
             // btnNewBaudRate
             // 
-            this.btnNewBaudRate.Location = new System.Drawing.Point(439, 47);
+            this.btnNewBaudRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewBaudRate.Location = new System.Drawing.Point(365, 47);
             this.btnNewBaudRate.Name = "btnNewBaudRate";
-            this.btnNewBaudRate.Size = new System.Drawing.Size(143, 31);
+            this.btnNewBaudRate.Size = new System.Drawing.Size(304, 38);
             this.btnNewBaudRate.TabIndex = 5;
             this.btnNewBaudRate.Text = "Change UART Baud";
             this.btnNewBaudRate.UseVisualStyleBackColor = true;
             this.btnNewBaudRate.Click += new System.EventHandler(this.btnNewBaudRate_Click);
             // 
+            // sendTestData
+            // 
+            this.sendTestData.AutoSize = true;
+            this.sendTestData.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendTestData.Location = new System.Drawing.Point(365, 179);
+            this.sendTestData.Name = "sendTestData";
+            this.sendTestData.Size = new System.Drawing.Size(198, 40);
+            this.sendTestData.TabIndex = 9;
+            this.sendTestData.Text = "Set Parameter";
+            this.sendTestData.UseVisualStyleBackColor = true;
+            this.sendTestData.Click += new System.EventHandler(this.sendTestData_Click);
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 3);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(89, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 20);
+            this.textBox1.Size = new System.Drawing.Size(255, 38);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "New Node Name";
             // 
             // button3
             // 
             this.button3.AutoSize = true;
-            this.button3.Location = new System.Drawing.Point(221, 47);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(89, 47);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 31);
+            this.button3.Size = new System.Drawing.Size(270, 38);
             this.button3.TabIndex = 5;
             this.button3.Text = "Change Node Name";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 31);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Index";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(89, 176);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 31);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Value";
             // 
             // label7
             // 
@@ -681,39 +632,47 @@
             // lblSelectedNodeTime
             // 
             this.lblSelectedNodeTime.AutoSize = true;
+            this.lblSelectedNodeTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectedNodeTime.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeTime.Location = new System.Drawing.Point(380, 106);
+            this.lblSelectedNodeTime.Location = new System.Drawing.Point(3, 70);
             this.lblSelectedNodeTime.Name = "lblSelectedNodeTime";
-            this.lblSelectedNodeTime.Size = new System.Drawing.Size(30, 13);
+            this.lblSelectedNodeTime.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeTime.Size = new System.Drawing.Size(59, 35);
             this.lblSelectedNodeTime.TabIndex = 4;
             this.lblSelectedNodeTime.Text = "Time";
             // 
             // lblSelectedNodeDataLogging
             // 
             this.lblSelectedNodeDataLogging.AutoSize = true;
+            this.lblSelectedNodeDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectedNodeDataLogging.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeDataLogging.Location = new System.Drawing.Point(380, 76);
+            this.lblSelectedNodeDataLogging.Location = new System.Drawing.Point(3, 35);
             this.lblSelectedNodeDataLogging.Name = "lblSelectedNodeDataLogging";
-            this.lblSelectedNodeDataLogging.Size = new System.Drawing.Size(65, 13);
+            this.lblSelectedNodeDataLogging.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeDataLogging.Size = new System.Drawing.Size(130, 35);
             this.lblSelectedNodeDataLogging.TabIndex = 4;
             this.lblSelectedNodeDataLogging.Text = "data logging";
             // 
             // lblSelectedNodeIp
             // 
             this.lblSelectedNodeIp.AutoSize = true;
+            this.lblSelectedNodeIp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectedNodeIp.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeIp.Location = new System.Drawing.Point(380, 50);
+            this.lblSelectedNodeIp.Location = new System.Drawing.Point(3, 0);
             this.lblSelectedNodeIp.Name = "lblSelectedNodeIp";
-            this.lblSelectedNodeIp.Size = new System.Drawing.Size(17, 13);
+            this.lblSelectedNodeIp.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeIp.Size = new System.Drawing.Size(31, 35);
             this.lblSelectedNodeIp.TabIndex = 4;
             this.lblSelectedNodeIp.Text = "IP";
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(29, 51);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(222, 173);
+            this.listBox1.Size = new System.Drawing.Size(222, 179);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -739,15 +698,6 @@
             this.testTab.TabIndex = 6;
             this.testTab.Text = "TEST";
             // 
-            // testingTabPage1
-            // 
-            this.testingTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.testingTabPage1.Location = new System.Drawing.Point(14, 3);
-            this.testingTabPage1.Margin = new System.Windows.Forms.Padding(6);
-            this.testingTabPage1.Name = "testingTabPage1";
-            this.testingTabPage1.Size = new System.Drawing.Size(1350, 866);
-            this.testingTabPage1.TabIndex = 0;
-            // 
             // brakesTab
             // 
             this.brakesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
@@ -757,15 +707,6 @@
             this.brakesTab.Size = new System.Drawing.Size(1555, 863);
             this.brakesTab.TabIndex = 7;
             this.brakesTab.Text = "Brakes";
-            // 
-            // brakesTabPage1
-            // 
-            this.brakesTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.brakesTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.brakesTabPage1.Location = new System.Drawing.Point(0, 0);
-            this.brakesTabPage1.Name = "brakesTabPage1";
-            this.brakesTabPage1.Size = new System.Drawing.Size(1555, 863);
-            this.brakesTabPage1.TabIndex = 0;
             // 
             // LGUTab
             // 
@@ -777,15 +718,6 @@
             this.LGUTab.TabIndex = 8;
             this.LGUTab.Text = "LGU";
             // 
-            // lguTabPage1
-            // 
-            this.lguTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.lguTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lguTabPage1.Location = new System.Drawing.Point(0, 0);
-            this.lguTabPage1.Name = "lguTabPage1";
-            this.lguTabPage1.Size = new System.Drawing.Size(1555, 863);
-            this.lguTabPage1.TabIndex = 0;
-            // 
             // FCUTab
             // 
             this.FCUTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
@@ -796,6 +728,141 @@
             this.FCUTab.TabIndex = 9;
             this.FCUTab.Text = "FCU";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeIp, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeDataLogging, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeTime, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(278, 51);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 173);
+            this.tableLayoutPanel2.TabIndex = 14;
+            // 
+            // podStateControl2
+            // 
+            this.podStateControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.podStateControl2.HE1Height = 12.23D;
+            this.podStateControl2.HE1Percent = 0.8D;
+            this.podStateControl2.HE1Power = 3000D;
+            this.podStateControl2.HE1RPM = 3000D;
+            this.podStateControl2.HE2Height = 12.2D;
+            this.podStateControl2.HE2Percent = 0.8D;
+            this.podStateControl2.HE2Power = 3000D;
+            this.podStateControl2.HE2RPM = 3000D;
+            this.podStateControl2.HE3Height = 12.2D;
+            this.podStateControl2.HE3Percent = 0.8D;
+            this.podStateControl2.HE3Power = 3000D;
+            this.podStateControl2.HE3RPM = 3000D;
+            this.podStateControl2.HE4Height = 12.2D;
+            this.podStateControl2.HE4Percent = 0.8D;
+            this.podStateControl2.HE4Power = 3000D;
+            this.podStateControl2.HE4RPM = 3000D;
+            this.podStateControl2.HE5Height = 12.2D;
+            this.podStateControl2.HE5Percent = 0.8D;
+            this.podStateControl2.HE5Power = 3000D;
+            this.podStateControl2.HE5RPM = 3000D;
+            this.podStateControl2.HE6Height = 12.2D;
+            this.podStateControl2.HE6Percent = 0.8D;
+            this.podStateControl2.HE6Power = 3000D;
+            this.podStateControl2.HE6RPM = 3000D;
+            this.podStateControl2.HE7Height = 12.2D;
+            this.podStateControl2.HE7Percent = 0.8D;
+            this.podStateControl2.HE7Power = 3000D;
+            this.podStateControl2.HE7RPM = 3000D;
+            this.podStateControl2.HE8Height = 12.2D;
+            this.podStateControl2.HE8Percent = 0.8D;
+            this.podStateControl2.HE8Power = 3000D;
+            this.podStateControl2.HE8RPM = 3000D;
+            this.podStateControl2.Location = new System.Drawing.Point(512, 0);
+            this.podStateControl2.Margin = new System.Windows.Forms.Padding(12);
+            this.podStateControl2.Name = "podStateControl2";
+            this.podStateControl2.Size = new System.Drawing.Size(599, 427);
+            this.podStateControl2.TabIndex = 0;
+            // 
+            // rPodSpeedometer1
+            // 
+            this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
+            this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodSpeedometer1.Name = "rPodSpeedometer1";
+            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 427);
+            this.rPodSpeedometer1.TabIndex = 9;
+            // 
+            // rPodGyro1
+            // 
+            this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rPodGyro1.Location = new System.Drawing.Point(1111, 0);
+            this.rPodGyro1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodGyro1.Name = "rPodGyro1";
+            this.rPodGyro1.Size = new System.Drawing.Size(438, 427);
+            this.rPodGyro1.TabIndex = 11;
+            // 
+            // rPodCurrentGauge2
+            // 
+            this.rPodCurrentGauge2.Location = new System.Drawing.Point(380, 11);
+            this.rPodCurrentGauge2.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodCurrentGauge2.Name = "rPodCurrentGauge2";
+            this.rPodCurrentGauge2.Size = new System.Drawing.Size(250, 229);
+            this.rPodCurrentGauge2.TabIndex = 13;
+            // 
+            // rPodBatteryIndicator1
+            // 
+            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(36, 268);
+            this.rPodBatteryIndicator1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodBatteryIndicator1.Name = "rPodBatteryIndicator1";
+            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(233, 113);
+            this.rPodBatteryIndicator1.TabIndex = 11;
+            // 
+            // rPodCurrentGauge1
+            // 
+            this.rPodCurrentGauge1.Location = new System.Drawing.Point(31, 0);
+            this.rPodCurrentGauge1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodCurrentGauge1.Name = "rPodCurrentGauge1";
+            this.rPodCurrentGauge1.Size = new System.Drawing.Size(238, 240);
+            this.rPodCurrentGauge1.TabIndex = 12;
+            // 
+            // rPodBatteryVoltage1
+            // 
+            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(400, 268);
+            this.rPodBatteryVoltage1.Margin = new System.Windows.Forms.Padding(12);
+            this.rPodBatteryVoltage1.Name = "rPodBatteryVoltage1";
+            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(250, 113);
+            this.rPodBatteryVoltage1.TabIndex = 11;
+            // 
+            // testingTabPage1
+            // 
+            this.testingTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.testingTabPage1.Location = new System.Drawing.Point(14, 3);
+            this.testingTabPage1.Margin = new System.Windows.Forms.Padding(6);
+            this.testingTabPage1.Name = "testingTabPage1";
+            this.testingTabPage1.Size = new System.Drawing.Size(1350, 866);
+            this.testingTabPage1.TabIndex = 0;
+            // 
+            // brakesTabPage1
+            // 
+            this.brakesTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.brakesTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.brakesTabPage1.Location = new System.Drawing.Point(0, 0);
+            this.brakesTabPage1.Name = "brakesTabPage1";
+            this.brakesTabPage1.Size = new System.Drawing.Size(1555, 863);
+            this.brakesTabPage1.TabIndex = 0;
+            // 
+            // lguTabPage1
+            // 
+            this.lguTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.lguTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lguTabPage1.Location = new System.Drawing.Point(0, 0);
+            this.lguTabPage1.Name = "lguTabPage1";
+            this.lguTabPage1.Size = new System.Drawing.Size(1555, 863);
+            this.lguTabPage1.TabIndex = 0;
+            // 
             // fcu1
             // 
             this.fcu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
@@ -804,36 +871,6 @@
             this.fcu1.Name = "fcu1";
             this.fcu1.Size = new System.Drawing.Size(1555, 863);
             this.fcu1.TabIndex = 0;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.btnStartDataLogging, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.testDataIndexTxt, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.testDataType, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnStopDataLogging, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtNewBaud, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.testDataToSendTxt, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnNewBaudRate, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.sendTestData, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(548, 13);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(873, 222);
-            this.tableLayoutPanel1.TabIndex = 13;
             // 
             // Form1
             // 
@@ -862,12 +899,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.testTab.ResumeLayout(false);
             this.brakesTab.ResumeLayout(false);
             this.LGUTab.ResumeLayout(false);
             this.FCUTab.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -937,6 +976,7 @@
         private TabPanels.BrakesTabPage brakesTabPage1;
         private TabPanels.FCU fcu1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
 
