@@ -88,8 +88,8 @@
             this.testingTabPage1 = new rLoop_Ground_Station.TabPanels.TestingTabPage();
             this.brakesTab = new System.Windows.Forms.TabPage();
             this.LGUTab = new System.Windows.Forms.TabPage();
-            this.FCUTab = new System.Windows.Forms.TabPage();
             this.lguTabPage1 = new rLoop_Ground_Station.TabPanels.LGUTabPage();
+            this.FCUTab = new System.Windows.Forms.TabPage();
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -169,7 +169,7 @@
             this.customTabControl1.Location = new System.Drawing.Point(12, 12);
             this.customTabControl1.Name = "customTabControl1";
             this.customTabControl1.SelectedIndex = 0;
-            this.customTabControl1.Size = new System.Drawing.Size(1413, 826);
+            this.customTabControl1.Size = new System.Drawing.Size(1563, 892);
             this.customTabControl1.TabIndex = 13;
             // 
             // OverviewTab
@@ -764,9 +764,18 @@
             this.LGUTab.Controls.Add(this.lguTabPage1);
             this.LGUTab.Location = new System.Drawing.Point(4, 27);
             this.LGUTab.Name = "LGUTab";
-            this.LGUTab.Size = new System.Drawing.Size(1405, 795);
+            this.LGUTab.Size = new System.Drawing.Size(1555, 861);
             this.LGUTab.TabIndex = 8;
             this.LGUTab.Text = "LGU";
+            // 
+            // lguTabPage1
+            // 
+            this.lguTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.lguTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lguTabPage1.Location = new System.Drawing.Point(0, 0);
+            this.lguTabPage1.Name = "lguTabPage1";
+            this.lguTabPage1.Size = new System.Drawing.Size(1555, 861);
+            this.lguTabPage1.TabIndex = 0;
             // 
             // FCUTab
             // 
@@ -777,20 +786,12 @@
             this.FCUTab.TabIndex = 9;
             this.FCUTab.Text = "FCU";
             // 
-            // lguTabPage1
-            // 
-            this.lguTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.lguTabPage1.Location = new System.Drawing.Point(38, 25);
-            this.lguTabPage1.Name = "lguTabPage1";
-            this.lguTabPage1.Size = new System.Drawing.Size(987, 721);
-            this.lguTabPage1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1452, 803);
+            this.ClientSize = new System.Drawing.Size(1587, 916);
             this.Controls.Add(this.customTabControl1);
             this.KeyPreview = true;
             this.Name = "Form1";
