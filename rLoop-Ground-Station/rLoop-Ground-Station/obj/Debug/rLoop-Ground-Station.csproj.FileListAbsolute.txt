@@ -138,3 +138,4 @@ C:\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Deb
 C:\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.csproj.GenerateResource.Cache
 C:\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.exe
 C:\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop-Ground-Station.pdb
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.TabPanels.LGUTabPage.resources

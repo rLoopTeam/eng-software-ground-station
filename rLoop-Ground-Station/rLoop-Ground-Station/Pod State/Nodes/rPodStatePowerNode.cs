@@ -43,11 +43,32 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
             }
         }
 
+        public bool SendPodSafe()
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0xA000;
+            p.Data = (UInt32)(0xABCD1298);
+
+            paramsToSend.Add(p);
+
+            DataParameter p2 = new DataParameter();
+            p2.Index = 0xA001;
+            p2.Data = (UInt32)(0x00000000);
+
+            paramsToSend.Add(p2);
+
+            return SendCommand(paramsToSend);
+        }
+
         //Should always line up with: http://confluence.rloop.org/display/SD/Power+Node+Telemetry
         public override void ProcessParameter(List<DataParameter> parameterList)
         {
             int batteryCellRowIndex;
             int batteryCellColumnIndex;
+
+            LastHeard = DateTime.Now;
 
             foreach (DataParameter p in parameterList)
             {

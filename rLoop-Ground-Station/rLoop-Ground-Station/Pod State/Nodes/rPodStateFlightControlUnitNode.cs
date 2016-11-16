@@ -17,6 +17,21 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float Speed;
         public float Acceleration;
 
+        /// <summary>
+        /// left eddy brakes screw position in mm
+        /// </summary>
+        public float EBLeftScrewPosition;
+
+        /// <summary>
+        /// right eddy brakes screw position in mm
+        /// </summary>
+        public float EBRightScrewPosition;
+
+        /// <summary>
+        /// left eddy brake, exend limit switch. 0 = open, 1 = closed
+        /// </summary>
+        
+
         public float EBLeftLimitSwitch;
         public float EBRightLimitSwitch;
         public float EBLeftMLP;
@@ -31,13 +46,63 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float IBDS1Value;
         public float IBDS2Value;
 
+
+
         public rPodStateFlightControlUnitNode()
         {
+        }
+
+        /// <summary>
+        /// Set the brake distance from the I-Beams
+        /// </summary>
+        /// <param name="dist">Distance in mm, 25 - 0.</param>
+        /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
+        public bool setIBeamDistance(float dist)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            if (dist < 0 || dist < 25)
+                return false;
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5100;
+            p.Data = dist;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Brake - Left - Set micro-steps per revolution
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+        public bool SendPodStop()
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5000;
+            p.Data = (UInt32)(0x4567A0B1);
+
+            paramsToSend.Add(p);
+
+            DataParameter p2 = new DataParameter();
+            p2.Index = 0xA001;
+            p2.Data = (UInt32)(0x00000000);
+
+            paramsToSend.Add(p2);
+
+            return SendCommand(paramsToSend);
         }
 
         //Should always line up with: http://confluence.rloop.org/display/SD/FCU+Node+Telemetry
         public override void ProcessParameter(List<DataParameter> parameterList)
         {
+            LastHeard = DateTime.Now;
+
             foreach (DataParameter p in parameterList)
             {
                 if (p.Index == 0 && p.Data is float)

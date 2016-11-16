@@ -30,7 +30,6 @@ namespace rLoop_Ground_Station
         String stateRowDischarge;
         String stateRowVoltage;
 
-        rPodNetworking net;
         Label[,] lblCellRowsTempPositiveTabs;
         Label[,] lblCellRowsTempNegativeTabs;
         Label[] lblCellRowsTransistors;
@@ -39,7 +38,6 @@ namespace rLoop_Ground_Station
         public Form1()
         {
             InitializeComponent();
-            net = new rPodNetworking();
 
             // arrays to store all the labels in the grid
             lblCellRowsTempPositiveTabs = new Label[18, 6];
@@ -63,30 +61,25 @@ namespace rLoop_Ground_Station
             switch (current.Name)
             {
                 case "OverviewTab":
-                    HEguiDemo.Enabled = true;
                     UpdateNodeList.Enabled = false;
                     UpdateDGVTimer.Enabled = false;
                     BatteryPackAStatusTab.Enabled = false;
                     break;
                 case "PowerNodeATab":
-                    HEguiDemo.Enabled = false;
                     UpdateNodeList.Enabled = false;
                     UpdateDGVTimer.Enabled = false;
                     BatteryPackAStatusTab.Enabled = true;
                     break;
                 case "NodeUtilitiesTab":
-                    HEguiDemo.Enabled = false;
                     UpdateNodeList.Enabled = true;
                     UpdateDGVTimer.Enabled = true;
                     BatteryPackAStatusTab.Enabled = false;
                     break;
                 default:
-                    HEguiDemo.Enabled = false;
                     UpdateNodeList.Enabled = false;
                     UpdateDGVTimer.Enabled = false;
                     BatteryPackAStatusTab.Enabled = false;
                     break;
-
             }
         }
 
@@ -203,7 +196,7 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Choose a valid file.");
                 return;
             }
-            net.uploadFile(lblSelectedNodeIp.Text, "root", "MoreCowbell", openFileDialog1.FileName, openFileDialog1.SafeFileName);
+            rPodNetworking.uploadFile(lblSelectedNodeIp.Text, "root", "MoreCowbell", openFileDialog1.FileName, openFileDialog1.SafeFileName);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -265,7 +258,7 @@ namespace rLoop_Ground_Station
                 return;
             }
             string node = listBox1.Items[listBox1.SelectedIndex].ToString();
-            LatestNodeDataNode nodeData = net.LatestNodeData.FirstOrDefault(x => (x.NodeName.Substring(0,1).ToUpper() + x.NodeName.Substring(1) + " Node") == node);
+            LatestNodeDataNode nodeData = rPodNetworking.LatestNodeData.FirstOrDefault(x => (x.NodeName.Substring(0,1).ToUpper() + x.NodeName.Substring(1) + " Node") == node);
             if (nodeData != null)
             {
                 foreach(NodeDataPoint p in nodeData.DataValues)
@@ -286,7 +279,7 @@ namespace rLoop_Ground_Station
                         dataGridView1.Rows[row].Cells[0].Value = p.Index.ToString();
                         dataGridView1.Rows[row].Cells[1].Value = p.Value;
 
-                        nodeTypes t = net.nodeParameterData.NodeTypes.FirstOrDefault(x => node == (x.Name.Substring(0, 1).ToUpper() + x.Name.Substring(1) + " Node"));
+                        nodeTypes t = rPodNetworking.nodeParameterData.NodeTypes.FirstOrDefault(x => node == (x.Name.Substring(0, 1).ToUpper() + x.Name.Substring(1) + " Node"));
                         if(t != null)
                         {
                             NodeParameterDefinition def = t.ParameterDefs.FirstOrDefault(x => x.Index == p.Index);
@@ -302,94 +295,10 @@ namespace rLoop_Ground_Station
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            podStateControl2.HE1Height = trackBar1.Value;
-            podStateControl2.HE2Height = trackBar1.Value;
-            podStateControl2.HE3Height = trackBar1.Value;
-            podStateControl2.HE4Height = trackBar1.Value;
-            podStateControl2.HE5Height = trackBar1.Value;
-            podStateControl2.HE6Height = trackBar1.Value;
-            podStateControl2.HE7Height = trackBar1.Value;
-            podStateControl2.HE8Height = trackBar1.Value;
-        }
-
-        private void trackBar4_Scroll(object sender, EventArgs e)
-        {
-            podStateControl2.HE1Percent = trackBar4.Value / 100.0;
-            podStateControl2.HE2Percent = trackBar4.Value / 100.0;
-            podStateControl2.HE3Percent = trackBar4.Value / 100.0;
-            podStateControl2.HE4Percent = trackBar4.Value / 100.0;
-            podStateControl2.HE5Percent = trackBar4.Value / 100.0;
-            podStateControl2.HE6Percent = trackBar4.Value / 100.0;
-            podStateControl2.HE7Percent = trackBar4.Value / 100.0;
-            podStateControl2.HE8Percent = trackBar4.Value / 100.0;
-
-        }
-
-        private void trackBar2_Scroll(object sender, EventArgs e)
-        {
-            podStateControl2.HE1RPM = trackBar2.Value;
-            podStateControl2.HE2RPM = trackBar2.Value;
-            podStateControl2.HE3RPM = trackBar2.Value;
-            podStateControl2.HE4RPM = trackBar2.Value;
-            podStateControl2.HE5RPM = trackBar2.Value;
-            podStateControl2.HE6RPM = trackBar2.Value;
-            podStateControl2.HE7RPM = trackBar2.Value;
-            podStateControl2.HE8RPM = trackBar2.Value;
-        }
-
-        private void trackBar3_Scroll(object sender, EventArgs e)
-        {
-            podStateControl2.HE1Power = trackBar3.Value;
-            podStateControl2.HE2Power = trackBar3.Value;
-            podStateControl2.HE3Power = trackBar3.Value;
-            podStateControl2.HE4Power = trackBar3.Value;
-            podStateControl2.HE5Power = trackBar3.Value;
-            podStateControl2.HE6Power = trackBar3.Value;
-            podStateControl2.HE7Power = trackBar3.Value;
-            podStateControl2.HE8Power = trackBar3.Value;
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            double newP = (podStateControl2.HE1Percent + .01) ;
-            if(newP > 1)
-                newP = 0;
-            podStateControl2.HE1Percent = newP;
-            podStateControl2.HE2Percent = newP;
-            podStateControl2.HE3Percent = newP;
-            podStateControl2.HE4Percent = newP;
-            podStateControl2.HE5Percent = newP;
-            podStateControl2.HE6Percent = newP;
-            podStateControl2.HE7Percent = newP;
-            podStateControl2.HE8Percent = newP;
-        }
-
-        private void Form1_ResizeEnd(object sender, EventArgs e)
-        {
-
-        }
-
-        private void trackBar5_Scroll(object sender, EventArgs e)
-        {
-            rPodSpeedometer1.currentSpeed = trackBar5.Value;
-            rPodSpeedometer1.Refresh();
-        }
-
-        private void rLoopTabControl_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            net.IsRunning = false;
+            rPodNetworking.IsRunning = false;
             rPodNodeDiscovery.IsRunning = false;
         }
 
@@ -406,8 +315,6 @@ namespace rLoop_Ground_Station
                 if (Form1.ActiveForm != null)
                 {
                     customTabControl1.Size = new Size(Form1.ActiveForm.Width - 28, Form1.ActiveForm.Height - 50);
-                    float fontSize = (float)(7.87 * getScalingFactor());
-                    customTabControl1.Font = new Font("Microsoft Sans Serif",fontSize);
                 }
                 customTabControl1.Location = new Point(5, 5);
             }
@@ -424,18 +331,9 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Choose a node from the list.");
                 return;
             }
-            net.changeNodeName(lblSelectedNodeIp.Text, "root", "MoreCowbell", textBox1.Text);
+            rPodNetworking.changeNodeName(lblSelectedNodeIp.Text, "root", "MoreCowbell", textBox1.Text);
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void rPodBatteryIndicator1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void sendTestData_Click(object sender, EventArgs e)
         {
@@ -509,7 +407,7 @@ namespace rLoop_Ground_Station
 
             paramsToSend.Add(p);
 
-            if (!net.setParameters(listBox1.SelectedItem.ToString(), paramsToSend))
+            if (!rPodNetworking.setParameters(listBox1.SelectedItem.ToString(), paramsToSend))
                 MessageBox.Show("There was an error sending the message.");
 
             return;
@@ -518,10 +416,6 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Coud not parse one of the fields.");
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
 
         private void BatteryPackAStatusTab_Tick(object sender, EventArgs e)
@@ -558,11 +452,7 @@ namespace rLoop_Ground_Station
                     lblCellRowsVoltages[y].Text = stateRowVoltage;
             }
         }
-        
-        private void label10_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnNewBaudRate_Click(object sender, EventArgs e)
         {
@@ -573,7 +463,7 @@ namespace rLoop_Ground_Station
                     MessageBox.Show("Choose a node from the list.");
                     return;
                 }
-                net.changeBaudrate(lblSelectedNodeIp.Text, "root", "MoreCowbell", txtNewBaud.Text);
+                rPodNetworking.changeBaudrate(lblSelectedNodeIp.Text, "root", "MoreCowbell", txtNewBaud.Text);
             }
             else
             {
@@ -588,7 +478,7 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Choose a node from the list.");
                 return;
             }
-            net.startNodeDataLogging(lblSelectedNodeIp.Text, "root", "MoreCowbell");
+            rPodNetworking.startNodeDataLogging(lblSelectedNodeIp.Text, "root", "MoreCowbell");
         }
 
         private void btnStopDataLogging_Click(object sender, EventArgs e)
@@ -598,7 +488,7 @@ namespace rLoop_Ground_Station
                 MessageBox.Show("Choose a node from the list.");
                 return;
             }
-            net.stopNodeDataLogging(lblSelectedNodeIp.Text, "root", "MoreCowbell");
+            rPodNetworking.stopNodeDataLogging(lblSelectedNodeIp.Text, "root", "MoreCowbell");
         }
 
         private void tmrUpdateNodeUtilStats_Tick(object sender, EventArgs e)
@@ -640,90 +530,26 @@ namespace rLoop_Ground_Station
                 customTabControl1.SelectedIndex = 6;
         }
 
-        private void btnAllPodStop_Click(object sender, EventArgs e)
-		{
-		}
 
-       
 
-        private void label18_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
 
-        }
+            DataParameter p = new DataParameter();
+            p.Index = 10000;
+            p.Data = (UInt64)(0x3141592653589793);
 
-        private void testTab_Click(object sender, EventArgs e)
-        {
+            paramsToSend.Add(p);
 
-        }
+            DataParameter p2 = new DataParameter();
+            p2.Index = 10001;
+            p2.Data = (byte)(1);
 
-        private void lblEBRightDistanceBeam_Click(object sender, EventArgs e)
-        {
+            paramsToSend.Add(p2);
 
-        }
-
-        private void lblEBLeftDistanceBeam_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label74_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label75_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAcceleration_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSpeed_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblIBDS2Value_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblIBDS1Value_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblHDS4Value_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void acc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label38_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label35_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-
+            if (!rPodNetworking.setParameters(listBox1.SelectedItem.ToString(), paramsToSend))
+                MessageBox.Show("There was an error sending the message.");
         }
     }
 }

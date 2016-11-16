@@ -24,6 +24,8 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         //Should always line up with: http://confluence.rloop.org/display/SD/FCU+Node+Telemetry
         public override void ProcessParameter(List<DataParameter> parameterList)
         {
+            LastHeard = DateTime.Now;
+
             foreach (DataParameter p in parameterList)
             {
                 if (p.Index == 0 && p.Data is float)

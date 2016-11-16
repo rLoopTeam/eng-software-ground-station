@@ -110,7 +110,8 @@ namespace rLoop_Ground_Station
                     if (ActiveNodes.Contains(n) == false)
                     {
                         ActiveNodes.Add(n);
-                        FoundNewNode(n);
+                        if(FoundNewNode != null)
+                            FoundNewNode(n);
                     }
                     else
                     {

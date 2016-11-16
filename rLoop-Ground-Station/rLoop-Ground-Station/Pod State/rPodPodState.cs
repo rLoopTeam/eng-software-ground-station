@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using rLoop_Ground_Station.Pod_State.Nodes;
+using System.Threading;
 
 /*
  * This is the top class for accessing the state of the Pod.
@@ -26,13 +27,10 @@ namespace rLoop_Ground_Station
             rPodEmergencyStopState}; //Uh-oh
         static public List<rPodStateNodeStateI> Nodes;
         static public rPodPodStateEnum rPodPodState_RunMode;
-        static public rPodStateCommandControlNode CommandNode;
-        static public rPodStateStepperNode StepperNode;
         static public rPodStatePowerNode PowerNodeA;
         static public rPodStatePowerNode PowerNodeB;
         static public rPodStateFlightControlUnitNode FlightControlUnitNode;
         static public rPodStateLandingGearUnitNode LandingGearUnitNode;
-        //static public rPodStateBrakeNode BrakeNode;
 
         static rPodPodState()
         {
@@ -40,29 +38,21 @@ namespace rLoop_Ground_Station
             //in other areas of code instead of crashing here
 
             Nodes = new List<rPodStateNodeStateI>();
-            CommandNode = new rPodStateCommandControlNode();
-            StepperNode = new rPodStateStepperNode();
+
             PowerNodeA = new rPodStatePowerNode();
             PowerNodeB = new rPodStatePowerNode();
             FlightControlUnitNode = new rPodStateFlightControlUnitNode();
             LandingGearUnitNode = new rPodStateLandingGearUnitNode();
-            //BrakeNode = new rPodStateBrakeNode();
 
-            CommandNode.NodeName = "Command";
-            StepperNode.NodeName = "Stepper";
             PowerNodeA.NodeName = "PowerA";
             PowerNodeB.NodeName = "PowerB";
             FlightControlUnitNode.NodeName = "FlightControlUnit";
             LandingGearUnitNode.NodeName = "LandingGearUnit";
-            //BrakeNode.NodeName = "BrakeNode";
 
-            Nodes.Add(CommandNode);
-            Nodes.Add(StepperNode);
             Nodes.Add(PowerNodeA);
             Nodes.Add(PowerNodeB);
             Nodes.Add(FlightControlUnitNode);
             Nodes.Add(LandingGearUnitNode);
-            //Nodes.Add(BrakeNode);
         }
     }
 }

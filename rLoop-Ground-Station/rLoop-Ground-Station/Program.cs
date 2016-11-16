@@ -19,6 +19,7 @@ namespace rLoop_Ground_Station
         [STAThread]
         static void Main()
         {
+            rPodNodeDiscovery.FoundNewNode += new FoundNewNodeHandler(rPodNetworking.NewNodeDetected);
             Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             SetProcessDPIAware();
             Application.EnableVisualStyles();

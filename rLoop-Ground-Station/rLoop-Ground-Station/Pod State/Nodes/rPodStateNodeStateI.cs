@@ -13,5 +13,12 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public string NodeName;
         public bool IsAlive;
         public DateTime LastHeard;
+        public bool PodStopped;
+
+        public bool SendCommand(List<DataParameter> commands)
+        {
+            return rPodNetworking.setParameters(NodeName, commands);
+        }
+
     }
 }

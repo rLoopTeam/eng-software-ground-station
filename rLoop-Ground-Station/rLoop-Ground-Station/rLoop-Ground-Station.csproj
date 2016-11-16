@@ -53,12 +53,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pod State\Nodes\rPodStateBrakeNode.cs" />
-    <Compile Include="Pod State\Nodes\rPodStateCommandNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStateLandingControlUnitNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStateFlightControlUnitNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStateNodeStateI.cs" />
-    <Compile Include="Pod State\Nodes\rPodStateStepperNode.cs" />
     <Compile Include="Pod State\Nodes\rPodStatePowerNode.cs" />
     <Compile Include="rPod GUI Elements\PodStateControl.cs">
       <SubType>UserControl</SubType>
@@ -102,6 +99,12 @@
       <DependentUpon>rPodSpeedometer.cs</DependentUpon>
     </Compile>
     <Compile Include="Pod State\rPodPodState.cs" />
+    <Compile Include="TabPanels\LGUTabPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPanels\LGUTabPage.Designer.cs">
+      <DependentUpon>LGUTabPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="TabPanels\TestingTabPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rPod GUI Elements\rPodSpeedometer.resx">
       <DependentUpon>rPodSpeedometer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPanels\LGUTabPage.resx">
+      <DependentUpon>LGUTabPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPanels\TestingTabPage.resx">
       <DependentUpon>TestingTabPage.cs</DependentUpon>

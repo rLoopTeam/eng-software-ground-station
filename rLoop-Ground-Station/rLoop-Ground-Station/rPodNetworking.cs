@@ -23,46 +23,44 @@ namespace rLoop_Ground_Station
     //The top class to handle data flow
     //between the ground station and the pod
     //Could make this class static
-    public class rPodNetworking
+    public static class rPodNetworking
     {
         //constains metadata on the various parameters from the nodes
-        public nodeParameterDescription nodeParameterData;
+        public static nodeParameterDescription nodeParameterData;
 
         //The last frames received from the nodese
         //Contains one entry per nod
-        public List<LatestNodeDataNode> LatestNodeData;
+        public static List<LatestNodeDataNode> LatestNodeData;
 
         //Used to shutdown the processing threads
-        bool _IsRunning;
+        static bool _IsRunning;
 
         //This kills everything, should be fixed to pause it
-        public bool IsRunning { set { _IsRunning = value; if (value == false) foreach (Thread t in runningThreads) t.Abort(); } get { return _IsRunning; } }
+        public static bool IsRunning { set { _IsRunning = value; if (value == false) foreach (Thread t in runningThreads) t.Abort(); } get { return _IsRunning; } }
 
         //halts any discovery actions temporarily
-        public bool Paused = false;
+        public static bool Paused = false;
 
         //The running threads processing ZMQ messages
-        public List<Thread> runningThreads;
+        public static List<Thread> runningThreads;
 
         //Checks if we've received any data recently
         //and tries to reconnect if not
-        public System.Timers.Timer ZMQKeepAliveTimer;
+        public static System.Timers.Timer ZMQKeepAliveTimer;
 
-        public rPodNetworking()
+        static rPodNetworking()
         {
             IsRunning = true;
             nodeParameterData = new nodeParameterDescription();
             runningThreads = new List<Thread>();
-            ZMQTelemetryProcessor.NetworkClass = this;
             LatestNodeData = new List<LatestNodeDataNode>();
-            rPodNodeDiscovery.FoundNewNode += new FoundNewNodeHandler(NewNodeDetected);
             ZMQKeepAliveTimer = new System.Timers.Timer(1000);
             ZMQKeepAliveTimer.Elapsed += ZMQKeepAliveTimerCallback;
             ZMQKeepAliveTimer.Enabled = true;
             ZMQKeepAliveTimer.AutoReset = true;
         }
 
-        public void ZMQKeepAliveTimerCallback(Object source, ElapsedEventArgs e)
+        public static void ZMQKeepAliveTimerCallback(Object source, ElapsedEventArgs e)
         {
             if (Paused)
                 return;
@@ -83,7 +81,7 @@ namespace rLoop_Ground_Station
         }
 
         //Called when a new node is detected on the network
-        public void NewNodeDetected(rPodNetworkNode node)
+        public static void NewNodeDetected(rPodNetworkNode node)
         {
             ZMQTelemetryProcessor processor = new ZMQTelemetryProcessor();
             processor.NetworkNode = node;
@@ -96,7 +94,7 @@ namespace rLoop_Ground_Station
         }
 
         //Called every time a ZMQ telemetry message is received
-        public void ProcessZMQTelemetryFrame(byte[] frame, string nodeName)
+        public static void ProcessZMQTelemetryFrame(byte[] frame, string nodeName)
         {
             rPodI2CRX rxProcessor = new rPodI2CRX();
             List<DataParameter> parameterList = rxProcessor.ProcessFrame(frame);
@@ -139,7 +137,7 @@ namespace rLoop_Ground_Station
         //that depend on the name.
         //This could use some error checking or could be done by a script on the Pi instead
         //of a pseudo bash script here.
-        public void changeNodeName(string host_ip, string username, string password, string newName)
+        public static void changeNodeName(string host_ip, string username, string password, string newName)
         {
             Paused = true;
             rPodNodeDiscovery.Paused = true;
@@ -157,7 +155,7 @@ namespace rLoop_Ground_Station
         }
 
         //Starts the data logging daemon
-        public void startNodeDataLogging(string host_ip, string username, string password)
+        public static void startNodeDataLogging(string host_ip, string username, string password)
         {
             using (SshClient ssh = new SshClient(host_ip, username, password))
             {
@@ -169,7 +167,7 @@ namespace rLoop_Ground_Station
         }
 
         //Stops the data logging daemon
-        public void stopNodeDataLogging(string host_ip, string username, string password)
+        public static void stopNodeDataLogging(string host_ip, string username, string password)
         {
             using (SshClient ssh = new SshClient(host_ip, username, password))
             {
@@ -198,7 +196,7 @@ namespace rLoop_Ground_Station
         //that depend on the name.
         //This could use some error checking or could be done by a script on the Pi instead
         //of a pseudo bash script here.
-        public void changeBaudrate(string host_ip, string username, string password, string newBaud)
+        public static void changeBaudrate(string host_ip, string username, string password, string newBaud)
         {
             Paused = true;
             rPodNodeDiscovery.Paused = true;
@@ -222,7 +220,7 @@ namespace rLoop_Ground_Station
         //Would be good to parse feedback from the Teensy cli loader
         //Validating the file would good too.
         //The ssh upload library is pretty unforgiving, need to parse and handle errors from it
-        public void uploadFile(string host_ip, string username, string password, string localFile, string remoteFile)
+        public static void uploadFile(string host_ip, string username, string password, string localFile, string remoteFile)
         {
             using (SftpClient ssh = new SftpClient(host_ip, username, password))
             {
@@ -248,7 +246,7 @@ namespace rLoop_Ground_Station
         //Allows interaction with pod control parameters
         //Can be used from the pod state classes or more
         //directly from the gui during developement
-        public bool setParameters(string node, List<DataParameter> parameters)
+        public static bool setParameters(string node, List<DataParameter> parameters)
         {
             rPodI2CTX formatter = new rPodI2CTX();
             rPodNetworkNode n = rPodNodeDiscovery.ActiveNodes.FirstOrDefault(x => x.NodeNamePretty == node);
@@ -264,6 +262,7 @@ namespace rLoop_Ground_Station
             if (!n.RequestSocket.TryReceiveFrameString(TimeSpan.FromSeconds(1), out reply))
             {
                 n.RequestSocket.Disconnect("tcp://" + ip + ":6789");
+                n.RequestSocket.Close();
                 return false;
             }
             else if (reply == "Got It")
@@ -278,7 +277,6 @@ namespace rLoop_Ground_Station
     public class ZMQTelemetryProcessor
     {
         public string Ip;
-        public static rPodNetworking NetworkClass;
         public SubscriberSocket Subscriber;
         public rPodNetworkNode NetworkNode;
         public string ZMQAddress;
@@ -297,7 +295,7 @@ namespace rLoop_Ground_Station
 
             Subscriber.ReceiveReady += (s, a) =>
             {
-                if (NetworkClass.Paused)
+                if (rPodNetworking.Paused)
                     return;
                 NetworkNode.NodeZMQSeen();
                 byte[] reply = a.Socket.ReceiveFrameBytes();
@@ -307,7 +305,7 @@ namespace rLoop_Ground_Station
                 {
                     i++;
                 }
-                NetworkClass.ProcessZMQTelemetryFrame(reply.Skip(i).ToArray(), NetworkNode.NodeNameShort);
+                rPodNetworking.ProcessZMQTelemetryFrame(reply.Skip(i).ToArray(), NetworkNode.NodeNameShort);
             };
             poller.Run();
         }
