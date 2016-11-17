@@ -49,7 +49,7 @@ namespace rLoop_Ground_Station.TabPanels
 
         private void btnChargeRelayOff_Click(object sender, EventArgs e)
         {
-            if (!rPodPodState.PowerNodeA.SetChargeRelay(true))
+            if (!rPodPodState.PowerNodeA.SetChargeRelay(false))
                 MessageBox.Show("There was an error sending the command.");
         }
 
