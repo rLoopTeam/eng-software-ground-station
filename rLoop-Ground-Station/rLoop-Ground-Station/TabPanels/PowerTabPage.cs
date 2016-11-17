@@ -56,7 +56,7 @@ namespace rLoop_Ground_Station.TabPanels
         private void lblUpdateTimer_Tick(object sender, EventArgs e)
         {
             lblTemperatureVal.Text = rPodPodState.PowerNodeA.BatteryPackTemperature.ToString("0.0") + " C";
-            lblPressureVal.Text = rPodPodState.PowerNodeA.BatteryPackPressure.ToString("0.0") + " Bar";
+            lblPressureVal.Text = rPodPodState.PowerNodeA.BatteryPackPressure.ToString() + " Bar";
         }
 
         private void PowerTabPage_Load(object sender, EventArgs e)
