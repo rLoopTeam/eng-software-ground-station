@@ -25,7 +25,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         /// <summary>
         /// Set the direction of forward 1 landing mechanism
         /// </summary>
-        /// <param name="dir">Direction: Up - Down.</param>
+        /// <param name="direction">Direction: Up: 1 - Down: 0.</param>
         /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
         public bool setLMForward1Direction(int direction)
         {
@@ -35,7 +35,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 return false;
 
             DataParameter p = new DataParameter();
-            p.Index = 0x5100; // TODO clarify the index
+            p.Index = 0x398; // 920
             p.Data = direction;
 
             paramsToSend.Add(p);
@@ -46,7 +46,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         /// <summary>
         /// Set the direction of forward 2 landing mechanism
         /// </summary>
-        /// <param name="dir">Direction: Up - Down.</param>
+        /// <param name="direction">Direction: Up: 1 - Down: 0.</param>
         /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
         public bool setLMForward2Direction(int direction)
         {
@@ -56,7 +56,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 return false;
 
             DataParameter p = new DataParameter();
-            p.Index = 0x5100; // TODO clarify the index
+            p.Index = 0x399; // 921
             p.Data = direction;
 
             paramsToSend.Add(p);
@@ -67,7 +67,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         /// <summary>
         /// Set the direction of aft 1 landing mechanism
         /// </summary>
-        /// <param name="dir">Direction: Up - Down.</param>
+        /// <param name="direction">Direction: Up: 1 - Down: 0.</param>
         /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
         public bool setLMAft1Direction(int direction)
         {
@@ -77,7 +77,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 return false;
 
             DataParameter p = new DataParameter();
-            p.Index = 0x5100; // TODO clarify the index
+            p.Index = 0x396; // 918
             p.Data = direction;
 
             paramsToSend.Add(p);
@@ -88,7 +88,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         /// <summary>
         /// Set the direction of aft 2 landing mechanism
         /// </summary>
-        /// <param name="dir">Direction: Up - Down.</param>
+        /// <param name="direction">Direction: Up: 1 - Down: 0.</param>
         /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
         public bool setLMAft2Direction(int direction)
         {
@@ -98,7 +98,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 return false;
 
             DataParameter p = new DataParameter();
-            p.Index = 0x5100; // TODO clarify the index
+            p.Index = 0x397; // 919
             p.Data = direction;
 
             paramsToSend.Add(p);
@@ -119,7 +119,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 return false;
 
             DataParameter p = new DataParameter();
-            p.Index = 0x5100; // TODO clarify the index
+            p.Index = 0x39C; // 924
             p.Data = speed;
 
             paramsToSend.Add(p);
@@ -140,7 +140,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 return false;
 
             DataParameter p = new DataParameter();
-            p.Index = 0x5100; // TODO clarify the index
+            p.Index = 0x39D; // 925
             p.Data = speed;
 
             paramsToSend.Add(p);
@@ -161,7 +161,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 return false;
 
             DataParameter p = new DataParameter();
-            p.Index = 0x5100; // TODO clarify the index
+            p.Index = 0x39A; // 922
             p.Data = speed;
 
             paramsToSend.Add(p);
@@ -182,7 +182,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                 return false;
 
             DataParameter p = new DataParameter();
-            p.Index = 0x5100; // TODO clarify the index
+            p.Index = 0x39B; // 923
             p.Data = speed;
 
             paramsToSend.Add(p);

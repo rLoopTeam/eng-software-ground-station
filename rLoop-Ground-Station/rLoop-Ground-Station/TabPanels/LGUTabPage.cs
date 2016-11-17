@@ -129,7 +129,13 @@ namespace rLoop_Ground_Station.TabPanels
 
         private void LMForward1Speed_Click(object sender, EventArgs e)
         {
-            int speed = trackBFwd1Speed.Value;
+            int speed = trackBFwd1Speed.Value * 1000;
+
+            if (speed < 0 || speed > 10000)
+            {
+                MessageBox.Show("Not a valid speed.");
+                return;
+            }
 
             if (!rPodPodState.LandingGearUnitNode.setLMForward1Speed(speed))
                 MessageBox.Show("There was an error sending the command.");
@@ -137,7 +143,13 @@ namespace rLoop_Ground_Station.TabPanels
 
         private void LMForward2Speed_Click(object sender, EventArgs e)
         {
-            int speed = trackBFwd2Speed.Value;
+            int speed = trackBFwd2Speed.Value * 1000;
+
+            if (speed < 0 || speed > 10000)
+            {
+                MessageBox.Show("Not a valid speed.");
+                return;
+            }
 
             if (!rPodPodState.LandingGearUnitNode.setLMForward2Speed(speed))
                 MessageBox.Show("There was an error sending the command.");
@@ -145,7 +157,13 @@ namespace rLoop_Ground_Station.TabPanels
 
         private void LMAft1Speed_Click(object sender, EventArgs e)
         {
-            int speed = trackBAft1Speed.Value;
+            int speed = trackBAft1Speed.Value * 1000;
+
+            if (speed < 0 || speed > 10000)
+            {
+                MessageBox.Show("Not a valid speed.");
+                return;
+            }
 
             if (!rPodPodState.LandingGearUnitNode.setLMAft1Speed(speed))
                 MessageBox.Show("There was an error sending the command.");
@@ -153,7 +171,13 @@ namespace rLoop_Ground_Station.TabPanels
 
         private void LMAft2Speed_Click(object sender, EventArgs e)
         {
-            int speed = trackBAft2Speed.Value;
+            int speed = trackBAft2Speed.Value * 1000;
+
+            if (speed < 0 || speed > 10000)
+            {
+                MessageBox.Show("Not a valid speed.");
+                return;
+            }
 
             if (!rPodPodState.LandingGearUnitNode.setLMAft2Speed(speed))
                 MessageBox.Show("There was an error sending the command.");

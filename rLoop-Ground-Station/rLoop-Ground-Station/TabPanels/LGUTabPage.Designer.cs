@@ -135,9 +135,9 @@
             this.lblAft2SpeedVal.Location = new System.Drawing.Point(792, 274);
             this.lblAft2SpeedVal.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.lblAft2SpeedVal.Name = "lblAft2SpeedVal";
-            this.lblAft2SpeedVal.Size = new System.Drawing.Size(177, 67);
+            this.lblAft2SpeedVal.Size = new System.Drawing.Size(113, 67);
             this.lblAft2SpeedVal.TabIndex = 243;
-            this.lblAft2SpeedVal.Text = "100%";
+            this.lblAft2SpeedVal.Text = "0%";
             // 
             // trackBAft2Speed
             // 
@@ -502,9 +502,9 @@
             this.lblAft1SpeedVal.Location = new System.Drawing.Point(792, 248);
             this.lblAft1SpeedVal.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.lblAft1SpeedVal.Name = "lblAft1SpeedVal";
-            this.lblAft1SpeedVal.Size = new System.Drawing.Size(177, 67);
+            this.lblAft1SpeedVal.Size = new System.Drawing.Size(113, 67);
             this.lblAft1SpeedVal.TabIndex = 243;
-            this.lblAft1SpeedVal.Text = "100%";
+            this.lblAft1SpeedVal.Text = "0%";
             // 
             // trackBAft1Speed
             // 
@@ -513,6 +513,7 @@
             this.trackBAft1Speed.Name = "trackBAft1Speed";
             this.trackBAft1Speed.Size = new System.Drawing.Size(584, 90);
             this.trackBAft1Speed.TabIndex = 278;
+            this.trackBAft1Speed.Scroll += new System.EventHandler(this.scrollBLMAft1Speed_Scroll);
             // 
             // radioAft1Up
             // 
@@ -605,9 +606,9 @@
             this.lblFwd2SpeedVal.Location = new System.Drawing.Point(792, 277);
             this.lblFwd2SpeedVal.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.lblFwd2SpeedVal.Name = "lblFwd2SpeedVal";
-            this.lblFwd2SpeedVal.Size = new System.Drawing.Size(177, 67);
+            this.lblFwd2SpeedVal.Size = new System.Drawing.Size(113, 67);
             this.lblFwd2SpeedVal.TabIndex = 243;
-            this.lblFwd2SpeedVal.Text = "100%";
+            this.lblFwd2SpeedVal.Text = "0%";
             // 
             // trackBFwd2Speed
             // 
@@ -616,6 +617,7 @@
             this.trackBFwd2Speed.Name = "trackBFwd2Speed";
             this.trackBFwd2Speed.Size = new System.Drawing.Size(584, 90);
             this.trackBFwd2Speed.TabIndex = 278;
+            this.trackBFwd2Speed.Scroll += new System.EventHandler(this.scrollBLMForward2Speed_Scroll);
             // 
             // radioFwd2Up
             // 
@@ -708,9 +710,9 @@
             this.lblFwd1SpeedVal.Location = new System.Drawing.Point(792, 260);
             this.lblFwd1SpeedVal.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.lblFwd1SpeedVal.Name = "lblFwd1SpeedVal";
-            this.lblFwd1SpeedVal.Size = new System.Drawing.Size(177, 67);
+            this.lblFwd1SpeedVal.Size = new System.Drawing.Size(113, 67);
             this.lblFwd1SpeedVal.TabIndex = 243;
-            this.lblFwd1SpeedVal.Text = "100%";
+            this.lblFwd1SpeedVal.Text = "0%";
             // 
             // trackBFwd1Speed
             // 
