@@ -104,6 +104,7 @@
             this.btnAft2SpeedSend.TabIndex = 273;
             this.btnAft2SpeedSend.Text = "Send";
             this.btnAft2SpeedSend.UseVisualStyleBackColor = true;
+            this.btnAft2SpeedSend.Click += new System.EventHandler(this.LMAft2Speed_Click);
             // 
             // groupAft2
             // 
@@ -145,6 +146,7 @@
             this.trackBAft2Speed.Name = "trackBAft2Speed";
             this.trackBAft2Speed.Size = new System.Drawing.Size(584, 90);
             this.trackBAft2Speed.TabIndex = 278;
+            this.trackBAft2Speed.Scroll += new System.EventHandler(this.scrollBLMAft2Speed_Scroll);
             // 
             // radioAft2Up
             // 
@@ -572,6 +574,7 @@
             this.btnAft1SpeedSend.TabIndex = 273;
             this.btnAft1SpeedSend.Text = "Send";
             this.btnAft1SpeedSend.UseVisualStyleBackColor = true;
+            this.btnAft1SpeedSend.Click += new System.EventHandler(this.LMAft1Speed_Click);
             // 
             // groupForward2
             // 
@@ -674,6 +677,7 @@
             this.btnFwd2SpeedSend.TabIndex = 273;
             this.btnFwd2SpeedSend.Text = "Send";
             this.btnFwd2SpeedSend.UseVisualStyleBackColor = true;
+            this.btnFwd2SpeedSend.Click += new System.EventHandler(this.LMForward2Speed_Click);
             // 
             // groupForward1
             // 
@@ -715,6 +719,7 @@
             this.trackBFwd1Speed.Name = "trackBFwd1Speed";
             this.trackBFwd1Speed.Size = new System.Drawing.Size(584, 90);
             this.trackBFwd1Speed.TabIndex = 278;
+            this.trackBFwd1Speed.Scroll += new System.EventHandler(this.scrollBLMForward1Speed_Scroll);
             // 
             // radioFwd1Up
             // 
@@ -776,6 +781,7 @@
             this.btnFwd1SpeedSend.TabIndex = 273;
             this.btnFwd1SpeedSend.Text = "Send";
             this.btnFwd1SpeedSend.UseVisualStyleBackColor = true;
+            this.btnFwd1SpeedSend.Click += new System.EventHandler(this.LMForward1Speed_Click);
             // 
             // tableLayoutPanel2
             // 

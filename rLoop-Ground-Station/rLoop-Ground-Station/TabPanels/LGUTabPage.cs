@@ -30,57 +30,157 @@ namespace rLoop_Ground_Station.TabPanels
         private void LMForward1Direction_Click(object sender, EventArgs e)
         {
             RadioButton radioButton = Utility.GetCheckedRadio(groupForward1);
-
+            int direction = 0;
             if (radioButton == null)
             {
                 MessageBox.Show("Please select a direction for landing gear forward 1.");
                 return;
             }
+            // TODO rework this section. need to clarify what type direction should be
+            if (radioButton.Text == "Up")
+                direction = 1;
+            else if (radioButton.Text == "Down")
+                direction = 0;
+            else
+            {
+                MessageBox.Show("Not a valid direction.");
+                return;
+            }
                 
-            if (!rPodPodState.LandingGearUnitNode.setLMDirection(radioButton))
-                MessageBox.Show("There was an error sending the command.");
+
+            if (!rPodPodState.LandingGearUnitNode.setLMForward1Direction(direction))
+                    MessageBox.Show("There was an error sending the command.");
         }
 
         private void LMForward2Direction_Click(object sender, EventArgs e)
         {
             RadioButton radioButton = Utility.GetCheckedRadio(groupForward2);
-
+            int direction = 0;
             if (radioButton == null)
             {
                 MessageBox.Show("Please select a direction for landing gear forward 2.");
                 return;
             }
+            // TODO rework this section. need to clarify what type direction should be
+            if (radioButton.Text == "Up")
+                direction = 1;
+            else if (radioButton.Text == "Down")
+                direction = 0;
+            else
+            {
+                MessageBox.Show("Not a valid direction.");
+                return;
+            }
 
-            if (!rPodPodState.LandingGearUnitNode.setLMDirection(radioButton))
+
+            if (!rPodPodState.LandingGearUnitNode.setLMForward2Direction(direction))
                 MessageBox.Show("There was an error sending the command.");
         }
 
         private void LMAft1Direction_Click(object sender, EventArgs e)
         {
             RadioButton radioButton = Utility.GetCheckedRadio(groupAft1);
-
+            int direction = 0;
             if (radioButton == null)
             {
                 MessageBox.Show("Please select a direction for landing gear aft 1.");
                 return;
             }
+            // TODO rework this section. need to clarify what type direction should be
+            if (radioButton.Text == "Up")
+                direction = 1;
+            else if (radioButton.Text == "Down")
+                direction = 0;
+            else
+            {
+                MessageBox.Show("Not a valid direction.");
+                return;
+            }
 
-            if (!rPodPodState.LandingGearUnitNode.setLMDirection(radioButton))
+
+            if (!rPodPodState.LandingGearUnitNode.setLMAft1Direction(direction))
                 MessageBox.Show("There was an error sending the command.");
         }
 
         private void LMAft2Direction_Click(object sender, EventArgs e)
         {
             RadioButton radioButton = Utility.GetCheckedRadio(groupAft2);
-
+            int direction = 0;
             if (radioButton == null)
             {
                 MessageBox.Show("Please select a direction for landing gear aft 2.");
                 return;
             }
+            // TODO rework this section. need to clarify what type direction should be
+            if (radioButton.Text == "Up")
+                direction = 1;
+            else if (radioButton.Text == "Down")
+                direction = 0;
+            else
+            {
+                MessageBox.Show("Not a valid direction.");
+                return;
+            }
 
-            if (!rPodPodState.LandingGearUnitNode.setLMDirection(radioButton))
+
+            if (!rPodPodState.LandingGearUnitNode.setLMAft2Direction(direction))
                 MessageBox.Show("There was an error sending the command.");
+        }
+
+        private void LMForward1Speed_Click(object sender, EventArgs e)
+        {
+            int speed = trackBFwd1Speed.Value;
+
+            if (!rPodPodState.LandingGearUnitNode.setLMForward1Speed(speed))
+                MessageBox.Show("There was an error sending the command.");
+        }
+
+        private void LMForward2Speed_Click(object sender, EventArgs e)
+        {
+            int speed = trackBFwd2Speed.Value;
+
+            if (!rPodPodState.LandingGearUnitNode.setLMForward2Speed(speed))
+                MessageBox.Show("There was an error sending the command.");
+        }
+
+        private void LMAft1Speed_Click(object sender, EventArgs e)
+        {
+            int speed = trackBAft1Speed.Value;
+
+            if (!rPodPodState.LandingGearUnitNode.setLMAft1Speed(speed))
+                MessageBox.Show("There was an error sending the command.");
+        }
+
+        private void LMAft2Speed_Click(object sender, EventArgs e)
+        {
+            int speed = trackBAft2Speed.Value;
+
+            if (!rPodPodState.LandingGearUnitNode.setLMAft2Speed(speed))
+                MessageBox.Show("There was an error sending the command.");
+        }
+
+        private void scrollBLMForward1Speed_Scroll(object sender, EventArgs e)
+        {
+            TrackBar trackBar = ((TrackBar)sender);
+            lblFwd1SpeedVal.Text = (float)((float)trackBar.Value / (float)trackBar.Maximum * 100) + "%";
+        }
+
+        private void scrollBLMForward2Speed_Scroll(object sender, EventArgs e)
+        {
+            TrackBar trackBar = ((TrackBar)sender);
+            lblFwd2SpeedVal.Text = (float)((float)trackBar.Value / (float)trackBar.Maximum * 100) + "%";
+        }
+
+        private void scrollBLMAft1Speed_Scroll(object sender, EventArgs e)
+        {
+            TrackBar trackBar = ((TrackBar)sender);
+            lblAft1SpeedVal.Text = (float)((float)trackBar.Value / (float)trackBar.Maximum * 100) + "%";
+        }
+
+        private void scrollBLMAft2Speed_Scroll(object sender, EventArgs e)
+        {
+            TrackBar trackBar = ((TrackBar)sender);
+            lblAft2SpeedVal.Text = (float)((float)trackBar.Value / (float)trackBar.Maximum * 100) + "%";
         }
     }
 }

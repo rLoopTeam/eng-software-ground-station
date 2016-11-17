@@ -23,49 +23,173 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         }
 
         /// <summary>
-        /// Set the direction of landing mechanism
+        /// Set the direction of forward 1 landing mechanism
         /// </summary>
         /// <param name="dir">Direction: Up - Down.</param>
         /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
-        public bool setLMDirection(RadioButton radiobutton)
+        public bool setLMForward1Direction(int direction)
         {
-            string direction = radiobutton.Text;
-            string radiobuttonName = radiobutton.Name;
             List<DataParameter> paramsToSend = new List<DataParameter>();
 
-            if (direction != "Up" && direction != "Down")
+            if (direction != 0 && direction != 1)
                 return false;
 
             DataParameter p = new DataParameter();
-            
-            //TODO clarify the values to use
-            if (direction == "Up")
-                p.Data = 0x01;
-            else if (direction == "Down")
-                p.Data = 0x00;
+            p.Index = 0x5100; // TODO clarify the index
+            p.Data = direction;
 
-            //TODO clarify the index to use
-            switch(radiobuttonName)
-            {
-                case "radioFwd1Up":
-                    p.Index = 0x5100;
-                    break;
-                case "radioFwd1Down":
-                    p.Index = 0x5100;
-                    break;
-                case "radioFwd2Up":
-                    p.Index = 0x5100;
-                    break;
-                case "radioFwd2Down":
-                    p.Index = 0x5100;
-                    break;
-            }
-            
             paramsToSend.Add(p);
 
             return SendCommand(paramsToSend);
         }
-        
+
+        /// <summary>
+        /// Set the direction of forward 2 landing mechanism
+        /// </summary>
+        /// <param name="dir">Direction: Up - Down.</param>
+        /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
+        public bool setLMForward2Direction(int direction)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            if (direction != 0 && direction != 1)
+                return false;
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5100; // TODO clarify the index
+            p.Data = direction;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Set the direction of aft 1 landing mechanism
+        /// </summary>
+        /// <param name="dir">Direction: Up - Down.</param>
+        /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
+        public bool setLMAft1Direction(int direction)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            if (direction != 0 && direction != 1)
+                return false;
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5100; // TODO clarify the index
+            p.Data = direction;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Set the direction of aft 2 landing mechanism
+        /// </summary>
+        /// <param name="dir">Direction: Up - Down.</param>
+        /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
+        public bool setLMAft2Direction(int direction)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            if (direction != 0 && direction != 1)
+                return false;
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5100; // TODO clarify the index
+            p.Data = direction;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Set the speed of forward 1 landing mechanism
+        /// </summary>
+        /// <param name="speed">Speed: Up - Down.</param>
+        /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
+        public bool setLMForward1Speed(int speed)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            if (speed != 0 && speed != 1)
+                return false;
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5100; // TODO clarify the index
+            p.Data = speed;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Set the speed of forward 2 landing mechanism
+        /// </summary>
+        /// <param name="speed">Speed: Up - Down.</param>
+        /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
+        public bool setLMForward2Speed(int speed)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            if (speed != 0 && speed != 1)
+                return false;
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5100; // TODO clarify the index
+            p.Data = speed;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Set the speed of aft 1 landing mechanism
+        /// </summary>
+        /// <param name="speed">Speed: Up - Down.</param>
+        /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
+        public bool setLMAft1Speed(int speed)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            if (speed != 0 && speed != 1)
+                return false;
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5100; // TODO clarify the index
+            p.Data = speed;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Set the speed of aft 2 landing mechanism
+        /// </summary>
+        /// <param name="speed">Speed: Up - Down.</param>
+        /// <returns>True if the command made it to the Pi, false if the Pi does not respond or an invalid value is given.</returns>
+        public bool setLMAft2Speed(int speed)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            if (speed != 0 && speed != 1)
+                return false;
+
+            DataParameter p = new DataParameter();
+            p.Index = 0x5100; // TODO clarify the index
+            p.Data = speed;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
 
         //Should always line up with: http://confluence.rloop.org/display/SD/FCU+Node+Telemetry
         public override void ProcessParameter(List<DataParameter> parameterList)
