@@ -107,6 +107,7 @@
             this.btnAft2SpeedSend.TabIndex = 273;
             this.btnAft2SpeedSend.Text = "Send";
             this.btnAft2SpeedSend.UseVisualStyleBackColor = true;
+            this.btnAft2SpeedSend.Click += new System.EventHandler(this.btnAft2SpeedSend_Click);
             // 
             // groupAft2
             // 
@@ -143,10 +144,14 @@
             // 
             // trackBAft2Speed
             // 
+            this.trackBAft2Speed.LargeChange = 10;
             this.trackBAft2Speed.Location = new System.Drawing.Point(359, 78);
+            this.trackBAft2Speed.Maximum = 1000;
             this.trackBAft2Speed.Name = "trackBAft2Speed";
             this.trackBAft2Speed.Size = new System.Drawing.Size(292, 45);
             this.trackBAft2Speed.TabIndex = 278;
+            this.trackBAft2Speed.TickFrequency = 20;
+            this.trackBAft2Speed.Scroll += new System.EventHandler(this.trackBAft2Speed_Scroll);
             // 
             // radioAft2Up
             // 
@@ -195,6 +200,7 @@
             this.btnAft2DirSend.TabIndex = 222;
             this.btnAft2DirSend.Text = "Send";
             this.btnAft2DirSend.UseVisualStyleBackColor = true;
+            this.btnAft2DirSend.Click += new System.EventHandler(this.btnAft2DirSend_Click);
             // 
             // lblLandingGearUnitTItle
             // 
@@ -507,10 +513,14 @@
             // 
             // trackBAft1Speed
             // 
+            this.trackBAft1Speed.LargeChange = 10;
             this.trackBAft1Speed.Location = new System.Drawing.Point(359, 78);
+            this.trackBAft1Speed.Maximum = 1000;
             this.trackBAft1Speed.Name = "trackBAft1Speed";
             this.trackBAft1Speed.Size = new System.Drawing.Size(292, 45);
             this.trackBAft1Speed.TabIndex = 278;
+            this.trackBAft1Speed.TickFrequency = 20;
+            this.trackBAft1Speed.Scroll += new System.EventHandler(this.trackBAft1Speed_Scroll);
             // 
             // radioAft1Up
             // 
@@ -559,6 +569,7 @@
             this.btnAft1DirSend.TabIndex = 222;
             this.btnAft1DirSend.Text = "Send";
             this.btnAft1DirSend.UseVisualStyleBackColor = true;
+            this.btnAft1DirSend.Click += new System.EventHandler(this.btnAft1DirSend_Click);
             // 
             // btnAft1SpeedSend
             // 
@@ -569,6 +580,7 @@
             this.btnAft1SpeedSend.TabIndex = 273;
             this.btnAft1SpeedSend.Text = "Send";
             this.btnAft1SpeedSend.UseVisualStyleBackColor = true;
+            this.btnAft1SpeedSend.Click += new System.EventHandler(this.btnAft1SpeedSend_Click);
             // 
             // groupForward2
             // 
@@ -605,10 +617,14 @@
             // 
             // trackBFwd2Speed
             // 
+            this.trackBFwd2Speed.LargeChange = 10;
             this.trackBFwd2Speed.Location = new System.Drawing.Point(359, 78);
+            this.trackBFwd2Speed.Maximum = 1000;
             this.trackBFwd2Speed.Name = "trackBFwd2Speed";
             this.trackBFwd2Speed.Size = new System.Drawing.Size(292, 45);
             this.trackBFwd2Speed.TabIndex = 278;
+            this.trackBFwd2Speed.TickFrequency = 20;
+            this.trackBFwd2Speed.Scroll += new System.EventHandler(this.trackBFwd2Speed_Scroll);
             // 
             // radioFwd2Up
             // 
@@ -657,6 +673,7 @@
             this.btnFwd2DirSend.TabIndex = 222;
             this.btnFwd2DirSend.Text = "Send";
             this.btnFwd2DirSend.UseVisualStyleBackColor = true;
+            this.btnFwd2DirSend.Click += new System.EventHandler(this.btnFwd2DirSend_Click);
             // 
             // btnFwd2SpeedSend
             // 
@@ -667,6 +684,7 @@
             this.btnFwd2SpeedSend.TabIndex = 273;
             this.btnFwd2SpeedSend.Text = "Send";
             this.btnFwd2SpeedSend.UseVisualStyleBackColor = true;
+            this.btnFwd2SpeedSend.Click += new System.EventHandler(this.btnFwd2SpeedSend_Click);
             // 
             // groupForward1
             // 
@@ -704,10 +722,14 @@
             // 
             // trackBFwd1Speed
             // 
+            this.trackBFwd1Speed.LargeChange = 10;
             this.trackBFwd1Speed.Location = new System.Drawing.Point(359, 78);
+            this.trackBFwd1Speed.Maximum = 1000;
             this.trackBFwd1Speed.Name = "trackBFwd1Speed";
             this.trackBFwd1Speed.Size = new System.Drawing.Size(292, 45);
             this.trackBFwd1Speed.TabIndex = 278;
+            this.trackBFwd1Speed.TickFrequency = 20;
+            this.trackBFwd1Speed.Scroll += new System.EventHandler(this.trackBFwd1Speed_Scroll);
             // 
             // radioFwd1Up
             // 
@@ -756,6 +778,7 @@
             this.btnFwd1DirSend.TabIndex = 222;
             this.btnFwd1DirSend.Text = "Send";
             this.btnFwd1DirSend.UseVisualStyleBackColor = true;
+            this.btnFwd1DirSend.Click += new System.EventHandler(this.btnFwd1DirSend_Click);
             // 
             // btnFwd1SpeedSend
             // 
@@ -766,6 +789,7 @@
             this.btnFwd1SpeedSend.TabIndex = 273;
             this.btnFwd1SpeedSend.Text = "Send";
             this.btnFwd1SpeedSend.UseVisualStyleBackColor = true;
+            this.btnFwd1SpeedSend.Click += new System.EventHandler(this.btnFwd1SpeedSend_Click);
             // 
             // tableLayoutPanel2
             // 

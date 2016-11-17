@@ -18,7 +18,11 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
         public bool SendCommand(List<DataParameter> commands)
         {
-            return rPodNetworking.setParameters(NodeName, commands);
+            //If we don't have telemetry from the node
+            //dont bother sending any commands
+            //if (Math.Abs((DateTime.Now - LastHeard).TotalSeconds) > 3)
+            //    return false;
+            return rPodNetworking.setParameters(NodeName + " Node", commands);
         }
 
     }

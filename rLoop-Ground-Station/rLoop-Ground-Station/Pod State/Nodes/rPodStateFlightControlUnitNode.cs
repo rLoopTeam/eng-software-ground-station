@@ -264,7 +264,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         }
         #endregion
 
-        #region Misc Commansdok
+        #region Misc Commands
 
         public rPodStateFlightControlUnitNode()
         {
@@ -279,7 +279,7 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         {
             List<DataParameter> paramsToSend = new List<DataParameter>();
 
-            if (dist < 0 || dist < 25)
+            if (dist < 0 || dist > 25)
                 return false;
 
             DataParameter p = new DataParameter();
@@ -290,12 +290,6 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
             return SendCommand(paramsToSend);
         }
-
-        /// <summary>
-        /// Brake - Left - Set micro-steps per revolution
-        /// </summary>
-        /// <returns></returns>
-        /// 
 
         public bool SendPodStop()
         {
@@ -325,13 +319,11 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
             foreach (DataParameter p in parameterList)
             {
-
-                #region Brakes
+                #region Brakes Confluence
                 if (p.Index == 0x5200 && p.Data is float)
                     EBLeftScrewPosition = (float)p.Data;
                 if (p.Index == 0x5201 && p.Data is float)
                     EBRightScrewPosition = (float)p.Data;
-
                 if (p.Index == 0x5202 && p.Data is byte)
                     EBLeftLimitSwitchExtend = (byte)p.Data;
                 if (p.Index == 0x5203 && p.Data is byte)

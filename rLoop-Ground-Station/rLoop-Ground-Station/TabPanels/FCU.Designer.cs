@@ -158,9 +158,9 @@
             this.lblHeight1.Location = new System.Drawing.Point(3, 82);
             this.lblHeight1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblHeight1.Name = "lblHeight1";
-            this.lblHeight1.Size = new System.Drawing.Size(123, 33);
+            this.lblHeight1.Size = new System.Drawing.Size(141, 33);
             this.lblHeight1.TabIndex = 243;
-            this.lblHeight1.Text = "Height 1";
+            this.lblHeight1.Text = "Height FL";
             // 
             // lblHeight2
             // 
@@ -171,9 +171,9 @@
             this.lblHeight2.Location = new System.Drawing.Point(3, 125);
             this.lblHeight2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblHeight2.Name = "lblHeight2";
-            this.lblHeight2.Size = new System.Drawing.Size(123, 33);
+            this.lblHeight2.Size = new System.Drawing.Size(146, 33);
             this.lblHeight2.TabIndex = 244;
-            this.lblHeight2.Text = "Height 2";
+            this.lblHeight2.Text = "Height FR";
             // 
             // lblLasersTitle
             // 
@@ -248,9 +248,9 @@
             this.lblHeight3.Location = new System.Drawing.Point(3, 168);
             this.lblHeight3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblHeight3.Name = "lblHeight3";
-            this.lblHeight3.Size = new System.Drawing.Size(123, 33);
+            this.lblHeight3.Size = new System.Drawing.Size(144, 33);
             this.lblHeight3.TabIndex = 245;
-            this.lblHeight3.Text = "Height 3";
+            this.lblHeight3.Text = "Height RL";
             // 
             // lblIBeam2Val
             // 
@@ -313,9 +313,9 @@
             this.lblHeight4.Location = new System.Drawing.Point(3, 211);
             this.lblHeight4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblHeight4.Name = "lblHeight4";
-            this.lblHeight4.Size = new System.Drawing.Size(123, 33);
+            this.lblHeight4.Size = new System.Drawing.Size(149, 33);
             this.lblHeight4.TabIndex = 246;
-            this.lblHeight4.Text = "Height 4";
+            this.lblHeight4.Text = "Height RR";
             // 
             // lblIBeam2
             // 
@@ -326,9 +326,9 @@
             this.lblIBeam2.Location = new System.Drawing.Point(3, 297);
             this.lblIBeam2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblIBeam2.Name = "lblIBeam2";
-            this.lblIBeam2.Size = new System.Drawing.Size(133, 33);
+            this.lblIBeam2.Size = new System.Drawing.Size(152, 33);
             this.lblIBeam2.TabIndex = 248;
-            this.lblIBeam2.Text = "I-Beam 2";
+            this.lblIBeam2.Text = "I-Beam Aft";
             // 
             // lblHeight4Val
             // 
@@ -352,9 +352,9 @@
             this.lblIBeam1.Location = new System.Drawing.Point(3, 254);
             this.lblIBeam1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblIBeam1.Name = "lblIBeam1";
-            this.lblIBeam1.Size = new System.Drawing.Size(133, 33);
+            this.lblIBeam1.Size = new System.Drawing.Size(172, 33);
             this.lblIBeam1.TabIndex = 247;
-            this.lblIBeam1.Text = "I-Beam 1";
+            this.lblIBeam1.Text = "I-Beam Fwd";
             // 
             // lblHeight1Val
             // 
@@ -465,7 +465,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblPositionVal, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.lblSpeedVal, 1, 9);
             this.tableLayoutPanel2.Controls.Add(this.lblAccelVal, 1, 10);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(512, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(513, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 16;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -833,7 +833,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblAccel1XVal, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.lblAccel1Y, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.lblPusherSwitchAVal, 1, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1021, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1023, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 16;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));

@@ -141,3 +141,4 @@ C:\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Deb
 C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.TabPanels.LGUTabPage.resources
 C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.TabPanels.BrakesTabPage.resources
 C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.TabPanels.FCU.resources
+C:\Users\David\eng-software-ground-station\rLoop-Ground-Station\rLoop-Ground-Station\obj\Debug\rLoop_Ground_Station.TabPanels.PowerTabPage.resources

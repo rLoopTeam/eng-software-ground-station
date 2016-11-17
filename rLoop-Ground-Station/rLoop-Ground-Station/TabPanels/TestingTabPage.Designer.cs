@@ -40,6 +40,7 @@
             // 
             this.btnPodStop.BackColor = System.Drawing.Color.Red;
             this.btnPodStop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPodStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPodStop.Location = new System.Drawing.Point(625, 233);
             this.btnPodStop.Name = "btnPodStop";
             this.btnPodStop.Size = new System.Drawing.Size(481, 288);
@@ -50,6 +51,7 @@
             // 
             // btnPodSafe
             // 
+            this.btnPodSafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPodSafe.Location = new System.Drawing.Point(137, 233);
             this.btnPodSafe.Name = "btnPodSafe";
             this.btnPodSafe.Size = new System.Drawing.Size(465, 288);

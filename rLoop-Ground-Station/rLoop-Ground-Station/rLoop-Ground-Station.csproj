@@ -37,6 +37,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Log" />
     <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlWriter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +119,12 @@
     <Compile Include="TabPanels\LGUTabPage.Designer.cs">
       <DependentUpon>LGUTabPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabPanels\PowerTabPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPanels\PowerTabPage.Designer.cs">
+      <DependentUpon>PowerTabPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="TabPanels\TestingTabPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabPanels\LGUTabPage.resx">
       <DependentUpon>LGUTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPanels\PowerTabPage.resx">
+      <DependentUpon>PowerTabPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPanels\TestingTabPage.resx">
       <DependentUpon>TestingTabPage.cs</DependentUpon>

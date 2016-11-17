@@ -19,6 +19,16 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public float[,] CellNegativeTabTemperature; //Degrees C
         public bool[] BatteryRowDischarging; //If the BMS is currently discharging/bypassing a paralled set of cells
         public float BatteryPackVoltage;
+
+
+        /// <summary>
+        /// In bars.
+        /// </summary>
+        public float BatteryPackPressure;
+
+        /// <summary>
+        /// Degrees C
+        /// </summary>
         public float BatteryPackTemperature;
 
         public rPodStatePowerNode()
@@ -62,6 +72,69 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
             return SendCommand(paramsToSend);
         }
 
+        /// <summary>
+        /// Turns streaming the temperature on and off. True = streaming
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public bool SetStreamTemp(bool stream)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0xA100;
+            if (stream)
+                p.Data = (byte)1;
+            else
+                p.Data = (byte)0;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Turns streaming the pressure on and off. True = streaming
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public bool SetStreamPressure(bool stream)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0xA200;
+            if (stream)
+                p.Data = (byte)1;
+            else
+                p.Data = (byte)0;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
+        /// <summary>
+        /// Turns the charge relay on and off. True = on
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public bool SetChargeRelay(bool on)
+        {
+            List<DataParameter> paramsToSend = new List<DataParameter>();
+
+            DataParameter p = new DataParameter();
+            p.Index = 0xA300;
+            if (on)
+                p.Data = (byte)1;
+            else
+                p.Data = (byte)0;
+
+            paramsToSend.Add(p);
+
+            return SendCommand(paramsToSend);
+        }
+
         //Should always line up with: http://confluence.rloop.org/display/SD/Power+Node+Telemetry
         public override void ProcessParameter(List<DataParameter> parameterList)
         {
@@ -72,7 +145,12 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
             foreach (DataParameter p in parameterList)
             {
-               
+                #region BatStuff;
+
+                /*
+
+                #region Battery Pack Voltages
+
                 if (p.Index >= 3 && p.Index <= 20 && p.Data is float)
                 {
                     batteryCellRowIndex = (p.Index - 3) % 18;
@@ -103,10 +181,11 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                     BatteryPackTemperature = (float)p.Data;
                 }
 
+                #endregion
 
-                /*
-                * Indices 23 - 130 are the temperature sensors for the positive tabs of the battery cells
-                */
+                #region Battery Temps
+
+                //Indices 23 - 130 are the temperature sensors for the positive tabs of the battery cells
                 if (p.Index >= 23 && p.Index <= 130 && p.Data is float)
                 {
                     batteryCellRowIndex = (p.Index - 23) / 6;
@@ -122,10 +201,8 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                     continue;
                 }
 
+                //Indices 131 - 238 are the temperature sensors for the positive tabs of the battery cells
 
-                /*
-                * Indices 131 - 238 are the temperature sensors for the positive tabs of the battery cells
-                */
                 if (p.Index >= 131 && p.Index <= 238 && p.Data is float)
                 {
                     batteryCellRowIndex = (p.Index - 131) / 6;
@@ -142,6 +219,21 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
                     }
                     continue;
                 }
+
+                #endregion
+
+    */
+
+                #endregion
+
+                //Temperature in Degrees C
+                if (p.Index == 0xA101 && p.Data is float)
+                    BatteryPackTemperature = (float)p.Data;
+
+                //Pressure in Bar
+                if (p.Index == 0xA201 && p.Data is float)
+                    BatteryPackPressure = (float)p.Data;
+
             }
         }
     }

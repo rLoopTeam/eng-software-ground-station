@@ -49,12 +49,21 @@ namespace rLoop_Ground_Station.TabPanels
                 case DialogResult.No: return;  break;
             }
 
+            bool PowerAResult;
+            bool PowerBResult;
+
             DateTime started = DateTime.Now;
             do
             {
-                rPodPodState.PowerNodeA.SendPodSafe();
-                rPodPodState.PowerNodeB.SendPodSafe();
+                PowerAResult = rPodPodState.PowerNodeA.SendPodSafe();
+                PowerBResult = rPodPodState.PowerNodeB.SendPodSafe();
             } while ((Math.Abs((rPodPodState.PowerNodeA.LastHeard - DateTime.Now).TotalMilliseconds) < 1000 || Math.Abs((rPodPodState.PowerNodeB.LastHeard - DateTime.Now).TotalMilliseconds) < 1000) && (DateTime.Now - started).TotalMilliseconds < 2000);
+
+            if (!PowerAResult)
+                MessageBox.Show("Unable to communicate with Power Node A.");
+
+            if (!PowerBResult)
+                MessageBox.Show("Unable to communicate with Power Node B.");
 
             if (Math.Abs((rPodPodState.PowerNodeA.LastHeard - DateTime.Now).TotalMilliseconds) < 2000)
                 MessageBox.Show("Power Node A was not shut down.");

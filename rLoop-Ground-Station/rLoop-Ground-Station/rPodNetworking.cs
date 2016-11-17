@@ -137,82 +137,130 @@ namespace rLoop_Ground_Station
         //that depend on the name.
         //This could use some error checking or could be done by a script on the Pi instead
         //of a pseudo bash script here.
-        public static void changeNodeName(string host_ip, string username, string password, string newName)
+        public static bool changeNodeName(string host_ip, string username, string password, string newName)
         {
             Paused = true;
             rPodNodeDiscovery.Paused = true;
             using (SshClient ssh = new SshClient(host_ip, username, password))
             {
-                ssh.Connect();
-                ssh.RunCommand("rm /mnt/data/config/nodename");
-                ssh.RunCommand("echo " + "\"" + newName + "\" > /mnt/data/config/nodename" );
-                ssh.RunCommand("/etc/init.d/S55telemetry restart");
-                ssh.RunCommand("/etc/init.d/S55udpBeacon restart");
-                ssh.Disconnect();
+                try
+                {
+                    ssh.ConnectionInfo.Timeout = new TimeSpan(0, 0, 3);
+                    ssh.Connect();
+                    ssh.RunCommand("rm /mnt/data/config/nodename");
+                    ssh.RunCommand("echo " + "\"" + newName + "\" > /mnt/data/config/nodename");
+                    ssh.RunCommand("/etc/init.d/S55telemetry restart");
+                    ssh.RunCommand("/etc/init.d/S55udpBeacon restart");
+                    ssh.Disconnect();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("SSH Failed: " + e.ToString());
+                    return false;
+                }
             }
             Paused = false;
             rPodNodeDiscovery.Paused = false;
+            return true;
         }
 
         //Starts the data logging daemon
-        public static void startNodeDataLogging(string host_ip, string username, string password)
+        public static bool startNodeDataLogging(string host_ip, string username, string password)
         {
             using (SshClient ssh = new SshClient(host_ip, username, password))
             {
-                ssh.Connect();
-                ssh.RunCommand("/etc/init.d/datalogging start");
-                ssh.Disconnect();
+                try
+                {
+                    ssh.ConnectionInfo.Timeout = new TimeSpan(0, 0, 3);
+                    ssh.Connect();
+                    ssh.RunCommand("/etc/init.d/datalogging start");
+                    ssh.Disconnect();
+                }
+                    catch (Exception e)
+                {
+                    Console.WriteLine("SSH Failed: " + e.ToString());
+                    return false;
+                }
             }
             rPodNodeDiscovery.Paused = false;
+            return true;
         }
 
         //Stops the data logging daemon
-        public static void stopNodeDataLogging(string host_ip, string username, string password)
+        public static bool stopNodeDataLogging(string host_ip, string username, string password)
         {
             using (SshClient ssh = new SshClient(host_ip, username, password))
             {
-                ssh.Connect();
-                ssh.RunCommand("/etc/init.d/datalogging stop");
-                ssh.Disconnect();
+                try
+                {
+                    ssh.Connect();
+                    ssh.RunCommand("/etc/init.d/datalogging stop");
+                    ssh.Disconnect();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("SSH Failed: " + e.ToString());
+                    return false;
+                }
             }
             rPodNodeDiscovery.Paused = false;
+            return true;
         }
 
         //Sets the clock on the Pi
-        public static void setNodeTime(string host_ip, string username, string password)
+        public static bool setNodeTime(string host_ip, string username, string password)
         {
             DateTime currentTime = DateTime.Now;
             string dateString = '"' + currentTime.Year.ToString() + "-" + currentTime.Month.ToString() + "-" + currentTime.Day.ToString() + " " + currentTime.Hour + ":" + currentTime.Minute.ToString() + ":" + currentTime.Second.ToString() + '"';
             using (SshClient ssh = new SshClient(host_ip, username, password))
             {
-                ssh.Connect();
-                ssh.RunCommand("date "+dateString);
-                ssh.Disconnect();
+                try
+                {
+                    ssh.Connect();
+                    ssh.RunCommand("date " + dateString);
+                    ssh.Disconnect();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("SSH Failed: " + e.ToString());
+                    return false;
+                }
             }
             rPodNodeDiscovery.Paused = false;
+            return true;
         }
 
         //Renames a node by changing the config file in the Pi and reloading the services
         //that depend on the name.
         //This could use some error checking or could be done by a script on the Pi instead
         //of a pseudo bash script here.
-        public static void changeBaudrate(string host_ip, string username, string password, string newBaud)
+        public static bool changeBaudrate(string host_ip, string username, string password, string newBaud)
         {
             Paused = true;
             rPodNodeDiscovery.Paused = true;
             using (SshClient ssh = new SshClient(host_ip, username, password))
             {
-                ssh.Connect();
-                ssh.RunCommand("rm /mnt/data/config/serialbaud");
-                ssh.RunCommand("echo " + "\"" + newBaud + "\" > /mnt/data/config/serialbaud");
-                ssh.RunCommand("/etc/init.d/S56uartSetParameter stop");
-                ssh.RunCommand("/etc/init.d/S55telemetry stop");
-                ssh.RunCommand("/etc/init.d/S56uartSetParameter start");
-                ssh.RunCommand("/etc/init.d/S55telemetry start");
-                ssh.Disconnect();
+                try
+                {
+                    ssh.ConnectionInfo.Timeout = new TimeSpan(0, 0, 3);
+                    ssh.Connect();
+                    ssh.RunCommand("rm /mnt/data/config/serialbaud");
+                    ssh.RunCommand("echo " + "\"" + newBaud + "\" > /mnt/data/config/serialbaud");
+                    ssh.RunCommand("/etc/init.d/S56uartSetParameter stop");
+                    ssh.RunCommand("/etc/init.d/S55telemetry stop");
+                    ssh.RunCommand("/etc/init.d/S56uartSetParameter start");
+                    ssh.RunCommand("/etc/init.d/S55telemetry start");
+                    ssh.Disconnect();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("SSH Failed: " + e.ToString());
+                    return false;
+                }
             }
             Paused = false;
             rPodNodeDiscovery.Paused = false;
+            return true;
         }
 
 
@@ -220,27 +268,38 @@ namespace rLoop_Ground_Station
         //Would be good to parse feedback from the Teensy cli loader
         //Validating the file would good too.
         //The ssh upload library is pretty unforgiving, need to parse and handle errors from it
-        public static void uploadFile(string host_ip, string username, string password, string localFile, string remoteFile)
+        public static bool uploadFile(string host_ip, string username, string password, string localFile, string remoteFile)
         {
-            using (SftpClient ssh = new SftpClient(host_ip, username, password))
+            try
             {
-                ssh.Connect();
-                FileStream stream = new FileStream(localFile, FileMode.Open);
-                if (ssh.ListDirectory("/").FirstOrDefault(x => x.Name == "teensyTemp") == null)
-                    ssh.CreateDirectory("/teensyTemp");
-                ssh.ChangeDirectory("/teensyTemp");
-                ssh.UploadFile(stream, remoteFile);
-                ssh.Disconnect();
-                stream.Close();
-            }
+                using (SftpClient ssh = new SftpClient(host_ip, username, password))
+                {
+                    ssh.ConnectionInfo.Timeout = new TimeSpan(0, 0, 3);
+                    ssh.Connect();
+                    FileStream stream = new FileStream(localFile, FileMode.Open);
+                    if (ssh.ListDirectory("/").FirstOrDefault(x => x.Name == "teensyTemp") == null)
+                        ssh.CreateDirectory("/teensyTemp");
+                    ssh.ChangeDirectory("/teensyTemp");
+                    ssh.UploadFile(stream, remoteFile);
+                    ssh.Disconnect();
+                    stream.Close();
+                }
 
-            using (SshClient ssh = new SshClient(host_ip, username, password))
-            {
-                ssh.Connect();
-                ssh.RunCommand("prog_teensy " + "\"/teensyTemp/" + remoteFile + "\"");
-                ssh.RunCommand("rm " + "\"/teensyTemp/" + remoteFile + "\"");
-                ssh.Disconnect();
+                using (SshClient ssh = new SshClient(host_ip, username, password))
+                {
+                    ssh.ConnectionInfo.Timeout = new TimeSpan(0, 0, 3);
+                    ssh.Connect();
+                    ssh.RunCommand("prog_teensy " + "\"/teensyTemp/" + remoteFile + "\"");
+                    ssh.RunCommand("rm " + "\"/teensyTemp/" + remoteFile + "\"");
+                    ssh.Disconnect();
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("SSH Failed: " + e.ToString());
+                return false;
+            }
+            return true;
         }
 
         //Allows interaction with pod control parameters
@@ -249,25 +308,39 @@ namespace rLoop_Ground_Station
         public static bool setParameters(string node, List<DataParameter> parameters)
         {
             rPodI2CTX formatter = new rPodI2CTX();
+
+            //catch if that list is empty
+            if (rPodNodeDiscovery.ActiveNodes == null || rPodNodeDiscovery.ActiveNodes.Count == 0)
+                return false; //No nodes is definitely a failure
+
             rPodNetworkNode n = rPodNodeDiscovery.ActiveNodes.FirstOrDefault(x => x.NodeNamePretty == node);
             if (n == null)
                 return false;
             string ip = n.IP;
-            if(n.RequestSocket == null)
-                n.RequestSocket = new RequestSocket();
-            
-            n.RequestSocket.Connect("tcp://" + ip + ":6789");
-            n.RequestSocket.TrySendFrame(TimeSpan.FromSeconds(1), formatter.formatTransmitParameters(parameters));
-            string reply;
-            if (!n.RequestSocket.TryReceiveFrameString(TimeSpan.FromSeconds(1), out reply))
+
+            //Catch any wonky network exceptions and indicate that we failed
+            try
             {
-                n.RequestSocket.Disconnect("tcp://" + ip + ":6789");
-                n.RequestSocket.Close();
+
+                if (n.RequestSocket == null)
+                    n.RequestSocket = new RequestSocket();
+
+                n.RequestSocket.Connect("tcp://" + ip + ":6789");
+                n.RequestSocket.TrySendFrame(TimeSpan.FromSeconds(1), formatter.formatTransmitParameters(parameters));
+                string reply;
+                if (!n.RequestSocket.TryReceiveFrameString(TimeSpan.FromSeconds(1), out reply))
+                {
+                    n.RequestSocket.Disconnect("tcp://" + ip + ":6789");
+                    n.RequestSocket.Close();
+                    return false;
+                }
+                else if (reply == "Got It")
+                    return true;
+                return false;
+            }catch
+            {
                 return false;
             }
-            else if (reply == "Got It")
-                return true;
-            return false;
         }
 
     }

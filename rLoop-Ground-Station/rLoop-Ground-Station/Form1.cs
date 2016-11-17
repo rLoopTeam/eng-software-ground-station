@@ -203,6 +203,9 @@ namespace rLoop_Ground_Station
         {
             this.WindowState = FormWindowState.Maximized;
 
+            //Interesting idea, not quite working well enough yet
+            //Console.SetOut(new ControlWriter(txtConsole));
+
             float DPIsf = this.CreateGraphics().DpiX / 96;
             customTabControl1.Font = new Font(customTabControl1.Font.FontFamily, customTabControl1.Font.Size * DPIsf);
             customTabControl1.Padding = new Point( (int)(customTabControl1.Padding.X * DPIsf), (int)(customTabControl1.Padding.Y * DPIsf));
@@ -346,7 +349,7 @@ namespace rLoop_Ground_Station
             List<DataParameter> paramsToSend = new List<DataParameter>();
             UInt16 index;
             object value = null;
-            if (testDataIndexTxt.Text.Substring(0, 2) == "0x")
+            if (testDataIndexTxt.Text.Length > 2 && testDataIndexTxt.Text.Substring(0, 2) == "0x")
                 index = Convert.ToUInt16(testDataIndexTxt.Text.Substring(2), 16);
             else
                 UInt16.TryParse(testDataIndexTxt.Text, out index);

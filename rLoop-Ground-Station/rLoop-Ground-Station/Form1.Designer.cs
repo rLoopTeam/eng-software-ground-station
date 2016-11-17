@@ -94,6 +94,9 @@
             this.lguTabPage1 = new rLoop_Ground_Station.TabPanels.LGUTabPage();
             this.FCUTab = new System.Windows.Forms.TabPage();
             this.fcu1 = new rLoop_Ground_Station.TabPanels.FCU();
+            this.powerTab = new System.Windows.Forms.TabPage();
+            this.powerTabPage1 = new rLoop_Ground_Station.TabPanels.PowerTabPage();
+            this.txtConsole = new System.Windows.Forms.TextBox();
             this.customTabControl1.SuspendLayout();
             this.OverviewTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,10 +110,12 @@
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.SerialConsoleTab.SuspendLayout();
             this.testTab.SuspendLayout();
             this.brakesTab.SuspendLayout();
             this.LGUTab.SuspendLayout();
             this.FCUTab.SuspendLayout();
+            this.powerTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -154,6 +159,7 @@
             this.customTabControl1.Controls.Add(this.brakesTab);
             this.customTabControl1.Controls.Add(this.LGUTab);
             this.customTabControl1.Controls.Add(this.FCUTab);
+            this.customTabControl1.Controls.Add(this.powerTab);
             this.customTabControl1.DisplayStyle = System.Windows.Forms.TabStyle.VS2010;
             // 
             // 
@@ -790,6 +796,7 @@
             // SerialConsoleTab
             // 
             this.SerialConsoleTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.SerialConsoleTab.Controls.Add(this.txtConsole);
             this.SerialConsoleTab.Location = new System.Drawing.Point(4, 25);
             this.SerialConsoleTab.Name = "SerialConsoleTab";
             this.SerialConsoleTab.Padding = new System.Windows.Forms.Padding(3);
@@ -807,7 +814,7 @@
             this.testTab.Name = "testTab";
             this.testTab.Size = new System.Drawing.Size(1555, 863);
             this.testTab.TabIndex = 6;
-            this.testTab.Text = "TEST";
+            this.testTab.Text = "STOPS";
             // 
             // testingTabPage1
             // 
@@ -876,6 +883,36 @@
             this.fcu1.Size = new System.Drawing.Size(1555, 863);
             this.fcu1.TabIndex = 0;
             // 
+            // powerTab
+            // 
+            this.powerTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.powerTab.Controls.Add(this.powerTabPage1);
+            this.powerTab.Location = new System.Drawing.Point(4, 25);
+            this.powerTab.Name = "powerTab";
+            this.powerTab.Size = new System.Drawing.Size(1555, 863);
+            this.powerTab.TabIndex = 10;
+            this.powerTab.Text = "Power";
+            // 
+            // powerTabPage1
+            // 
+            this.powerTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.powerTabPage1.Location = new System.Drawing.Point(24, 4);
+            this.powerTabPage1.Name = "powerTabPage1";
+            this.powerTabPage1.Size = new System.Drawing.Size(1181, 798);
+            this.powerTabPage1.TabIndex = 0;
+            // 
+            // txtConsole
+            // 
+            this.txtConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
+            this.txtConsole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConsole.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtConsole.Location = new System.Drawing.Point(3, 3);
+            this.txtConsole.Multiline = true;
+            this.txtConsole.Name = "txtConsole";
+            this.txtConsole.Size = new System.Drawing.Size(1549, 857);
+            this.txtConsole.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -907,10 +944,13 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.SerialConsoleTab.ResumeLayout(false);
+            this.SerialConsoleTab.PerformLayout();
             this.testTab.ResumeLayout(false);
             this.brakesTab.ResumeLayout(false);
             this.LGUTab.ResumeLayout(false);
             this.FCUTab.ResumeLayout(false);
+            this.powerTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -981,6 +1021,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage powerTab;
+        private TabPanels.PowerTabPage powerTabPage1;
+        private System.Windows.Forms.TextBox txtConsole;
     }
 }
 

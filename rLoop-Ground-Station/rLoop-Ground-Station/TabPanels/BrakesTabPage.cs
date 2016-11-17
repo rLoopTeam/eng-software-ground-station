@@ -74,16 +74,27 @@ namespace rLoop_Ground_Station.TabPanels
                 return;
             }
 
+            if (outVal < 0 || outVal > 25) {
+                MessageBox.Show("Value out of range of 0 to 25 mm.");
+                return;
+            }
+
             if (!rPodPodState.FlightControlUnitNode.setIBeamDistance(outVal))
                 MessageBox.Show("There was an error sending the command.");
 
+        }
+
+        public void ErrorIfFalse(bool val)
+        {
+            if(!val)
+                MessageBox.Show("Unable to send the command.");
         }
 
         private void btnBrakeParameter_Click(object sender, EventArgs e)
         {
             
 
-            switch (comboBrakeParameters.SelectedText)
+            switch (comboBrakeParameters.SelectedItem.ToString())
             {
                 case "Left - micro-steps per revolution": //U32
                     UInt32 UInt32Val;
@@ -93,7 +104,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBLeftMicroStepsPerRevolution(UInt32Val);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBLeftMicroStepsPerRevolution(UInt32Val));
                     }
                     break;
                 case "Left - max acceleration, microns / sec^2": //S32
@@ -104,7 +115,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBLeftMaxAcceleration(Int32Val1);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBLeftMaxAcceleration(Int32Val1));
                     }
                     break;
                 case "Left - Linear Microns per revolution": //S32
@@ -115,7 +126,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBLeftLinearMicronsPerRevolution(Int32Val2);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBLeftLinearMicronsPerRevolution(Int32Val2));
                     }
                     break;
                 case "Left - Steps per revolution": //U32
@@ -126,7 +137,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBLeftStepsPerRevolution(UInt32Val3);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBLeftStepsPerRevolution(UInt32Val3));
                     }
                     break;
                 case "Left - Max Angluar Velocity": //S32
@@ -137,7 +148,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBLeftMaxAngularVeolocity(Int32Val4) ;
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBLeftMaxAngularVeolocity(Int32Val4));
                     }
                     break;
                 case "Right - micro-steps per revolution": //U32
@@ -148,7 +159,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBRightMicroStepsPerRevolution(Int32Val5);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBRightMicroStepsPerRevolution(Int32Val5));
                     }
                     break;
                 case "Right - max acceleration, microns / sec^2": //S32
@@ -159,7 +170,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBRightMaxAcceleration(Int32Val6);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBRightMaxAcceleration(Int32Val6));
                     }
                     break;
                 case "Right - Linear Microns per revolution": //S32
@@ -170,7 +181,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBRightLinearMicronsPerRevolution(Int32Val7);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBRightLinearMicronsPerRevolution(Int32Val7));
                     }
                     break;
                 case "Right - Steps per revolution": //U32
@@ -181,7 +192,7 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBRightStepsPerRevolution(Int32Val8);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBRightStepsPerRevolution(Int32Val8));
                     }
                     break;
                 case "Right - Max Angluar Velocity": //S32
@@ -192,9 +203,10 @@ namespace rLoop_Ground_Station.TabPanels
                     }
                     else
                     {
-                        rPodPodState.FlightControlUnitNode.SetEBRightMaxAngularVeolocity(Int32Val9);
+                        ErrorIfFalse(rPodPodState.FlightControlUnitNode.SetEBRightMaxAngularVeolocity(Int32Val9));
                     }
                     break;
+                default: MessageBox.Show("Invalid selection in combo box."); break;
             }
 
         }
