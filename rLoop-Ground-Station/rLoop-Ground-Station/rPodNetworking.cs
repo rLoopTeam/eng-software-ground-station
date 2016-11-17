@@ -380,7 +380,11 @@ namespace rLoop_Ground_Station
                 }
                 rPodNetworking.ProcessZMQTelemetryFrame(reply.Skip(i).ToArray(), NetworkNode.NodeNameShort);
             };
-            poller.Run();
+            try
+            {
+                poller.Run();
+            }
+            catch { Console.WriteLine("Problem with subscriber running, possibly a node that changed or went offline (?)"); }
         }
     }
 
