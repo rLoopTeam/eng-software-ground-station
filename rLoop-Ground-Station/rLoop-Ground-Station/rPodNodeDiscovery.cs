@@ -13,6 +13,7 @@ using System.Globalization;
 using NetMQ;
 using NetMQ.Sockets;
 using Microsoft.VisualBasic.FileIO;
+using System.Net.NetworkInformation;
 
 
 /*
@@ -35,13 +36,25 @@ namespace rLoop_Ground_Station
         static bool _IsRunning = true;
         static UdpState s;
         public static bool Paused = false;
-
         public static event FoundNewNodeHandler FoundNewNode;
+        static UdpClient u;
+
+        static rPodNodeDiscovery()
+        {
+            //Make sure we're listening on all network interfaces as they come up and down
+            NetworkChange.NetworkAvailabilityChanged += new
+                NetworkAvailabilityChangedEventHandler(AvailabilityChangedCallback);
+        }
+
+        static void AvailabilityChangedCallback(object sender, EventArgs e)
+        {
+            beginUDPListen();
+        }
 
         public static bool beginUDPListen()
         {
             IPEndPoint e = new IPEndPoint(IPAddress.Any, 50051);
-            UdpClient u = new UdpClient(e);
+            u = new UdpClient(e);
             u.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             try
             {
