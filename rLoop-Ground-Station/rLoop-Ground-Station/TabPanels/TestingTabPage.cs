@@ -49,14 +49,16 @@ namespace rLoop_Ground_Station.TabPanels
                 case DialogResult.No: return;  break;
             }
 
-            bool PowerAResult;
-            bool PowerBResult;
+            bool PowerAResult = false;
+            bool PowerBResult = false;
 
             DateTime started = DateTime.Now;
             do
             {
-                PowerAResult = rPodPodState.PowerNodeA.SendPodSafe();
-                PowerBResult = rPodPodState.PowerNodeB.SendPodSafe();
+                if(!PowerAResult)
+                    PowerAResult = rPodPodState.PowerNodeA.SendPodSafe();
+                if(!PowerBResult)
+                    PowerBResult =  rPodPodState.PowerNodeB.SendPodSafe();
             } while ((Math.Abs((rPodPodState.PowerNodeA.LastHeard - DateTime.Now).TotalMilliseconds) < 1000 || Math.Abs((rPodPodState.PowerNodeB.LastHeard - DateTime.Now).TotalMilliseconds) < 1000) && (DateTime.Now - started).TotalMilliseconds < 2000);
 
             if (!PowerAResult)

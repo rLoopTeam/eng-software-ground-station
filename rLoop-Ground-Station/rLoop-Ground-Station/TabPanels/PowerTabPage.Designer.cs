@@ -58,7 +58,7 @@
             btnStreamPressureOn.Location = new System.Drawing.Point(6, 6);
             btnStreamPressureOn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             btnStreamPressureOn.Name = "btnStreamPressureOn";
-            btnStreamPressureOn.Size = new System.Drawing.Size(768, 260);
+            btnStreamPressureOn.Size = new System.Drawing.Size(768, 264);
             btnStreamPressureOn.TabIndex = 0;
             btnStreamPressureOn.Text = "Stream Pressure On";
             btnStreamPressureOn.UseVisualStyleBackColor = true;
@@ -151,6 +151,9 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -165,10 +168,10 @@
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1560, 819);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1560, 831);
             this.tableLayoutPanel2.TabIndex = 281;
             // 
             // btnStreamPressureOff
@@ -181,7 +184,7 @@
             this.btnStreamPressureOff.Location = new System.Drawing.Point(786, 6);
             this.btnStreamPressureOff.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnStreamPressureOff.Name = "btnStreamPressureOff";
-            this.btnStreamPressureOff.Size = new System.Drawing.Size(768, 260);
+            this.btnStreamPressureOff.Size = new System.Drawing.Size(768, 264);
             this.btnStreamPressureOff.TabIndex = 0;
             this.btnStreamPressureOff.Text = "Stream Pressure Off";
             this.btnStreamPressureOff.UseVisualStyleBackColor = true;
@@ -194,10 +197,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChargeRelayOn.AutoSize = true;
             this.btnChargeRelayOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChargeRelayOn.Location = new System.Drawing.Point(6, 551);
+            this.btnChargeRelayOn.Location = new System.Drawing.Point(6, 559);
             this.btnChargeRelayOn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnChargeRelayOn.Name = "btnChargeRelayOn";
-            this.btnChargeRelayOn.Size = new System.Drawing.Size(768, 262);
+            this.btnChargeRelayOn.Size = new System.Drawing.Size(768, 266);
             this.btnChargeRelayOn.TabIndex = 0;
             this.btnChargeRelayOn.Text = "Charge Relay On";
             this.btnChargeRelayOn.UseVisualStyleBackColor = true;
@@ -210,10 +213,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChargeRelayOff.AutoSize = true;
             this.btnChargeRelayOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChargeRelayOff.Location = new System.Drawing.Point(786, 551);
+            this.btnChargeRelayOff.Location = new System.Drawing.Point(786, 559);
             this.btnChargeRelayOff.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnChargeRelayOff.Name = "btnChargeRelayOff";
-            this.btnChargeRelayOff.Size = new System.Drawing.Size(768, 262);
+            this.btnChargeRelayOff.Size = new System.Drawing.Size(768, 266);
             this.btnChargeRelayOff.TabIndex = 0;
             this.btnChargeRelayOff.Text = "Charge Relay Off";
             this.btnChargeRelayOff.UseVisualStyleBackColor = true;
@@ -226,10 +229,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStreamTemperatureOn.AutoSize = true;
             this.btnStreamTemperatureOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStreamTemperatureOn.Location = new System.Drawing.Point(6, 278);
+            this.btnStreamTemperatureOn.Location = new System.Drawing.Point(6, 282);
             this.btnStreamTemperatureOn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnStreamTemperatureOn.Name = "btnStreamTemperatureOn";
-            this.btnStreamTemperatureOn.Size = new System.Drawing.Size(768, 261);
+            this.btnStreamTemperatureOn.Size = new System.Drawing.Size(768, 265);
             this.btnStreamTemperatureOn.TabIndex = 0;
             this.btnStreamTemperatureOn.Text = "Stream Temperature On";
             this.btnStreamTemperatureOn.UseVisualStyleBackColor = true;
@@ -242,10 +245,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStreamTemperatureOff.AutoSize = true;
             this.btnStreamTemperatureOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStreamTemperatureOff.Location = new System.Drawing.Point(786, 278);
+            this.btnStreamTemperatureOff.Location = new System.Drawing.Point(786, 282);
             this.btnStreamTemperatureOff.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnStreamTemperatureOff.Name = "btnStreamTemperatureOff";
-            this.btnStreamTemperatureOff.Size = new System.Drawing.Size(768, 261);
+            this.btnStreamTemperatureOff.Size = new System.Drawing.Size(768, 265);
             this.btnStreamTemperatureOff.TabIndex = 0;
             this.btnStreamTemperatureOff.Text = "Stream Temperature Off";
             this.btnStreamTemperatureOff.UseVisualStyleBackColor = true;

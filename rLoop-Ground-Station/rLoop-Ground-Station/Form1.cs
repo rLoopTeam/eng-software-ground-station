@@ -557,5 +557,10 @@ namespace rLoop_Ground_Station
             if (!rPodNetworking.setParameters(listBox1.SelectedItem.ToString(), paramsToSend))
                 MessageBox.Show("There was an error sending the message.");
         }
+
+        private void powerTabPage1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

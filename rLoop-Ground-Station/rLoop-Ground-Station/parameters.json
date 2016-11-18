@@ -66,7 +66,39 @@
 	"power": [],
 	"control": [],
 	"hdk": [],
-		"Loopback": [
+	"FlightControlUnit": [
+		[20992,	0,		0,	"mm",	"Brake - Left Screw Position"],
+		[20993,	0,		0,	"mm",	"Brake - Right Screw Position"],
+		[20994,	0,		0,	"NA",	"Brake - Left Limit Switch Extend"],
+		[20995,	0,		0,	"NA",	"Brake - Right Limit Switch Extend"],
+		[20996,	0,		0,	"NA",	"Brake - Left Limit Switch Retract"],
+		[20997,	0,		0,	"NA",	"Brake - Right Limit Switch Retract"],
+		[20998,	0,		0,	"mm",	"Brake - Left iBeam Distance"],
+		[20999,	0,		0,	"mm",	"Brake - Right iBeam Distance"],
+		[21000,	0,		0,	"NA",	"Brake - Left MLP ADC Raw"],
+		[21001,	0,		0,	"NA",	"Brake - Right MLP ADC Raw"],
+		[21002,	0,		0,	"mm",	"Brake - Left MLP Scaled Value mm"],
+		[21003,	0,		0,	"mm",	"Brake - Right MLP Scaled Value mm"],
+		
+		[21248,	0,		0,	"mm",	"Pitch Laser FL"],
+		[21249,	0,		0,	"mm",	"Pitch Laser FR"],
+		[21250,	0,		0,	"mm",	"Pitch Laser RL"],
+		[21251,	0,		0,	"mm",	"Pitch Laser RR"],	
+		[21252,	0,		0,	"mm",	"Yaw Laser Front"],	
+		[21252,	0,		0,	"mm",	"Yaw Laser Rear"],
+
+
+		[21504,	0,		0,	"NA",	"Pusher Switch A"],	
+		[21505,	0,		0,	"NA",	"Pusher Switch B"],	
+		[21506,	0,		0,	"NA",	"Pusher Switch C"],	
+
+		[21760,	0,		0,	"Gs",	"Accel 1 X Axis"],	
+		[21761,	0,		0,	"Gs",	"Accel 1 Y Axis"],	
+		[21762,	0,		0,	"Gs",	"Accel 1 Z Axis"],		
+	],
+	
+	
+	"Loopback": [
 		[0,	0,		0,	"NA",	"uint8 test"],
 		[1,	0,		0,	"NA",	"int8 test"],
 		[2,	0,		0,	"NA",	"uint16 test"],
