@@ -126,18 +126,16 @@
             // UpdateNodeList
             // 
             this.UpdateNodeList.Enabled = true;
-            this.UpdateNodeList.Interval = 2000;
+            this.UpdateNodeList.Interval = 1000;
             this.UpdateNodeList.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // UpdateDGVTimer
             // 
             this.UpdateDGVTimer.Enabled = true;
-            this.UpdateDGVTimer.Interval = 50;
             this.UpdateDGVTimer.Tick += new System.EventHandler(this.UpdateDGVTimer_Tick);
             // 
             // BatteryPackAStatusTab
             // 
-            this.BatteryPackAStatusTab.Enabled = true;
             this.BatteryPackAStatusTab.Interval = 200;
             this.BatteryPackAStatusTab.Tick += new System.EventHandler(this.BatteryPackAStatusTab_Tick);
             // 
@@ -180,11 +178,10 @@
             this.customTabControl1.DisplayStyleProvider.TextColorDisabled = System.Drawing.Color.WhiteSmoke;
             this.customTabControl1.DisplayStyleProvider.TextColorSelected = System.Drawing.SystemColors.ControlText;
             this.customTabControl1.HotTrack = true;
-            this.customTabControl1.Location = new System.Drawing.Point(42, 23);
-            this.customTabControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.customTabControl1.Location = new System.Drawing.Point(21, 12);
             this.customTabControl1.Name = "customTabControl1";
             this.customTabControl1.SelectedIndex = 0;
-            this.customTabControl1.Size = new System.Drawing.Size(3126, 1715);
+            this.customTabControl1.Size = new System.Drawing.Size(1563, 892);
             this.customTabControl1.TabIndex = 13;
             // 
             // OverviewTab
@@ -192,11 +189,10 @@
             this.OverviewTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.OverviewTab.Controls.Add(this.panel1);
             this.OverviewTab.Controls.Add(this.panel2);
-            this.OverviewTab.Location = new System.Drawing.Point(4, 36);
-            this.OverviewTab.Margin = new System.Windows.Forms.Padding(6);
+            this.OverviewTab.Location = new System.Drawing.Point(4, 25);
             this.OverviewTab.Name = "OverviewTab";
-            this.OverviewTab.Padding = new System.Windows.Forms.Padding(6);
-            this.OverviewTab.Size = new System.Drawing.Size(3118, 1675);
+            this.OverviewTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.OverviewTab.Size = new System.Drawing.Size(1555, 863);
             this.OverviewTab.TabIndex = 0;
             this.OverviewTab.Text = "Overview";
             // 
@@ -206,10 +202,9 @@
             this.panel1.Controls.Add(this.rPodSpeedometer1);
             this.panel1.Controls.Add(this.rPodGyro1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(3106, 836);
+            this.panel1.Size = new System.Drawing.Size(1549, 427);
             this.panel1.TabIndex = 12;
             // 
             // podStateControl2
@@ -247,28 +242,28 @@
             this.podStateControl2.HE8Percent = 0.8D;
             this.podStateControl2.HE8Power = 3000D;
             this.podStateControl2.HE8RPM = 3000D;
-            this.podStateControl2.Location = new System.Drawing.Point(1024, 0);
-            this.podStateControl2.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
+            this.podStateControl2.Location = new System.Drawing.Point(512, 0);
+            this.podStateControl2.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.podStateControl2.Name = "podStateControl2";
-            this.podStateControl2.Size = new System.Drawing.Size(1206, 836);
+            this.podStateControl2.Size = new System.Drawing.Size(599, 427);
             this.podStateControl2.TabIndex = 0;
             // 
             // rPodSpeedometer1
             // 
             this.rPodSpeedometer1.Dock = System.Windows.Forms.DockStyle.Left;
             this.rPodSpeedometer1.Location = new System.Drawing.Point(0, 0);
-            this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
+            this.rPodSpeedometer1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.rPodSpeedometer1.Name = "rPodSpeedometer1";
-            this.rPodSpeedometer1.Size = new System.Drawing.Size(1024, 836);
+            this.rPodSpeedometer1.Size = new System.Drawing.Size(512, 427);
             this.rPodSpeedometer1.TabIndex = 9;
             // 
             // rPodGyro1
             // 
             this.rPodGyro1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rPodGyro1.Location = new System.Drawing.Point(2230, 0);
-            this.rPodGyro1.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
+            this.rPodGyro1.Location = new System.Drawing.Point(1111, 0);
+            this.rPodGyro1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.rPodGyro1.Name = "rPodGyro1";
-            this.rPodGyro1.Size = new System.Drawing.Size(876, 836);
+            this.rPodGyro1.Size = new System.Drawing.Size(438, 427);
             this.rPodGyro1.TabIndex = 11;
             // 
             // panel2
@@ -278,53 +273,51 @@
             this.panel2.Controls.Add(this.rPodCurrentGauge1);
             this.panel2.Controls.Add(this.rPodBatteryVoltage1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(6, 842);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6);
+            this.panel2.Location = new System.Drawing.Point(3, 430);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(3106, 827);
+            this.panel2.Size = new System.Drawing.Size(1549, 430);
             this.panel2.TabIndex = 13;
             // 
             // rPodCurrentGauge2
             // 
-            this.rPodCurrentGauge2.Location = new System.Drawing.Point(760, 21);
-            this.rPodCurrentGauge2.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
+            this.rPodCurrentGauge2.Location = new System.Drawing.Point(380, 11);
+            this.rPodCurrentGauge2.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.rPodCurrentGauge2.Name = "rPodCurrentGauge2";
-            this.rPodCurrentGauge2.Size = new System.Drawing.Size(500, 440);
+            this.rPodCurrentGauge2.Size = new System.Drawing.Size(250, 229);
             this.rPodCurrentGauge2.TabIndex = 13;
             // 
             // rPodBatteryIndicator1
             // 
-            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(72, 515);
-            this.rPodBatteryIndicator1.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
+            this.rPodBatteryIndicator1.Location = new System.Drawing.Point(36, 268);
+            this.rPodBatteryIndicator1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.rPodBatteryIndicator1.Name = "rPodBatteryIndicator1";
-            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(466, 217);
+            this.rPodBatteryIndicator1.Size = new System.Drawing.Size(233, 113);
             this.rPodBatteryIndicator1.TabIndex = 11;
             // 
             // rPodCurrentGauge1
             // 
-            this.rPodCurrentGauge1.Location = new System.Drawing.Point(62, 0);
-            this.rPodCurrentGauge1.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
+            this.rPodCurrentGauge1.Location = new System.Drawing.Point(31, 0);
+            this.rPodCurrentGauge1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.rPodCurrentGauge1.Name = "rPodCurrentGauge1";
-            this.rPodCurrentGauge1.Size = new System.Drawing.Size(476, 462);
+            this.rPodCurrentGauge1.Size = new System.Drawing.Size(238, 240);
             this.rPodCurrentGauge1.TabIndex = 12;
             // 
             // rPodBatteryVoltage1
             // 
-            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(800, 515);
-            this.rPodBatteryVoltage1.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
+            this.rPodBatteryVoltage1.Location = new System.Drawing.Point(400, 268);
+            this.rPodBatteryVoltage1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.rPodBatteryVoltage1.Name = "rPodBatteryVoltage1";
-            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(500, 217);
+            this.rPodBatteryVoltage1.Size = new System.Drawing.Size(250, 113);
             this.rPodBatteryVoltage1.TabIndex = 11;
             // 
             // PowerNodeATab
             // 
             this.PowerNodeATab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.PowerNodeATab.Controls.Add(this.customTabControl2);
-            this.PowerNodeATab.Location = new System.Drawing.Point(4, 36);
-            this.PowerNodeATab.Margin = new System.Windows.Forms.Padding(6);
+            this.PowerNodeATab.Location = new System.Drawing.Point(4, 25);
             this.PowerNodeATab.Name = "PowerNodeATab";
-            this.PowerNodeATab.Padding = new System.Windows.Forms.Padding(6);
-            this.PowerNodeATab.Size = new System.Drawing.Size(3118, 1675);
+            this.PowerNodeATab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.PowerNodeATab.Size = new System.Drawing.Size(1555, 863);
             this.PowerNodeATab.TabIndex = 3;
             this.PowerNodeATab.Text = "Power A";
             // 
@@ -356,11 +349,10 @@
             this.customTabControl2.DisplayStyleProvider.TextColorSelected = System.Drawing.SystemColors.ControlText;
             this.customTabControl2.HotTrack = true;
             this.customTabControl2.ItemSize = new System.Drawing.Size(95, 22);
-            this.customTabControl2.Location = new System.Drawing.Point(12, 12);
-            this.customTabControl2.Margin = new System.Windows.Forms.Padding(6);
+            this.customTabControl2.Location = new System.Drawing.Point(6, 6);
             this.customTabControl2.Name = "customTabControl2";
             this.customTabControl2.SelectedIndex = 0;
-            this.customTabControl2.Size = new System.Drawing.Size(2506, 1213);
+            this.customTabControl2.Size = new System.Drawing.Size(1253, 631);
             this.customTabControl2.TabIndex = 0;
             // 
             // tabPage1
@@ -370,10 +362,9 @@
             this.tabPage1.Controls.Add(this.BrakesAPackTemperature);
             this.tabPage1.Controls.Add(this.BrakesAPackVoltage);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage1.Size = new System.Drawing.Size(2498, 1182);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1245, 600);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Voltages";
             // 
@@ -384,10 +375,10 @@
             this.flowLayoutPanel1.AutoScrollMinSize = new System.Drawing.Size(0, 50);
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 108);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 56);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(2420, 1065);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1210, 554);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -396,10 +387,9 @@
             this.BrakesAPackTemperature.AutoSize = true;
             this.BrakesAPackTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrakesAPackTemperature.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BrakesAPackTemperature.Location = new System.Drawing.Point(736, 23);
-            this.BrakesAPackTemperature.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.BrakesAPackTemperature.Location = new System.Drawing.Point(368, 12);
             this.BrakesAPackTemperature.Name = "BrakesAPackTemperature";
-            this.BrakesAPackTemperature.Size = new System.Drawing.Size(768, 73);
+            this.BrakesAPackTemperature.Size = new System.Drawing.Size(384, 37);
             this.BrakesAPackTemperature.TabIndex = 2;
             this.BrakesAPackTemperature.Text = "Temperature: 0.000 degC";
             // 
@@ -408,10 +398,9 @@
             this.BrakesAPackVoltage.AutoSize = true;
             this.BrakesAPackVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrakesAPackVoltage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BrakesAPackVoltage.Location = new System.Drawing.Point(34, 23);
-            this.BrakesAPackVoltage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.BrakesAPackVoltage.Location = new System.Drawing.Point(17, 12);
             this.BrakesAPackVoltage.Name = "BrakesAPackVoltage";
-            this.BrakesAPackVoltage.Size = new System.Drawing.Size(608, 73);
+            this.BrakesAPackVoltage.Size = new System.Drawing.Size(306, 37);
             this.BrakesAPackVoltage.TabIndex = 1;
             this.BrakesAPackVoltage.Text = "Voltage: 0.000 Volts";
             // 
@@ -419,9 +408,8 @@
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.tabPage5.Location = new System.Drawing.Point(4, 27);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(2498, 1182);
+            this.tabPage5.Size = new System.Drawing.Size(1245, 600);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Charger";
             // 
@@ -429,10 +417,9 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage2.Size = new System.Drawing.Size(2498, 1182);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(1245, 600);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BMS 1";
             // 
@@ -440,9 +427,8 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(2498, 1182);
+            this.tabPage3.Size = new System.Drawing.Size(1245, 600);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "BMS 2";
             // 
@@ -450,29 +436,27 @@
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.tabPage4.Location = new System.Drawing.Point(4, 27);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(2498, 1182);
+            this.tabPage4.Size = new System.Drawing.Size(1245, 600);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "BMS 3";
             // 
             // PowerNodeBTab
             // 
             this.PowerNodeBTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.PowerNodeBTab.Location = new System.Drawing.Point(4, 36);
-            this.PowerNodeBTab.Margin = new System.Windows.Forms.Padding(6);
+            this.PowerNodeBTab.Location = new System.Drawing.Point(4, 25);
             this.PowerNodeBTab.Name = "PowerNodeBTab";
-            this.PowerNodeBTab.Size = new System.Drawing.Size(3118, 1675);
+            this.PowerNodeBTab.Size = new System.Drawing.Size(1555, 863);
             this.PowerNodeBTab.TabIndex = 4;
             this.PowerNodeBTab.Text = "Power B";
             // 
             // AuxPropTab
             // 
             this.AuxPropTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.AuxPropTab.Location = new System.Drawing.Point(4, 36);
-            this.AuxPropTab.Margin = new System.Windows.Forms.Padding(4);
+            this.AuxPropTab.Location = new System.Drawing.Point(4, 25);
+            this.AuxPropTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AuxPropTab.Name = "AuxPropTab";
-            this.AuxPropTab.Size = new System.Drawing.Size(3118, 1675);
+            this.AuxPropTab.Size = new System.Drawing.Size(1555, 863);
             this.AuxPropTab.TabIndex = 5;
             this.AuxPropTab.Text = "Aux Prop";
             // 
@@ -482,31 +466,28 @@
             this.NodeUtilitiesTab.Controls.Add(this.panel5);
             this.NodeUtilitiesTab.Controls.Add(this.panel4);
             this.NodeUtilitiesTab.Controls.Add(this.panel3);
-            this.NodeUtilitiesTab.Location = new System.Drawing.Point(4, 36);
-            this.NodeUtilitiesTab.Margin = new System.Windows.Forms.Padding(6);
+            this.NodeUtilitiesTab.Location = new System.Drawing.Point(4, 25);
             this.NodeUtilitiesTab.Name = "NodeUtilitiesTab";
-            this.NodeUtilitiesTab.Padding = new System.Windows.Forms.Padding(6);
-            this.NodeUtilitiesTab.Size = new System.Drawing.Size(3118, 1675);
+            this.NodeUtilitiesTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.NodeUtilitiesTab.Size = new System.Drawing.Size(1555, 863);
             this.NodeUtilitiesTab.TabIndex = 1;
             this.NodeUtilitiesTab.Text = "Node Utilities";
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(6, 1477);
-            this.panel5.Margin = new System.Windows.Forms.Padding(6);
+            this.panel5.Location = new System.Drawing.Point(3, 760);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(3106, 192);
+            this.panel5.Size = new System.Drawing.Size(1549, 100);
             this.panel5.TabIndex = 8;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(6, 494);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6);
+            this.panel4.Location = new System.Drawing.Point(3, 257);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(3106, 1175);
+            this.panel4.Size = new System.Drawing.Size(1549, 603);
             this.panel4.TabIndex = 7;
             // 
             // dataGridView1
@@ -522,12 +503,11 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(3106, 1175);
+            this.dataGridView1.Size = new System.Drawing.Size(1549, 603);
             this.dataGridView1.TabIndex = 5;
             // 
             // index
@@ -561,10 +541,9 @@
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.listBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(6, 6);
-            this.panel3.Margin = new System.Windows.Forms.Padding(6);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(3106, 488);
+            this.panel3.Size = new System.Drawing.Size(1549, 254);
             this.panel3.TabIndex = 6;
             // 
             // tableLayoutPanel2
@@ -574,15 +553,14 @@
             this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeIp, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeDataLogging, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblSelectedNodeTime, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(556, 98);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(278, 51);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(400, 333);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 173);
             this.tableLayoutPanel2.TabIndex = 14;
             // 
             // lblSelectedNodeIp
@@ -590,11 +568,10 @@
             this.lblSelectedNodeIp.AutoSize = true;
             this.lblSelectedNodeIp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectedNodeIp.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeIp.Location = new System.Drawing.Point(6, 0);
-            this.lblSelectedNodeIp.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblSelectedNodeIp.Location = new System.Drawing.Point(3, 0);
             this.lblSelectedNodeIp.Name = "lblSelectedNodeIp";
-            this.lblSelectedNodeIp.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
-            this.lblSelectedNodeIp.Size = new System.Drawing.Size(60, 67);
+            this.lblSelectedNodeIp.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeIp.Size = new System.Drawing.Size(31, 35);
             this.lblSelectedNodeIp.TabIndex = 4;
             this.lblSelectedNodeIp.Text = "IP";
             // 
@@ -603,11 +580,10 @@
             this.lblSelectedNodeDataLogging.AutoSize = true;
             this.lblSelectedNodeDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectedNodeDataLogging.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeDataLogging.Location = new System.Drawing.Point(6, 67);
-            this.lblSelectedNodeDataLogging.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblSelectedNodeDataLogging.Location = new System.Drawing.Point(3, 35);
             this.lblSelectedNodeDataLogging.Name = "lblSelectedNodeDataLogging";
-            this.lblSelectedNodeDataLogging.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
-            this.lblSelectedNodeDataLogging.Size = new System.Drawing.Size(247, 67);
+            this.lblSelectedNodeDataLogging.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeDataLogging.Size = new System.Drawing.Size(130, 35);
             this.lblSelectedNodeDataLogging.TabIndex = 4;
             this.lblSelectedNodeDataLogging.Text = "data logging";
             // 
@@ -616,11 +592,10 @@
             this.lblSelectedNodeTime.AutoSize = true;
             this.lblSelectedNodeTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectedNodeTime.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedNodeTime.Location = new System.Drawing.Point(6, 134);
-            this.lblSelectedNodeTime.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblSelectedNodeTime.Location = new System.Drawing.Point(3, 70);
             this.lblSelectedNodeTime.Name = "lblSelectedNodeTime";
-            this.lblSelectedNodeTime.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
-            this.lblSelectedNodeTime.Size = new System.Drawing.Size(114, 67);
+            this.lblSelectedNodeTime.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblSelectedNodeTime.Size = new System.Drawing.Size(59, 35);
             this.lblSelectedNodeTime.TabIndex = 4;
             this.lblSelectedNodeTime.Text = "Time";
             // 
@@ -646,8 +621,7 @@
             this.tableLayoutPanel1.Controls.Add(this.testDataToSendTxt, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label8, 1, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1171, 25);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(586, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.07207F));
@@ -655,17 +629,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.16216F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(2670, 438);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1331, 234);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // btnStartDataLogging
             // 
             this.btnStartDataLogging.AutoSize = true;
             this.btnStartDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartDataLogging.Location = new System.Drawing.Point(1263, 6);
-            this.btnStartDataLogging.Margin = new System.Windows.Forms.Padding(6);
+            this.btnStartDataLogging.Location = new System.Drawing.Point(631, 3);
             this.btnStartDataLogging.Name = "btnStartDataLogging";
-            this.btnStartDataLogging.Size = new System.Drawing.Size(638, 82);
+            this.btnStartDataLogging.Size = new System.Drawing.Size(319, 43);
             this.btnStartDataLogging.TabIndex = 5;
             this.btnStartDataLogging.Text = "Start Data Logging";
             this.btnStartDataLogging.UseVisualStyleBackColor = true;
@@ -675,10 +648,9 @@
             // 
             this.btnStopDataLogging.AutoSize = true;
             this.btnStopDataLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStopDataLogging.Location = new System.Drawing.Point(1263, 103);
-            this.btnStopDataLogging.Margin = new System.Windows.Forms.Padding(6);
+            this.btnStopDataLogging.Location = new System.Drawing.Point(631, 54);
             this.btnStopDataLogging.Name = "btnStopDataLogging";
-            this.btnStopDataLogging.Size = new System.Drawing.Size(630, 95);
+            this.btnStopDataLogging.Size = new System.Drawing.Size(315, 49);
             this.btnStopDataLogging.TabIndex = 5;
             this.btnStopDataLogging.Text = "Stop Data Logging";
             this.btnStopDataLogging.UseVisualStyleBackColor = true;
@@ -687,20 +659,18 @@
             // txtNewBaud
             // 
             this.txtNewBaud.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewBaud.Location = new System.Drawing.Point(643, 6);
-            this.txtNewBaud.Margin = new System.Windows.Forms.Padding(6);
+            this.txtNewBaud.Location = new System.Drawing.Point(321, 3);
             this.txtNewBaud.Name = "txtNewBaud";
-            this.txtNewBaud.Size = new System.Drawing.Size(282, 69);
+            this.txtNewBaud.Size = new System.Drawing.Size(143, 38);
             this.txtNewBaud.TabIndex = 6;
             this.txtNewBaud.Text = "57600";
             // 
             // btnNewBaudRate
             // 
             this.btnNewBaudRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewBaudRate.Location = new System.Drawing.Point(643, 103);
-            this.btnNewBaudRate.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNewBaudRate.Location = new System.Drawing.Point(321, 54);
             this.btnNewBaudRate.Name = "btnNewBaudRate";
-            this.btnNewBaudRate.Size = new System.Drawing.Size(608, 87);
+            this.btnNewBaudRate.Size = new System.Drawing.Size(304, 45);
             this.btnNewBaudRate.TabIndex = 5;
             this.btnNewBaudRate.Text = "Change UART Baud";
             this.btnNewBaudRate.UseVisualStyleBackColor = true;
@@ -709,10 +679,9 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(6, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(506, 69);
+            this.textBox1.Size = new System.Drawing.Size(255, 38);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "New Node Name";
             // 
@@ -720,10 +689,9 @@
             // 
             this.button3.AutoSize = true;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(6, 103);
-            this.button3.Margin = new System.Windows.Forms.Padding(6);
+            this.button3.Location = new System.Drawing.Point(3, 54);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(625, 95);
+            this.button3.Size = new System.Drawing.Size(312, 49);
             this.button3.TabIndex = 5;
             this.button3.Text = "Change Node Name";
             this.button3.UseVisualStyleBackColor = true;
@@ -744,10 +712,9 @@
             "UInt 64",
             "Float",
             "Double"});
-            this.testDataType.Location = new System.Drawing.Point(1263, 267);
-            this.testDataType.Margin = new System.Windows.Forms.Padding(6);
+            this.testDataType.Location = new System.Drawing.Point(631, 141);
             this.testDataType.Name = "testDataType";
-            this.testDataType.Size = new System.Drawing.Size(392, 71);
+            this.testDataType.Size = new System.Drawing.Size(198, 39);
             this.testDataType.TabIndex = 12;
             this.testDataType.Text = "Data Type";
             // 
@@ -755,10 +722,9 @@
             // 
             this.sendTestData.AutoSize = true;
             this.sendTestData.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendTestData.Location = new System.Drawing.Point(1263, 355);
-            this.sendTestData.Margin = new System.Windows.Forms.Padding(6);
+            this.sendTestData.Location = new System.Drawing.Point(631, 188);
             this.sendTestData.Name = "sendTestData";
-            this.sendTestData.Size = new System.Drawing.Size(768, 76);
+            this.sendTestData.Size = new System.Drawing.Size(384, 41);
             this.sendTestData.TabIndex = 9;
             this.sendTestData.Text = "Set Parameter";
             this.sendTestData.UseVisualStyleBackColor = true;
@@ -767,20 +733,18 @@
             // testDataIndexTxt
             // 
             this.testDataIndexTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testDataIndexTxt.Location = new System.Drawing.Point(643, 267);
-            this.testDataIndexTxt.Margin = new System.Windows.Forms.Padding(6);
+            this.testDataIndexTxt.Location = new System.Drawing.Point(321, 141);
             this.testDataIndexTxt.Name = "testDataIndexTxt";
-            this.testDataIndexTxt.Size = new System.Drawing.Size(420, 69);
+            this.testDataIndexTxt.Size = new System.Drawing.Size(212, 38);
             this.testDataIndexTxt.TabIndex = 8;
             this.testDataIndexTxt.Text = "5";
             // 
             // testDataToSendTxt
             // 
             this.testDataToSendTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testDataToSendTxt.Location = new System.Drawing.Point(643, 355);
-            this.testDataToSendTxt.Margin = new System.Windows.Forms.Padding(6);
+            this.testDataToSendTxt.Location = new System.Drawing.Point(321, 188);
             this.testDataToSendTxt.Name = "testDataToSendTxt";
-            this.testDataToSendTxt.Size = new System.Drawing.Size(420, 69);
+            this.testDataToSendTxt.Size = new System.Drawing.Size(212, 38);
             this.testDataToSendTxt.TabIndex = 7;
             this.testDataToSendTxt.Text = "3.14159";
             // 
@@ -790,10 +754,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(465, 349);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(232, 185);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 63);
+            this.label1.Size = new System.Drawing.Size(83, 31);
             this.label1.TabIndex = 11;
             this.label1.Text = "Value";
             // 
@@ -803,10 +766,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(472, 261);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Location = new System.Drawing.Point(235, 138);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(159, 63);
+            this.label8.Size = new System.Drawing.Size(80, 31);
             this.label8.TabIndex = 10;
             this.label8.Text = "Index";
             // 
@@ -815,10 +777,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(102, 25);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Location = new System.Drawing.Point(51, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(360, 48);
+            this.label7.Size = new System.Drawing.Size(188, 25);
             this.label7.TabIndex = 4;
             this.label7.Text = "Discovered Nodes";
             // 
@@ -826,11 +787,10 @@
             // 
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 48;
-            this.listBox1.Location = new System.Drawing.Point(58, 98);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.listBox1.ItemHeight = 25;
+            this.listBox1.Location = new System.Drawing.Point(29, 51);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(440, 340);
+            this.listBox1.Size = new System.Drawing.Size(222, 179);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -838,11 +798,10 @@
             // 
             this.SerialConsoleTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.SerialConsoleTab.Controls.Add(this.txtConsole);
-            this.SerialConsoleTab.Location = new System.Drawing.Point(4, 36);
-            this.SerialConsoleTab.Margin = new System.Windows.Forms.Padding(6);
+            this.SerialConsoleTab.Location = new System.Drawing.Point(4, 25);
             this.SerialConsoleTab.Name = "SerialConsoleTab";
-            this.SerialConsoleTab.Padding = new System.Windows.Forms.Padding(6);
-            this.SerialConsoleTab.Size = new System.Drawing.Size(3118, 1675);
+            this.SerialConsoleTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.SerialConsoleTab.Size = new System.Drawing.Size(1555, 863);
             this.SerialConsoleTab.TabIndex = 2;
             this.SerialConsoleTab.Text = "Console";
             // 
@@ -852,11 +811,10 @@
             this.txtConsole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConsole.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtConsole.Location = new System.Drawing.Point(6, 6);
-            this.txtConsole.Margin = new System.Windows.Forms.Padding(6);
+            this.txtConsole.Location = new System.Drawing.Point(3, 3);
             this.txtConsole.Multiline = true;
             this.txtConsole.Name = "txtConsole";
-            this.txtConsole.Size = new System.Drawing.Size(3106, 1663);
+            this.txtConsole.Size = new System.Drawing.Size(1549, 857);
             this.txtConsole.TabIndex = 0;
             // 
             // testTab
@@ -864,30 +822,29 @@
             this.testTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.testTab.Controls.Add(this.testingTabPage1);
             this.testTab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.testTab.Location = new System.Drawing.Point(4, 36);
-            this.testTab.Margin = new System.Windows.Forms.Padding(4);
+            this.testTab.Location = new System.Drawing.Point(4, 25);
+            this.testTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.testTab.Name = "testTab";
-            this.testTab.Size = new System.Drawing.Size(3118, 1675);
+            this.testTab.Size = new System.Drawing.Size(1555, 863);
             this.testTab.TabIndex = 6;
             this.testTab.Text = "STOPS";
             // 
             // testingTabPage1
             // 
             this.testingTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.testingTabPage1.Location = new System.Drawing.Point(28, 6);
-            this.testingTabPage1.Margin = new System.Windows.Forms.Padding(12);
+            this.testingTabPage1.Location = new System.Drawing.Point(14, 3);
+            this.testingTabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.testingTabPage1.Name = "testingTabPage1";
-            this.testingTabPage1.Size = new System.Drawing.Size(2700, 1665);
+            this.testingTabPage1.Size = new System.Drawing.Size(1350, 866);
             this.testingTabPage1.TabIndex = 0;
             // 
             // brakesTab
             // 
             this.brakesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.brakesTab.Controls.Add(this.brakesTabPage1);
-            this.brakesTab.Location = new System.Drawing.Point(4, 36);
-            this.brakesTab.Margin = new System.Windows.Forms.Padding(6);
+            this.brakesTab.Location = new System.Drawing.Point(4, 25);
             this.brakesTab.Name = "brakesTab";
-            this.brakesTab.Size = new System.Drawing.Size(3118, 1675);
+            this.brakesTab.Size = new System.Drawing.Size(1555, 863);
             this.brakesTab.TabIndex = 7;
             this.brakesTab.Text = "Brakes";
             // 
@@ -896,19 +853,18 @@
             this.brakesTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.brakesTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.brakesTabPage1.Location = new System.Drawing.Point(0, 0);
-            this.brakesTabPage1.Margin = new System.Windows.Forms.Padding(12);
+            this.brakesTabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.brakesTabPage1.Name = "brakesTabPage1";
-            this.brakesTabPage1.Size = new System.Drawing.Size(3118, 1675);
+            this.brakesTabPage1.Size = new System.Drawing.Size(1555, 863);
             this.brakesTabPage1.TabIndex = 0;
             // 
             // LGUTab
             // 
             this.LGUTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.LGUTab.Controls.Add(this.lguTabPage1);
-            this.LGUTab.Location = new System.Drawing.Point(4, 36);
-            this.LGUTab.Margin = new System.Windows.Forms.Padding(6);
+            this.LGUTab.Location = new System.Drawing.Point(4, 25);
             this.LGUTab.Name = "LGUTab";
-            this.LGUTab.Size = new System.Drawing.Size(3118, 1675);
+            this.LGUTab.Size = new System.Drawing.Size(1555, 863);
             this.LGUTab.TabIndex = 8;
             this.LGUTab.Text = "LGU";
             // 
@@ -917,19 +873,18 @@
             this.lguTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.lguTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lguTabPage1.Location = new System.Drawing.Point(0, 0);
-            this.lguTabPage1.Margin = new System.Windows.Forms.Padding(12);
+            this.lguTabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lguTabPage1.Name = "lguTabPage1";
-            this.lguTabPage1.Size = new System.Drawing.Size(3118, 1675);
+            this.lguTabPage1.Size = new System.Drawing.Size(1555, 863);
             this.lguTabPage1.TabIndex = 0;
             // 
             // FCUTab
             // 
             this.FCUTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.FCUTab.Controls.Add(this.fcu1);
-            this.FCUTab.Location = new System.Drawing.Point(4, 36);
-            this.FCUTab.Margin = new System.Windows.Forms.Padding(6);
+            this.FCUTab.Location = new System.Drawing.Point(4, 25);
             this.FCUTab.Name = "FCUTab";
-            this.FCUTab.Size = new System.Drawing.Size(3118, 1675);
+            this.FCUTab.Size = new System.Drawing.Size(1555, 863);
             this.FCUTab.TabIndex = 9;
             this.FCUTab.Text = "FCU";
             // 
@@ -940,41 +895,39 @@
             this.fcu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fcu1.ForeColor = System.Drawing.Color.Silver;
             this.fcu1.Location = new System.Drawing.Point(0, 0);
-            this.fcu1.Margin = new System.Windows.Forms.Padding(12);
+            this.fcu1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.fcu1.Name = "fcu1";
-            this.fcu1.Size = new System.Drawing.Size(3118, 1675);
+            this.fcu1.Size = new System.Drawing.Size(1555, 863);
             this.fcu1.TabIndex = 0;
             // 
             // powerTab
             // 
             this.powerTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
             this.powerTab.Controls.Add(this.powerTabPage1);
-            this.powerTab.Location = new System.Drawing.Point(4, 36);
-            this.powerTab.Margin = new System.Windows.Forms.Padding(6);
+            this.powerTab.Location = new System.Drawing.Point(4, 25);
             this.powerTab.Name = "powerTab";
-            this.powerTab.Size = new System.Drawing.Size(3118, 1675);
+            this.powerTab.Size = new System.Drawing.Size(1555, 863);
             this.powerTab.TabIndex = 10;
             this.powerTab.Text = "Power";
             // 
             // powerTabPage1
             // 
             this.powerTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(62)))));
-            this.powerTabPage1.Location = new System.Drawing.Point(48, 8);
-            this.powerTabPage1.Margin = new System.Windows.Forms.Padding(12);
+            this.powerTabPage1.Location = new System.Drawing.Point(24, 4);
+            this.powerTabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.powerTabPage1.Name = "powerTabPage1";
-            this.powerTabPage1.Size = new System.Drawing.Size(2362, 1535);
+            this.powerTabPage1.Size = new System.Drawing.Size(1181, 798);
             this.powerTabPage1.TabIndex = 0;
             this.powerTabPage1.Load += new System.EventHandler(this.powerTabPage1_Load);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(2988, 1762);
+            this.ClientSize = new System.Drawing.Size(1494, 590);
             this.Controls.Add(this.customTabControl1);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "rLoop Ground Station Control";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
