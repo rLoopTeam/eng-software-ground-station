@@ -92,9 +92,13 @@
 		[21505,	0,		0,	"NA",	"Pusher Switch B"],	
 		[21506,	0,		0,	"NA",	"Pusher Switch C"],	
 
-		[21760,	0,		0,	"Gs",	"Accel 1 X Axis"],	
-		[21761,	0,		0,	"Gs",	"Accel 1 Y Axis"],	
-		[21762,	0,		0,	"Gs",	"Accel 1 Z Axis"],		
+		[21760,	0,		0,	"Gs",	"Accel 1 X Raw"],	
+		[21761,	0,		0,	"Gs",	"Accel 1 Y Raw"],
+    [21762, 0,    0,  "Gs", "Accel 1 Z Raw" ],		
+
+    [21763,	0,		0,	"Gs",	"Accel 1 X Gs"],	
+		[21764,	0,		0,	"Gs",	"Accel 1 Y Gs"],	
+		[21765,	0,		0,	"Gs",	"Accel 1 Z Gs"],		
 	],
 	
 	

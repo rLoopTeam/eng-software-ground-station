@@ -123,21 +123,33 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
         public byte PusherState;
         #endregion
 
-        #region Gyro
+        #region Accel
 
         /// <summary>
-        /// Gyro 1 X-Axis, units?
+        /// Accel 1 X-Axis Raw
         /// </summary>
-        public Int16 Accel1X;
+        public Int16 Accel1XRaw;
         /// <summary>
-        /// Gyro 1 Y-Axis, units?
+        /// Accel 1 Y-Axis Raw
         /// </summary>
-        public Int16 Accel1Y;
+        public Int16 Accel1YRaw;
         /// <summary>
-        /// Gyro 1 Z-Axis, units?
+        /// Accel 1 Z-Axis Raw
         /// </summary>
-        public Int16 Accel1Z;
+        public Int16 Accel1ZRaw;
 
+        /// <summary>
+        /// Accel 1 X-Axis Gs
+        /// </summary>
+        public float Accel1XGs;
+        /// <summary>
+        /// Accel 1 Y-Axis Gs
+        /// </summary>
+        public float Accel1YGs;
+        /// <summary>
+        /// Accel 1 Z-Axis Gs
+        /// </summary>
+        public float Accel1ZGs;
         #endregion
 
         #region EBLowLevelCommand
@@ -386,11 +398,17 @@ namespace rLoop_Ground_Station.Pod_State.Nodes
 
                 #region Accel Parameter
                 if (p.Index == 0x5500 && p.Data is Int16)
-                    Accel1X = (Int16)p.Data;
+                    Accel1XRaw = (Int16)p.Data;
                 if (p.Index == 0x5501 && p.Data is Int16)
-                    Accel1Y = (Int16)p.Data;
+                    Accel1YRaw = (Int16)p.Data;
                 if (p.Index == 0x5502 && p.Data is Int16)
-                    Accel1Z = (Int16)p.Data;
+                    Accel1ZRaw = (Int16)p.Data;
+                if (p.Index == 0x5503 && p.Data is float)
+                    Accel1XGs = (float)p.Data;
+                if (p.Index == 0x5504 && p.Data is float)
+                    Accel1YGs = (float)p.Data;
+                if (p.Index == 0x5505 && p.Data is float)
+                    Accel1ZGs = (float)p.Data;
                 #endregion
 
             }

@@ -55,9 +55,14 @@ namespace rLoop_Ground_Station.TabPanels
                 default: lblPusherStateVal.Text = "Unknown"; break;
             }
 
-            lblAccel1XVal.Text = rPodPodState.FlightControlUnitNode.Accel1X.ToString("0.00");
-            lblAccel1YVal.Text = rPodPodState.FlightControlUnitNode.Accel1Y.ToString("0.00");
-            lblAccel1ZVal.Text = rPodPodState.FlightControlUnitNode.Accel1Z.ToString("0.00");
+            lblAccel1XVal.Text = rPodPodState.FlightControlUnitNode.Accel1XGs.ToString() + " Gs";
+            lblAccel1YVal.Text = rPodPodState.FlightControlUnitNode.Accel1YGs.ToString() + " Gs";
+            lblAccel1ZVal.Text = rPodPodState.FlightControlUnitNode.Accel1ZGs.ToString() + " Gs";
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

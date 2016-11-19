@@ -41,14 +41,7 @@ namespace rLoop_Ground_Station
 
         static rPodNodeDiscovery()
         {
-            //Make sure we're listening on all network interfaces as they come up and down
-            NetworkChange.NetworkAvailabilityChanged += new
-                NetworkAvailabilityChangedEventHandler(AvailabilityChangedCallback);
-        }
 
-        static void AvailabilityChangedCallback(object sender, EventArgs e)
-        {
-            beginUDPListen();
         }
 
         public static bool beginUDPListen()
